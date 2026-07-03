@@ -1,0 +1,360 @@
+import Image from "next/image";
+import Link from "next/link";
+import { NewsCard } from "@/components/NewsCard";
+import {
+  languagePages,
+  practicePages,
+  programPages,
+  resourcePages,
+} from "@/data/content";
+import { news } from "@/data/site";
+
+const stats = [
+  { value: "10+", label: "年教学与服务经验" },
+  { value: "10,000+", label: "累计服务学员" },
+  { value: "4", label: "核心语种方向" },
+  { value: "26", label: "分级与专项班型" },
+];
+
+const languageMarks: Record<string, string> = {
+  english: "EN",
+  french: "FR",
+  japanese: "日",
+  korean: "한",
+};
+
+export default function HomePage() {
+  return (
+    <>
+      <section className="relative min-h-[720px] overflow-hidden bg-[#071f3e] text-white">
+        <Image
+          src="/images/campus-autumn.png"
+          alt=""
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071f3e]/95 via-[#071f3e]/82 to-[#071f3e]/30" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_35%,rgba(201,155,72,0.18),transparent_30%)]" />
+        <div className="shell relative flex min-h-[720px] items-center py-24">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold tracking-[0.28em] text-[#ead7ad]">
+              LANGUAGE · KNOWLEDGE · WORLD
+            </p>
+            <h1 className="mt-7 font-serif text-[clamp(46px,7vw,82px)] font-semibold leading-[1.12] tracking-[-0.05em]">
+              让语言成为
+              <br />
+              通往更大世界的能力
+            </h1>
+            <p className="mt-7 max-w-xl text-base leading-8 text-white/76 sm:text-lg">
+              英语、法语、日语、韩语，从零基础分级进阶到考试、升学与职业应用，为个人与组织提供有目标、有路径、有反馈的语言学习方案。
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link
+                href="/languages"
+                className="bg-[#c99b48] px-7 py-4 text-sm font-semibold text-[#071f3e] transition hover:bg-[#ead7ad]"
+              >
+                探索语种课程
+              </Link>
+              <Link
+                href="/programs"
+                className="border border-white/35 px-7 py-4 text-sm font-semibold transition hover:bg-white/10"
+              >
+                查看培训项目
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="absolute bottom-0 right-0 bg-[#071f3e]/70 px-5 py-3 text-[11px] tracking-[0.08em] text-white/70 backdrop-blur-sm">
+          多语种学习 · 专业辅导 · 国际视野
+        </div>
+      </section>
+
+      <section className="-mt-px bg-[#0b2f5b] text-white">
+        <div className="shell grid sm:grid-cols-2 lg:grid-cols-4">
+          {languagePages.map((language) => (
+            <Link
+              key={language.slug}
+              href={`/languages/${language.slug}`}
+              className="group flex min-h-40 items-center gap-5 border-b border-r border-white/10 p-6 transition hover:bg-white/8 sm:p-7"
+            >
+              <span className="grid size-14 shrink-0 place-items-center rounded-full border border-[#c99b48]/50 font-serif text-xl text-[#ead7ad]">
+                {languageMarks[language.slug]}
+              </span>
+              <span>
+                <strong className="block font-serif text-xl">
+                  {language.title}
+                </strong>
+                <small className="mt-1.5 block text-[10px] uppercase tracking-[0.14em] text-white/45">
+                  {language.english}
+                </small>
+                <span className="mt-3 block text-xs text-white/55 transition group-hover:text-white">
+                  课程详情 →
+                </span>
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-b border-slate-200 bg-[#f7f5f0]">
+        <div className="shell grid grid-cols-2 lg:grid-cols-4">
+          {stats.map((item) => (
+            <div
+              key={item.label}
+              className="border-r border-slate-200 px-5 py-9 last:border-r-0 lg:px-8"
+            >
+              <strong className="block font-serif text-3xl text-[#0b2f5b] sm:text-4xl">
+                {item.value}
+              </strong>
+              <span className="mt-2 block text-xs tracking-[0.1em] text-slate-500">
+                {item.label}
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-24">
+        <div className="shell grid gap-12 lg:grid-cols-[0.84fr_1.16fr] lg:items-center">
+          <div>
+            <span className="eyebrow">About us</span>
+            <h2 className="section-title">十余年，把语言教育做成一件长期的事</h2>
+            <p className="section-copy">
+              从最初的英语课程与学习小组，到今天覆盖四个语种、多个级别和应用方向的课程体系，我们始终关注一件事：学过之后，能否更自信、更准确地表达。
+            </p>
+            <div className="mt-8 grid gap-3 text-sm text-slate-600 sm:grid-cols-2">
+              <Link href="/about/history" className="border-l-2 border-[#c99b48] pl-4 py-1">
+                中心发展历程 →
+              </Link>
+              <Link href="/about/approach" className="border-l-2 border-[#c99b48] pl-4 py-1">
+                教育理念与方法 →
+              </Link>
+              <Link href="/about/organization" className="border-l-2 border-[#c99b48] pl-4 py-1">
+                教学与组织架构 →
+              </Link>
+              <Link href="/faculty" className="border-l-2 border-[#c99b48] pl-4 py-1">
+                认识教学团队 →
+              </Link>
+            </div>
+          </div>
+          <div className="relative min-h-[480px] overflow-hidden bg-[#0b2f5b]">
+            <Image
+              src="/images/language-class.png"
+              alt="多语种教学课堂"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 60vw"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#edf2f6] py-24">
+        <div className="shell">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <span className="eyebrow">Learning pathways</span>
+              <h2 className="section-title">每一个学习目标，都有更合适的抵达方式</h2>
+              <p className="section-copy">
+                打牢基础、准备考试、走向海外课堂、提升职业沟通，或为团队定制培训——目标不同，课程组合与学习节奏也应不同。
+              </p>
+            </div>
+            <Link href="/programs" className="text-sm font-semibold text-[#174f8f]">
+              查看全部培训项目 →
+            </Link>
+          </div>
+          <div className="mt-12 grid gap-px overflow-hidden border border-slate-200 bg-slate-200 md:grid-cols-2 lg:grid-cols-4">
+            {programPages.map((program, index) => (
+              <Link
+                key={program.slug}
+                href={`/programs/${program.slug}`}
+                className="group min-h-[270px] bg-white p-7 transition hover:bg-[#0b2f5b] hover:text-white"
+              >
+                <span className="font-serif text-sm text-[#c99b48]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-8 font-serif text-2xl font-semibold leading-8">
+                  {program.title}
+                </h3>
+                <p className="mt-2 text-[10px] uppercase tracking-[0.14em] text-slate-400 group-hover:text-white/45">
+                  {program.english}
+                </p>
+                <p className="mt-5 text-sm leading-7 text-slate-500 group-hover:text-white/66">
+                  {program.summary}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24">
+        <div className="shell">
+          <div className="grid overflow-hidden bg-[#071f3e] text-white lg:grid-cols-[1.04fr_0.96fr]">
+            <div className="relative min-h-[520px]">
+              <Image
+                src="/images/student-collaboration.png"
+                alt="学员小组交流"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 55vw"
+              />
+            </div>
+            <div className="p-9 sm:p-14">
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ead7ad]">
+                Learning in practice
+              </span>
+              <h2 className="mt-5 font-serif text-4xl font-semibold leading-tight">
+                让语言走出课本，进入真实交流
+              </h2>
+              <p className="mt-5 text-sm leading-8 text-white/62">
+                语言辅导、学习社群、文化体验、赛事展示与主题研学，让课堂所学在一次次表达、协作和探索中转化为能力。
+              </p>
+              <div className="mt-8 divide-y divide-white/12 border-t border-white/12">
+                {practicePages.map((item) => (
+                  <Link
+                    key={item.slug}
+                    href={`/practice/${item.slug}`}
+                    className="flex items-center justify-between py-4 text-sm text-white/76 transition hover:text-white"
+                  >
+                    <span>{item.title}</span>
+                    <span className="text-[#c99b48]">→</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#f7f5f0] py-24">
+        <div className="shell">
+          <div className="grid gap-6 lg:grid-cols-2">
+            <Link
+              href="/research"
+              className="group relative min-h-[440px] overflow-hidden bg-[#0b2f5b] p-9 text-white sm:p-12"
+            >
+              <Image
+                src="/images/modern-classroom.jpg"
+                alt=""
+                fill
+                className="object-cover opacity-42 transition duration-500 group-hover:scale-[1.03]"
+                sizes="50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#071f3e] via-[#071f3e]/45 to-transparent" />
+              <div className="relative flex h-full flex-col justify-end">
+                <p className="text-xs uppercase tracking-[0.18em] text-[#ead7ad]">
+                  Teaching & Research
+                </p>
+                <h2 className="mt-3 font-serif text-4xl font-semibold">教学研究</h2>
+                <p className="mt-4 max-w-md text-sm leading-7 text-white/68">
+                  从课堂问题出发研究方法、更新课程，把十余年的教学经验沉淀为可验证、可延续的专业标准。
+                </p>
+                <span className="mt-6 text-sm font-semibold">进入栏目 →</span>
+              </div>
+            </Link>
+            <Link
+              href="/collaboration"
+              className="group relative min-h-[440px] overflow-hidden bg-[#0b2f5b] p-9 text-white sm:p-12"
+            >
+              <Image
+                src="/images/meeting-room.jpg"
+                alt=""
+                fill
+                className="object-cover opacity-42 transition duration-500 group-hover:scale-[1.03]"
+                sizes="50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#071f3e] via-[#071f3e]/45 to-transparent" />
+              <div className="relative flex h-full flex-col justify-end">
+                <p className="text-xs uppercase tracking-[0.18em] text-[#ead7ad]">
+                  Collaboration
+                </p>
+                <h2 className="mt-3 font-serif text-4xl font-semibold">合作交流</h2>
+                <p className="mt-4 max-w-md text-sm leading-7 text-white/68">
+                  与高校、企业及国际伙伴共同设计语言项目，让课程回应校园发展、岗位能力与跨文化交流需求。
+                </p>
+                <span className="mt-6 text-sm font-semibold">进入栏目 →</span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24">
+        <div className="shell grid gap-14 lg:grid-cols-[0.72fr_1.28fr]">
+          <div>
+            <span className="eyebrow">News & archive</span>
+            <h2 className="section-title">十余年的学习现场，汇成一部成长档案</h2>
+            <p className="section-copy">
+              开班、语言角、公开课与教学研讨，记录着课程如何成熟、教师如何精进，也记录着一届届学员如何走得更远。
+            </p>
+            <Link
+              href="/news"
+              className="mt-8 inline-block text-sm font-semibold text-[#174f8f]"
+            >
+              浏览 2015—2026 年动态 →
+            </Link>
+          </div>
+          <div>
+            {news.slice(0, 6).map((item) => (
+              <NewsCard key={item.slug} item={item} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#0b2f5b] py-20 text-white">
+        <div className="shell">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <p className="text-xs uppercase tracking-[0.18em] text-[#ead7ad]">
+                Resource center
+              </p>
+              <h2 className="mt-4 font-serif text-4xl font-semibold">
+                让每一次课后投入，都更有方向
+              </h2>
+            </div>
+            <Link href="/resources" className="text-sm font-semibold text-white/76">
+              查看资源中心 →
+            </Link>
+          </div>
+          <div className="mt-10 grid gap-px bg-white/12 md:grid-cols-4">
+            {resourcePages.map((item) => (
+              <Link
+                key={item.slug}
+                href={`/resources/${item.slug}`}
+                className="min-h-44 bg-[#0b2f5b] p-6 transition hover:bg-[#174f8f]"
+              >
+                <h3 className="font-serif text-xl font-semibold">{item.title}</h3>
+                <p className="mt-3 text-xs leading-6 text-white/55">
+                  {item.summary}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#c99b48] py-16">
+        <div className="shell flex flex-col justify-between gap-8 lg:flex-row lg:items-center">
+          <div>
+            <p className="text-xs font-semibold tracking-[0.2em] text-[#071f3e]/60">
+              START A CONVERSATION
+            </p>
+            <h2 className="mt-3 font-serif text-3xl font-semibold text-[#071f3e] sm:text-4xl">
+              从目标出发，开启你的语言进阶路径
+            </h2>
+          </div>
+          <Link
+            href="/contact"
+            className="inline-flex w-fit bg-[#071f3e] px-7 py-4 text-sm font-semibold text-white"
+          >
+            预约课程咨询 →
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}

@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #11233e;
+  --navy: #0b2f5b;
+  --navy-deep: #071f3e;
+  --blue: #174f8f;
+  --gold: #c99b48;
+  --gold-soft: #ead7ad;
+  --paper: #f7f5f0;
+  --mist: #edf2f6;
+  --line: #dce3e8;
+  --muted: #637083;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--white);
+  font-family: "Noto Sans SC", "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:where(:not([class*="text-"])) {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  color: white;
+  background: var(--blue);
+}
+
+.shell {
+  width: min(1240px, calc(100% - 48px));
+  margin-inline: auto;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  width: 28px;
+  height: 1px;
+  content: "";
+  background: var(--gold);
+}
+
+.section-title {
+  margin: 14px 0 0;
+  color: var(--ink);
+  font-family: "Noto Serif SC", "Songti SC", "STSong", serif;
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+}
+
+.section-copy {
+  max-width: 650px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.image-placeholder {
+  position: relative;
+  display: flex;
+  min-height: 220px;
+  align-items: flex-end;
+  overflow: hidden;
+  padding: 22px;
+  color: rgba(255, 255, 255, 0.9);
+  background:
+    linear-gradient(145deg, rgba(11, 47, 91, 0.78), rgba(7, 31, 62, 0.95)),
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.05) 0,
+      rgba(255, 255, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 22px
+    );
+}
+
+.image-placeholder::after {
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  content: "";
+  pointer-events: none;
+}
+
+.image-placeholder small {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.prose-page h2 {
+  margin: 42px 0 16px;
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  font-size: 28px;
+}
+
+.prose-page p {
+  margin: 0 0 18px;
+  color: #435269;
+  font-size: 16px;
+  line-height: 2;
+}
+
+@media (max-width: 760px) {
+  .shell {
+    width: min(100% - 32px, 1240px);
+  }
+}

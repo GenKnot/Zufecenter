@@ -1,0 +1,83 @@
+import {
+  aboutPages,
+  collaborationPages,
+  facultyPages,
+  practicePages,
+  programPages,
+  researchPages,
+  resourcePages,
+  type ContentPage,
+} from "@/data/content";
+import type { LocalizedContentParent } from "@/data/fr-content-details";
+export type { LocalizedContentParent };
+
+type DetailCopy = {
+  parent: LocalizedContentParent;
+  slug: string;
+  title: string;
+  summary: string;
+  points: [string, string, string];
+};
+
+const copies: DetailCopy[] = [
+  { parent: "about", slug: "history", title: "Nuestra historia", summary: "Más de diez años de cursos, comunidades de aprendizaje y desarrollo pedagógico han dado forma al centro tal como es hoy.", points: ["De clases de inglés y pequeños grupos de estudio a un sistema de cursos en cuatro idiomas", "Clubes de idiomas regulares, talleres y apoyo a los estudiantes más allá de las clases formales", "Revisión continua del programa de estudios, la práctica docente y los servicios organizativos"] },
+  { parent: "about", slug: "approach", title: "Nuestro enfoque educativo", summary: "Convertimos el conocimiento lingüístico en comunicación mediante etapas claras, tareas significativas y retroalimentación que los estudiantes pueden utilizar.", points: ["Partir del nivel actual, el objetivo y el tiempo de estudio disponible del estudiante", "Conectar el vocabulario y la gramática con situaciones reales y tareas con propósito", "Usar los objetivos de etapa y la retroalimentación para hacer visible el progreso y los próximos pasos"] },
+  { parent: "about", slug: "organization", title: "Cómo funciona el centro", summary: "Las funciones de enseñanza, programa de estudios, apoyo a los estudiantes y colaboración trabajan juntas en torno a un encargo pedagógico compartido.", points: ["Los equipos lingüísticos imparten los cursos y responden al rendimiento de los estudiantes", "El trabajo curricular y de investigación alinea los objetivos, los materiales y la evaluación", "Los equipos de apoyo a los estudiantes y de proyectos coordinan la ubicación, los cursos y las colaboraciones"] },
+
+  { parent: "programs", slug: "general", title: "Competencia lingüística general", summary: "Desarrolla una comprensión auditiva, expresión oral, lectura y escritura equilibradas mediante una progresión adaptada a tu nivel actual.", points: ["Un itinerario por niveles desde los fundamentos hasta una comunicación más independiente", "Trabajo integrado sobre las habilidades lingüísticas receptivas y productivas", "Tareas de aplicación regulares que muestran lo que el estudiante ya puede hacer"] },
+  { parent: "programs", slug: "exam-preparation", title: "Exámenes y estudios superiores", summary: "Combina el desarrollo lingüístico de fondo con la preparación práctica para los exámenes y los estudios futuros.", points: ["Diagnóstico antes de las estrategias de examen, para que la preparación parta del nivel real", "Práctica cronometrada, análisis de tareas y retroalimentación en todas las habilidades evaluadas", "Planificación del estudio que conecta un objetivo de puntuación con un crecimiento lingüístico sostenible"] },
+  { parent: "programs", slug: "business", title: "Idioma profesional y de negocios", summary: "Practica la comunicación para reuniones, correos electrónicos, presentaciones, clientes y trabajo en equipo intercultural.", points: ["Idioma extraído de situaciones laborales en lugar de terminología aislada", "Práctica basada en roles para la comunicación escrita, oral y colaborativa", "Retroalimentación sobre la claridad, el tono, el juicio profesional y las estrategias de respuesta"] },
+  { parent: "programs", slug: "academic", title: "Inglés académico y comunicación", summary: "Desarrolla una lectura, redacción, presentación y debate más claros para entornos universitarios y de investigación.", points: ["Leer las fuentes de forma crítica y organizar notas útiles", "Escribir con una posición visible, evidencia y progresión lógica", "Presentar ideas académicas y responder preguntas con mayor confianza"] },
+  { parent: "programs", slug: "young-learners", title: "Crecimiento lingüístico para jóvenes estudiantes", summary: "Desarrolla el interés, la expresión y hábitos de estudio duraderos mediante un aprendizaje por etapas adecuado a la edad.", points: ["Actividades adaptadas a la edad, la atención y el desarrollo lingüístico actual", "Un equilibrio entre comunicación, alfabetización, proyectos y exploración cultural", "Retroalimentación constructiva para los estudiantes y comunicación clara del progreso a las familias"] },
+  { parent: "programs", slug: "corporate", title: "Formación corporativa personalizada", summary: "Diseña la formación lingüística en torno a las funciones, los sectores, el trabajo internacional y los resultados específicos del equipo.", points: ["Análisis de necesidades basado en los participantes y las situaciones laborales reales", "Formato flexible de idioma, contenido, calendario y modalidad de impartición", "Un proceso de revisión que vincula la participación con resultados de comunicación observables"] },
+  { parent: "programs", slug: "workshops", title: "Talleres cortos enfocados", summary: "Aborda un desafío práctico de comunicación mediante una formación compacta y concentrada.", points: ["Un tema estrechamente definido como el correo electrónico, la presentación o la confianza oral", "Demostración, práctica, retroalimentación y revisión inmediata en cada sesión", "Formatos adecuados para individuos, campus, equipos y grupos profesionales"] },
+  { parent: "programs", slug: "study-abroad", title: "Preparación lingüística para estudios en el extranjero", summary: "Prepárate para la comunicación académica, la adaptación cotidiana y las demandas lingüísticas prácticas de estudiar en el extranjero.", points: ["Conectar los objetivos del examen con el idioma necesario después de la admisión", "Practicar la participación en clase, las presentaciones, el correo electrónico y el estudio autónomo", "Desarrollar la conciencia intercultural para la vida cotidiana y las expectativas académicas"] },
+
+  { parent: "practice", slug: "tutoring", title: "Tutoría lingüística", summary: "Usa el diagnóstico, las preguntas y la retroalimentación enfocada para resolver dificultades específicas de aprendizaje.", points: ["Clarificar si el obstáculo está relacionado con el conocimiento, la práctica, la estrategia o la confianza", "Trabajar en un objetivo manejable mediante ejemplos y corrección guiada", "Marcharse con un próximo paso práctico para la práctica autónoma"] },
+  { parent: "practice", slug: "language-clubs", title: "Clubes de idiomas y comunidades de aprendizaje", summary: "Crea oportunidades regulares y sin presión para hablar, escuchar y aprender con otros.", points: ["Temas que dan a cada participante una razón clara para contribuir", "Apoyo del profesor o facilitador sin convertir la actividad en otra clase", "Una comunidad continua que ayuda a los estudiantes a mantener la práctica entre los cursos"] },
+  { parent: "practice", slug: "cultural-events", title: "Experiencias lingüísticas y culturales", summary: "Explora cómo el idioma vive en las costumbres, los medios de comunicación, las elecciones cotidianas y la expresión creativa.", points: ["Usar material cultural auténtico a un nivel accesible para los participantes", "Conectar el vocabulario y las expresiones con las situaciones que les dan significado", "Fomentar la observación, la comparación y el debate intercultural respetuoso"] },
+  { parent: "practice", slug: "competitions", title: "Concursos y presentaciones de aprendizaje", summary: "Da a la expresión oral, la redacción y los proyectos un público real y un resultado visible.", points: ["Una preparación que trata el evento como un proceso de aprendizaje, no solo un resultado", "Criterios claros para el contenido, el idioma, la presentación y la reflexión", "Oportunidades para compartir el progreso mediante discursos, escritura y trabajo colaborativo"] },
+  { parent: "practice", slug: "study-tours", title: "Visitas temáticas e intercambios", summary: "Lleva las tareas lingüísticas a campus, organizaciones y entornos culturales donde la observación conduce a la comunicación.", points: ["Un tema claro y un encargo de comunicación antes de cada visita", "Observación guiada, preguntas, entrevistas o tareas colaborativas in situ", "Un informe final, presentación o reflexión que convierte la experiencia en aprendizaje"] },
+
+  { parent: "faculty", slug: "english", title: "Equipo de enseñanza de inglés", summary: "Estándares compartidos conectan la enseñanza de inglés general, oral, académico, profesional y de examen.", points: ["Los profesores planifican en torno a objetivos de etapa comunes mientras aportan sus especialidades", "Las evidencias del aula y la retroalimentación de los estudiantes informan la revisión regular de los cursos", "El desarrollo del equipo vincula la progresión general con los itinerarios de cursos especializados"] },
+  { parent: "faculty", slug: "french", title: "Equipo de enseñanza de francés", summary: "La progresión en lengua francesa se enseña junto con el contexto cultural y la comunicación práctica.", points: ["Etapas alineadas con el MCER desde la primera pronunciación hasta la expresión independiente", "Comprensión auditiva, expresión oral, lectura y escritura integradas en cada nivel", "Apoyo enfocado para el aprendizaje cultural y la preparación para el DELF"] },
+  { parent: "faculty", slug: "japanese", title: "Equipo de enseñanza de japonés", summary: "La explicación estructurada y el uso significativo ayudan a los estudiantes a conectar los sistemas de escritura, la gramática y la comunicación natural.", points: ["Un camino sistemático desde el kana hasta el desarrollo lingüístico intermedio", "Tareas en clase que llevan a los estudiantes del reconocimiento al uso apropiado", "Apoyo integrado para la comunicación práctica y la progresión en el JLPT"] },
+  { parent: "faculty", slug: "korean", title: "Equipo de enseñanza de coreano", summary: "Unos fundamentos claros y la práctica repetida apoyan el progreso desde el Hangul hasta la expresión intermedia conectada.", points: ["Trabajo sistemático sobre el sonido, la escritura, la estructura y el idioma de alta frecuencia", "Situaciones cotidianas y contexto cultural para hacer el aprendizaje memorable", "Una progresión que apoya tanto la comunicación práctica como los objetivos del TOPIK"] },
+
+  { parent: "research", slug: "teaching-research", title: "Investigación en enseñanza de idiomas", summary: "La observación en el aula convierte las dificultades recurrentes de los estudiantes en preguntas que el equipo docente puede examinar.", points: ["Partir del rendimiento visible de los estudiantes en lugar de las tendencias abstractas", "Usar ensayos a pequeña escala, debates y evidencias para probar las respuestas pedagógicas", "Compartir los hallazgos en formas que puedan mejorar las decisiones cotidianas en el aula"] },
+  { parent: "research", slug: "curriculum-development", title: "Desarrollo curricular", summary: "Alinear los objetivos, las tareas de clase, los materiales y la evaluación en cada progresión lingüística.", points: ["Definir lo que los estudiantes deben ser capaces de hacer al final de cada etapa", "Elegir contenidos y prácticas que apoyen directamente esos objetivos", "Revisar las transiciones para que un curso prepare a los estudiantes para el siguiente"] },
+  { parent: "research", slug: "faculty-development", title: "Desarrollo del profesorado", summary: "La planificación colectiva, la observación entre iguales y los casos de enseñanza mantienen el aprendizaje profesional práctico.", points: ["La preparación compartida hace más coherentes los objetivos y las expectativas de calidad", "La observación crea una base concreta para el debate profesional", "La reflexión convierte la experiencia individual en conocimiento que el equipo puede usar"] },
+
+  { parent: "resources", slug: "study-guides", title: "Guías de estudio", summary: "La orientación práctica ayuda a los estudiantes a establecer objetivos, crear rutinas y usar su limitado tiempo de estudio de manera más eficaz.", points: ["Elegir un objetivo lo suficientemente específico como para guiar la práctica semanal", "Equilibrar las entradas, el recuerdo activo, la comunicación y la revisión", "Ajustar la rutina usando evidencias de las tareas y la retroalimentación del profesor"] },
+  { parent: "resources", slug: "downloads", title: "Materiales del curso", summary: "Los manuales del curso, las listas de verificación y los materiales de enseñanza seleccionados se comparten en el contexto donde son más útiles.", points: ["La información del curso ayuda a los estudiantes a comprender el nivel y las expectativas", "Las listas de verificación de aprendizaje apoyan la preparación y la revisión entre las clases", "Los materiales de enseñanza se adaptan al curso actual en lugar de ofrecerse como un archivo sin estructurar"] },
+  { parent: "resources", slug: "faq", title: "Preguntas frecuentes", summary: "Respuestas claras sobre niveles, ubicación, horarios y expectativas de aprendizaje facilitan las decisiones sobre los cursos.", points: ["Elegir un idioma y un nivel basándose en evidencias, no solo en el interés", "Confirmar las fechas actuales, el formato, las tarifas y la disponibilidad antes de la inscripción", "Pedir una conversación de ubicación cuando los estudios previos no encajan en una etiqueta sencilla"] },
+  { parent: "resources", slug: "digital-learning", title: "Aprendizaje digital", summary: "Usa las herramientas digitales con un propósito claro para que la tecnología apoye, en lugar de fragmentar, la práctica lingüística.", points: ["Seleccionar herramientas para una habilidad específica o un problema de aprendizaje recurrente", "Combinar la práctica digital breve con una lectura, escritura y comunicación más profundas", "Revisar el progreso regularmente en lugar de coleccionar más aplicaciones y recursos"] },
+
+  { parent: "collaboration", slug: "campus", title: "Colaboraciones con campus", summary: "Co-diseñar cursos, talleres y actividades culturales para las necesidades de una comunidad estudiantil particular.", points: ["Partir de los participantes, el contexto académico y el resultado deseado", "Combinar el aprendizaje de idiomas con las disciplinas, la vida estudiantil o las iniciativas del campus", "Elegir un formato que pueda impartirse y evaluarse de manera realista"] },
+  { parent: "collaboration", slug: "enterprise", title: "Colaboraciones empresariales y organizativas", summary: "Construir la formación a partir de situaciones laborales, las funciones de los participantes y las necesidades de comunicación internacional de la organización.", points: ["Identificar las tareas de alta frecuencia y los riesgos de comunicación antes de diseñar el contenido", "Usar casos relevantes, simulaciones y documentos sin exponer información sensible", "Revisar tanto la participación como la transferencia práctica al lugar de trabajo"] },
+  { parent: "collaboration", slug: "international", title: "Intercambio internacional", summary: "Diseñar el intercambio en torno al diálogo y una tarea común significativa en lugar de una visita ceremonial.", points: ["Preparar a los participantes con el idioma y el contexto necesarios para contribuir", "Crear oportunidades estructuradas para preguntas, colaboración y aprendizaje mutuo", "Usar un resultado compartido para dar al intercambio continuidad y valor educativo"] },
+];
+
+const sourceGroups: Record<LocalizedContentParent, ContentPage[]> = {
+  about: aboutPages,
+  programs: programPages,
+  practice: practicePages,
+  faculty: facultyPages,
+  research: researchPages,
+  resources: resourcePages,
+  collaboration: collaborationPages,
+};
+
+export type LocalizedContentDetail = DetailCopy & { heroImage: string; image?: string };
+
+export const esContentDetails: LocalizedContentDetail[] = copies.map((copy) => {
+  const source = sourceGroups[copy.parent].find((page) => page.slug === copy.slug);
+  if (!source) throw new Error(`Missing source page for ${copy.parent}/${copy.slug}`);
+  return { ...copy, heroImage: source.heroImage, image: source.image };
+});
+
+export const findEsContentDetail = (parent: string, slug: string) =>
+  esContentDetails.find((d) => d.parent === parent && d.slug === slug);
+
+export const esDetailsByParent = (parent: string) =>
+  esContentDetails.filter((d) => d.parent === parent);
