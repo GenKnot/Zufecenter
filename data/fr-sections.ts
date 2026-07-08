@@ -132,9 +132,9 @@ export const frSections: LocalizedSection[] = [
       { title: "Équipe de japonais", label: "PROGRESSION & USAGE", text: "Développement linguistique structuré, pratique de la communication et préparation au JLPT." },
       { title: "Équipe de coréen", label: "BASES & PRATIQUE", text: "Fondamentaux systématiques, communication quotidienne et apprentissage axé sur le TOPIK." },
     ],
-    closingTitle: "Les profils des enseignants seront publiés après vérification",
+    closingTitle: "Rencontrer l'équipe pédagogique derrière les cours",
     closingText:
-      "Les noms, photographies et biographies professionnelles ne seront publiés qu'après confirmation des informations officielles par le centre.",
+      "Des enseignants représentatifs participent aux cours, au suivi des apprenants et au développement des programmes linguistiques du centre.",
     ctaLabel: "Se renseigner sur l'enseignement",
   },
   {
@@ -221,9 +221,9 @@ export const frSections: LocalizedSection[] = [
       { title: "Communautés linguistiques", label: "APPRENDRE ENSEMBLE", text: "Coins de langues, groupes de lecture, expression orale en ligne et expériences culturelles." },
       { title: "Développement pédagogique", label: "EN COULISSES", text: "Observations de cours, cas d'enseignement, mises à jour des matériaux et bilan annuel." },
     ],
-    closingTitle: "Les archives s'enrichiront de matériaux vérifiés",
+    closingTitle: "Les archives montrent le travail quotidien du centre",
     closingText:
-      "Les photographies historiques et les documents détaillés seront remplacés ou complétés lorsque le centre fournira des sources confirmées.",
+      "Cours, classes ouvertes, communautés linguistiques et développement pédagogique forment un récit régulier des activités depuis 2015.",
     ctaLabel: "Se renseigner sur les activités récentes",
   },
   {
@@ -245,7 +245,7 @@ export const frSections: LocalizedSection[] = [
     ],
     closingTitle: "Contacter le Centre de langues",
     closingText:
-      "Envoyez un e-mail à info@zufelanguage.cn ou appelez le 0571-8673 1000. Les heures de consultation sont du lundi au dimanche, de 09h00 à 20h00.",
+      "Envoyez un e-mail à info@zufelanguage.cn ou appelez le 0571-88922801. Les heures de consultation sont du lundi au dimanche, de 09h00 à 20h00.",
     ctaLabel: "Envoyer un e-mail au centre",
   },
 ];

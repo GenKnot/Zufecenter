@@ -16,7 +16,83 @@ import { jaSections, findJaSection } from "@/data/ja-sections";
 import { jaDetailsByParent } from "@/data/ja-content-details";
 import { koSections, findKoSection } from "@/data/ko-sections";
 import { koDetailsByParent } from "@/data/ko-content-details";
+import { localizedUi, type ForeignLocale } from "@/data/i18n";
 import { siteConfig } from "@/data/site-config";
+
+const facultyProfiles = [
+  {
+    name: "Chen Xinmin",
+    role: "English Program Lead",
+    focus: "General English, business communication, academic expression",
+    experience: "10 years of language teaching experience",
+  },
+  {
+    name: "Wang Liming",
+    role: "Exam and Study Pathway Instructor",
+    focus: "IELTS bridge courses, writing, interview communication",
+    experience: "12 years of teaching and coaching experience",
+  },
+  {
+    name: "Lin Jiayi",
+    role: "French Instructor",
+    focus: "Beginner French, DELF preparation, cultural topics",
+    experience: "9 years of French teaching experience",
+  },
+  {
+    name: "Zhao Mingyuan",
+    role: "Japanese Instructor",
+    focus: "Japanese progression, JLPT, language practice",
+    experience: "11 years of Japanese teaching experience",
+  },
+  {
+    name: "Li Ruoqing",
+    role: "Korean Instructor",
+    focus: "Beginner Korean, daily communication, TOPIK training",
+    experience: "8 years of Korean teaching experience",
+  },
+  {
+    name: "Kim Hyunwoo",
+    role: "Cross-cultural Program Instructor",
+    focus: "Language practice, cultural activities, themed workshops",
+    experience: "10 years of cross-cultural course experience",
+  },
+];
+
+const facultyShowcaseCopy: Record<
+  ForeignLocale,
+  { eyebrow: string; title: string; intro: string }
+> = {
+  en: {
+    eyebrow: "Faculty members",
+    title: "Representative Teachers",
+    intro:
+      "The center brings together instructors in English, French, Japanese, Korean and cross-cultural practice. They teach, review learning feedback and support curriculum development.",
+  },
+  fr: {
+    eyebrow: "Équipe enseignante",
+    title: "Enseignants représentatifs",
+    intro:
+      "Le centre réunit des enseignants d'anglais, de français, de japonais, de coréen et de pratique interculturelle. Ils assurent les cours, suivent les retours d'apprentissage et participent au développement pédagogique.",
+  },
+  ja: {
+    eyebrow: "講師陣",
+    title: "代表講師",
+    intro:
+      "センターには英語、フランス語、日本語、韓国語、異文化実践を担当する講師が在籍し、授業、学習フィードバック、カリキュラム改善に関わっています。",
+  },
+  ko: {
+    eyebrow: "강사진",
+    title: "대표 강사",
+    intro:
+      "센터는 영어, 프랑스어, 일본어, 한국어 및 문화 실천 분야의 강사진으로 구성되어 있으며 수업, 학습 피드백, 교육과정 개발을 함께 담당합니다.",
+  },
+  es: {
+    eyebrow: "Equipo docente",
+    title: "Docentes representativos",
+    intro:
+      "El centro reúne docentes de inglés, francés, japonés, coreano y práctica intercultural. Imparten clases, revisan la retroalimentación del aprendizaje y apoyan el desarrollo curricular.",
+  },
+};
 
 export const dynamicParams = false;
 
@@ -114,6 +190,8 @@ export default async function EnglishSectionPage({
     section.slug === "contact"
       ? siteConfig.contact.emailHref
       : `/${locale}/contact`;
+  const ui = localizedUi[locale as ForeignLocale];
+  const facultyCopy = facultyShowcaseCopy[locale as ForeignLocale];
 
   return (
     <>
@@ -126,7 +204,7 @@ export default async function EnglishSectionPage({
       <section className="py-24">
         <div className="shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
-            <span className="eyebrow">Overview</span>
+            <span className="eyebrow">{ui.overview}</span>
             <h2 className="section-title">{section.introTitle}</h2>
             <div className="mt-6 space-y-5 text-sm leading-8 text-slate-600">
               {section.intro.map((paragraph) => (
@@ -151,6 +229,9 @@ export default async function EnglishSectionPage({
         <div className="shell grid gap-px bg-slate-200 md:grid-cols-2 xl:grid-cols-3">
           {section.cards.map((card, index) => {
             const detail = linkedDetails[index];
+            if (detail?.parent === "resources" && detail.slug === "downloads") {
+              return null;
+            }
             const href =
               card.href ??
               (detail ? `/${locale}/${detail.parent}/${detail.slug}` : undefined);
@@ -174,7 +255,7 @@ export default async function EnglishSectionPage({
                   href={href}
                   className="mt-7 inline-block text-xs font-semibold text-[#174f8f]"
                 >
-                  View details →
+                  {ui.viewDetails} →
                 </Link>
               )}
             </article>
@@ -183,11 +264,43 @@ export default async function EnglishSectionPage({
         </div>
       </section>
 
+      {section.slug === "faculty" && (
+        <section className="py-24">
+          <div className="shell">
+            <div className="mb-10 max-w-3xl">
+              <span className="eyebrow">{facultyCopy.eyebrow}</span>
+              <h2 className="section-title">{facultyCopy.title}</h2>
+              <p className="section-copy">
+                {facultyCopy.intro}
+              </p>
+            </div>
+            <div className="grid gap-px overflow-hidden border border-slate-200 bg-slate-200 md:grid-cols-2 xl:grid-cols-3">
+              {facultyProfiles.map((teacher) => (
+                <article key={teacher.name} className="bg-white p-8">
+                  <p className="text-xs font-semibold tracking-[0.14em] text-[#174f8f]">
+                    {teacher.experience}
+                  </p>
+                  <h3 className="mt-5 font-serif text-3xl font-semibold text-[#11233e]">
+                    {teacher.name}
+                  </h3>
+                  <p className="mt-2 text-sm font-semibold text-[#c99b48]">
+                    {teacher.role}
+                  </p>
+                  <p className="mt-6 text-sm leading-7 text-slate-500">
+                    {teacher.focus}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="py-24">
         <div className="shell grid overflow-hidden bg-[#071f3e] text-white lg:grid-cols-[1fr_auto] lg:items-end">
           <div className="p-9 sm:p-14">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ead7ad]">
-              Next step
+              {ui.nextStep}
             </p>
             <h2 className="mt-4 max-w-3xl font-serif text-3xl font-semibold leading-tight sm:text-4xl">
               {section.closingTitle}

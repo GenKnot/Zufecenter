@@ -61,7 +61,9 @@ const contentRoutes = [
   ...facultyPages.map((page) => `/faculty/${page.slug}`),
   ...researchPages.map((page) => `/research/${page.slug}`),
   ...collaborationPages.map((page) => `/collaboration/${page.slug}`),
-  ...resourcePages.map((page) => `/resources/${page.slug}`),
+  ...resourcePages
+    .filter((page) => page.slug !== "downloads")
+    .map((page) => `/resources/${page.slug}`),
   ...news.map((item) => `/news/${item.slug}`),
 ];
 
@@ -107,14 +109,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const englishContentPages: MetadataRoute.Sitemap = englishContentDetails.map(
-    (detail) => ({
+  const englishContentPages: MetadataRoute.Sitemap = englishContentDetails
+    .filter((detail) => detail.slug !== "downloads")
+    .map((detail) => ({
       url: `${siteConfig.url}/en/${detail.parent}/${detail.slug}/`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.6,
-    }),
-  );
+    }));
 
   const englishNewsPages: MetadataRoute.Sitemap = englishNews.map((item) => ({
     url: `${siteConfig.url}/en/news/${item.slug}/`,
@@ -149,7 +151,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),
-    ...details.map((d) => ({
+    ...details.filter((d) => d.slug !== "downloads").map((d) => ({
       url: `${siteConfig.url}/${locale}/${d.parent}/${d.slug}/`,
       lastModified: now,
       changeFrequency: "monthly" as const,

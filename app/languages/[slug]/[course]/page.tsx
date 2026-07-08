@@ -81,15 +81,16 @@ export default async function LanguageCoursePage({
       </section>
 
       <section className="border-b border-slate-200 bg-[#f7f5f0]">
-        <div className="shell grid sm:grid-cols-3">
+        <div className="shell grid sm:grid-cols-2 lg:grid-cols-4">
           {[
             ["标准周期", item.duration],
             ["学习频率", item.frequency],
             ["建议班额", item.classSize],
+            ["招生状态", "招生中"],
           ].map(([label, value]) => (
             <div
               key={label}
-              className="border-b border-slate-200 px-1 py-8 sm:border-b-0 sm:border-r sm:px-8 sm:first:pl-0"
+              className="border-b border-slate-200 px-1 py-8 sm:border-r sm:px-8 sm:first:pl-0 lg:border-b-0"
             >
               <p className="text-xs font-semibold tracking-[0.12em] text-[#174f8f]">
                 {label}

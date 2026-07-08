@@ -7,6 +7,7 @@ import { frNews, findFrNews } from "@/data/fr-news";
 import { esNews, findEsNews } from "@/data/es-news";
 import { jaNews, findJaNews } from "@/data/ja-news";
 import { koNews, findKoNews } from "@/data/ko-news";
+import { localizedUi, type ForeignLocale } from "@/data/i18n";
 import { siteConfig } from "@/data/site-config";
 
 export const dynamicParams = false;
@@ -81,13 +82,14 @@ export default async function EnglishNewsDetailPage({
     : locale === "ko" ? findKoNews(slug)
     : undefined;
   if (!item) notFound();
+  const ui = localizedUi[locale as ForeignLocale];
 
   return (
     <>
       <section className="bg-[#f7f5f0] py-20">
         <div className="shell max-w-4xl">
           <Link href={`/${locale}/news`} className="text-sm text-[#174f8f]">
-            ← Back to news and archive
+            ← {ui.backToNews}
           </Link>
           <p className="mt-10 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
             {item.category} · {item.date}
@@ -113,16 +115,14 @@ export default async function EnglishNewsDetailPage({
           />
         </div>
         <p className="mt-3 text-xs leading-6 text-slate-400">
-          {item.category} · language learning and exchange
+          {item.category} · {ui.newsCaption}
         </p>
         <div className="prose-page mt-12">
           {item.content.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
           <p className="mt-10 border-l-2 border-[#c99b48] pl-5 text-sm text-slate-500">
-            Course, open-class and language-cultural activity information is
-            published in the news archive. Contact the center to ask about
-            current arrangements.
+            {ui.newsNote}
           </p>
         </div>
       </article>

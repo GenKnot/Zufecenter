@@ -87,6 +87,9 @@ export default function ContactPage() {
                 <p className="text-xs tracking-[0.12em] text-slate-400">
                   地址与咨询时间
                 </p>
+                <p className="mt-2 font-semibold leading-7 text-slate-700">
+                  {siteConfig.contact.locationName}
+                </p>
                 <p className="mt-2 leading-7">{siteConfig.contact.address}</p>
                 <p className="mt-1 text-sm text-slate-500">
                   {siteConfig.contact.hours}

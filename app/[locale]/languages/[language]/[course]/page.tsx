@@ -6,6 +6,7 @@ import { frCourses, findFrCourse } from "@/data/fr-courses";
 import { esCourses, findEsCourse } from "@/data/es-courses";
 import { jaCourses, findJaCourse } from "@/data/ja-courses";
 import { koCourses, findKoCourse } from "@/data/ko-courses";
+import { localizedUi, type ForeignLocale } from "@/data/i18n";
 import { siteConfig } from "@/data/site-config";
 
 export const dynamicParams = false;
@@ -78,6 +79,7 @@ export default async function EnglishCoursePage({
     : locale === "ko" ? findKoCourse(language, slug)
     : undefined;
   if (!course) notFound();
+  const ui = localizedUi[locale as ForeignLocale];
 
   return (
     <>
@@ -87,7 +89,7 @@ export default async function EnglishCoursePage({
             href={`/${locale}/languages/${course.language}`}
             className="text-xs font-semibold tracking-[0.12em] text-[#ead7ad]"
           >
-            ← Back to the {course.languageLabel} class catalogue
+            ← {ui.backToCatalogue(course.languageLabel)}
           </Link>
           <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_300px] lg:items-end">
             <div>
@@ -103,7 +105,7 @@ export default async function EnglishCoursePage({
             </div>
             <div className="border-l-2 border-[#c99b48] pl-6">
               <p className="text-xs uppercase tracking-[0.14em] text-white/45">
-                Recommended for
+                {ui.recommendedFor}
               </p>
               <p className="mt-3 text-sm leading-7 text-white/76">
                 {course.audience}
@@ -114,12 +116,13 @@ export default async function EnglishCoursePage({
       </section>
 
       <section className="border-b border-slate-200 bg-[#f7f5f0]">
-        <div className="shell grid sm:grid-cols-2 lg:grid-cols-4">
+        <div className="shell grid sm:grid-cols-2 lg:grid-cols-5">
           {[
-            ["Level", course.level],
-            ["Standard length", course.duration],
-            ["Study frequency", course.frequency],
-            ["Suggested class size", course.classSize],
+            [ui.level, course.level],
+            [ui.standardLength, course.duration],
+            [ui.studyFrequency, course.frequency],
+            [ui.classSize, course.classSize],
+            [ui.admissionsStatus, ui.enrolling],
           ].map(([label, value]) => (
             <div
               key={label}
@@ -139,9 +142,9 @@ export default async function EnglishCoursePage({
       <section className="py-24">
         <div className="shell grid gap-14 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <span className="eyebrow">Stage outcomes</span>
+            <span className="eyebrow">{ui.stageOutcomes}</span>
             <h2 className="section-title">
-              What you should be able to do after this stage
+              {ui.outcomesTitle}
             </h2>
           </div>
           <div className="grid gap-px bg-slate-200 sm:grid-cols-2">
@@ -161,11 +164,10 @@ export default async function EnglishCoursePage({
 
       <section className="bg-[#edf2f6] py-24">
         <div className="shell">
-          <span className="eyebrow">Course outline</span>
-          <h2 className="section-title">Four connected learning modules</h2>
+          <span className="eyebrow">{ui.courseOutline}</span>
+          <h2 className="section-title">{ui.modulesTitle}</h2>
           <p className="section-copy">
-            Teachers may adjust practice density in response to the class, while
-            the stage outcomes and core content remain consistent.
+            {ui.modulesIntro}
           </p>
           <div className="mt-12 grid gap-5 md:grid-cols-2">
             {course.syllabus.map((module) => (
@@ -174,7 +176,7 @@ export default async function EnglishCoursePage({
                 className="border border-slate-200 bg-white p-8"
               >
                 <span className="font-serif text-sm text-[#c99b48]">
-                  MODULE {module.unit}
+                  {ui.moduleLabel} {module.unit}
                 </span>
                 <h3 className="mt-5 font-serif text-2xl font-semibold text-[#11233e]">
                   {module.title}
@@ -192,22 +194,20 @@ export default async function EnglishCoursePage({
         <div className="shell flex flex-col justify-between gap-8 bg-[#0b2f5b] p-9 text-white sm:p-12 lg:flex-row lg:items-end">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#ead7ad]">
-              Placement & enrolment
+              {ui.placement}
             </p>
             <h2 className="mt-4 max-w-2xl font-serif text-3xl font-semibold">
-              Confirm your starting point before choosing a class
+              {ui.placementTitle}
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-white/65">
-              Share your learning history, goal and available times. Where a
-              level check is needed, the center will arrange a short assessment
-              or conversation before recommending a class.
+              {ui.placementText}
             </p>
           </div>
           <Link
             href={`/${locale}/contact`}
             className="inline-flex w-fit shrink-0 bg-[#c99b48] px-7 py-4 text-sm font-semibold text-[#071f3e]"
           >
-            Ask about course availability →
+            {ui.askAvailability} →
           </Link>
         </div>
       </section>

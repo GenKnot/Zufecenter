@@ -116,9 +116,9 @@ export const koSections: LocalizedSection[] = [
       { title: "일본어 팀", label: "단계 진행·활용", text: "체계적인 언어 발달, 소통 실습, JLPT 준비." },
       { title: "한국어 팀", label: "기초·실습", text: "체계적인 기초, 일상 소통, TOPIK 중심 학습." },
     ],
-    closingTitle: "교원 프로필은 사실만 게재합니다",
+    closingTitle: "과정을 이끄는 강사진",
     closingText:
-      "성명, 사진, 경력 소개는 센터가 공식 정보를 확인한 후에만 공개됩니다.",
+      "대표 강사진은 수업 운영, 학습 피드백, 교육과정 개선에 참여하며 센터의 언어 프로그램을 함께 지원합니다.",
     ctaLabel: "교육 체계에 대해 문의하기",
   },
   {
@@ -205,9 +205,9 @@ export const koSections: LocalizedSection[] = [
       { title: "언어 커뮤니티", label: "함께 배우기", text: "언어 코너, 독서 모임, 온라인 말하기, 문화 체험." },
       { title: "교육 개발", label: "수업의 이면", text: "수업 참관, 수업 사례, 교재 업데이트, 연간 검토." },
     ],
-    closingTitle: "아카이브는 확인된 자료로 채워질 것입니다",
+    closingTitle: "아카이브는 센터의 일상적인 활동을 보여 줍니다",
     closingText:
-      "센터에서 확인된 자료를 제공하는 시점에 역사적 사진과 상세 기록을 교체하거나 보완할 것입니다.",
+      "수업, 공개 강의, 언어 커뮤니티, 교육 개발 기록이 2015년부터 이어진 활동의 흐름을 보여 줍니다.",
     ctaLabel: "최근 활동에 대해 문의하기",
   },
   {
@@ -229,7 +229,7 @@ export const koSections: LocalizedSection[] = [
     ],
     closingTitle: "언어센터에 문의하기",
     closingText:
-      "info@zufelanguage.cn 으로 이메일을 보내시거나 0571-8673 1000으로 전화해 주세요. 상담 운영 시간은 월~일, 09:00~20:00입니다.",
+      "info@zufelanguage.cn 으로 이메일을 보내시거나 0571-88922801로 전화해 주세요. 상담 운영 시간은 월~일, 09:00~20:00입니다.",
     ctaLabel: "센터에 이메일 보내기",
   },
 ];

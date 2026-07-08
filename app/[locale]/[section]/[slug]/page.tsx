@@ -11,6 +11,7 @@ import { frContentDetails, findFrContentDetail } from "@/data/fr-content-details
 import { esContentDetails, findEsContentDetail } from "@/data/es-content-details";
 import { jaContentDetails, findJaContentDetail } from "@/data/ja-content-details";
 import { koContentDetails, findKoContentDetail } from "@/data/ko-content-details";
+import { localizedUi, type ForeignLocale } from "@/data/i18n";
 import { siteConfig } from "@/data/site-config";
 
 const parentCopy: Record<
@@ -77,12 +78,15 @@ const parentCopy: Record<
 export const dynamicParams = false;
 
 export function generateStaticParams() {
+  const visibleDetails = <T extends { slug: string }>(items: T[]) =>
+    items.filter((item) => item.slug !== "downloads");
+
   return [
-    ...englishContentDetails.map((d) => ({ locale: "en", section: d.parent, slug: d.slug })),
-    ...frContentDetails.map((d) => ({ locale: "fr", section: d.parent, slug: d.slug })),
-    ...esContentDetails.map((d) => ({ locale: "es", section: d.parent, slug: d.slug })),
-    ...jaContentDetails.map((d) => ({ locale: "ja", section: d.parent, slug: d.slug })),
-    ...koContentDetails.map((d) => ({ locale: "ko", section: d.parent, slug: d.slug })),
+    ...visibleDetails(englishContentDetails).map((d) => ({ locale: "en", section: d.parent, slug: d.slug })),
+    ...visibleDetails(frContentDetails).map((d) => ({ locale: "fr", section: d.parent, slug: d.slug })),
+    ...visibleDetails(esContentDetails).map((d) => ({ locale: "es", section: d.parent, slug: d.slug })),
+    ...visibleDetails(jaContentDetails).map((d) => ({ locale: "ja", section: d.parent, slug: d.slug })),
+    ...visibleDetails(koContentDetails).map((d) => ({ locale: "ko", section: d.parent, slug: d.slug })),
   ];
 }
 
@@ -100,6 +104,7 @@ export async function generateMetadata({
     : locale === "ko" ? findKoContentDetail(section, slug)
     : undefined;
   if (!detail) return {};
+  if (detail.slug === "downloads") return {};
 
   const canonical = `${siteConfig.url}/${locale}/${section}/${slug}/`;
   const chinese = `${siteConfig.url}/${section}/${slug}/`;
@@ -145,8 +150,10 @@ export default async function EnglishContentDetailPage({
     : locale === "ko" ? findKoContentDetail(section, slug)
     : undefined;
   if (!detail) notFound();
+  if (detail.slug === "downloads") notFound();
 
   const context = parentCopy[detail.parent];
+  const ui = localizedUi[locale as ForeignLocale];
 
   return (
     <>
@@ -166,7 +173,7 @@ export default async function EnglishContentDetailPage({
               href={`/${locale}/${detail.parent}`}
               className="text-xs font-semibold tracking-[0.14em] text-[#ead7ad]"
             >
-              ← Back to {context.label}
+              ← {ui.backTo} {context.label}
             </Link>
             <p className="mt-8 text-xs font-semibold uppercase tracking-[0.2em] text-white/55">
               {context.label}
@@ -184,7 +191,7 @@ export default async function EnglishContentDetailPage({
       <section className="py-24">
         <div className="shell grid gap-14 lg:grid-cols-[0.76fr_1.24fr]">
           <div>
-            <span className="eyebrow">At a glance</span>
+            <span className="eyebrow">{ui.atAGlance}</span>
             <h2 className="section-title">{context.overview}</h2>
           </div>
           <div className="grid gap-px bg-slate-200 sm:grid-cols-3">
@@ -203,19 +210,13 @@ export default async function EnglishContentDetailPage({
       <section className="bg-[#edf2f6] py-24">
         <div className="shell grid gap-12 lg:grid-cols-[1fr_0.82fr] lg:items-center">
           <div>
-            <span className="eyebrow">In practice</span>
+            <span className="eyebrow">{ui.inPractice}</span>
             <h2 className="section-title">{context.method}</h2>
             <p className="section-copy">
-              The center begins with a clear purpose, chooses an appropriate
-              format and uses participation and feedback to review what is
-              working. Details are adjusted to the learners involved without
-              losing the intended outcome.
+              {ui.practiceBody}
             </p>
             <p className="mt-5 max-w-2xl text-sm leading-8 text-slate-600">
-              Current dates, instructors, delivery format, fees and available
-              places are confirmed separately. The public page describes the
-              educational direction and does not invent unconfirmed enrolment
-              information.
+              {ui.enrolmentNote}
             </p>
           </div>
           {detail.image ? (
@@ -238,7 +239,7 @@ export default async function EnglishContentDetailPage({
         <div className="shell flex flex-col justify-between gap-8 lg:flex-row lg:items-center">
           <div>
             <p className="text-xs font-semibold tracking-[0.18em] text-[#071f3e]/55">
-              NEXT STEP
+              {ui.nextStep}
             </p>
             <h2 className="mt-3 max-w-3xl font-serif text-3xl font-semibold text-[#071f3e]">
               {context.ctaTitle}
@@ -251,7 +252,7 @@ export default async function EnglishContentDetailPage({
             href={`/${locale}/contact`}
             className="inline-flex w-fit shrink-0 bg-[#071f3e] px-7 py-4 text-sm font-semibold text-white"
           >
-            Contact the center →
+            {ui.contactCenter} →
           </Link>
         </div>
       </section>

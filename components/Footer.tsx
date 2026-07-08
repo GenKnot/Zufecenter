@@ -64,6 +64,7 @@ export function Footer() {
             <LanguageSwitcher light />
           </div>
           <div className="mt-5 space-y-3 text-sm leading-6 text-white/60">
+            {!localized && <p>{siteConfig.contact.locationName}</p>}
             <p>{localized ? localized.address : siteConfig.contact.address}</p>
             <p>
               <a href={siteConfig.contact.phoneHref}>

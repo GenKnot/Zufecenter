@@ -116,9 +116,9 @@ export const esSections: LocalizedSection[] = [
       { title: "Equipo de japonés", label: "PROGRESIÓN Y USO", text: "Desarrollo lingüístico estructurado, práctica de la comunicación y preparación para el JLPT." },
       { title: "Equipo de coreano", label: "FUNDAMENTOS Y PRÁCTICA", text: "Fundamentos sistemáticos, comunicación cotidiana y aprendizaje orientado al TOPIK." },
     ],
-    closingTitle: "Los perfiles del profesorado se publicarán con información verificada",
+    closingTitle: "Conoce al equipo docente detrás de los cursos",
     closingText:
-      "Los nombres, fotografías y biografías profesionales solo se publicarán después de que el centro confirme la información oficial.",
+      "Docentes representativos participan en la enseñanza, el seguimiento del aprendizaje y el desarrollo de los programas de idiomas del centro.",
     ctaLabel: "Informarse sobre la enseñanza",
   },
   {
@@ -205,9 +205,9 @@ export const esSections: LocalizedSection[] = [
       { title: "Comunidades lingüísticas", label: "APRENDER JUNTOS", text: "Rincones de idiomas, grupos de lectura, expresión oral en línea y experiencias culturales." },
       { title: "Desarrollo pedagógico", label: "ENTRE BASTIDORES", text: "Observaciones de clase, casos de enseñanza, actualizaciones de materiales y revisión anual." },
     ],
-    closingTitle: "El archivo crecerá con material verificado",
+    closingTitle: "El archivo muestra el trabajo cotidiano del centro",
     closingText:
-      "Las fotografías históricas y los registros detallados se reemplazarán o ampliarán cuando el centro proporcione material fuente confirmado.",
+      "Cursos, clases abiertas, comunidades lingüísticas y desarrollo docente crean un registro constante de actividad desde 2015.",
     ctaLabel: "Informarse sobre actividades recientes",
   },
   {
@@ -229,7 +229,7 @@ export const esSections: LocalizedSection[] = [
     ],
     closingTitle: "Contactar con el Centro de Idiomas",
     closingText:
-      "Envía un correo a info@zufelanguage.cn o llama al 0571-8673 1000. El horario de consulta es de lunes a domingo, de 09:00 a 20:00.",
+      "Envía un correo a info@zufelanguage.cn o llama al 0571-88922801. El horario de consulta es de lunes a domingo, de 09:00 a 20:00.",
     ctaLabel: "Enviar un correo al centro",
   },
 ];

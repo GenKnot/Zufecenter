@@ -5,16 +5,17 @@
 export const siteConfig = {
   url: "https://zufelanguage.cn",
   domain: "zufelanguage.cn",
-  name: "浙商资本市场研究院语言中心",
+  name: "浙江财经大学（文华校区）语言中心",
   shortName: "语言中心",
   englishName: "Language Center · ZUFE",
   tagline: "让语言成为通往更大世界的能力",
   description:
     "十余年语言教育与学习服务经验，提供英语、法语、日语、韩语分级课程、考试升学辅导、职业语言与组织定制培训。",
   contact: {
-    address: "浙江省杭州市下沙高教园区",
-    phone: "0571-8673 1000",
-    phoneHref: "tel:+8657186731000",
+    locationName: "浙江财经大学（文华校区）语言中心",
+    address: "浙江省杭州市西湖区古荡街道文一西路83号",
+    phone: "0571-88922801",
+    phoneHref: "tel:+8657188922801",
     email: "info@zufelanguage.cn",
     emailHref: "mailto:info@zufelanguage.cn",
     // 获得正式二维码图片后填写 public 下的路径；空值时前台不渲染。

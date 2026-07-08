@@ -8,6 +8,7 @@ import { esCoursesByLanguage } from "@/data/es-courses";
 import { jaCoursesByLanguage } from "@/data/ja-courses";
 import { koCoursesByLanguage } from "@/data/ko-courses";
 import { type LanguageSlug } from "@/data/language-courses";
+import { localizedUi, type ForeignLocale } from "@/data/i18n";
 import { siteConfig } from "@/data/site-config";
 
 const languageInfo: Record<
@@ -87,6 +88,7 @@ export default async function EnglishLanguagePage({
 
   const language = value as LanguageSlug;
   const info = languageInfo[language];
+  const ui = localizedUi[locale as ForeignLocale];
   const courses =
     locale === "fr" ? frCoursesByLanguage(language)
     : locale === "es" ? esCoursesByLanguage(language)
@@ -104,14 +106,12 @@ export default async function EnglishLanguagePage({
       <section className="py-24">
         <div className="shell">
           <div className="mb-12 max-w-3xl">
-            <span className="eyebrow">Class catalogue</span>
+            <span className="eyebrow">{ui.classCatalogue}</span>
             <h2 className="section-title">
-              {courses.length} structured course options
+              {ui.structuredOptions(courses.length)}
             </h2>
             <p className="section-copy">
-              Course length and class size describe the standard teaching plan.
-              Confirm current dates, times, instructor and fees with the center
-              before enrolling.
+              {ui.catalogueIntro}
             </p>
           </div>
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -134,7 +134,7 @@ export default async function EnglishLanguagePage({
                   {course.summary}
                 </p>
                 <span className="mt-auto pt-7 text-sm font-semibold text-[#174f8f]">
-                  Course details →
+                  {ui.courseDetails} →
                 </span>
               </Link>
             ))}
@@ -143,7 +143,7 @@ export default async function EnglishLanguagePage({
             href={`/${locale}/languages`}
             className="mt-10 inline-block text-sm font-semibold text-[#174f8f]"
           >
-            ← Back to all languages
+            ← {ui.backToAllLanguages}
           </Link>
         </div>
       </section>

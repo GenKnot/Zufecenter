@@ -66,7 +66,6 @@ export const navigation: NavItem[] = [
     children: [
       { label: "新闻动态", href: "/news", description: "课程、活动与中心记忆" },
       { label: "学习指南", href: "/resources/study-guides", description: "方法、规划与常见问题" },
-      { label: "课程资料", href: "/resources/downloads", description: "手册、清单与课堂资料" },
       { label: "合作交流", href: "/collaboration", description: "高校、企业与国际交流" },
       { label: "联系我们", href: "/contact", description: "课程咨询与合作洽谈" },
     ],

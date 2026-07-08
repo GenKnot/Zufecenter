@@ -125,7 +125,7 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     quickLinks: "Quick links",
     contact: "Contact",
     consultation: "Course enquiries",
-    address: "Xiasha Higher Education Zone, Hangzhou, Zhejiang, China",
+    address: "Language Center, Wenhua Campus, Zhejiang University of Finance and Economics, No. 83 Wenyi West Road, Xihu District, Hangzhou, Zhejiang, China",
     footerTagline: "Language education · Multilingual learning · International exchange",
     metadataTitle: "Language Center · Zhejiang University of Finance and Economics",
     metadataDescription:
@@ -140,10 +140,14 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     primaryCta: "Découvrir les cours",
     secondaryCta: "Parler à un conseiller",
     nav: [
-      { label: "Le centre", href: "#about" },
-      { label: "Cours", href: "#courses" },
-      { label: "Notre pédagogie", href: "#approach" },
-      { label: "Contact", href: "#contact" },
+      { label: "Le centre", href: "/about" },
+      { label: "Cours", href: "/languages" },
+      { label: "Programmes", href: "/programs" },
+      { label: "Pratique", href: "/practice" },
+      { label: "Équipe", href: "/faculty" },
+      { label: "Ressources", href: "/resources" },
+      { label: "Actualités", href: "/news" },
+      { label: "Contact", href: "/contact" },
     ],
     stats: [
       { value: "10+", label: "ans d’enseignement" },
@@ -159,7 +163,7 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     coursesTitle: "Choisissez une langue et construisez votre parcours",
     coursesText:
       "Les programmes vont des bases aux usages avancés, avec des modules consacrés à l’oral, au monde professionnel et aux examens.",
-    courseAction: "Voir le catalogue complet en chinois",
+    courseAction: "Voir le catalogue complet des cours",
     courses: [
       { mark: "EN", title: "Anglais", subtitle: "8 formats", text: "Anglais général, oral, professionnel et préparation à l’IELTS." },
       { mark: "FR", title: "Français", subtitle: "6 formats", text: "Un parcours du niveau A1 au B2, complété par la préparation au DELF." },
@@ -184,7 +188,7 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     quickLinks: "Liens rapides",
     contact: "Contact",
     consultation: "Renseignements sur les cours",
-    address: "Zone universitaire de Xiasha, Hangzhou, Zhejiang, Chine",
+    address: "Centre de langues, campus Wenhua, Université des finances et de l’économie du Zhejiang, 83 route Wenyi Ouest, district de Xihu, Hangzhou, Zhejiang, Chine",
     footerTagline: "Enseignement des langues · Apprentissage multilingue · Échanges internationaux",
     metadataTitle: "Centre de langues · Université des finances et de l’économie du Zhejiang",
     metadataDescription:
@@ -199,10 +203,14 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     primaryCta: "コースを見る",
     secondaryCta: "学習相談をする",
     nav: [
-      { label: "センター紹介", href: "#about" },
-      { label: "語学コース", href: "#courses" },
-      { label: "学び方", href: "#approach" },
-      { label: "お問い合わせ", href: "#contact" },
+      { label: "センター紹介", href: "/about" },
+      { label: "語学コース", href: "/languages" },
+      { label: "プログラム", href: "/programs" },
+      { label: "実践学習", href: "/practice" },
+      { label: "講師陣", href: "/faculty" },
+      { label: "リソース", href: "/resources" },
+      { label: "ニュース", href: "/news" },
+      { label: "お問い合わせ", href: "/contact" },
     ],
     stats: [
       { value: "10+", label: "年の教育実績" },
@@ -218,7 +226,7 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     coursesTitle: "目的に合った言語と学習ルートを選ぶ",
     coursesText:
       "初級から中上級までの総合コースに加え、会話、ビジネス、語学試験に対応した専門コースを用意しています。",
-    courseAction: "中国語の全コース一覧を見る",
+    courseAction: "全コース一覧を見る",
     courses: [
       { mark: "EN", title: "英語", subtitle: "8クラス", text: "総合英語、会話、ビジネス、IELTS準備。" },
       { mark: "FR", title: "フランス語", subtitle: "6クラス", text: "A1からB2までの段階学習とDELF対策。" },
@@ -243,7 +251,7 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     quickLinks: "クイックリンク",
     contact: "お問い合わせ",
     consultation: "コース相談",
-    address: "中国浙江省杭州市下沙高教園区",
+    address: "中国浙江省杭州市西湖区文一西路83号 浙江財経大学（文華キャンパス）語学センター",
     footerTagline: "語学教育 · 多言語学習 · 国際交流",
     metadataTitle: "語学センター · 浙江財経大学",
     metadataDescription:
@@ -258,10 +266,14 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     primaryCta: "과정 살펴보기",
     secondaryCta: "학습 상담하기",
     nav: [
-      { label: "센터 소개", href: "#about" },
-      { label: "언어 과정", href: "#courses" },
-      { label: "교육 방식", href: "#approach" },
-      { label: "문의", href: "#contact" },
+      { label: "센터 소개", href: "/about" },
+      { label: "언어 과정", href: "/languages" },
+      { label: "프로그램", href: "/programs" },
+      { label: "실천 학습", href: "/practice" },
+      { label: "강사진", href: "/faculty" },
+      { label: "자료", href: "/resources" },
+      { label: "소식", href: "/news" },
+      { label: "문의", href: "/contact" },
     ],
     stats: [
       { value: "10+", label: "년 교육 경험" },
@@ -277,7 +289,7 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     coursesTitle: "목표에 맞는 언어와 학습 경로를 선택하세요",
     coursesText:
       "입문부터 중·고급 활용까지 단계별 과정과 회화, 비즈니스, 어학시험 중심의 전문 과정을 운영합니다.",
-    courseAction: "중국어 전체 과정 보기",
+    courseAction: "전체 과정 보기",
     courses: [
       { mark: "EN", title: "영어", subtitle: "8개 과정", text: "종합 영어, 회화, 비즈니스, IELTS 준비." },
       { mark: "FR", title: "프랑스어", subtitle: "6개 과정", text: "A1부터 B2까지의 단계 학습과 DELF 준비." },
@@ -302,7 +314,7 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     quickLinks: "바로가기",
     contact: "문의",
     consultation: "과정 상담",
-    address: "중국 저장성 항저우시 샤사 고등교육단지",
+    address: "중국 저장성 항저우시 시후구 원이서로 83호 저장재경대학교(원화캠퍼스) 언어센터",
     footerTagline: "언어교육 · 다언어 학습 · 국제교류",
     metadataTitle: "언어센터 · 저장재경대학교",
     metadataDescription:
@@ -317,10 +329,14 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     primaryCta: "Explorar los cursos",
     secondaryCta: "Hablar con un asesor",
     nav: [
-      { label: "El centro", href: "#about" },
-      { label: "Cursos", href: "#courses" },
-      { label: "Cómo enseñamos", href: "#approach" },
-      { label: "Contacto", href: "#contact" },
+      { label: "El centro", href: "/about" },
+      { label: "Cursos", href: "/languages" },
+      { label: "Programas", href: "/programs" },
+      { label: "Práctica", href: "/practice" },
+      { label: "Equipo", href: "/faculty" },
+      { label: "Recursos", href: "/resources" },
+      { label: "Noticias", href: "/news" },
+      { label: "Contacto", href: "/contact" },
     ],
     stats: [
       { value: "10+", label: "años de enseñanza" },
@@ -336,7 +352,7 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     coursesTitle: "Elige un idioma y construye un camino acorde con tu meta",
     coursesText:
       "Los programas abarcan desde los fundamentos hasta el uso avanzado, con opciones específicas de conversación, negocios y preparación de exámenes.",
-    courseAction: "Ver el catálogo completo en chino",
+    courseAction: "Ver el catálogo completo",
     courses: [
       { mark: "EN", title: "Inglés", subtitle: "8 modalidades", text: "Inglés general, conversación, negocios y preparación para IELTS." },
       { mark: "FR", title: "Francés", subtitle: "6 modalidades", text: "Progresión de A1 a B2 y preparación para DELF." },
@@ -361,10 +377,266 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     quickLinks: "Enlaces rápidos",
     contact: "Contacto",
     consultation: "Consultas sobre cursos",
-    address: "Zona Universitaria de Xiasha, Hangzhou, Zhejiang, China",
+    address: "Centro de Idiomas, campus Wenhua, Universidad de Finanzas y Economía de Zhejiang, n.º 83 Wenyi West Road, distrito de Xihu, Hangzhou, Zhejiang, China",
     footerTagline: "Enseñanza de idiomas · Aprendizaje multilingüe · Intercambio internacional",
     metadataTitle: "Centro de Idiomas · Universidad de Finanzas y Economía de Zhejiang",
     metadataDescription:
       "Cursos de inglés, francés, japonés y coreano, preparación de exámenes, comunicación profesional y formación a medida.",
+  },
+};
+
+export type LocalizedUi = {
+  overview: string;
+  viewDetails: string;
+  nextStep: string;
+  backTo: string;
+  atAGlance: string;
+  inPractice: string;
+  practiceBody: string;
+  enrolmentNote: string;
+  contactCenter: string;
+  classCatalogue: string;
+  structuredOptions: (count: number) => string;
+  catalogueIntro: string;
+  courseDetails: string;
+  backToAllLanguages: string;
+  backToCatalogue: (language: string) => string;
+  recommendedFor: string;
+  level: string;
+  standardLength: string;
+  studyFrequency: string;
+  classSize: string;
+  admissionsStatus: string;
+  enrolling: string;
+  stageOutcomes: string;
+  outcomesTitle: string;
+  courseOutline: string;
+  modulesTitle: string;
+  modulesIntro: string;
+  moduleLabel: string;
+  placement: string;
+  placementTitle: string;
+  placementText: string;
+  askAvailability: string;
+  backToNews: string;
+  newsCaption: string;
+  newsNote: string;
+};
+
+export const localizedUi: Record<ForeignLocale, LocalizedUi> = {
+  en: {
+    overview: "Overview",
+    viewDetails: "View details",
+    nextStep: "Next step",
+    backTo: "Back to",
+    atAGlance: "At a glance",
+    inPractice: "In practice",
+    practiceBody:
+      "The center begins with a clear purpose, chooses an appropriate format and uses participation and feedback to review what is working. Details are adjusted to the learners involved without losing the intended outcome.",
+    enrolmentNote:
+      "Programs are open for consultation and enrolment. The center will help learners choose a suitable class based on level, goals and available study time.",
+    contactCenter: "Contact the center",
+    classCatalogue: "Class catalogue",
+    structuredOptions: (count) => `${count} structured course options`,
+    catalogueIntro:
+      "Course length and class size describe the standard teaching plan. Current programs are open for consultation and enrolment.",
+    courseDetails: "Course details",
+    backToAllLanguages: "Back to all languages",
+    backToCatalogue: (language) => `Back to the ${language} class catalogue`,
+    recommendedFor: "Recommended for",
+    level: "Level",
+    standardLength: "Standard length",
+    studyFrequency: "Study frequency",
+    classSize: "Suggested class size",
+    admissionsStatus: "Admissions status",
+    enrolling: "Open for enrolment",
+    stageOutcomes: "Stage outcomes",
+    outcomesTitle: "What you should be able to do after this stage",
+    courseOutline: "Course outline",
+    modulesTitle: "Four connected learning modules",
+    modulesIntro:
+      "Teachers may adjust practice density in response to the class, while the stage outcomes and core content remain consistent.",
+    moduleLabel: "MODULE",
+    placement: "Placement & enrolment",
+    placementTitle: "Confirm your starting point before choosing a class",
+    placementText:
+      "Share your learning history, goal and available times. Where a level check is needed, the center will arrange a short assessment or conversation before recommending a class.",
+    askAvailability: "Ask about course availability",
+    backToNews: "Back to news and archive",
+    newsCaption: "language learning and exchange",
+    newsNote:
+      "Course, open-class and language-cultural activity information is published in the news archive. Contact the center to ask about current arrangements.",
+  },
+  fr: {
+    overview: "Aperçu",
+    viewDetails: "Voir les détails",
+    nextStep: "Prochaine étape",
+    backTo: "Retour à",
+    atAGlance: "En un coup d'oeil",
+    inPractice: "En pratique",
+    practiceBody:
+      "Le centre part d'un objectif clair, choisit un format adapté et s'appuie sur la participation et les retours pour suivre les progrès. Les détails sont ajustés selon les apprenants sans perdre le résultat visé.",
+    enrolmentNote:
+      "Les programmes sont ouverts à la consultation et à l'inscription. Le centre aide les apprenants à choisir une classe adaptée à leur niveau, leurs objectifs et leurs disponibilités.",
+    contactCenter: "Contacter le centre",
+    classCatalogue: "Catalogue des classes",
+    structuredOptions: (count) => `${count} options de cours structurées`,
+    catalogueIntro:
+      "La durée et la taille des classes décrivent le plan pédagogique standard. Les programmes actuels sont ouverts à la consultation et à l'inscription.",
+    courseDetails: "Détails du cours",
+    backToAllLanguages: "Retour à toutes les langues",
+    backToCatalogue: (language) => `Retour au catalogue ${language}`,
+    recommendedFor: "Recommandé pour",
+    level: "Niveau",
+    standardLength: "Durée standard",
+    studyFrequency: "Fréquence d'étude",
+    classSize: "Taille de classe conseillée",
+    admissionsStatus: "Statut des inscriptions",
+    enrolling: "Inscriptions ouvertes",
+    stageOutcomes: "Résultats attendus",
+    outcomesTitle: "Ce que vous devriez pouvoir faire à la fin de cette étape",
+    courseOutline: "Plan du cours",
+    modulesTitle: "Quatre modules d'apprentissage reliés",
+    modulesIntro:
+      "Les enseignants peuvent ajuster la densité des exercices selon la classe, tandis que les objectifs d'étape et le contenu central restent cohérents.",
+    moduleLabel: "MODULE",
+    placement: "Positionnement et inscription",
+    placementTitle: "Confirmer son point de départ avant de choisir une classe",
+    placementText:
+      "Partagez votre parcours, votre objectif et vos disponibilités. Si nécessaire, le centre organisera un court entretien ou une évaluation avant de recommander une classe.",
+    askAvailability: "Demander les disponibilités",
+    backToNews: "Retour aux actualités",
+    newsCaption: "apprentissage des langues et échanges",
+    newsNote:
+      "Les informations sur les cours, les classes ouvertes et les activités linguistiques et culturelles sont publiées dans les archives. Contactez le centre pour connaître les arrangements actuels.",
+  },
+  ja: {
+    overview: "概要",
+    viewDetails: "詳細を見る",
+    nextStep: "次のステップ",
+    backTo: "戻る：",
+    atAGlance: "ポイント",
+    inPractice: "実践での形",
+    practiceBody:
+      "センターは明確な目的から出発し、適切な形式を選び、参加とフィードバックを通じて学習状況を確認します。対象者に合わせて内容を調整しながら、到達目標は保ちます。",
+    enrolmentNote:
+      "各プログラムは相談・申込受付中です。センターはレベル、目標、受講可能な時間に合わせて適切なクラス選びをサポートします。",
+    contactCenter: "センターに問い合わせる",
+    classCatalogue: "クラス一覧",
+    structuredOptions: (count) => `${count}種類のコース`,
+    catalogueIntro:
+      "期間とクラス規模は標準的な授業計画です。現在、各プログラムは相談・申込受付中です。",
+    courseDetails: "コース詳細",
+    backToAllLanguages: "すべての言語に戻る",
+    backToCatalogue: (language) => `${language}のクラス一覧に戻る`,
+    recommendedFor: "対象者",
+    level: "レベル",
+    standardLength: "標準期間",
+    studyFrequency: "学習頻度",
+    classSize: "推奨クラス規模",
+    admissionsStatus: "募集状況",
+    enrolling: "申込受付中",
+    stageOutcomes: "到達目標",
+    outcomesTitle: "この段階の終了時にできるようになること",
+    courseOutline: "コース概要",
+    modulesTitle: "四つの連続した学習モジュール",
+    modulesIntro:
+      "講師はクラスの状況に応じて練習量を調整しますが、段階目標と中心内容は一貫しています。",
+    moduleLabel: "モジュール",
+    placement: "レベル確認と申込",
+    placementTitle: "クラスを選ぶ前に出発点を確認する",
+    placementText:
+      "学習歴、目標、受講可能な時間をお知らせください。必要に応じて短いレベル確認や面談を行い、適切なクラスをご案内します。",
+    askAvailability: "開講状況を問い合わせる",
+    backToNews: "ニュース一覧に戻る",
+    newsCaption: "語学学習と交流",
+    newsNote:
+      "コース、公開授業、語学・文化活動の情報はニュースアーカイブで公開しています。現在の予定はセンターまでお問い合わせください。",
+  },
+  ko: {
+    overview: "개요",
+    viewDetails: "자세히 보기",
+    nextStep: "다음 단계",
+    backTo: "돌아가기:",
+    atAGlance: "한눈에 보기",
+    inPractice: "실제 운영",
+    practiceBody:
+      "센터는 명확한 목적에서 출발해 적절한 형식을 선택하고, 참여와 피드백을 통해 학습 효과를 점검합니다. 학습자에 맞게 세부 사항을 조정하되 목표는 유지합니다.",
+    enrolmentNote:
+      "각 프로그램은 상담 및 등록 접수 중입니다. 센터는 수준, 목표, 가능한 학습 시간에 맞춰 적절한 수업 선택을 돕습니다.",
+    contactCenter: "센터에 문의하기",
+    classCatalogue: "수업 목록",
+    structuredOptions: (count) => `${count}개의 체계적인 과정`,
+    catalogueIntro:
+      "수업 기간과 인원은 표준 교육 계획입니다. 현재 프로그램은 상담 및 등록 접수 중입니다.",
+    courseDetails: "과정 상세",
+    backToAllLanguages: "전체 언어로 돌아가기",
+    backToCatalogue: (language) => `${language} 수업 목록으로 돌아가기`,
+    recommendedFor: "추천 대상",
+    level: "수준",
+    standardLength: "표준 기간",
+    studyFrequency: "학습 빈도",
+    classSize: "권장 인원",
+    admissionsStatus: "모집 상태",
+    enrolling: "등록 접수 중",
+    stageOutcomes: "단계 성과",
+    outcomesTitle: "이 단계 후 할 수 있어야 하는 것",
+    courseOutline: "과정 개요",
+    modulesTitle: "연결된 네 개의 학습 모듈",
+    modulesIntro:
+      "강사는 수업 상황에 따라 연습 밀도를 조정하지만 단계 목표와 핵심 내용은 일관되게 유지됩니다.",
+    moduleLabel: "모듈",
+    placement: "레벨 확인 및 등록",
+    placementTitle: "수업 선택 전에 출발점을 확인하세요",
+    placementText:
+      "학습 경험, 목표, 가능한 시간을 알려 주세요. 필요한 경우 센터가 짧은 평가나 상담을 진행한 뒤 적절한 수업을 추천합니다.",
+    askAvailability: "수업 가능 여부 문의",
+    backToNews: "뉴스 목록으로 돌아가기",
+    newsCaption: "언어 학습과 교류",
+    newsNote:
+      "과정, 공개 수업, 언어·문화 활동 정보는 뉴스 아카이브에 게시됩니다. 현재 일정은 센터에 문의해 주세요.",
+  },
+  es: {
+    overview: "Resumen",
+    viewDetails: "Ver detalles",
+    nextStep: "Siguiente paso",
+    backTo: "Volver a",
+    atAGlance: "De un vistazo",
+    inPractice: "En la práctica",
+    practiceBody:
+      "El centro parte de un propósito claro, elige un formato adecuado y utiliza la participación y la retroalimentación para revisar el avance. Los detalles se ajustan a los estudiantes sin perder el resultado previsto.",
+    enrolmentNote:
+      "Los programas están abiertos a consulta e inscripción. El centro ayuda a elegir una clase adecuada según el nivel, los objetivos y el tiempo disponible.",
+    contactCenter: "Contactar con el centro",
+    classCatalogue: "Catálogo de clases",
+    structuredOptions: (count) => `${count} opciones de curso estructuradas`,
+    catalogueIntro:
+      "La duración y el tamaño de clase describen el plan docente estándar. Los programas actuales están abiertos a consulta e inscripción.",
+    courseDetails: "Detalles del curso",
+    backToAllLanguages: "Volver a todos los idiomas",
+    backToCatalogue: (language) => `Volver al catálogo de ${language}`,
+    recommendedFor: "Recomendado para",
+    level: "Nivel",
+    standardLength: "Duración estándar",
+    studyFrequency: "Frecuencia de estudio",
+    classSize: "Tamaño sugerido",
+    admissionsStatus: "Estado de admisión",
+    enrolling: "Inscripción abierta",
+    stageOutcomes: "Resultados de etapa",
+    outcomesTitle: "Lo que deberías poder hacer al terminar esta etapa",
+    courseOutline: "Programa del curso",
+    modulesTitle: "Cuatro módulos de aprendizaje conectados",
+    modulesIntro:
+      "Los docentes pueden ajustar la intensidad de práctica según la clase, mientras los objetivos de etapa y el contenido central se mantienen.",
+    moduleLabel: "MÓDULO",
+    placement: "Nivelación e inscripción",
+    placementTitle: "Confirma tu punto de partida antes de elegir una clase",
+    placementText:
+      "Comparte tu experiencia, objetivo y horarios disponibles. Si hace falta, el centro organizará una breve evaluación o conversación antes de recomendar una clase.",
+    askAvailability: "Consultar disponibilidad",
+    backToNews: "Volver a noticias",
+    newsCaption: "aprendizaje de idiomas e intercambio",
+    newsNote:
+      "La información sobre cursos, clases abiertas y actividades lingüísticas y culturales se publica en el archivo de noticias. Contacta con el centro para consultar los planes actuales.",
   },
 };

@@ -18,17 +18,21 @@ export function Brand({
     return (
       <Link
         href={href}
-        className="block h-[60px] w-[280px] overflow-hidden sm:h-[76px] sm:w-[350px]"
+        className="flex h-[60px] items-center gap-3 sm:h-[76px] sm:gap-4"
         aria-label={localized ? localized.siteName : "返回首页"}
       >
         <Image
-          src="/logo.png"
-          alt={localized ? localized.siteName : "浙江财经大学浙商资本市场研究院语言中心"}
-          width={2167}
-          height={725}
+          src="/logo-dark.svg"
+          alt={localized ? localized.siteName : "浙江财经大学"}
+          width={370}
+          height={81}
           priority
-          className="h-auto w-[280px] -translate-y-[16px] sm:w-[350px] sm:-translate-y-[20px]"
+          className="h-auto w-[160px] shrink-0 sm:w-[210px]"
         />
+        <span className="h-9 w-px shrink-0 bg-slate-300 sm:h-11" />
+        <span className="max-w-[132px] font-serif text-[14px] font-semibold leading-snug tracking-[0.03em] text-[#0b2f5b] sm:max-w-[190px] sm:text-[17px]">
+          {localized ? localized.siteName : siteConfig.name}
+        </span>
       </Link>
     );
   }

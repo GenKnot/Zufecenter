@@ -116,9 +116,9 @@ export const jaSections: LocalizedSection[] = [
       { title: "日本語チーム", label: "段階進学・活用", text: "体系的な言語発達、コミュニケーション実践、JLPT対策。" },
       { title: "韓国語チーム", label: "基礎・実践", text: "体系的な基礎、日常コミュニケーション、TOPIK志向の学習。" },
     ],
-    closingTitle: "教員プロフィールは事実のみを掲載します",
+    closingTitle: "コースを支える講師陣",
     closingText:
-      "氏名・写真・経歴は、センターが公式情報を確認した後にのみ公開されます。",
+      "代表講師は授業、学習フィードバック、カリキュラム改善に関わり、センターの語学プログラムを支えています。",
     ctaLabel: "指導体制について問い合わせる",
   },
   {
@@ -205,9 +205,9 @@ export const jaSections: LocalizedSection[] = [
       { title: "語学コミュニティ", label: "共に学ぶ", text: "語学コーナー・読書会・オンライン会話・文化体験。" },
       { title: "教育開発", label: "授業の裏側", text: "授業観察・教育事例・教材更新・年次レビュー。" },
     ],
-    closingTitle: "アーカイブは確認済み素材で充実していきます",
+    closingTitle: "アーカイブはセンターの日常的な活動を示します",
     closingText:
-      "センターが確認済みの資料を提供した際に、歴史的な写真と詳細な記録を置き換えるか補完します。",
+      "コース、公開授業、語学コミュニティ、教育開発の記録が、2015年から続く活動の流れを形づくっています。",
     ctaLabel: "最近の活動について問い合わせる",
   },
   {
@@ -229,7 +229,7 @@ export const jaSections: LocalizedSection[] = [
     ],
     closingTitle: "語学センターへのお問い合わせ",
     closingText:
-      "info@zufelanguage.cn にメールするか、0571-8673 1000 にお電話ください。相談受付時間は月曜〜日曜、09:00〜20:00です。",
+      "info@zufelanguage.cn にメールするか、0571-88922801 にお電話ください。相談受付時間は月曜〜日曜、09:00〜20:00です。",
     ctaLabel: "センターにメールする",
   },
 ];

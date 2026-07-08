@@ -132,9 +132,9 @@ export const englishSections: EnglishSection[] = [
       { title: "Japanese team", label: "PROGRESSION & USE", text: "Structured language development, communication practice and JLPT preparation." },
       { title: "Korean team", label: "FOUNDATIONS & PRACTICE", text: "Systematic foundations, daily communication and TOPIK-focused learning." },
     ],
-    closingTitle: "Teacher profiles will remain factual",
+    closingTitle: "Meet the teaching team behind the courses",
     closingText:
-      "Names, photographs and professional biographies will be published only after the center confirms the official information.",
+      "Representative teachers support course delivery, curriculum review and learner feedback across the center’s language programs.",
     ctaLabel: "Ask about teaching arrangements",
   },
   {
@@ -213,7 +213,7 @@ export const englishSections: EnglishSection[] = [
     introTitle: "History made from ordinary, meaningful work",
     intro: [
       "The center’s story is not built around exaggerated awards. It is visible in course openings, language clubs, teaching reviews, cultural activities and learner reflections.",
-      "The current English archive provides an overview while the individual historical articles are being prepared for publication in English.",
+      "The archive brings together course openings, language communities, teaching reviews and learner support records since 2015.",
     ],
     image: "/images/classroom-students.jpg",
     cards: [
@@ -221,9 +221,9 @@ export const englishSections: EnglishSection[] = [
       { title: "Language communities", label: "LEARNING TOGETHER", text: "Language corners, reading groups, online speaking and cultural experiences." },
       { title: "Teaching development", label: "BEHIND THE CLASSROOM", text: "Lesson observations, teaching cases, material updates and annual review." },
     ],
-    closingTitle: "The archive will grow with verified material",
+    closingTitle: "The archive shows the center’s everyday work over time",
     closingText:
-      "Historical photographs and detailed records will be replaced or expanded when the center provides confirmed source material.",
+      "Courses, open classes, language communities and teaching development together create a steady record of ongoing activity.",
     ctaLabel: "Ask about recent activities",
   },
   {
@@ -245,7 +245,7 @@ export const englishSections: EnglishSection[] = [
     ],
     closingTitle: "Contact the Language Center",
     closingText:
-      "Email info@zufelanguage.cn or call 0571-8673 1000. Consultation hours are Monday to Sunday, 09:00–20:00.",
+      "Email info@zufelanguage.cn or call 0571-88922801. Consultation hours are Monday to Sunday, 09:00–20:00.",
     ctaLabel: "Email the center",
   },
 ];

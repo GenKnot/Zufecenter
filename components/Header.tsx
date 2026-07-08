@@ -41,9 +41,7 @@ export function Header() {
             <Link
               href={
                 localized
-                  ? locale === "en"
-                    ? "/en/contact"
-                    : `${localeHome(locale)}#contact`
+                  ? `/${locale}/contact`
                   : "/contact"
               }
               className="font-medium text-[#174f8f]"
