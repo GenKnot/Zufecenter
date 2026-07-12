@@ -125,7 +125,7 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     quickLinks: "Quick links",
     contact: "Contact",
     consultation: "Course enquiries",
-    address: "Language Center, Wenhua Campus, Zhejiang University of Finance and Economics, No. 83 Wenyi West Road, Xihu District, Hangzhou, Zhejiang, China",
+    address: "Language Center, Zhejiang University of Finance and Economics, No. 83 Wenyi West Road, Xihu District, Hangzhou, Zhejiang, China",
     footerTagline: "Language education · Multilingual learning · International exchange",
     metadataTitle: "Language Center · Zhejiang University of Finance and Economics",
     metadataDescription:
@@ -188,7 +188,7 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     quickLinks: "Liens rapides",
     contact: "Contact",
     consultation: "Renseignements sur les cours",
-    address: "Centre de langues, campus Wenhua, Université des finances et de l’économie du Zhejiang, 83 route Wenyi Ouest, district de Xihu, Hangzhou, Zhejiang, Chine",
+    address: "Centre de langues, Université des finances et de l’économie du Zhejiang, 83 route Wenyi Ouest, district de Xihu, Hangzhou, Zhejiang, Chine",
     footerTagline: "Enseignement des langues · Apprentissage multilingue · Échanges internationaux",
     metadataTitle: "Centre de langues · Université des finances et de l’économie du Zhejiang",
     metadataDescription:
@@ -251,7 +251,7 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     quickLinks: "クイックリンク",
     contact: "お問い合わせ",
     consultation: "コース相談",
-    address: "中国浙江省杭州市西湖区文一西路83号 浙江財経大学（文華キャンパス）語学センター",
+    address: "中国浙江省杭州市西湖区文一西路83号 浙江財経大学語学センター",
     footerTagline: "語学教育 · 多言語学習 · 国際交流",
     metadataTitle: "語学センター · 浙江財経大学",
     metadataDescription:
@@ -377,7 +377,7 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     quickLinks: "Enlaces rápidos",
     contact: "Contacto",
     consultation: "Consultas sobre cursos",
-    address: "Centro de Idiomas, campus Wenhua, Universidad de Finanzas y Economía de Zhejiang, n.º 83 Wenyi West Road, distrito de Xihu, Hangzhou, Zhejiang, China",
+    address: "Centro de Idiomas, Universidad de Finanzas y Economía de Zhejiang, n.º 83 Wenyi West Road, distrito de Xihu, Hangzhou, Zhejiang, China",
     footerTagline: "Enseñanza de idiomas · Aprendizaje multilingüe · Intercambio internacional",
     metadataTitle: "Centro de Idiomas · Universidad de Finanzas y Economía de Zhejiang",
     metadataDescription:
