@@ -104,13 +104,13 @@ export async function generateMetadata({
       siteName: "Language Center · ZUFE",
       title: copy.metadataTitle,
       description: copy.description,
-      images: [{ url: "/images/classroom-students.jpg", alt: copy.metadataTitle }],
+      images: [{ url: siteConfig.ogImage, alt: copy.metadataTitle }],
     },
     twitter: {
       card: "summary_large_image",
       title: copy.metadataTitle,
       description: copy.description,
-      images: ["/images/classroom-students.jpg"],
+      images: [siteConfig.ogImage],
     },
     robots: {
       index: true,

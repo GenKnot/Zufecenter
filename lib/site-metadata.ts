@@ -26,7 +26,7 @@ export function createPageMetadata(
   path: string,
 ): Metadata {
   const canonical = absoluteUrl(path);
-  const image = "/images/campus-autumn.png";
+  const image = siteConfig.ogImage;
 
   return {
     title,
@@ -57,8 +57,8 @@ export function createPageMetadata(
       images: [
         {
           url: image,
-          width: 1672,
-          height: 941,
+          width: 1200,
+          height: 630,
           alt: siteConfig.name,
         },
       ],

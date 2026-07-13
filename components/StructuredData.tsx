@@ -25,7 +25,7 @@ function buildStructuredData() {
         alternateName: [siteConfig.shortName, siteConfig.englishName],
         url: siteConfig.url,
         logo: `${siteConfig.url}/logo-dark.svg`,
-        image: `${siteConfig.url}/images/campus-autumn.png`,
+        image: `${siteConfig.url}${siteConfig.ogImage}`,
         description: siteConfig.description,
         address: {
           "@type": "PostalAddress",

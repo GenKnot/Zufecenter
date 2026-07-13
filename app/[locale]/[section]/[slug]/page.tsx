@@ -132,13 +132,13 @@ export async function generateMetadata({
       siteName: "Language Center · ZUFE",
       title: detail.title,
       description: detail.summary,
-      images: [{ url: detail.heroImage, alt: detail.title }],
+      images: [{ url: siteConfig.ogImage, alt: detail.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: detail.title,
       description: detail.summary,
-      images: [detail.heroImage],
+      images: [siteConfig.ogImage],
     },
     robots: {
       index: true,

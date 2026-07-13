@@ -83,13 +83,13 @@ export async function generateMetadata({
       siteName: "Language Center · ZUFE",
       title: `${info.name} Courses`,
       description: info.description,
-      images: [{ url: "/images/language-class.png", alt: `${info.name} Courses` }],
+      images: [{ url: siteConfig.ogImage, alt: `${info.name} Courses` }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${info.name} Courses`,
       description: info.description,
-      images: ["/images/language-class.png"],
+      images: [siteConfig.ogImage],
     },
     robots: {
       index: true,

@@ -54,9 +54,9 @@ export async function generateMetadata({
       description: content.metadataDescription,
       images: [
         {
-          url: "/images/campus-autumn.png",
-          width: 1672,
-          height: 941,
+          url: siteConfig.ogImage,
+          width: 1200,
+          height: 630,
           alt: content.siteName,
         },
       ],
@@ -65,7 +65,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: content.metadataTitle,
       description: content.metadataDescription,
-      images: ["/images/campus-autumn.png"],
+      images: [siteConfig.ogImage],
     },
     robots: {
       index: true,

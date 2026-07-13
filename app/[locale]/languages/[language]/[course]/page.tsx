@@ -62,12 +62,13 @@ export async function generateMetadata({
       siteName: "Language Center · ZUFE",
       title: course.title,
       description: course.summary,
+      images: [{ url: siteConfig.ogImage, alt: course.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: course.title,
       description: course.summary,
-      images: ["/images/language-class.png"],
+      images: [siteConfig.ogImage],
     },
     robots: {
       index: true,

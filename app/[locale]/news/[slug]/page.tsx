@@ -64,13 +64,13 @@ export async function generateMetadata({
       title: item.title,
       description: item.summary,
       publishedTime: item.date,
-      images: [{ url: item.image, alt: item.title }],
+      images: [{ url: siteConfig.ogImage, alt: item.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: item.title,
       description: item.summary,
-      images: [item.image],
+      images: [siteConfig.ogImage],
     },
     robots: {
       index: true,

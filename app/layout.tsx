@@ -34,9 +34,9 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: "/images/campus-autumn.png",
-        width: 1672,
-        height: 941,
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
         alt: siteConfig.name,
       },
     ],
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
-    images: ["/images/campus-autumn.png"],
+    images: [siteConfig.ogImage],
   },
   robots: {
     index: true,
