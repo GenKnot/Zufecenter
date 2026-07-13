@@ -112,6 +112,7 @@ export async function generateMetadata({
   return {
     title: { absolute: `${detail.title} | Language Center · ZUFE` },
     description: detail.summary,
+    keywords: siteConfig.keywords,
     alternates: {
       canonical,
       languages: {
@@ -132,6 +133,16 @@ export async function generateMetadata({
       title: detail.title,
       description: detail.summary,
       images: [{ url: detail.heroImage, alt: detail.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: detail.title,
+      description: detail.summary,
+      images: [detail.heroImage],
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }

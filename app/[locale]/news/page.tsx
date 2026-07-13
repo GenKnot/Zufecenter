@@ -84,6 +84,7 @@ export async function generateMetadata({
   return {
     title: { absolute: copy.metadataTitle },
     description: copy.description,
+    keywords: siteConfig.keywords,
     alternates: {
       canonical,
       languages: {
@@ -95,6 +96,25 @@ export async function generateMetadata({
         ko: `${siteConfig.url}/ko/news/`,
         "x-default": `${siteConfig.url}/news/`,
       },
+    },
+    openGraph: {
+      type: "website",
+      locale,
+      url: canonical,
+      siteName: "Language Center · ZUFE",
+      title: copy.metadataTitle,
+      description: copy.description,
+      images: [{ url: "/images/classroom-students.jpg", alt: copy.metadataTitle }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: copy.metadataTitle,
+      description: copy.description,
+      images: ["/images/classroom-students.jpg"],
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }

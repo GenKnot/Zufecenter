@@ -8,6 +8,13 @@ import {
   resourcePages,
 } from "@/data/content";
 import { news } from "@/data/site";
+import { createPageMetadata } from "@/lib/site-metadata";
+
+export const metadata = createPageMetadata(
+  "英语法语日语韩语课程与培训",
+  "浙江财经大学语言中心提供英语、法语、日语、韩语分级课程、考试升学辅导、商务职业语言、青少年课程与企业定制培训。",
+  "/",
+);
 
 const stats = [
   { value: "10+", label: "年教学与服务经验" },

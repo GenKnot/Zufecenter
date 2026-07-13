@@ -42,6 +42,7 @@ export async function generateMetadata({
   return {
     title: { absolute: `${course.title} | Language Center · ZUFE` },
     description: course.summary,
+    keywords: siteConfig.keywords,
     alternates: {
       canonical,
       languages: {
@@ -61,6 +62,16 @@ export async function generateMetadata({
       siteName: "Language Center · ZUFE",
       title: course.title,
       description: course.summary,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: course.title,
+      description: course.summary,
+      images: ["/images/language-class.png"],
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }

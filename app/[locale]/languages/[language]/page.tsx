@@ -63,6 +63,7 @@ export async function generateMetadata({
   return {
     title: { absolute: `${info.name} Courses | Language Center · ZUFE` },
     description: info.description,
+    keywords: siteConfig.keywords,
     alternates: {
       canonical,
       languages: {
@@ -74,6 +75,25 @@ export async function generateMetadata({
         ko: `${siteConfig.url}/ko/languages/${language}/`,
         "x-default": `${siteConfig.url}/languages/${language}/`,
       },
+    },
+    openGraph: {
+      type: "website",
+      locale,
+      url: canonical,
+      siteName: "Language Center · ZUFE",
+      title: `${info.name} Courses`,
+      description: info.description,
+      images: [{ url: "/images/language-class.png", alt: `${info.name} Courses` }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${info.name} Courses`,
+      description: info.description,
+      images: ["/images/language-class.png"],
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }

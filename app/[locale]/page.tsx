@@ -32,6 +32,7 @@ export async function generateMetadata({
   return {
     title: { absolute: content.metadataTitle },
     description: content.metadataDescription,
+    keywords: siteConfig.keywords,
     alternates: {
       canonical,
       languages: {
@@ -59,6 +60,16 @@ export async function generateMetadata({
           alt: content.siteName,
         },
       ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: content.metadataTitle,
+      description: content.metadataDescription,
+      images: ["/images/campus-autumn.png"],
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }

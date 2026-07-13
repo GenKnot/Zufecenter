@@ -6,6 +6,7 @@ import {
   languageCourses,
 } from "@/data/language-courses";
 import { siteConfig } from "@/data/site-config";
+import { localizedAlternates } from "@/lib/site-metadata";
 
 export function generateStaticParams() {
   return languageCourses.map((item) => ({
@@ -22,12 +23,35 @@ export async function generateMetadata({
   const { slug, course } = await params;
   const item = findLanguageCourse(slug, course);
   if (!item) return {};
+  const path = `/languages/${slug}/${course}`;
+  const canonical = `${siteConfig.url}${path}/`;
 
   return {
     title: item.title,
     description: item.summary,
+    keywords: siteConfig.keywords,
     alternates: {
-      canonical: `${siteConfig.url}/languages/${slug}/${course}/`,
+      canonical,
+      languages: localizedAlternates(path),
+    },
+    openGraph: {
+      type: "website",
+      locale: "zh_CN",
+      url: canonical,
+      siteName: siteConfig.name,
+      title: item.title,
+      description: item.summary,
+      images: [{ url: "/images/language-class.png", alt: item.title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: item.title,
+      description: item.summary,
+      images: ["/images/language-class.png"],
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   };
 }
