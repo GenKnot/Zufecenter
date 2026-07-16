@@ -18,6 +18,7 @@ export const esSections: LocalizedSection[] = [
       { title: "Nuestra historia", label: "2015—2026", text: "Cursos, clubes de idiomas, talleres y revisiones pedagógicas forman la historia viva del centro." },
       { title: "Nuestro enfoque", label: "APRENDER USANDO", text: "Objetivos de etapa claros conectan el conocimiento lingüístico con la comunicación realmente utilizable." },
       { title: "Cómo trabajamos", label: "ENSEÑANZA Y APOYO", text: "La enseñanza, el desarrollo curricular, el apoyo a los estudiantes y los equipos de proyecto funcionan con estándares compartidos." },
+      { title: "Instalaciones de evaluación", label: "ESPACIO CBT", text: "Puestos de examen informático, separadores y equipo de audio apoyan la evaluación lingüística." },
     ],
     closingTitle: "El progreso debe ser visible, útil y sostenible",
     closingText:
@@ -171,21 +172,21 @@ export const esSections: LocalizedSection[] = [
     eyebrow: "COLABORACIÓN",
     title: "Conectar la enseñanza de idiomas con campus, organizaciones y el mundo",
     description:
-      "Desarrollamos cursos, talleres, intercambios de personal y programas culturales con socios que tienen una necesidad de aprendizaje claramente definida.",
-    introTitle: "La colaboración puede comenzar con un problema concreto",
+      "Conectamos recursos educativos internacionales con el desarrollo lingüístico, los estándares académicos y la colaboración orientada a la evaluación.",
+    introTitle: "Colaboraciones basadas en estándares y progreso medible",
     intro: [
-      "Algunos socios necesitan un solo taller; otros necesitan un curso semestral o un programa de desarrollo continuo. Empezamos por comprender a los participantes y el resultado deseado.",
-      "El contenido, el equipo docente, el formato de impartición y el método de revisión se diseñan entonces en torno a ese encargo compartido.",
+      "El centro trabaja con universidades, organismos educativos oficiales y socios institucionales para apoyar la mejora lingüística, la preparación para evaluaciones internacionales y el desarrollo conjunto de cursos.",
+      "La cooperación se guía por una gestión académica clara, expectativas de evaluación coherentes y un plan de ejecución práctico para que los recursos de calidad puedan aplicarse localmente.",
     ],
     image: "/images/meeting-room.jpg",
     cards: [
       { title: "Colaboraciones con campus", label: "CURSOS Y ACTIVIDADES", text: "Cursos conjuntos, conferencias, talleres y actividades lingüístico-culturales para grupos de estudiantes específicos." },
       { title: "Colaboraciones empresariales", label: "NECESIDADES LABORALES", text: "Formación derivada de las funciones, la comunicación con clientes y las situaciones de negocios internacionales." },
-      { title: "Intercambio internacional", label: "APRENDIZAJE COMPARTIDO", text: "Proyectos de intercambio centrados en el idioma, construidos en torno al diálogo y una tarea común significativa." },
+      { title: "Intercambio internacional", label: "ESTÁNDARES GLOBALES", text: "Colaboraciones que conectan recursos educativos internacionales con mejora lingüística y servicios de evaluación." },
     ],
-    closingTitle: "Una colaboración debe conducir a un resultado observable",
+    closingTitle: "Una colaboración debe fortalecer la calidad del aprendizaje y la preparación para la evaluación",
     closingText:
-      "Unos objetivos claros y un proceso de revisión práctico ayudan a ambas partes a comprender lo que los participantes han aprendido y qué debe mejorar.",
+      "Expectativas académicas claras, una implementación cuidadosa y una revisión práctica ayudan a los participantes a beneficiarse de recursos internacionales de forma estructurada.",
     ctaLabel: "Iniciar una conversación de colaboración",
   },
   {

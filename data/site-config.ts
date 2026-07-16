@@ -35,8 +35,7 @@ export const siteConfig = {
     phoneHref: "tel:+8657188922801",
     email: "info@zufelanguage.cn",
     emailHref: "mailto:info@zufelanguage.cn",
-    // 获得正式二维码图片后填写 public 下的路径；空值时前台不渲染。
-    wechatQrImage: "",
+    wechatQrImage: "/images/wechat-service-qr.jpg",
     hours: "周一至周日 09:00—20:00",
   },
 };

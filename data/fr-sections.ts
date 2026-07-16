@@ -34,6 +34,7 @@ export const frSections: LocalizedSection[] = [
       { title: "Notre histoire", label: "2015—2026", text: "Cours, clubs de langues, ateliers et bilans pédagogiques constituent l'histoire vivante du centre." },
       { title: "Notre approche", label: "APPRENDRE EN UTILISANT", text: "Des objectifs d'étape clairs relient les connaissances linguistiques à une communication réellement utilisable." },
       { title: "Notre organisation", label: "ENSEIGNEMENT & ACCOMPAGNEMENT", text: "L'enseignement, le développement curriculaire, le soutien aux apprenants et les équipes de projet fonctionnent autour de standards communs." },
+      { title: "Installations de test", label: "ESPACE CBT", text: "Postes de test informatisé, cloisons et équipement audio soutiennent l'évaluation linguistique." },
     ],
     closingTitle: "Les progrès doivent être visibles, utiles et durables",
     closingText:
@@ -187,21 +188,21 @@ export const frSections: LocalizedSection[] = [
     eyebrow: "COLLABORATION",
     title: "Relier l'enseignement des langues aux campus, aux organisations et au monde",
     description:
-      "Nous développons des cours, des ateliers, des échanges de personnel et des programmes culturels avec des partenaires ayant un besoin d'apprentissage clairement défini.",
-    introTitle: "La collaboration peut commencer par un problème concret",
+      "Nous relions des ressources éducatives internationales au développement linguistique, aux standards académiques et à la coopération en matière d'évaluation.",
+    introTitle: "Des partenariats fondés sur des standards et des progrès mesurables",
     intro: [
-      "Certains partenaires ont besoin d'un seul atelier ; d'autres ont besoin d'un cours semestriel ou d'un programme de développement continu. Nous commençons par comprendre les participants et le résultat souhaité.",
-      "Le contenu, l'équipe pédagogique, le format de diffusion et la méthode de révision sont ensuite conçus autour de ce cahier des charges partagé.",
+      "Le centre travaille avec des universités, des organismes éducatifs officiels et des partenaires institutionnels pour soutenir le développement linguistique, la préparation aux évaluations internationales et la co-construction de cours.",
+      "La coopération suit une gestion académique claire, des attentes d'évaluation cohérentes et un plan de mise en œuvre pratique afin que les ressources de qualité puissent être utilisées localement.",
     ],
     image: "/images/meeting-room.jpg",
     cards: [
       { title: "Partenariats universitaires", label: "COURS & ACTIVITÉS", text: "Cours communs, conférences, ateliers et activités linguistiques pour des groupes d'étudiants spécifiques." },
       { title: "Partenariats entreprises", label: "BESOINS EN MILIEU DE TRAVAIL", text: "Formation issue des fonctions, de la communication client et des situations d'affaires internationales." },
-      { title: "Échange international", label: "APPRENTISSAGE PARTAGÉ", text: "Projets d'échange centrés sur la langue, construits autour du dialogue et d'une tâche commune significative." },
+      { title: "Échange international", label: "STANDARDS INTERNATIONAUX", text: "Partenariats reliant ressources éducatives internationales, progression linguistique et services d'évaluation." },
     ],
-    closingTitle: "Un partenariat doit conduire à un résultat observable",
+    closingTitle: "Un partenariat doit renforcer la qualité d'apprentissage et la préparation à l'évaluation",
     closingText:
-      "Des objectifs clairs et un processus de révision pratique aident les deux parties à comprendre ce que les participants ont acquis et ce qui doit s'améliorer.",
+      "Des attentes académiques claires, une mise en œuvre attentive et une révision régulière aident les participants à bénéficier de ressources internationales de manière structurée.",
     ctaLabel: "Engager une conversation partenariale",
   },
   {

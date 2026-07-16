@@ -518,6 +518,39 @@ export const aboutPages: ContentPage[] = [
     ],
     image: "/images/team.jpg",
   },
+  {
+    slug: "facilities",
+    title: "硬件设施",
+    english: "Testing Facilities",
+    summary: "配备标准化机考工位、独立隔断与听说设备，支持语言测评与多媒体教学。",
+    heroImage: "/images/testing-lab-workstations.png",
+    intro: [
+      "中心配备面向语言测评和多媒体教学的计算机辅助测试空间，可用于听力、口语、阅读、写作等环节的集中训练与阶段测评。",
+      "每个考位设置独立隔断、电脑终端和语音耳麦，便于在相对安静、互不干扰的环境中完成机考、模拟测评或听说训练。",
+    ],
+    highlights: [
+      { title: "标准化工位", text: "电脑终端、键盘鼠标与独立考位保持统一配置。" },
+      { title: "听说设备", text: "配备语音耳麦，支持听力输入与口语表达训练。" },
+      { title: "空间隔断", text: "考位之间设置隔板，降低相互干扰。" },
+      { title: "教学兼容", text: "可服务语言测评、模拟机考与多媒体课堂。" },
+    ],
+    sections: [
+      {
+        title: "面向机考场景",
+        paragraphs: [
+          "多媒体测评空间参照标准化语言测试和课堂测评场景配置，适合开展阶段水平测试、听说训练、模拟机考和课程反馈评估。",
+        ],
+      },
+      {
+        title: "稳定与安全",
+        paragraphs: [
+          "工位布局强调独立性、可观察性和运行稳定性，便于教师或考务人员组织测评、巡视现场并处理设备使用问题。",
+        ],
+      },
+    ],
+    image: "/images/testing-lab-partitioned-seats.png",
+    imageAlt: "标准化语言机考工位与语音耳麦",
+  },
 ];
 
 export const researchPages: ContentPage[] = [
@@ -592,10 +625,10 @@ export const collaborationPages: ContentPage[] = [
       { title: "联合课程", text: "根据专业与学习需求共建内容。" },
       { title: "主题活动", text: "语言文化周、讲座与工作坊。" },
       { title: "学习支持", text: "针对学生群体安排专项辅导。" },
-      { title: "资源共享", text: "共同开发教学与活动资源。" },
+      { title: "资源共享", text: "共享教学与学术测评资源，协助院系对接国际标准化语言评估体系。" },
     ],
     sections: [
-      { title: "合作方式", paragraphs: ["既可以从单场讲座、小型工作坊开始，也可以按学期组织系列课程或长期项目。形式可以灵活，学习目标必须清楚。"] },
+      { title: "合作方式", paragraphs: ["既可以从单场讲座、小型工作坊开始，也可以按学期组织系列课程或长期项目。形式可以灵活，全面对接国际通用语言标准（如 CEFR），确保学术成果与测评目标的清晰互认。"] },
       { title: "如何开始", paragraphs: ["告诉我们参与对象、希望解决的问题和大致时间，我们会据此整理主题、师资、课时与执行建议。"] },
     ],
     image: "/images/university-lecture.jpg",
@@ -623,18 +656,18 @@ export const collaborationPages: ContentPage[] = [
     slug: "international",
     title: "国际交流",
     english: "International Exchange",
-    summary: "让学习者不只谈论世界，也有机会与不同文化背景的人真正交流。",
+    summary: "对接国际优质教育资源，建设高标准语言提升与国际化测评合作平台。",
     heroImage: "/images/student-collaboration.png",
-    intro: ["真正有价值的国际交流，不是一张合影或一段行程，而是双方围绕共同主题持续对话、共同完成任务。中心以语言学习成果为出发点设计交流项目。"],
+    intro: ["中心积极拓展与海外高校、官方教育机构及国际伙伴的合作，在课程共建、师资交流、语言提升与测评服务等方向形成稳定协作，为学习者提供更高标准的国际化语言学习环境。"],
     highlights: [
-      { title: "教师交流", text: "教学分享、课程研讨与资源共建。" },
-      { title: "学生伙伴", text: "线上对话与共同学习项目。" },
-      { title: "文化项目", text: "围绕语言、城市与青年议题交流。" },
-      { title: "研学访问", text: "以明确主题组织短期学习与访问。" },
+      { title: "资源对接", text: "连接海外高校与官方教育资源。" },
+      { title: "规范管理", text: "遵循统一学术与测评标准。" },
+      { title: "平台建设", text: "服务语言提升与国际化测评。" },
+      { title: "长期合作", text: "以课程、师资与项目形成持续协作。" },
     ],
     sections: [
-      { title: "项目方向", paragraphs: ["线上语言伙伴、多语种文化论坛、联合课堂、教师工作坊和短期访问。"] },
-      { title: "合作标准", paragraphs: ["每个项目都应有清楚的参与对象、交流主题和学习成果。比起一次性的热闹，我们更看重能够长期互信、共同设计内容的伙伴关系。"] },
+      { title: "合作方向", paragraphs: ["合作内容包括国际课程资源引入、语言能力提升项目、教师研修、标准化测评服务和跨文化学习活动。"] },
+      { title: "合作标准", paragraphs: ["项目设计强调清晰的学术管理流程、可执行的教学安排和规范化的测评要求，让国际合作真正服务于学习质量提升。"] },
     ],
     image: "/images/library-hero.png",
   },

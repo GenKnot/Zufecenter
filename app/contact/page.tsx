@@ -77,9 +77,9 @@ export default function ContactPage() {
                   <Image
                     src={siteConfig.contact.wechatQrImage}
                     alt="语言中心微信二维码"
-                    width={144}
-                    height={144}
-                    className="mt-4"
+                    width={220}
+                    height={300}
+                    className="mt-4 w-full max-w-[220px] border border-slate-200 bg-white"
                   />
                 </div>
               )}

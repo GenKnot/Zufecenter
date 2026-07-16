@@ -66,7 +66,7 @@ export default function AboutPage() {
             <span className="eyebrow">Discover more</span>
             <h2 className="section-title">进一步了解中心</h2>
           </div>
-          <HubCards items={aboutPages} basePath="/about" />
+          <HubCards items={aboutPages} basePath="/about" compact />
         </div>
       </section>
       <section className="bg-[#f7f5f0] py-24">

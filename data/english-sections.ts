@@ -34,6 +34,7 @@ export const englishSections: EnglishSection[] = [
       { title: "Our story", label: "2015—2026", text: "Courses, language clubs, workshops and teaching reviews form the center’s living history." },
       { title: "Educational approach", label: "LEARN BY USING", text: "Clear stage goals connect language knowledge with communication learners can actually use." },
       { title: "How we work", label: "TEACHING & SUPPORT", text: "Teaching, curriculum development, learner support and project teams work around shared standards." },
+      { title: "Testing facilities", label: "CBT SPACE", text: "Computer-based testing workstations, partitions and audio equipment support language assessment." },
     ],
     closingTitle: "Progress should be visible, useful and sustainable",
     closingText:
@@ -187,21 +188,21 @@ export const englishSections: EnglishSection[] = [
     eyebrow: "COLLABORATION",
     title: "Connecting language education with campuses, organizations and the wider world",
     description:
-      "We develop courses, workshops, faculty exchanges and cultural programs with partners who have a clear learning need.",
-    introTitle: "Collaboration can begin with one concrete problem",
+      "We connect international educational resources with language advancement, academic standards and assessment-oriented collaboration.",
+    introTitle: "Partnerships built around standards and measurable progress",
     intro: [
-      "Some partners need a single workshop; others need a semester-long course or a continuing development program. We begin by understanding the participants and desired outcome.",
-      "The content, teaching team, delivery format and review method are then designed around that shared brief.",
+      "The center works with universities, official education organizations and institutional partners to support language advancement, international assessment readiness and shared course development.",
+      "Collaboration is guided by academic management, consistent assessment expectations and a practical delivery plan so that high-quality resources can be used locally.",
     ],
     image: "/images/meeting-room.jpg",
     cards: [
       { title: "Campus partnerships", label: "COURSES & ACTIVITIES", text: "Joint courses, lectures, workshops and language-cultural activities for specific student groups." },
       { title: "Enterprise partnerships", label: "WORKPLACE NEEDS", text: "Training derived from roles, client communication and international business situations." },
-      { title: "International exchange", label: "SHARED LEARNING", text: "Language-centered exchange projects built around dialogue and a meaningful shared task." },
+      { title: "International exchange", label: "GLOBAL STANDARDS", text: "Partnerships that connect international education resources with language advancement and assessment services." },
     ],
-    closingTitle: "A partnership should lead to an observable outcome",
+    closingTitle: "A partnership should strengthen learning quality and assessment readiness",
     closingText:
-      "Clear objectives and a practical review process help both sides understand what participants gained and what should improve next.",
+      "Clear academic expectations, careful implementation and review help participants benefit from international resources in a structured way.",
     ctaLabel: "Start a partnership conversation",
   },
   {

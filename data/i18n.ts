@@ -39,7 +39,11 @@ type LocalizedLanding = {
   heroText: string;
   primaryCta: string;
   secondaryCta: string;
-  nav: { label: string; href: string }[];
+  nav: {
+    label: string;
+    href: string;
+    children?: { label: string; href: string; description?: string }[];
+  }[];
   stats: { value: string; label: string }[];
   aboutEyebrow: string;
   aboutTitle: string;
@@ -77,12 +81,66 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     primaryCta: "Explore our courses",
     secondaryCta: "Talk to an adviser",
     nav: [
-      { label: "About", href: "/about" },
-      { label: "Courses", href: "/languages" },
-      { label: "Programs", href: "/programs" },
-      { label: "Learning", href: "/practice" },
-      { label: "Faculty", href: "/faculty" },
-      { label: "Resources", href: "/resources" },
+      {
+        label: "About",
+        href: "/about",
+        children: [
+          { label: "About the center", href: "/about", description: "Role, history and learning mission" },
+          { label: "Our history", href: "/about/history", description: "A decade of courses and learner support" },
+          { label: "Educational approach", href: "/about/approach", description: "How learning goals become usable skills" },
+          { label: "Testing facilities", href: "/about/facilities", description: "Computer-based testing and multimedia spaces" },
+        ],
+      },
+      {
+        label: "Courses",
+        href: "/languages",
+        children: [
+          { label: "English", href: "/languages/english", description: "General, speaking, business and IELTS" },
+          { label: "French", href: "/languages/french", description: "From A1 foundations to DELF preparation" },
+          { label: "Japanese", href: "/languages/japanese", description: "Progression from first steps to JLPT" },
+          { label: "Korean", href: "/languages/korean", description: "Foundations, communication and TOPIK" },
+        ],
+      },
+      {
+        label: "Programs",
+        href: "/programs",
+        children: [
+          { label: "General ability", href: "/programs/general", description: "Balanced language progression" },
+          { label: "Exams and study", href: "/programs/exam-preparation", description: "Assessment and further-study preparation" },
+          { label: "Business and careers", href: "/programs/business", description: "Professional communication scenarios" },
+          { label: "Corporate training", href: "/programs/corporate", description: "Customized organizational programs" },
+        ],
+      },
+      {
+        label: "Learning",
+        href: "/practice",
+        children: [
+          { label: "Tutoring", href: "/practice/tutoring", description: "Diagnosis, questions and focused feedback" },
+          { label: "Language clubs", href: "/practice/language-clubs", description: "Regular low-pressure speaking practice" },
+          { label: "Cultural experiences", href: "/practice/cultural-events", description: "Language in culture and daily life" },
+          { label: "Study visits", href: "/practice/study-tours", description: "Themed learning and exchange activities" },
+        ],
+      },
+      {
+        label: "Faculty",
+        href: "/faculty",
+        children: [
+          { label: "English team", href: "/faculty/english", description: "General, academic and exam English" },
+          { label: "French team", href: "/faculty/french", description: "French language and culture teaching" },
+          { label: "Japanese team", href: "/faculty/japanese", description: "Japanese progression and JLPT support" },
+          { label: "Korean team", href: "/faculty/korean", description: "Korean foundations and TOPIK support" },
+        ],
+      },
+      {
+        label: "Resources",
+        href: "/resources",
+        children: [
+          { label: "Study guides", href: "/resources/study-guides", description: "Planning, methods and learning routines" },
+          { label: "FAQ", href: "/resources/faq", description: "Levels, placement and enrolment questions" },
+          { label: "Digital learning", href: "/resources/digital-learning", description: "Using tools with a clear learning purpose" },
+          { label: "Collaboration", href: "/collaboration", description: "Campus, enterprise and exchange projects" },
+        ],
+      },
       { label: "News", href: "/news" },
       { label: "Contact", href: "/contact" },
     ],
@@ -140,12 +198,66 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     primaryCta: "Découvrir les cours",
     secondaryCta: "Parler à un conseiller",
     nav: [
-      { label: "Le centre", href: "/about" },
-      { label: "Cours", href: "/languages" },
-      { label: "Programmes", href: "/programs" },
-      { label: "Pratique", href: "/practice" },
-      { label: "Équipe", href: "/faculty" },
-      { label: "Ressources", href: "/resources" },
+      {
+        label: "Le centre",
+        href: "/about",
+        children: [
+          { label: "Présentation", href: "/about", description: "Mission, histoire et rôle du centre" },
+          { label: "Notre histoire", href: "/about/history", description: "Dix ans de cours et d'accompagnement" },
+          { label: "Approche pédagogique", href: "/about/approach", description: "Objectifs, pratique et retours utiles" },
+          { label: "Installations de test", href: "/about/facilities", description: "Espace CBT et enseignement multimédia" },
+        ],
+      },
+      {
+        label: "Cours",
+        href: "/languages",
+        children: [
+          { label: "Anglais", href: "/languages/english", description: "Général, oral, professionnel et IELTS" },
+          { label: "Français", href: "/languages/french", description: "Parcours A1 à B2 et préparation DELF" },
+          { label: "Japonais", href: "/languages/japanese", description: "Progression jusqu'au JLPT" },
+          { label: "Coréen", href: "/languages/korean", description: "Bases, communication et TOPIK" },
+        ],
+      },
+      {
+        label: "Programmes",
+        href: "/programs",
+        children: [
+          { label: "Compétences générales", href: "/programs/general", description: "Progression équilibrée par niveau" },
+          { label: "Examens et études", href: "/programs/exam-preparation", description: "Évaluation et préparation académique" },
+          { label: "Affaires et carrières", href: "/programs/business", description: "Communication professionnelle" },
+          { label: "Formation en entreprise", href: "/programs/corporate", description: "Programmes personnalisés" },
+        ],
+      },
+      {
+        label: "Pratique",
+        href: "/practice",
+        children: [
+          { label: "Tutorat", href: "/practice/tutoring", description: "Diagnostic et retours ciblés" },
+          { label: "Clubs de langues", href: "/practice/language-clubs", description: "Pratique orale régulière" },
+          { label: "Culture", href: "/practice/cultural-events", description: "Langue, culture et vie quotidienne" },
+          { label: "Visites d'étude", href: "/practice/study-tours", description: "Activités thématiques et échanges" },
+        ],
+      },
+      {
+        label: "Équipe",
+        href: "/faculty",
+        children: [
+          { label: "Équipe d'anglais", href: "/faculty/english", description: "Anglais général, académique et examens" },
+          { label: "Équipe de français", href: "/faculty/french", description: "Langue et culture françaises" },
+          { label: "Équipe de japonais", href: "/faculty/japanese", description: "Progression et JLPT" },
+          { label: "Équipe de coréen", href: "/faculty/korean", description: "Bases et TOPIK" },
+        ],
+      },
+      {
+        label: "Ressources",
+        href: "/resources",
+        children: [
+          { label: "Guides d'étude", href: "/resources/study-guides", description: "Méthodes et routines" },
+          { label: "Questions fréquentes", href: "/resources/faq", description: "Niveaux, placement et inscription" },
+          { label: "Apprentissage numérique", href: "/resources/digital-learning", description: "Outils et pratiques ciblées" },
+          { label: "Collaboration", href: "/collaboration", description: "Campus, entreprises et échanges" },
+        ],
+      },
       { label: "Actualités", href: "/news" },
       { label: "Contact", href: "/contact" },
     ],
@@ -203,12 +315,66 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     primaryCta: "コースを見る",
     secondaryCta: "学習相談をする",
     nav: [
-      { label: "センター紹介", href: "/about" },
-      { label: "語学コース", href: "/languages" },
-      { label: "プログラム", href: "/programs" },
-      { label: "実践学習", href: "/practice" },
-      { label: "講師陣", href: "/faculty" },
-      { label: "リソース", href: "/resources" },
+      {
+        label: "センター紹介",
+        href: "/about",
+        children: [
+          { label: "センター概要", href: "/about", description: "役割、歩み、学習方針" },
+          { label: "センターの歩み", href: "/about/history", description: "十年以上の授業と支援" },
+          { label: "教育アプローチ", href: "/about/approach", description: "目標、実践、フィードバック" },
+          { label: "測定設備", href: "/about/facilities", description: "CBTスペースと音声設備" },
+        ],
+      },
+      {
+        label: "語学コース",
+        href: "/languages",
+        children: [
+          { label: "英語", href: "/languages/english", description: "総合、会話、ビジネス、IELTS" },
+          { label: "フランス語", href: "/languages/french", description: "A1からB2、DELF対策" },
+          { label: "日本語", href: "/languages/japanese", description: "入門からJLPT対策" },
+          { label: "韓国語", href: "/languages/korean", description: "基礎、会話、TOPIK" },
+        ],
+      },
+      {
+        label: "プログラム",
+        href: "/programs",
+        children: [
+          { label: "総合語学力", href: "/programs/general", description: "段階的な総合力向上" },
+          { label: "試験・進学", href: "/programs/exam-preparation", description: "試験と進学準備" },
+          { label: "ビジネス", href: "/programs/business", description: "職業場面のコミュニケーション" },
+          { label: "法人研修", href: "/programs/corporate", description: "組織向けカスタム研修" },
+        ],
+      },
+      {
+        label: "実践学習",
+        href: "/practice",
+        children: [
+          { label: "語学補講", href: "/practice/tutoring", description: "診断と個別フィードバック" },
+          { label: "語学クラブ", href: "/practice/language-clubs", description: "継続的な会話練習" },
+          { label: "文化体験", href: "/practice/cultural-events", description: "言語と文化をつなぐ活動" },
+          { label: "テーマ研学", href: "/practice/study-tours", description: "交流と実践活動" },
+        ],
+      },
+      {
+        label: "講師陣",
+        href: "/faculty",
+        children: [
+          { label: "英語チーム", href: "/faculty/english", description: "総合、学術、試験英語" },
+          { label: "フランス語チーム", href: "/faculty/french", description: "フランス語と言語文化" },
+          { label: "日本語チーム", href: "/faculty/japanese", description: "段階学習とJLPT" },
+          { label: "韓国語チーム", href: "/faculty/korean", description: "基礎とTOPIK" },
+        ],
+      },
+      {
+        label: "リソース",
+        href: "/resources",
+        children: [
+          { label: "学習ガイド", href: "/resources/study-guides", description: "方法、計画、習慣づくり" },
+          { label: "FAQ", href: "/resources/faq", description: "レベル、配置、申込" },
+          { label: "デジタル学習", href: "/resources/digital-learning", description: "目的に合ったツール活用" },
+          { label: "連携交流", href: "/collaboration", description: "キャンパス、企業、国際交流" },
+        ],
+      },
       { label: "ニュース", href: "/news" },
       { label: "お問い合わせ", href: "/contact" },
     ],
@@ -266,12 +432,66 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     primaryCta: "과정 살펴보기",
     secondaryCta: "학습 상담하기",
     nav: [
-      { label: "센터 소개", href: "/about" },
-      { label: "언어 과정", href: "/languages" },
-      { label: "프로그램", href: "/programs" },
-      { label: "실천 학습", href: "/practice" },
-      { label: "강사진", href: "/faculty" },
-      { label: "자료", href: "/resources" },
+      {
+        label: "센터 소개",
+        href: "/about",
+        children: [
+          { label: "센터 개요", href: "/about", description: "역할, 역사, 학습 방향" },
+          { label: "센터의 역사", href: "/about/history", description: "10년 이상의 수업과 지원" },
+          { label: "교육 방식", href: "/about/approach", description: "목표, 실천, 피드백" },
+          { label: "평가 시설", href: "/about/facilities", description: "CBT 공간과 음향 장비" },
+        ],
+      },
+      {
+        label: "언어 과정",
+        href: "/languages",
+        children: [
+          { label: "영어", href: "/languages/english", description: "종합, 회화, 비즈니스, IELTS" },
+          { label: "프랑스어", href: "/languages/french", description: "A1부터 B2, DELF 준비" },
+          { label: "일본어", href: "/languages/japanese", description: "입문부터 JLPT 준비" },
+          { label: "한국어", href: "/languages/korean", description: "기초, 회화, TOPIK" },
+        ],
+      },
+      {
+        label: "프로그램",
+        href: "/programs",
+        children: [
+          { label: "종합 언어 능력", href: "/programs/general", description: "단계별 종합 능력 향상" },
+          { label: "시험과 진학", href: "/programs/exam-preparation", description: "시험과 학업 준비" },
+          { label: "비즈니스", href: "/programs/business", description: "직무 커뮤니케이션" },
+          { label: "기업 맞춤 연수", href: "/programs/corporate", description: "조직 맞춤형 과정" },
+        ],
+      },
+      {
+        label: "실천 학습",
+        href: "/practice",
+        children: [
+          { label: "언어 튜터링", href: "/practice/tutoring", description: "진단과 집중 피드백" },
+          { label: "언어 클럽", href: "/practice/language-clubs", description: "정기적인 말하기 연습" },
+          { label: "문화 체험", href: "/practice/cultural-events", description: "언어와 문화를 연결" },
+          { label: "테마 연수", href: "/practice/study-tours", description: "교류와 실천 활동" },
+        ],
+      },
+      {
+        label: "강사진",
+        href: "/faculty",
+        children: [
+          { label: "영어 팀", href: "/faculty/english", description: "종합, 학술, 시험 영어" },
+          { label: "프랑스어 팀", href: "/faculty/french", description: "프랑스어와 문화" },
+          { label: "일본어 팀", href: "/faculty/japanese", description: "단계 학습과 JLPT" },
+          { label: "한국어 팀", href: "/faculty/korean", description: "기초와 TOPIK" },
+        ],
+      },
+      {
+        label: "자료",
+        href: "/resources",
+        children: [
+          { label: "학습 가이드", href: "/resources/study-guides", description: "방법, 계획, 학습 루틴" },
+          { label: "FAQ", href: "/resources/faq", description: "수준, 배치, 등록 질문" },
+          { label: "디지털 학습", href: "/resources/digital-learning", description: "목적에 맞는 도구 활용" },
+          { label: "협력", href: "/collaboration", description: "캠퍼스, 기업, 교류 프로젝트" },
+        ],
+      },
       { label: "소식", href: "/news" },
       { label: "문의", href: "/contact" },
     ],
@@ -329,12 +549,66 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     primaryCta: "Explorar los cursos",
     secondaryCta: "Hablar con un asesor",
     nav: [
-      { label: "El centro", href: "/about" },
-      { label: "Cursos", href: "/languages" },
-      { label: "Programas", href: "/programs" },
-      { label: "Práctica", href: "/practice" },
-      { label: "Equipo", href: "/faculty" },
-      { label: "Recursos", href: "/resources" },
+      {
+        label: "El centro",
+        href: "/about",
+        children: [
+          { label: "Presentación", href: "/about", description: "Misión, historia y papel del centro" },
+          { label: "Nuestra historia", href: "/about/history", description: "Diez años de cursos y apoyo" },
+          { label: "Enfoque educativo", href: "/about/approach", description: "Objetivos, práctica y orientación" },
+          { label: "Instalaciones", href: "/about/facilities", description: "Espacio CBT y enseñanza multimedia" },
+        ],
+      },
+      {
+        label: "Cursos",
+        href: "/languages",
+        children: [
+          { label: "Inglés", href: "/languages/english", description: "General, conversación, negocios e IELTS" },
+          { label: "Francés", href: "/languages/french", description: "De A1 a B2 y preparación DELF" },
+          { label: "Japonés", href: "/languages/japanese", description: "De iniciación a preparación JLPT" },
+          { label: "Coreano", href: "/languages/korean", description: "Bases, comunicación y TOPIK" },
+        ],
+      },
+      {
+        label: "Programas",
+        href: "/programs",
+        children: [
+          { label: "Competencia general", href: "/programs/general", description: "Progresión equilibrada por nivel" },
+          { label: "Exámenes y estudios", href: "/programs/exam-preparation", description: "Evaluación y preparación académica" },
+          { label: "Negocios y carreras", href: "/programs/business", description: "Comunicación profesional" },
+          { label: "Formación corporativa", href: "/programs/corporate", description: "Programas personalizados" },
+        ],
+      },
+      {
+        label: "Práctica",
+        href: "/practice",
+        children: [
+          { label: "Tutoría", href: "/practice/tutoring", description: "Diagnóstico y orientación enfocada" },
+          { label: "Clubes de idiomas", href: "/practice/language-clubs", description: "Práctica oral regular" },
+          { label: "Experiencias culturales", href: "/practice/cultural-events", description: "Idioma, cultura y vida diaria" },
+          { label: "Visitas de estudio", href: "/practice/study-tours", description: "Actividades temáticas e intercambio" },
+        ],
+      },
+      {
+        label: "Equipo",
+        href: "/faculty",
+        children: [
+          { label: "Equipo de inglés", href: "/faculty/english", description: "Inglés general, académico y exámenes" },
+          { label: "Equipo de francés", href: "/faculty/french", description: "Lengua y cultura francesa" },
+          { label: "Equipo de japonés", href: "/faculty/japanese", description: "Progresión y JLPT" },
+          { label: "Equipo de coreano", href: "/faculty/korean", description: "Bases y TOPIK" },
+        ],
+      },
+      {
+        label: "Recursos",
+        href: "/resources",
+        children: [
+          { label: "Guías de estudio", href: "/resources/study-guides", description: "Métodos y rutinas" },
+          { label: "Preguntas frecuentes", href: "/resources/faq", description: "Niveles, ubicación e inscripción" },
+          { label: "Aprendizaje digital", href: "/resources/digital-learning", description: "Herramientas con propósito" },
+          { label: "Colaboración", href: "/collaboration", description: "Campus, empresas e intercambio" },
+        ],
+      },
       { label: "Noticias", href: "/news" },
       { label: "Contacto", href: "/contact" },
     ],
