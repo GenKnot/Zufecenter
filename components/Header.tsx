@@ -14,13 +14,177 @@ import {
   type ForeignLocale,
 } from "@/data/i18n";
 
+type NavChild = NonNullable<NavItem["children"]>[number];
+
+const localizedNavSupplements: Record<
+  ForeignLocale,
+  {
+    home: string;
+    dynamicResources: string;
+    aboutOrganization: NavChild;
+    programYoungLearners: NavChild;
+    programWorkshops: NavChild;
+    practiceCompetitions: NavChild;
+    facultyResearch: NavChild;
+    news: NavChild;
+    studyGuides: NavChild;
+    collaboration: NavChild;
+    contact: NavChild;
+  }
+> = {
+  en: {
+    home: "Home",
+    dynamicResources: "News & Resources",
+    aboutOrganization: { label: "Organization", href: "/about/organization", description: "Teaching, research and learner support" },
+    programYoungLearners: { label: "Young learners", href: "/programs/young-learners", description: "Interest, confidence and long-term growth" },
+    programWorkshops: { label: "Short workshops", href: "/programs/workshops", description: "Focused modules for specific needs" },
+    practiceCompetitions: { label: "Competitions and showcases", href: "/practice/competitions", description: "Speaking, writing and learner presentation" },
+    facultyResearch: { label: "Teaching research", href: "/research", description: "Curriculum development and faculty growth" },
+    news: { label: "News", href: "/news", description: "Courses, events and center updates" },
+    studyGuides: { label: "Study guides", href: "/resources/study-guides", description: "Methods, planning and common questions" },
+    collaboration: { label: "Collaboration", href: "/collaboration", description: "Campus, enterprise and international projects" },
+    contact: { label: "Contact", href: "/contact", description: "Course enquiries and partnership contact" },
+  },
+  fr: {
+    home: "Accueil",
+    dynamicResources: "Actualités et ressources",
+    aboutOrganization: { label: "Organisation", href: "/about/organization", description: "Enseignement, recherche et accompagnement" },
+    programYoungLearners: { label: "Jeunes apprenants", href: "/programs/young-learners", description: "Intérêt, confiance et progression durable" },
+    programWorkshops: { label: "Ateliers courts", href: "/programs/workshops", description: "Modules ciblés selon les besoins" },
+    practiceCompetitions: { label: "Concours et présentations", href: "/practice/competitions", description: "Expression orale, écrite et valorisation" },
+    facultyResearch: { label: "Recherche pédagogique", href: "/research", description: "Programmes, méthodes et développement enseignant" },
+    news: { label: "Actualités", href: "/news", description: "Cours, activités et nouvelles du centre" },
+    studyGuides: { label: "Guides d'étude", href: "/resources/study-guides", description: "Méthodes, organisation et questions fréquentes" },
+    collaboration: { label: "Collaboration", href: "/collaboration", description: "Campus, entreprises et échanges internationaux" },
+    contact: { label: "Contact", href: "/contact", description: "Conseil cours et partenariats" },
+  },
+  ja: {
+    home: "ホーム",
+    dynamicResources: "ニュース・資料",
+    aboutOrganization: { label: "組織体制", href: "/about/organization", description: "教育、研究、学習支援の体制" },
+    programYoungLearners: { label: "青少年向け", href: "/programs/young-learners", description: "興味、自信、長期的な成長" },
+    programWorkshops: { label: "短期ワークショップ", href: "/programs/workshops", description: "目的別の集中モジュール" },
+    practiceCompetitions: { label: "発表・コンテスト", href: "/practice/competitions", description: "スピーチ、作文、学習成果発表" },
+    facultyResearch: { label: "教育研究", href: "/research", description: "カリキュラム開発と教員成長" },
+    news: { label: "ニュース", href: "/news", description: "講座、活動、センターのお知らせ" },
+    studyGuides: { label: "学習ガイド", href: "/resources/study-guides", description: "方法、計画、よくある質問" },
+    collaboration: { label: "連携交流", href: "/collaboration", description: "大学、企業、国際交流プロジェクト" },
+    contact: { label: "お問い合わせ", href: "/contact", description: "講座相談と連携相談" },
+  },
+  ko: {
+    home: "홈",
+    dynamicResources: "뉴스·자료",
+    aboutOrganization: { label: "조직 구조", href: "/about/organization", description: "교육, 연구, 학습 지원 체계" },
+    programYoungLearners: { label: "청소년 성장", href: "/programs/young-learners", description: "흥미, 자신감, 장기 성장" },
+    programWorkshops: { label: "단기 워크숍", href: "/programs/workshops", description: "목적별 집중 모듈" },
+    practiceCompetitions: { label: "대회와 발표", href: "/practice/competitions", description: "말하기, 쓰기, 학습 성과 발표" },
+    facultyResearch: { label: "교육 연구", href: "/research", description: "과정 개발과 교원 성장" },
+    news: { label: "뉴스", href: "/news", description: "강좌, 활동, 센터 소식" },
+    studyGuides: { label: "학습 가이드", href: "/resources/study-guides", description: "방법, 계획, 자주 묻는 질문" },
+    collaboration: { label: "협력 교류", href: "/collaboration", description: "대학, 기업, 국제 교류 프로젝트" },
+    contact: { label: "문의하기", href: "/contact", description: "강좌 상담과 협력 문의" },
+  },
+  es: {
+    home: "Inicio",
+    dynamicResources: "Noticias y recursos",
+    aboutOrganization: { label: "Organización", href: "/about/organization", description: "Docencia, investigación y apoyo al aprendizaje" },
+    programYoungLearners: { label: "Jóvenes estudiantes", href: "/programs/young-learners", description: "Interés, confianza y crecimiento a largo plazo" },
+    programWorkshops: { label: "Talleres breves", href: "/programs/workshops", description: "Módulos enfocados para necesidades específicas" },
+    practiceCompetitions: { label: "Concursos y muestras", href: "/practice/competitions", description: "Oratoria, escritura y presentación de logros" },
+    facultyResearch: { label: "Investigación docente", href: "/research", description: "Currículo, métodos y desarrollo docente" },
+    news: { label: "Noticias", href: "/news", description: "Cursos, actividades y novedades del centro" },
+    studyGuides: { label: "Guías de estudio", href: "/resources/study-guides", description: "Métodos, planificación y preguntas frecuentes" },
+    collaboration: { label: "Colaboración", href: "/collaboration", description: "Campus, empresas e intercambio internacional" },
+    contact: { label: "Contacto", href: "/contact", description: "Consulta de cursos y cooperación" },
+  },
+};
+
+function childOrFallback(
+  item: NavItem | undefined,
+  href: string,
+  fallback: NavChild,
+) {
+  return item?.children?.find((child) => child.href === href) ?? fallback;
+}
+
+function buildLocalizedNavigation(locale: ForeignLocale, nav: NavItem[]): NavItem[] {
+  const labels = localizedNavSupplements[locale];
+  const about = nav.find((item) => item.href === "/about");
+  const languages = nav.find((item) => item.href === "/languages");
+  const programs = nav.find((item) => item.href === "/programs");
+  const practice = nav.find((item) => item.href === "/practice");
+  const faculty = nav.find((item) => item.href === "/faculty");
+
+  return [
+    { label: labels.home, href: "/" },
+    {
+      label: about?.label ?? "About",
+      href: "/about",
+      children: [
+        childOrFallback(about, "/about", { label: about?.label ?? "About", href: "/about" }),
+        childOrFallback(about, "/about/history", { label: "History", href: "/about/history" }),
+        childOrFallback(about, "/about/approach", { label: "Approach", href: "/about/approach" }),
+        labels.aboutOrganization,
+        childOrFallback(about, "/about/facilities", { label: "Facilities", href: "/about/facilities" }),
+      ],
+    },
+    languages ?? { label: "Courses", href: "/languages" },
+    {
+      label: programs?.label ?? "Programs",
+      href: "/programs",
+      children: [
+        childOrFallback(programs, "/programs/general", { label: "General ability", href: "/programs/general" }),
+        childOrFallback(programs, "/programs/exam-preparation", { label: "Exams and study", href: "/programs/exam-preparation" }),
+        childOrFallback(programs, "/programs/business", { label: "Business and careers", href: "/programs/business" }),
+        labels.programYoungLearners,
+        childOrFallback(programs, "/programs/corporate", { label: "Corporate training", href: "/programs/corporate" }),
+        labels.programWorkshops,
+      ],
+    },
+    {
+      label: practice?.label ?? "Learning",
+      href: "/practice",
+      children: [
+        childOrFallback(practice, "/practice/tutoring", { label: "Tutoring", href: "/practice/tutoring" }),
+        childOrFallback(practice, "/practice/language-clubs", { label: "Language clubs", href: "/practice/language-clubs" }),
+        childOrFallback(practice, "/practice/cultural-events", { label: "Cultural experiences", href: "/practice/cultural-events" }),
+        labels.practiceCompetitions,
+        childOrFallback(practice, "/practice/study-tours", { label: "Study visits", href: "/practice/study-tours" }),
+      ],
+    },
+    {
+      label: faculty?.label ?? "Faculty",
+      href: "/faculty",
+      children: [
+        childOrFallback(faculty, "/faculty/english", { label: "English team", href: "/faculty/english" }),
+        childOrFallback(faculty, "/faculty/french", { label: "French team", href: "/faculty/french" }),
+        childOrFallback(faculty, "/faculty/japanese", { label: "Japanese team", href: "/faculty/japanese" }),
+        childOrFallback(faculty, "/faculty/korean", { label: "Korean team", href: "/faculty/korean" }),
+        labels.facultyResearch,
+      ],
+    },
+    {
+      label: labels.dynamicResources,
+      href: "/news",
+      children: [
+        labels.news,
+        labels.studyGuides,
+        labels.collaboration,
+        labels.contact,
+      ],
+    },
+  ];
+}
+
 export function Header() {
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
   const pathname = usePathname();
   const locale = localeFromPathname(pathname);
   const localized = locale === "zh" ? null : localizedLandings[locale as ForeignLocale];
-  const navItems: NavItem[] = localized ? localized.nav : navigation;
+  const navItems: NavItem[] = localized
+    ? buildLocalizedNavigation(locale as ForeignLocale, localized.nav)
+    : navigation;
 
   useEffect(() => {
     document.documentElement.lang =

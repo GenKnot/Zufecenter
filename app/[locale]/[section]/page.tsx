@@ -94,6 +94,65 @@ const facultyShowcaseCopy: Record<
   },
 };
 
+const contactInfoCopy: Record<
+  ForeignLocale,
+  {
+    eyebrow: string;
+    title: string;
+    phone: string;
+    email: string;
+    wechat: string;
+    address: string;
+    hours: string;
+  }
+> = {
+  en: {
+    eyebrow: "Contact details",
+    title: "Reach the Language Center",
+    phone: "Course consultation hotline",
+    email: "Email",
+    wechat: "WeChat consultation",
+    address: "Address",
+    hours: "Consultation hours",
+  },
+  fr: {
+    eyebrow: "Coordonnées",
+    title: "Contacter le Centre de langues",
+    phone: "Téléphone de consultation",
+    email: "E-mail",
+    wechat: "Consultation WeChat",
+    address: "Adresse",
+    hours: "Horaires de consultation",
+  },
+  ja: {
+    eyebrow: "お問い合わせ情報",
+    title: "語学センターへの連絡",
+    phone: "コース相談電話",
+    email: "メール",
+    wechat: "WeChat相談",
+    address: "住所",
+    hours: "相談時間",
+  },
+  ko: {
+    eyebrow: "연락 정보",
+    title: "언어센터 문의",
+    phone: "과정 상담 전화",
+    email: "이메일",
+    wechat: "WeChat 상담",
+    address: "주소",
+    hours: "상담 시간",
+  },
+  es: {
+    eyebrow: "Datos de contacto",
+    title: "Contactar con el Centro de Idiomas",
+    phone: "Teléfono de consulta",
+    email: "Correo electrónico",
+    wechat: "Consulta por WeChat",
+    address: "Dirección",
+    hours: "Horario de consulta",
+  },
+};
+
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -203,6 +262,7 @@ export default async function EnglishSectionPage({
       : `/${locale}/contact`;
   const ui = localizedUi[locale as ForeignLocale];
   const facultyCopy = facultyShowcaseCopy[locale as ForeignLocale];
+  const contactCopy = contactInfoCopy[locale as ForeignLocale];
 
   return (
     <>
@@ -302,6 +362,82 @@ export default async function EnglishSectionPage({
                   </p>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {section.slug === "contact" && (
+        <section className="py-24">
+          <div className="shell">
+            <div className="mb-12 grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+              <div>
+                <span className="eyebrow">{contactCopy.eyebrow}</span>
+                <h2 className="section-title">{contactCopy.title}</h2>
+              </div>
+              <p className="max-w-2xl text-sm leading-8 text-slate-600 lg:justify-self-end">
+                {section.description}
+              </p>
+            </div>
+            <div className="grid gap-8 lg:grid-cols-[1fr_340px]">
+              <div className="grid gap-px overflow-hidden border border-slate-200 bg-slate-200 sm:grid-cols-2">
+                <article className="bg-white p-8 sm:p-10">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#174f8f]">
+                    {contactCopy.phone}
+                  </p>
+                  <a
+                    href={siteConfig.contact.phoneHref}
+                    className="mt-5 block font-serif text-3xl font-semibold text-[#11233e] transition hover:text-[#174f8f]"
+                  >
+                    {siteConfig.contact.phone}
+                  </a>
+                  <p className="mt-4 text-sm leading-7 text-slate-500">
+                    {siteConfig.contact.hours}
+                  </p>
+                </article>
+                <article className="bg-white p-8 sm:p-10">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#174f8f]">
+                    {contactCopy.email}
+                  </p>
+                  <a
+                    href={siteConfig.contact.emailHref}
+                    className="mt-5 block break-words text-lg font-semibold text-[#11233e] transition hover:text-[#174f8f]"
+                  >
+                    {siteConfig.contact.email}
+                  </a>
+                  <p className="mt-4 text-sm leading-7 text-slate-500">
+                    {siteConfig.contact.locationName}
+                  </p>
+                </article>
+                <article className="bg-white p-8 sm:col-span-2 sm:p-10">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#174f8f]">
+                    {contactCopy.address}
+                  </p>
+                  <p className="mt-4 max-w-3xl text-sm leading-8 text-slate-600">
+                    {siteConfig.contact.address}
+                  </p>
+                </article>
+              </div>
+
+              {siteConfig.contact.wechatQrImage && (
+                <aside className="bg-[#edf2f6] p-8 text-center sm:p-10 lg:self-stretch">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#174f8f]">
+                    {contactCopy.wechat}
+                  </p>
+                  <div className="mt-6 inline-block bg-white p-4 shadow-sm">
+                    <Image
+                      src={siteConfig.contact.wechatQrImage}
+                      alt={contactCopy.wechat}
+                      width={220}
+                      height={300}
+                      className="w-full max-w-[220px]"
+                    />
+                  </div>
+                  <p className="mx-auto mt-5 max-w-[220px] text-xs leading-6 text-slate-500">
+                    {contactCopy.phone}
+                  </p>
+                </aside>
+              )}
             </div>
           </div>
         </section>

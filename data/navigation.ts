@@ -14,6 +14,7 @@ export const navigation: NavItem[] = [
       { label: "发展历程", href: "/about/history", description: "十余年的课程与服务积累" },
       { label: "教育理念", href: "/about/approach", description: "以真实能力为导向的教学" },
       { label: "组织架构", href: "/about/organization", description: "教学、教研与运营支持" },
+      { label: "硬件设施", href: "/about/facilities", description: "标准化机考与多媒体学习空间" },
     ],
   },
   {

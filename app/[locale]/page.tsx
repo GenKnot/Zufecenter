@@ -13,6 +13,8 @@ import { siteConfig } from "@/data/site-config";
 
 export const dynamicParams = false;
 
+const courseSlugs = ["english", "french", "japanese", "korean"] as const;
+
 export function generateStaticParams() {
   return foreignLocales.map((locale) => ({ locale }));
 }
@@ -97,6 +99,7 @@ export default async function LocalizedLandingPage({
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#071f3e]/95 via-[#071f3e]/82 to-[#071f3e]/30" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_35%,rgba(201,155,72,0.18),transparent_30%)]" />
         <div className="shell relative flex min-h-[700px] items-center py-24">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold tracking-[0.24em] text-[#ead7ad]">
@@ -123,6 +126,40 @@ export default async function LocalizedLandingPage({
               </Link>
             </div>
           </div>
+        </div>
+        <div className="absolute bottom-0 right-0 bg-[#071f3e]/70 px-5 py-3 text-[11px] tracking-[0.08em] text-white/70 backdrop-blur-sm">
+          {content.footerTagline}
+        </div>
+      </section>
+
+      <section className="-mt-px bg-[#0b2f5b] text-white">
+        <div className="shell grid sm:grid-cols-2 lg:grid-cols-4">
+          {content.courses.map((course, index) => {
+            const courseSlug = courseSlugs[index];
+
+            return (
+              <Link
+                key={course.title}
+                href={`/${locale}/languages/${courseSlug}`}
+                className="group flex min-h-40 items-center gap-5 border-b border-r border-white/10 p-6 transition hover:bg-white/8 sm:p-7"
+              >
+                <span className="grid size-14 shrink-0 place-items-center rounded-full border border-[#c99b48]/50 font-serif text-xl text-[#ead7ad]">
+                  {course.mark}
+                </span>
+                <span>
+                  <strong className="block font-serif text-xl">
+                    {course.title}
+                  </strong>
+                  <small className="mt-1.5 block text-[10px] uppercase tracking-[0.14em] text-white/45">
+                    {course.subtitle}
+                  </small>
+                  <span className="mt-3 block text-xs text-white/55 transition group-hover:text-white">
+                    {content.primaryCta} →
+                  </span>
+                </span>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
@@ -166,16 +203,24 @@ export default async function LocalizedLandingPage({
             <p className="max-w-2xl text-sm leading-8 text-slate-600">{content.coursesText}</p>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden border border-slate-200 bg-slate-200 md:grid-cols-2 lg:grid-cols-4">
-            {content.courses.map((course) => (
-              <article key={course.title} className="min-h-[285px] bg-white p-7">
-                <span className="grid size-13 place-items-center rounded-full border border-[#c99b48]/60 font-serif text-lg text-[#174f8f]">
-                  {course.mark}
-                </span>
-                <h3 className="mt-7 font-serif text-2xl font-semibold text-[#11233e]">{course.title}</h3>
-                <p className="mt-2 text-[10px] uppercase tracking-[0.12em] text-[#a77c31]">{course.subtitle}</p>
-                <p className="mt-5 text-sm leading-7 text-slate-500">{course.text}</p>
-              </article>
-            ))}
+            {content.courses.map((course, index) => {
+              const courseSlug = courseSlugs[index];
+
+              return (
+                <Link
+                  key={course.title}
+                  href={`/${locale}/languages/${courseSlug}`}
+                  className="group min-h-[285px] bg-white p-7 transition hover:bg-[#0b2f5b] hover:text-white"
+                >
+                  <span className="grid size-13 place-items-center rounded-full border border-[#c99b48]/60 font-serif text-lg text-[#174f8f] transition group-hover:text-[#ead7ad]">
+                    {course.mark}
+                  </span>
+                  <h3 className="mt-7 font-serif text-2xl font-semibold text-[#11233e] transition group-hover:text-white">{course.title}</h3>
+                  <p className="mt-2 text-[10px] uppercase tracking-[0.12em] text-[#a77c31] transition group-hover:text-white/45">{course.subtitle}</p>
+                  <p className="mt-5 text-sm leading-7 text-slate-500 transition group-hover:text-white/66">{course.text}</p>
+                </Link>
+              );
+            })}
           </div>
           <Link
             href={`/${locale}/languages`}
