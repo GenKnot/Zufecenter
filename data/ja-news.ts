@@ -1,4 +1,5 @@
 import { news } from "@/data/site";
+import { supplementalNewsCopies } from "@/data/supplemental-news-localizations";
 
 type JaNewsCopy = {
   slug: string;
@@ -9,6 +10,7 @@ type JaNewsCopy = {
 };
 
 const copies: JaNewsCopy[] = [
+  ...supplementalNewsCopies.ja,
   { slug: "2026-spring-english-corner", category: "センター活動", title: "春の英語コーナー：都市の生活から異文化コミュニケーションへ", summary: "学習者は都市の生活と異文化コミュニケーションを出発点に、自然な討論とグループ課題に取り組みました。", content: ["春の英語コーナーは、キャンパス・近隣・日常の都市生活に関する身近な話題から始まり、文化をまたいだコミュニケーションの違いへと話を発展させました。", "この活動は、学習者がテキストブックの外で自分を表現し、他者に応答し、定期的な練習によって自信を育てる居心地のいい空間を提供するセンターの継続的な取り組みの一部です。"] },
   { slug: "2026-french-salon-spring", category: "語学コミュニティ", title: "春のフランス語サロン「私の街」から始まる", summary: "写真・地図・短い説明が、学習者が身近な街を紹介しフォローアップの質問を練習するのに役立ちました。", content: ["参加者は知っている場所の画像や地図を持参し、通り・名所・個人的な思い出をアクセスしやすいフランス語で描写しました。", "サロンは発展中の学習者が参加できるくらい課題を小さく保ちながら、自信のある話者が質問し会話を広げる余地も残しています。"] },
   { slug: "2025-business-writing-workshop", category: "授業情報", title: "秋のビジネスライティングワークショップ：より明確で適切なメール", summary: "実際のメール事例が、学習者が情報を整理し適切なトーンを選び効果的に伝えるのを助けました。", content: ["ワークショップでは件名・依頼・フォローアップ・難しいメッセージ、そして直接的であることと不必要な無礼との違いを検討しました。", "参加者は複数のラウンドで例を修正し、フィードバックを使って各メッセージをより明確・簡潔・読者に適したものにしました。"] },
@@ -39,6 +41,9 @@ const copies: JaNewsCopy[] = [
   { slug: "2016-first-language-corner", category: "センター活動", title: "週末語学コーナーが定期的な活動になる", summary: "週次の語学コーナーが学習者に授業以外で自己表現するさらなる機会を与えました。", content: ["活動はアクセスしやすいテーマと少人数グループのやり取りを使い、さまざまな段階の参加者が参加できるようにしました。", "その目的は試験での成績ではなく、真の使用を通じた自信と相互作用の段階的な発達でした。"] },
   { slug: "2015-first-study-sharing", category: "センターの記憶", title: "最初の英語学習方法共有会が教師と学習者を集める", summary: "参加者が語彙・リスニング練習・学習時間を現実的に整理する方法について話し合いました。", content: ["教師が実践的なアプローチを共有しながら、学習者は自分のルーティンで何がうまくいき何がうまくいかなかったかを比較しました。", "この共有会はセンターの初期のパターンを確立しました：学習者が質問し・振り返り・互いから学べるとき、指導は授業を超えて広がります。"] },
   { slug: "2015-course-launch", category: "センターの記憶", title: "センター最初の語学開発コースが始まる", summary: "英語開発コースと入門語学コースは最初の学習者の実践的なニーズから始まりました。", content: ["最初のコースサイクルは語学教育と小さな学習活動を組み合わせ、参加者のフィードバックへの細やかな注意を払いました。", "これらの最初のクラスは学習者が実際に言語をどのように使うかを中心にコースとサポートを発展させるセンターの継続的な作業を始めました。"] },
+  { slug: "2026-wuxin-zhejiang-finance-forum", category: "院長活動", title: "武鑫教授が浙江金融投資フォーラムに参加", summary: "武鑫院長は国際金融連携を報告し、フランス語と金融を結ぶ複合人材の育成を提案しました。", content: ["2026年1月17日、武鑫教授は第19回浙江金融投資フォーラムおよび浙江省国際金融学会2025年度年次総会に参加しました。", "浙江企業のフランス語圏市場での活動を支えるため、金融、フランス語コミュニケーション、異文化能力を統合する必要性を示しました。"] },
+  { slug: "2025-wuxin-qiantang-research", category: "院長活動", title: "銭塘区で企業の海外展開支援を調査", summary: "武鑫院長は市場調査、リスク対応、フランス語サービスについて意見交換しました。", content: ["2025年4月2日、武鑫院長は企業の国際展開支援をテーマに銭塘区を訪問しました。", "市場調査とリスク対応を、フランスおよびフランス語圏アフリカ向けのビジネスフランス語、越境金融、コンプライアンス研修と結びつける方向を検討しました。"] },
+  { slug: "2024-wuxin-finance-french-lecture", category: "講演", title: "講演の夕べ：金融イノベーションとフランス語圏越境金融人材", summary: "武鑫教授が金融イノベーション、フランス語圏市場、複合人材育成について講演しました。", content: ["2024年3月28日、武鑫教授は金融イノベーション、リスク認識、越境ビジネスの関係を解説しました。", "フランスとフランス語圏アフリカを例に、語学力を金融、コンプライアンス、異文化コミュニケーションとともに育てる重要性を述べました。"] },
 ];
 
 const imageByChineseCategory: Record<string, string> = {
@@ -59,7 +64,11 @@ const imageByChineseCategory: Record<string, string> = {
 
 const copyBySlug = new Map(copies.map((copy) => [copy.slug, copy]));
 
-export type JaNewsItem = JaNewsCopy & { date: string; image: string };
+export type JaNewsItem = JaNewsCopy & {
+  date: string;
+  image: string;
+  source?: { label: string; href: string };
+};
 
 export const jaNews: JaNewsItem[] = news.map((source) => {
   const copy = copyBySlug.get(source.slug);
@@ -67,7 +76,8 @@ export const jaNews: JaNewsItem[] = news.map((source) => {
   return {
     ...copy,
     date: source.date,
-    image: imageByChineseCategory[source.category] ?? "/images/student-collaboration.png",
+    source: source.source,
+    image: source.image ?? imageByChineseCategory[source.category] ?? "/images/student-collaboration.png",
   };
 });
 

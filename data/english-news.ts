@@ -1,4 +1,5 @@
 import { news } from "@/data/site";
+import { supplementalNewsCopies } from "@/data/supplemental-news-localizations";
 
 type EnglishNewsCopy = {
   slug: string;
@@ -9,6 +10,7 @@ type EnglishNewsCopy = {
 };
 
 const copies: EnglishNewsCopy[] = [
+  ...supplementalNewsCopies.en,
   { slug: "2026-spring-english-corner", category: "Center activity", title: "Spring English Corner: from city life to cross-cultural communication", summary: "Learners used city life and cross-cultural communication as starting points for natural discussion and group tasks.", content: ["The spring English Corner opened with familiar questions about campus, neighbourhoods and everyday city life before moving into differences in communication across cultures.", "The activity is part of the center’s continuing effort to provide a relaxed space where learners can speak beyond the textbook, respond to others and build confidence through regular use."] },
   { slug: "2026-french-salon-spring", category: "Language community", title: "The spring French salon begins with ‘My City’", summary: "Photographs, maps and short descriptions helped learners introduce a familiar city and practise asking follow-up questions.", content: ["Participants brought images or maps of places they knew and used accessible French to describe streets, landmarks and personal memories.", "The salon keeps tasks small enough for developing learners to join while leaving room for more confident speakers to ask questions and extend the conversation."] },
   { slug: "2025-business-writing-workshop", category: "Course update", title: "Autumn business writing workshop: clearer and more appropriate email", summary: "Realistic email cases helped learners organize information, choose an appropriate tone and communicate more efficiently.", content: ["The workshop examined subject lines, requests, follow-up, difficult messages and the difference between directness and unnecessary bluntness.", "Participants revised examples in several rounds, using feedback to make each message clearer, more concise and better suited to its reader."] },
@@ -39,6 +41,9 @@ const copies: EnglishNewsCopy[] = [
   { slug: "2016-first-language-corner", category: "Center activity", title: "Weekend language corner becomes a regular activity", summary: "A recurring weekend language corner gave learners more opportunities to express themselves beyond class.", content: ["The activity used accessible themes and small-group exchanges so that participants at different stages could join.", "Its purpose was not examination performance, but the gradual development of confidence and interaction through genuine use."] },
   { slug: "2015-first-study-sharing", category: "Center memory", title: "First English learning methods exchange brings teachers and learners together", summary: "Participants discussed vocabulary, listening practice and realistic ways to organize study time.", content: ["Teachers shared practical approaches while learners compared what had and had not worked in their own routines.", "The exchange established an early pattern for the center: teaching extends beyond class when learners can ask, reflect and learn from one another."] },
   { slug: "2015-course-launch", category: "Center memory", title: "The center’s first language-development courses begin", summary: "English development and introductory language courses started from the practical needs of early learners.", content: ["The first course cycle combined language teaching with small learning activities and close attention to participant feedback.", "Those initial classes began the center’s continuing work of developing courses and support around how learners actually use language."] },
+  { slug: "2026-wuxin-zhejiang-finance-forum", category: "Dean's activities", title: "Professor Wu Xin attends the Zhejiang Finance and Investment Forum", summary: "Dean Wu Xin reported on international-finance collaboration and called for French-speaking interdisciplinary finance talent.", content: ["On 17 January 2026, Professor Wu Xin attended the 19th Zhejiang Finance and Investment Forum and the 2025 annual meeting of the Zhejiang Society of International Finance, where he delivered the alliance's annual work report.", "He proposed closer integration of finance, French communication and intercultural competence to support Zhejiang enterprises working across Francophone markets."] },
+  { slug: "2025-wuxin-qiantang-research", category: "Dean's activities", title: "Research visit to Qiantang explores support for enterprises going global", summary: "Dean Wu Xin led discussions on research, risk guidance and French-language support for international business.", content: ["On 2 April 2025, Wu Xin led a research visit to Qiantang District focused on services for companies expanding into international markets.", "The discussion connected market research and risk guidance with French communication, cross-border finance and compliance training for work in France and Francophone Africa."] },
+  { slug: "2024-wuxin-finance-french-lecture", category: "Lecture", title: "Lecture evening: financial innovation and French-speaking cross-border finance talent", summary: "Professor Wu Xin discussed financial innovation, Francophone markets and interdisciplinary talent development.", content: ["On 28 March 2024, Professor Wu Xin explained how financial innovation, risk awareness and cross-border business are connected.", "Using France and Francophone Africa as contexts, he argued that language ability should develop alongside finance, compliance and intercultural communication."] },
 ];
 
 const imageByChineseCategory: Record<string, string> = {
@@ -62,6 +67,7 @@ const copyBySlug = new Map(copies.map((copy) => [copy.slug, copy]));
 export type EnglishNewsItem = EnglishNewsCopy & {
   date: string;
   image: string;
+  source?: { label: string; href: string };
 };
 
 export const englishNews: EnglishNewsItem[] = news.map((source) => {
@@ -70,8 +76,9 @@ export const englishNews: EnglishNewsItem[] = news.map((source) => {
   return {
     ...copy,
     date: source.date,
+    source: source.source,
     image:
-      imageByChineseCategory[source.category] ??
+      source.image ?? imageByChineseCategory[source.category] ??
       "/images/student-collaboration.png",
   };
 });

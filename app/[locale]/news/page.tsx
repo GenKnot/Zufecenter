@@ -6,7 +6,7 @@ import { frNews } from "@/data/fr-news";
 import { esNews } from "@/data/es-news";
 import { jaNews } from "@/data/ja-news";
 import { koNews } from "@/data/ko-news";
-import { type ForeignLocale } from "@/data/i18n";
+import { localizedLandings, type ForeignLocale } from "@/data/i18n";
 import { siteConfig } from "@/data/site-config";
 
 const newsArchiveCopy: Record<
@@ -24,7 +24,7 @@ const newsArchiveCopy: Record<
     eyebrow: "NEWS & ARCHIVE",
     title: "Courses, communities and everyday learning since 2015",
     description:
-      "Thirty records trace how classes, teaching discussions, language activities and learner support have developed across more than a decade.",
+      "This growing archive traces how classes, teaching discussions, leadership activities and learner support have developed across more than a decade.",
     browseByYear: "Browse by year",
     recordLabel: (count) => `${count} ${count === 1 ? "record" : "records"}`,
     metadataTitle: "News and Archive | Language Center · ZUFE",
@@ -33,7 +33,7 @@ const newsArchiveCopy: Record<
     eyebrow: "ACTUALITÉS & ARCHIVES",
     title: "Cours, communautés et apprentissage quotidien depuis 2015",
     description:
-      "Trente archives montrent l'évolution des cours, des échanges pédagogiques, des activités linguistiques et du soutien aux apprenants sur plus de dix ans.",
+      "Ces archives en développement montrent l'évolution des cours, des échanges pédagogiques, des activités de direction et du soutien aux apprenants sur plus de dix ans.",
     browseByYear: "Par année",
     recordLabel: (count) => `${count} ${count === 1 ? "archive" : "archives"}`,
     metadataTitle: "Actualités et archives | Centre de langues · ZUFE",
@@ -42,7 +42,7 @@ const newsArchiveCopy: Record<
     eyebrow: "ニュース & アーカイブ",
     title: "2015年から続く授業、コミュニティ、日々の学び",
     description:
-      "30件の記録から、十年以上にわたる授業、教研、語学活動、学習支援の歩みを見ることができます。",
+      "増え続ける記録から、十年以上にわたる授業、教研、院長活動、学習支援の歩みを見ることができます。",
     browseByYear: "年別に見る",
     recordLabel: (count) => `${count}件`,
     metadataTitle: "ニュースとアーカイブ | 語学センター · ZUFE",
@@ -51,7 +51,7 @@ const newsArchiveCopy: Record<
     eyebrow: "소식 & 아카이브",
     title: "2015년부터 이어진 수업, 커뮤니티와 일상의 학습",
     description:
-      "30개의 기록은 10년 넘게 이어진 수업, 교육 논의, 언어 활동, 학습 지원의 흐름을 보여 줍니다.",
+      "계속 확장되는 기록은 11년간 이어진 수업, 교육 논의, 원장 활동, 학습 지원의 흐름을 보여 줍니다.",
     browseByYear: "연도별 보기",
     recordLabel: (count) => `${count}건`,
     metadataTitle: "소식과 아카이브 | 언어센터 · ZUFE",
@@ -60,7 +60,7 @@ const newsArchiveCopy: Record<
     eyebrow: "NOTICIAS & ARCHIVO",
     title: "Cursos, comunidades y aprendizaje cotidiano desde 2015",
     description:
-      "Treinta registros muestran cómo han evolucionado las clases, el desarrollo docente, las actividades lingüísticas y el apoyo al aprendizaje durante más de una década.",
+      "Este archivo en crecimiento muestra cómo han evolucionado las clases, el desarrollo docente, las actividades de dirección y el apoyo al aprendizaje durante más de una década.",
     browseByYear: "Ver por año",
     recordLabel: (count) => `${count} ${count === 1 ? "registro" : "registros"}`,
     metadataTitle: "Noticias y archivo | Centro de Idiomas · ZUFE",
@@ -80,6 +80,7 @@ export async function generateMetadata({
 }) {
   const { locale } = await params;
   const copy = newsArchiveCopy[locale as ForeignLocale] ?? newsArchiveCopy.en;
+  const localizedSiteName = localizedLandings[locale as ForeignLocale].siteName;
   const canonical = `${siteConfig.url}/${locale}/news/`;
   return {
     title: { absolute: copy.metadataTitle },
@@ -101,7 +102,7 @@ export async function generateMetadata({
       type: "website",
       locale,
       url: canonical,
-      siteName: "Language Center · ZUFE",
+      siteName: localizedSiteName,
       title: copy.metadataTitle,
       description: copy.description,
       images: [{ url: siteConfig.ogImage, alt: copy.metadataTitle }],

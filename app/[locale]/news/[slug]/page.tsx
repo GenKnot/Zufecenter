@@ -7,8 +7,16 @@ import { frNews, findFrNews } from "@/data/fr-news";
 import { esNews, findEsNews } from "@/data/es-news";
 import { jaNews, findJaNews } from "@/data/ja-news";
 import { koNews, findKoNews } from "@/data/ko-news";
-import { localizedUi, type ForeignLocale } from "@/data/i18n";
+import { localizedLandings, localizedUi, type ForeignLocale } from "@/data/i18n";
 import { siteConfig } from "@/data/site-config";
+
+const sourceLabels: Record<ForeignLocale, string> = {
+  en: "Official source",
+  fr: "Source officielle",
+  es: "Fuente oficial",
+  ja: "公式情報",
+  ko: "공식 출처",
+};
 
 export const dynamicParams = false;
 
@@ -36,12 +44,14 @@ export async function generateMetadata({
     : locale === "ko" ? findKoNews(slug)
     : undefined;
   if (!item) return {};
+  const localizedSiteName = localizedLandings[locale as ForeignLocale].siteName;
+  const hasFullPublicationDate = /^\d{4}-\d{2}-\d{2}$/.test(item.date);
 
   const canonical = `${siteConfig.url}/${locale}/news/${slug}/`;
   const chinese = `${siteConfig.url}/news/${slug}/`;
 
   return {
-    title: { absolute: `${item.title} | Language Center · ZUFE` },
+    title: { absolute: `${item.title} | ${localizedSiteName}` },
     description: item.summary,
     keywords: siteConfig.keywords,
     alternates: {
@@ -60,10 +70,10 @@ export async function generateMetadata({
       type: "article",
       locale,
       url: canonical,
-      siteName: "Language Center · ZUFE",
+      siteName: localizedSiteName,
       title: item.title,
       description: item.summary,
-      publishedTime: item.date,
+      ...(hasFullPublicationDate ? { publishedTime: item.date } : {}),
       images: [{ url: siteConfig.ogImage, alt: item.title }],
     },
     twitter: {
@@ -132,6 +142,19 @@ export default async function EnglishNewsDetailPage({
           {item.content.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
+          {item.source && (
+            <p className="mt-10 border-t border-slate-200 pt-6 text-sm text-slate-500">
+              {sourceLabels[locale as ForeignLocale]}:{" "}
+              <a
+                href={item.source.href}
+                target="_blank"
+                rel="noreferrer"
+                className="font-medium text-[#174f8f] underline decoration-[#c99b48]/60 underline-offset-4"
+              >
+                {item.source.label} ↗
+              </a>
+            </p>
+          )}
           <p className="mt-10 border-l-2 border-[#c99b48] pl-5 text-sm text-slate-500">
             {ui.newsNote}
           </p>

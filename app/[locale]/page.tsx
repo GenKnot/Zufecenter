@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { NewsCard } from "@/components/NewsCard";
+import { englishNews } from "@/data/english-news";
+import { esNews } from "@/data/es-news";
+import { frNews } from "@/data/fr-news";
 import {
   foreignLocales,
   isLocale,
@@ -9,11 +13,63 @@ import {
   localizedLandings,
   type ForeignLocale,
 } from "@/data/i18n";
+import { jaNews } from "@/data/ja-news";
+import { koNews } from "@/data/ko-news";
 import { siteConfig } from "@/data/site-config";
+import { selectHomepageNews } from "@/data/news-utils";
 
 export const dynamicParams = false;
 
 const courseSlugs = ["english", "french", "japanese", "korean"] as const;
+
+const newsByLocale = {
+  en: englishNews,
+  fr: frNews,
+  es: esNews,
+  ja: jaNews,
+  ko: koNews,
+};
+
+const homeNewsCopy: Record<
+  ForeignLocale,
+  { eyebrow: string; title: string; text: string; archive: string; read: string }
+> = {
+  en: {
+    eyebrow: "NEWS & ARCHIVE",
+    title: "More than a decade of learning, teaching and exchange",
+    text: "Courses, language clubs, open lessons, teaching reviews and center activities form a living record from 2015 to today.",
+    archive: "Browse all {count} stories from 2015—2026",
+    read: "Read",
+  },
+  fr: {
+    eyebrow: "ACTUALITÉS & ARCHIVES",
+    title: "Plus de dix ans d'apprentissage, d'enseignement et d'échanges",
+    text: "Cours, clubs de langues, leçons ouvertes, bilans pédagogiques et activités du centre composent une histoire vivante de 2015 à aujourd'hui.",
+    archive: "Parcourir les {count} actualités de 2015—2026",
+    read: "Lire",
+  },
+  es: {
+    eyebrow: "NOTICIAS Y ARCHIVO",
+    title: "Más de diez años de aprendizaje, docencia e intercambio",
+    text: "Cursos, clubes de idiomas, clases abiertas, revisiones docentes y actividades del centro forman una historia viva desde 2015 hasta hoy.",
+    archive: "Consultar las {count} noticias de 2015—2026",
+    read: "Leer",
+  },
+  ja: {
+    eyebrow: "ニュース・アーカイブ",
+    title: "11年間にわたる学び、教育、交流の記録",
+    text: "講座、語学コミュニティ、公開授業、教育研究、センター活動を2015年から現在まで継続して記録しています。",
+    archive: "2015—2026年の全{count}件を見る",
+    read: "読む",
+  },
+  ko: {
+    eyebrow: "뉴스·아카이브",
+    title: "11년간 이어 온 학습, 교육, 교류의 기록",
+    text: "과정, 언어 모임, 공개 수업, 교육 검토와 센터 활동을 2015년부터 현재까지 꾸준히 기록하고 있습니다.",
+    archive: "2015—2026년 전체 {count}건 보기",
+    read: "읽기",
+  },
+};
 
 export function generateStaticParams() {
   return foreignLocales.map((locale) => ({ locale }));
@@ -86,6 +142,9 @@ export default async function LocalizedLandingPage({
 
   const locale = value as ForeignLocale;
   const content = localizedLandings[locale];
+  const newsCopy = homeNewsCopy[locale];
+  const localeNews = newsByLocale[locale];
+  const recentNews = selectHomepageNews(localeNews);
 
   return (
     <>
@@ -247,6 +306,32 @@ export default async function LocalizedLandingPage({
                 <h3 className="mt-6 font-serif text-2xl font-semibold text-[#11233e]">{item.title}</h3>
                 <p className="mt-4 text-sm leading-7 text-slate-600">{item.text}</p>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#f7f5f0] py-24">
+        <div className="shell grid gap-14 lg:grid-cols-[0.72fr_1.28fr]">
+          <div>
+            <span className="eyebrow">{newsCopy.eyebrow}</span>
+            <h2 className="section-title">{newsCopy.title}</h2>
+            <p className="section-copy">{newsCopy.text}</p>
+            <Link
+              href={`/${locale}/news`}
+              className="mt-8 inline-block text-sm font-semibold text-[#174f8f]"
+            >
+              {newsCopy.archive.replace("{count}", String(localeNews.length))} →
+            </Link>
+          </div>
+          <div>
+            {recentNews.map((item) => (
+              <NewsCard
+                key={item.slug}
+                item={item}
+                prefix={`/${locale}`}
+                readLabel={newsCopy.read}
+              />
             ))}
           </div>
         </div>

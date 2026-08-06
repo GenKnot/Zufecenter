@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -68,6 +69,9 @@ export default function RootLayout({
   return (
     <html lang="zh-CN" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body>
+        <Script id="locale-html-lang" strategy="beforeInteractive">
+          {"(()=>{const s=location.pathname.split('/').filter(Boolean)[0];const locales=['en','fr','es','ja','ko'];document.documentElement.lang=locales.includes(s)?s:'zh-CN'})()"}
+        </Script>
         <StructuredData />
         <Header />
         <main>{children}</main>

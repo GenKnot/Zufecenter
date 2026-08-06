@@ -16,47 +16,9 @@ import { jaSections, findJaSection } from "@/data/ja-sections";
 import { jaDetailsByParent } from "@/data/ja-content-details";
 import { koSections, findKoSection } from "@/data/ko-sections";
 import { koDetailsByParent } from "@/data/ko-content-details";
-import { localizedUi, type ForeignLocale } from "@/data/i18n";
+import { localizedFacultyProfiles } from "@/data/faculty-profiles";
+import { localizedLandings, localizedUi, type ForeignLocale } from "@/data/i18n";
 import { siteConfig } from "@/data/site-config";
-
-const facultyProfiles = [
-  {
-    name: "Chen Xinmin",
-    role: "English Program Lead",
-    focus: "General English, business communication, academic expression",
-    experience: "10 years of language teaching experience",
-  },
-  {
-    name: "Wang Liming",
-    role: "Exam and Study Pathway Instructor",
-    focus: "IELTS bridge courses, writing, interview communication",
-    experience: "12 years of teaching and coaching experience",
-  },
-  {
-    name: "Lin Jiayi",
-    role: "French Instructor",
-    focus: "Beginner French, DELF preparation, cultural topics",
-    experience: "9 years of French teaching experience",
-  },
-  {
-    name: "Zhao Mingyuan",
-    role: "Japanese Instructor",
-    focus: "Japanese progression, JLPT, language practice",
-    experience: "11 years of Japanese teaching experience",
-  },
-  {
-    name: "Li Ruoqing",
-    role: "Korean Instructor",
-    focus: "Beginner Korean, daily communication, TOPIK training",
-    experience: "8 years of Korean teaching experience",
-  },
-  {
-    name: "Kim Hyunwoo",
-    role: "Cross-cultural Program Instructor",
-    focus: "Language practice, cultural activities, themed workshops",
-    experience: "10 years of cross-cultural course experience",
-  },
-];
 
 const facultyShowcaseCopy: Record<
   ForeignLocale,
@@ -66,31 +28,31 @@ const facultyShowcaseCopy: Record<
     eyebrow: "Faculty members",
     title: "Representative Teachers",
     intro:
-      "The center brings together instructors in English, French, Japanese, Korean and cross-cultural practice. They teach, review learning feedback and support curriculum development.",
+      "The four faculty profiles currently presented here are members of the French teaching team, with strengths in staged learning, assessment, professional French, academic language and intercultural communication.",
   },
   fr: {
     eyebrow: "Équipe enseignante",
     title: "Enseignants représentatifs",
     intro:
-      "Le centre réunit des enseignants d'anglais, de français, de japonais, de coréen et de pratique interculturelle. Ils assurent les cours, suivent les retours d'apprentissage et participent au développement pédagogique.",
+      "Les quatre profils présentés ici appartiennent à l'équipe de français et couvrent la progression par niveau, l'évaluation, le français professionnel, les langues académiques et la communication interculturelle.",
   },
   ja: {
     eyebrow: "講師陣",
     title: "代表講師",
     intro:
-      "センターには英語、フランス語、日本語、韓国語、異文化実践を担当する講師が在籍し、授業、学習フィードバック、カリキュラム改善に関わっています。",
+      "現在公開している4名はフランス語チームの講師で、段階別学習、評価、専門フランス語、学術言語、異文化コミュニケーションを担当しています。",
   },
   ko: {
     eyebrow: "강사진",
     title: "대표 강사",
     intro:
-      "센터는 영어, 프랑스어, 일본어, 한국어 및 문화 실천 분야의 강사진으로 구성되어 있으며 수업, 학습 피드백, 교육과정 개발을 함께 담당합니다.",
+      "현재 공개된 네 명의 강사는 프랑스어 팀 소속으로 단계별 학습, 평가, 전문 프랑스어, 학술 언어, 문화 간 소통 분야를 담당합니다.",
   },
   es: {
     eyebrow: "Equipo docente",
     title: "Docentes representativos",
     intro:
-      "El centro reúne docentes de inglés, francés, japonés, coreano y práctica intercultural. Imparten clases, revisan la retroalimentación del aprendizaje y apoyan el desarrollo curricular.",
+      "Los cuatro perfiles publicados pertenecen al equipo de francés y abarcan la progresión por niveles, la evaluación, el francés profesional, el lenguaje académico y la comunicación intercultural.",
   },
 };
 
@@ -188,6 +150,7 @@ export async function generateMetadata({
     : locale === "ko" ? findKoSection(slug)
     : undefined;
   if (!section) return {};
+  const localizedSiteName = localizedLandings[locale as ForeignLocale].siteName;
 
   const canonical = `${siteConfig.url}/${locale}/${section.slug}/`;
   const chinesePath =
@@ -198,7 +161,7 @@ export async function generateMetadata({
         : `/${section.slug}/`;
 
   return {
-    title: { absolute: `${section.title} | Language Center · ZUFE` },
+    title: { absolute: `${section.title} | ${localizedSiteName}` },
     description: section.description,
     keywords: siteConfig.keywords,
     alternates: {
@@ -217,7 +180,7 @@ export async function generateMetadata({
       type: "website",
       locale,
       url: canonical,
-      siteName: "Language Center · ZUFE",
+      siteName: localizedSiteName,
       title: section.title,
       description: section.description,
       images: [{ url: siteConfig.ogImage, alt: section.title }],
@@ -262,6 +225,7 @@ export default async function EnglishSectionPage({
       : `/${locale}/contact`;
   const ui = localizedUi[locale as ForeignLocale];
   const facultyCopy = facultyShowcaseCopy[locale as ForeignLocale];
+  const facultyProfiles = localizedFacultyProfiles[locale as ForeignLocale];
   const contactCopy = contactInfoCopy[locale as ForeignLocale];
 
   return (
@@ -345,7 +309,7 @@ export default async function EnglishSectionPage({
                 {facultyCopy.intro}
               </p>
             </div>
-            <div className="grid gap-px overflow-hidden border border-slate-200 bg-slate-200 md:grid-cols-2 xl:grid-cols-3">
+            <div className="grid gap-px overflow-hidden border border-slate-200 bg-slate-200 md:grid-cols-2">
               {facultyProfiles.map((teacher) => (
                 <article key={teacher.name} className="bg-white p-8">
                   <p className="text-xs font-semibold tracking-[0.14em] text-[#174f8f]">
@@ -430,7 +394,7 @@ export default async function EnglishSectionPage({
                       alt={contactCopy.wechat}
                       width={220}
                       height={300}
-                      className="w-full max-w-[220px]"
+                      className="h-auto w-full max-w-[220px]"
                     />
                   </div>
                   <p className="mx-auto mt-5 max-w-[220px] text-xs leading-6 text-slate-500">

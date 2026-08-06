@@ -1,4 +1,5 @@
 import { news } from "@/data/site";
+import { supplementalNewsCopies } from "@/data/supplemental-news-localizations";
 
 type KoNewsCopy = {
   slug: string;
@@ -9,6 +10,7 @@ type KoNewsCopy = {
 };
 
 const copies: KoNewsCopy[] = [
+  ...supplementalNewsCopies.ko,
   { slug: "2026-spring-english-corner", category: "센터 활동", title: "봄 영어 코너: 도시 생활에서 이문화 소통으로", summary: "학습자들이 도시 생활과 이문화 소통을 출발점으로 자연스러운 토론과 그룹 과제에 참여했습니다.", content: ["봄 영어 코너는 캠퍼스, 인근 지역, 일상적인 도시 생활에 관한 친숙한 질문으로 시작하여 문화를 넘나드는 소통의 차이로 이야기를 발전시켰습니다.", "이 활동은 학습자들이 교재 밖에서 자신을 표현하고, 서로에게 응답하고, 정기적인 연습을 통해 자신감을 키울 수 있는 편안한 공간을 제공하려는 센터의 지속적인 노력의 일부입니다."] },
   { slug: "2026-french-salon-spring", category: "언어 커뮤니티", title: "봄 프랑스어 살롱이 '나의 도시'로 시작되다", summary: "사진, 지도, 짧은 설명이 학습자들이 친숙한 도시를 소개하고 후속 질문을 연습하는 데 도움이 되었습니다.", content: ["참가자들은 알고 있는 장소의 이미지나 지도를 가져와 거리, 명소, 개인적인 추억을 접근하기 쉬운 프랑스어로 묘사했습니다.", "살롱은 발전 중인 학습자들이 참여할 수 있도록 과제를 작게 유지하면서, 자신감 있는 화자들이 질문하고 대화를 확장할 수 있는 공간도 남겨 둡니다."] },
   { slug: "2025-business-writing-workshop", category: "수업 소식", title: "가을 비즈니스 글쓰기 워크숍: 더 명확하고 적절한 이메일", summary: "실제 이메일 사례가 학습자들이 정보를 구성하고, 적절한 어조를 선택하며, 더 효과적으로 소통하는 데 도움이 되었습니다.", content: ["워크숍에서는 이메일 제목, 요청, 후속 조치, 어려운 메시지, 그리고 직접적인 것과 불필요한 무례함의 차이를 살펴보았습니다.", "참가자들은 여러 라운드에 걸쳐 예시를 수정하면서 피드백을 사용해 각 메시지를 더 명확하고, 간결하며, 독자에게 더 잘 맞도록 만들었습니다."] },
@@ -39,6 +41,9 @@ const copies: KoNewsCopy[] = [
   { slug: "2016-first-language-corner", category: "센터 활동", title: "주말 언어 코너가 정기 활동이 되다", summary: "매주 반복되는 언어 코너가 학습자들에게 수업 밖에서 자신을 표현할 더 많은 기회를 주었습니다.", content: ["활동은 접근하기 쉬운 주제와 소규모 그룹 교류를 사용하여 다양한 단계의 참가자들이 참여할 수 있게 했습니다.", "그 목적은 시험 성과가 아니라 진정한 사용을 통한 자신감과 상호작용의 점진적인 발전이었습니다."] },
   { slug: "2015-first-study-sharing", category: "센터의 기억", title: "첫 번째 영어 학습 방법 공유회가 교사와 학습자를 모으다", summary: "참가자들이 어휘, 듣기 연습, 현실적인 학습 시간 정리 방법에 대해 이야기했습니다.", content: ["교사들이 실용적인 접근법을 공유하면서 학습자들은 자신의 루틴에서 무엇이 효과가 있었고 없었는지 비교했습니다.", "공유회는 센터의 초기 패턴을 정립했습니다: 학습자들이 질문하고, 성찰하고, 서로에게서 배울 수 있을 때 수업은 교실을 넘어 확장됩니다."] },
   { slug: "2015-course-launch", category: "센터의 기억", title: "센터 첫 번째 언어 개발 수업이 시작되다", summary: "영어 개발 수업과 입문 언어 수업이 첫 번째 학습자들의 실용적인 필요에서 시작되었습니다.", content: ["첫 번째 수업 주기는 언어 수업과 소규모 학습 활동을 결합하고 참가자들의 피드백에 세심한 주의를 기울였습니다.", "이 초기 수업들이 학습자들이 실제로 언어를 어떻게 사용하는지를 중심으로 수업과 지원을 발전시키는 센터의 지속적인 작업을 시작했습니다."] },
+  { slug: "2026-wuxin-zhejiang-finance-forum", category: "원장 활동", title: "우신 교수가 저장 금융투자포럼에 참석", summary: "우신 원장은 국제금융 협력을 보고하고 프랑스어와 금융을 결합한 융합 인재 양성을 제안했습니다.", content: ["2026년 1월 17일 우신 교수는 제19회 저장 금융투자포럼과 저장성 국제금융학회 2025년도 연례회의에 참석했습니다.", "저장 기업의 프랑스어권 시장 활동을 지원하기 위해 금융, 프랑스어 소통, 문화 간 역량을 함께 키워야 한다고 제안했습니다."] },
+  { slug: "2025-wuxin-qiantang-research", category: "원장 활동", title: "첸탕구에서 기업 해외진출 지원을 조사", summary: "우신 원장은 시장 조사, 위험 대응, 프랑스어 서비스에 대해 논의했습니다.", content: ["2025년 4월 2일 우신 원장은 기업 국제화 지원을 주제로 첸탕구 현장 조사를 이끌었습니다.", "시장 조사와 위험 대응을 프랑스 및 프랑스어권 아프리카 대상 비즈니스 프랑스어, 국경 간 금융, 규정 준수 교육과 연결하는 방안을 논의했습니다."] },
+  { slug: "2024-wuxin-finance-french-lecture", category: "강연", title: "강연의 밤: 금융 혁신과 프랑스어권 국경 간 금융 인재", summary: "우신 교수가 금융 혁신, 프랑스어권 시장, 융합 인재 양성을 소개했습니다.", content: ["2024년 3월 28일 우신 교수는 금융 혁신, 위험 인식, 국경 간 비즈니스의 관계를 설명했습니다.", "프랑스와 프랑스어권 아프리카를 예로 들어 언어 역량을 금융, 규정 준수, 문화 간 소통과 함께 발전시켜야 한다고 강조했습니다."] },
 ];
 
 const imageByChineseCategory: Record<string, string> = {
@@ -59,7 +64,11 @@ const imageByChineseCategory: Record<string, string> = {
 
 const copyBySlug = new Map(copies.map((copy) => [copy.slug, copy]));
 
-export type KoNewsItem = KoNewsCopy & { date: string; image: string };
+export type KoNewsItem = KoNewsCopy & {
+  date: string;
+  image: string;
+  source?: { label: string; href: string };
+};
 
 export const koNews: KoNewsItem[] = news.map((source) => {
   const copy = copyBySlug.get(source.slug);
@@ -67,7 +76,8 @@ export const koNews: KoNewsItem[] = news.map((source) => {
   return {
     ...copy,
     date: source.date,
-    image: imageByChineseCategory[source.category] ?? "/images/student-collaboration.png",
+    source: source.source,
+    image: source.image ?? imageByChineseCategory[source.category] ?? "/images/student-collaboration.png",
   };
 });
 

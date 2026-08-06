@@ -69,7 +69,7 @@ export default async function NewsDetailPage({
       <article className="shell max-w-4xl py-20">
         <div className="relative aspect-[16/9] overflow-hidden bg-[#0b2f5b]">
           <Image
-            src={newsImages[item.category] || "/images/student-collaboration.png"}
+            src={item.image || newsImages[item.category] || "/images/student-collaboration.png"}
             alt={item.title}
             fill
             className="object-cover"
@@ -83,10 +83,43 @@ export default async function NewsDetailPage({
           {item.content.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
+          {item.source && (
+            <p className="mt-10 border-t border-slate-200 pt-6 text-sm text-slate-500">
+              来源：{" "}
+              <a
+                href={item.source.href}
+                target="_blank"
+                rel="noreferrer"
+                className="font-medium text-[#174f8f] underline decoration-[#c99b48]/60 underline-offset-4"
+              >
+                {item.source.label} ↗
+              </a>
+            </p>
+          )}
           <p className="mt-10 border-l-2 border-[#c99b48] pl-5 text-sm text-slate-500">
             课程、公开课与语言文化活动信息会持续发布在新闻动态中，也可通过电话或邮箱咨询近期安排。
           </p>
         </div>
+        {item.gallery && item.gallery.length > 0 && (
+          <div className="mt-14 grid gap-6 sm:grid-cols-2">
+            {item.gallery.map((photo) => (
+              <figure key={photo.src}>
+                <div className="relative aspect-[4/3] overflow-hidden bg-[#0b2f5b]">
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, 440px"
+                  />
+                </div>
+                <figcaption className="mt-3 text-xs leading-6 text-slate-400">
+                  {photo.alt}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        )}
       </article>
     </>
   );

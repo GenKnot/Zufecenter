@@ -27,7 +27,7 @@ export function Footer() {
           <p className="mt-6 max-w-md text-sm leading-7 text-white/62">
             {localized
               ? localized.footerText
-              : "十余年专注语言教育，以分级课程、专业教学与持续反馈，服务学生、职场人士及企事业单位的多元学习目标。"}
+              : "十一年专注语言教育，以分级课程、专业教学与持续反馈，服务学生、职场人士及企事业单位的多元学习目标。"}
           </p>
         </div>
         <div>

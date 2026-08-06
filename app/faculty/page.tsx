@@ -1,6 +1,7 @@
 import { PageHero } from "@/components/PageHero";
 import { HubCards } from "@/components/HubCards";
 import { facultyPages } from "@/data/content";
+import { facultyProfilesZh } from "@/data/faculty-profiles";
 import { createPageMetadata } from "@/lib/site-metadata";
 
 export const metadata = createPageMetadata(
@@ -8,51 +9,6 @@ export const metadata = createPageMetadata(
   "了解英语、法语、日语、韩语教学团队，以及中心的共同备课、课堂观察与课程质量机制。",
   "/faculty",
 );
-
-const facultyProfiles = [
-  {
-    name: "陈新民",
-    role: "英语课程负责人",
-    focus: "通用英语、商务沟通、学术表达",
-    experience: "10 年语言教学经验",
-    bio: "长期负责英语分级课程与职场沟通课程设计，关注学员从基础表达走向真实场景应用的能力提升。",
-  },
-  {
-    name: "王利明",
-    role: "考试与升学辅导教师",
-    focus: "雅思衔接、英语写作、面试表达",
-    experience: "12 年教学与备考辅导经验",
-    bio: "擅长把考试目标拆解为可执行的阶段任务，帮助学员在语言能力、答题方法和学习节奏之间建立清楚路径。",
-  },
-  {
-    name: "林嘉怡",
-    role: "法语教学教师",
-    focus: "法语入门、DELF 准备、文化专题",
-    experience: "9 年法语教学经验",
-    bio: "课程重视语音基础和实际交流，把法语文化、城市生活与课堂任务结合起来，让初学者稳步建立表达信心。",
-  },
-  {
-    name: "赵明远",
-    role: "日语教学教师",
-    focus: "日语分级进阶、JLPT、文化实践",
-    experience: "11 年日语教学经验",
-    bio: "熟悉从五十音到中高级表达的学习难点，善于用结构化讲解和主题任务帮助学员形成持续进阶能力。",
-  },
-  {
-    name: "李若晴",
-    role: "韩语教学教师",
-    focus: "韩语入门、生活会话、TOPIK 训练",
-    experience: "8 年韩语教学经验",
-    bio: "注重发音、句型和礼貌表达的系统训练，通过生活情境、影视材料和文化活动提升课堂参与度。",
-  },
-  {
-    name: "金贤宇",
-    role: "跨文化项目教师",
-    focus: "语言实践、文化活动、主题工作坊",
-    experience: "10 年跨文化课程经验",
-    bio: "参与语言角、文化体验和短期工作坊设计，帮助学员把课堂所学转化为更自然的交流和展示能力。",
-  },
-];
 
 export default function FacultyPage() {
   return (
@@ -78,11 +34,11 @@ export default function FacultyPage() {
               <span className="eyebrow">Faculty members</span>
               <h2 className="section-title">教师代表</h2>
               <p className="section-copy">
-                中心教师覆盖英语、法语、日语、韩语及跨文化实践方向，既承担课堂教学，也参与课程建设、学习反馈和活动设计。
+                本次公开展示的四位教师均来自法语教学团队，覆盖分级教学、国际测评、专业法语、学术语言与跨文化沟通等方向。
               </p>
             </div>
-            <div className="grid gap-px overflow-hidden border border-slate-200 bg-slate-200 md:grid-cols-2 xl:grid-cols-3">
-              {facultyProfiles.map((teacher) => (
+            <div className="grid gap-px overflow-hidden border border-slate-200 bg-slate-200 md:grid-cols-2">
+              {facultyProfilesZh.map((teacher) => (
                 <article key={teacher.name} className="bg-white p-8">
                   <p className="text-xs font-semibold tracking-[0.14em] text-[#174f8f]">
                     {teacher.experience}

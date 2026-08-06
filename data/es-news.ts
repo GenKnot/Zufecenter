@@ -1,4 +1,5 @@
 import { news } from "@/data/site";
+import { supplementalNewsCopies } from "@/data/supplemental-news-localizations";
 
 type EsNewsCopy = {
   slug: string;
@@ -9,6 +10,7 @@ type EsNewsCopy = {
 };
 
 const copies: EsNewsCopy[] = [
+  ...supplementalNewsCopies.es,
   { slug: "2026-spring-english-corner", category: "Actividad del centro", title: "Rincón de inglés de primavera: de la vida urbana a la comunicación intercultural", summary: "Los estudiantes usaron la vida urbana y la comunicación intercultural como puntos de partida para debates naturales y tareas en grupo.", content: ["El rincón de inglés de primavera comenzó con preguntas familiares sobre el campus, los barrios y la vida urbana cotidiana antes de abordar las diferencias de comunicación entre culturas.", "La actividad forma parte del esfuerzo continuo del centro por ofrecer un espacio relajado donde los estudiantes puedan expresarse más allá del libro de texto, responder a los demás y desarrollar su confianza mediante la práctica regular."] },
   { slug: "2026-french-salon-spring", category: "Comunidad lingüística", title: "El salón francés de primavera comienza con 'Mi ciudad'", summary: "Fotografías, mapas y descripciones cortas ayudaron a los estudiantes a presentar una ciudad familiar y a practicar las preguntas de seguimiento.", content: ["Los participantes trajeron imágenes o mapas de lugares que conocían y usaron un francés accesible para describir calles, monumentos y recuerdos personales.", "El salón mantiene las tareas lo suficientemente pequeñas como para que los estudiantes en desarrollo puedan participar, mientras deja espacio para que los hablantes más seguros hagan preguntas y amplíen la conversación."] },
   { slug: "2025-business-writing-workshop", category: "Actualización del curso", title: "Taller de redacción profesional de otoño: correos electrónicos más claros y apropiados", summary: "Casos de correos electrónicos reales ayudaron a los estudiantes a organizar la información, elegir un tono apropiado y comunicarse de manera más eficiente.", content: ["El taller examinó los asuntos de los correos, las solicitudes, los seguimientos, los mensajes difíciles y la diferencia entre la directividad y la brusquedad innecesaria.", "Los participantes revisaron ejemplos en varias rondas, usando la retroalimentación para hacer cada mensaje más claro, conciso y mejor adaptado a su lector."] },
@@ -39,6 +41,9 @@ const copies: EsNewsCopy[] = [
   { slug: "2016-first-language-corner", category: "Actividad del centro", title: "El rincón de idiomas del fin de semana se convierte en una actividad regular", summary: "Un rincón de idiomas semanal recurrente dio a los estudiantes más oportunidades para expresarse más allá de las clases.", content: ["La actividad usaba temas accesibles e intercambios en pequeños grupos para que los participantes en diferentes etapas pudieran unirse.", "Su propósito no era el rendimiento en los exámenes, sino el desarrollo gradual de la confianza y la interacción mediante el uso genuino."] },
   { slug: "2015-first-study-sharing", category: "Memoria del centro", title: "El primer intercambio de métodos de aprendizaje de inglés reúne a profesores y estudiantes", summary: "Los participantes debatieron sobre el vocabulario, la práctica de la comprensión auditiva y las formas realistas de organizar el tiempo de estudio.", content: ["Los profesores compartieron enfoques prácticos mientras los estudiantes comparaban lo que había y no había funcionado en sus propias rutinas.", "El intercambio estableció un patrón temprano para el centro: la enseñanza se extiende más allá de la clase cuando los estudiantes pueden preguntar, reflexionar y aprender unos de otros."] },
   { slug: "2015-course-launch", category: "Memoria del centro", title: "Los primeros cursos de desarrollo lingüístico del centro comienzan", summary: "Los cursos de desarrollo en inglés y de idioma introductorio comenzaron a partir de las necesidades prácticas de los primeros estudiantes.", content: ["El primer ciclo de cursos combinó la enseñanza de idiomas con pequeñas actividades de aprendizaje y una estrecha atención a los comentarios de los participantes.", "Esas primeras clases comenzaron el trabajo continuo del centro de desarrollar cursos y apoyo en torno a cómo los estudiantes realmente usan el idioma."] },
+  { slug: "2026-wuxin-zhejiang-finance-forum", category: "Actividades del decano", title: "El profesor Wu Xin participa en el Foro de Finanzas e Inversión de Zhejiang", summary: "El decano Wu Xin presentó la cooperación en finanzas internacionales y la formación interdisciplinaria con francés.", content: ["El 17 de enero de 2026, el profesor Wu Xin participó en el XIX Foro de Finanzas e Inversión de Zhejiang y en la reunión anual de la Sociedad de Finanzas Internacionales de Zhejiang.", "Propuso integrar finanzas, comunicación en francés y competencia intercultural para apoyar a empresas de Zhejiang en mercados francófonos."] },
+  { slug: "2025-wuxin-qiantang-research", category: "Actividades del decano", title: "Una visita a Qiantang estudia el apoyo a empresas que salen al exterior", summary: "El decano Wu Xin trató la investigación, la prevención de riesgos y los servicios en francés.", content: ["El 2 de abril de 2025, Wu Xin encabezó una visita de investigación al distrito de Qiantang centrada en la internacionalización empresarial.", "El diálogo vinculó los estudios de mercado y la gestión de riesgos con el francés profesional, las finanzas transfronterizas y el cumplimiento en Francia y África francófona."] },
+  { slug: "2024-wuxin-finance-french-lecture", category: "Conferencia", title: "Noche de conferencia: innovación financiera y talento francófono transfronterizo", summary: "El profesor Wu Xin habló de innovación financiera, mercados francófonos y formación interdisciplinaria.", content: ["El 28 de marzo de 2024, el profesor Wu Xin explicó la relación entre innovación financiera, gestión del riesgo y actividad transfronteriza.", "Con Francia y África francófona como contexto, señaló que el francés debe avanzar junto con las finanzas, el cumplimiento y la comunicación intercultural."] },
 ];
 
 const imageByChineseCategory: Record<string, string> = {
@@ -59,7 +64,11 @@ const imageByChineseCategory: Record<string, string> = {
 
 const copyBySlug = new Map(copies.map((copy) => [copy.slug, copy]));
 
-export type EsNewsItem = EsNewsCopy & { date: string; image: string };
+export type EsNewsItem = EsNewsCopy & {
+  date: string;
+  image: string;
+  source?: { label: string; href: string };
+};
 
 export const esNews: EsNewsItem[] = news.map((source) => {
   const copy = copyBySlug.get(source.slug);
@@ -67,7 +76,8 @@ export const esNews: EsNewsItem[] = news.map((source) => {
   return {
     ...copy,
     date: source.date,
-    image: imageByChineseCategory[source.category] ?? "/images/student-collaboration.png",
+    source: source.source,
+    image: source.image ?? imageByChineseCategory[source.category] ?? "/images/student-collaboration.png",
   };
 });
 

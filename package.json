@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "node scripts/localize-static-html-lang.mjs",
+    "audit:export": "node scripts/audit-static-export.mjs",
     "start": "next start",
     "lint": "eslint ."
   },

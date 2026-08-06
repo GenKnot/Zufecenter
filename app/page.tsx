@@ -8,6 +8,7 @@ import {
   resourcePages,
 } from "@/data/content";
 import { news } from "@/data/site";
+import { selectHomepageNews } from "@/data/news-utils";
 import { createPageMetadata } from "@/lib/site-metadata";
 
 export const metadata = createPageMetadata(
@@ -17,8 +18,8 @@ export const metadata = createPageMetadata(
 );
 
 const stats = [
-  { value: "10+", label: "年教学与服务经验" },
-  { value: "10,000+", label: "累计服务学员" },
+  { value: "11", label: "年教学与服务经验" },
+  { value: "13,000+", label: "累计服务学员" },
   { value: "4", label: "核心语种方向" },
   { value: "26", label: "分级与专项班型" },
 ];
@@ -31,6 +32,8 @@ const languageMarks: Record<string, string> = {
 };
 
 export default function HomePage() {
+  const recentNews = selectHomepageNews(news);
+
   return (
     <>
       <section className="relative min-h-[720px] overflow-hidden bg-[#071f3e] text-white">
@@ -127,7 +130,7 @@ export default function HomePage() {
         <div className="shell grid gap-12 lg:grid-cols-[0.84fr_1.16fr] lg:items-center">
           <div>
             <span className="eyebrow">About us</span>
-            <h2 className="section-title">十余年，把语言教育做成一件长期的事</h2>
+            <h2 className="section-title">十一年，把语言教育做成一件长期的事</h2>
             <p className="section-copy">
               从最初的英语课程与学习小组，到今天覆盖四个语种、多个级别和应用方向的课程体系，我们始终关注一件事：学过之后，能否更自信、更准确地表达。
             </p>
@@ -257,7 +260,7 @@ export default function HomePage() {
                 </p>
                 <h2 className="mt-3 font-serif text-4xl font-semibold">教学研究</h2>
                 <p className="mt-4 max-w-md text-sm leading-7 text-white/68">
-                  从课堂问题出发研究方法、更新课程，把十余年的教学经验沉淀为可验证、可延续的专业标准。
+                  从课堂问题出发研究方法、更新课程，把十一年的教学经验沉淀为可验证、可延续的专业标准。
                 </p>
                 <span className="mt-6 text-sm font-semibold">进入栏目 →</span>
               </div>
@@ -293,7 +296,7 @@ export default function HomePage() {
         <div className="shell grid gap-14 lg:grid-cols-[0.72fr_1.28fr]">
           <div>
             <span className="eyebrow">News & archive</span>
-            <h2 className="section-title">十余年的学习现场，汇成一部成长档案</h2>
+            <h2 className="section-title">十一年的学习现场，汇成一部成长档案</h2>
             <p className="section-copy">
               开班、语言角、公开课与教学研讨，记录着课程如何成熟、教师如何精进，也记录着一届届学员如何走得更远。
             </p>
@@ -305,7 +308,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div>
-            {news.slice(0, 6).map((item) => (
+            {recentNews.map((item) => (
               <NewsCard key={item.slug} item={item} />
             ))}
           </div>
@@ -327,8 +330,8 @@ export default function HomePage() {
               查看资源中心 →
             </Link>
           </div>
-          <div className="mt-10 grid gap-px bg-white/12 md:grid-cols-4">
-            {resourcePages.map((item) => (
+          <div className="mt-10 grid gap-px bg-white/12 md:grid-cols-3">
+            {resourcePages.filter((item) => item.slug !== "downloads").map((item) => (
               <Link
                 key={item.slug}
                 href={`/resources/${item.slug}`}

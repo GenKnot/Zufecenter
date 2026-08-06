@@ -26,6 +26,16 @@ export function localeHome(locale: Locale) {
   return locale === "zh" ? "/" : `/${locale}/`;
 }
 
+export function localePath(pathname: string, locale: Locale) {
+  const segments = pathname.split("/").filter(Boolean);
+  const currentLocale = segments[0] && isLocale(segments[0]) && segments[0] !== "zh";
+  const resolvedSegments = currentLocale ? segments.slice(1) : segments;
+  const pageSegments = resolvedSegments[0] === "_not-found" ? [] : resolvedSegments;
+  const pagePath = pageSegments.length > 0 ? `/${pageSegments.join("/")}/` : "/";
+
+  return locale === "zh" ? pagePath : `/${locale}${pagePath}`;
+}
+
 export function localizedHref(locale: Locale, href: string) {
   if (locale === "zh") return href;
   if (href.startsWith("#")) return `${localeHome(locale)}${href}`;
@@ -145,13 +155,13 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
       { label: "Contact", href: "/contact" },
     ],
     stats: [
-      { value: "10+", label: "years of teaching" },
-      { value: "10,000+", label: "learners served" },
+      { value: "11", label: "years of teaching" },
+      { value: "13,000+", label: "learners served" },
       { value: "4", label: "languages" },
       { value: "26", label: "course formats" },
     ],
     aboutEyebrow: "About the center",
-    aboutTitle: "A decade of steady, practical language education",
+    aboutTitle: "Eleven years of steady, practical language education",
     aboutText:
       "Working with the Zheshang Capital Market Research Institute at Zhejiang University of Finance and Economics, the center serves students, professionals and organizations. Our teaching combines clear progression, purposeful practice and feedback learners can act on.",
     coursesEyebrow: "Language programs",
@@ -262,13 +272,13 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
       { label: "Contact", href: "/contact" },
     ],
     stats: [
-      { value: "10+", label: "ans d’enseignement" },
-      { value: "10 000+", label: "apprenants accompagnés" },
+      { value: "11", label: "ans d’enseignement" },
+      { value: "13 000+", label: "apprenants accompagnés" },
       { value: "4", label: "langues" },
       { value: "26", label: "formats de cours" },
     ],
     aboutEyebrow: "À propos du centre",
-    aboutTitle: "Plus de dix ans d’enseignement attentif et concret",
+    aboutTitle: "Onze ans d’enseignement attentif et concret",
     aboutText:
       "En collaboration avec l’Institut de recherche sur les marchés de capitaux Zheshang de l’Université des finances et de l’économie du Zhejiang, le centre accompagne étudiants, professionnels et organisations grâce à des parcours progressifs, une pratique active et des retours précis.",
     coursesEyebrow: "Programmes de langues",
@@ -379,13 +389,13 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
       { label: "お問い合わせ", href: "/contact" },
     ],
     stats: [
-      { value: "10+", label: "年の教育実績" },
-      { value: "10,000+", label: "受講者数" },
+      { value: "11", label: "年の教育実績" },
+      { value: "13,000+", label: "受講者数" },
       { value: "4", label: "対応言語" },
       { value: "26", label: "クラス形式" },
     ],
     aboutEyebrow: "センターについて",
-    aboutTitle: "十年以上、着実で実践的な語学教育を",
+    aboutTitle: "11年間、着実で実践的な語学教育を",
     aboutText:
       "浙江財経大学浙商資本市場研究院との協力のもと、学生、社会人、組織を対象に語学教育を行っています。明確な到達目標、実践的な課題、次の学びにつながるフィードバックを大切にしています。",
     coursesEyebrow: "語学プログラム",
@@ -496,13 +506,13 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
       { label: "문의", href: "/contact" },
     ],
     stats: [
-      { value: "10+", label: "년 교육 경험" },
-      { value: "10,000+", label: "누적 학습자" },
+      { value: "11", label: "년 교육 경험" },
+      { value: "13,000+", label: "누적 학습자" },
       { value: "4", label: "교육 언어" },
       { value: "26", label: "수업 유형" },
     ],
     aboutEyebrow: "센터 소개",
-    aboutTitle: "10년 넘게 이어 온 꾸준하고 실용적인 언어교육",
+    aboutTitle: "11년간 이어 온 꾸준하고 실용적인 언어교육",
     aboutText:
       "저장재경대학교 저장상인 자본시장 연구원과 협력하여 학생, 직장인, 기관을 위한 언어교육을 제공합니다. 명확한 단계, 실제 활용, 구체적인 피드백을 통해 학습자가 자신의 성장을 확인하도록 돕습니다.",
     coursesEyebrow: "언어 프로그램",
@@ -530,7 +540,7 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
     ctaText: "현재 수준, 목표, 가능한 시간을 알려 주시면 적절한 시작점을 함께 찾겠습니다.",
     ctaButton: "센터에 문의하기",
     footerText:
-      "10년 넘게 개인과 기관을 위한 체계적인 언어 과정과 학습 지원을 제공해 왔습니다.",
+      "11년간 개인과 기관을 위한 체계적인 언어 과정과 학습 지원을 제공해 왔습니다.",
     quickLinks: "바로가기",
     contact: "문의",
     consultation: "과정 상담",
@@ -613,13 +623,13 @@ export const localizedLandings: Record<ForeignLocale, LocalizedLanding> = {
       { label: "Contacto", href: "/contact" },
     ],
     stats: [
-      { value: "10+", label: "años de enseñanza" },
-      { value: "10.000+", label: "estudiantes atendidos" },
+      { value: "11", label: "años de enseñanza" },
+      { value: "13.000+", label: "estudiantes atendidos" },
       { value: "4", label: "idiomas" },
       { value: "26", label: "modalidades de curso" },
     ],
     aboutEyebrow: "Sobre el centro",
-    aboutTitle: "Más de una década de enseñanza práctica y constante",
+    aboutTitle: "Once años de enseñanza práctica y constante",
     aboutText:
       "En colaboración con el Instituto de Investigación del Mercado de Capitales Zheshang de la Universidad de Finanzas y Economía de Zhejiang, atendemos a estudiantes, profesionales y organizaciones con itinerarios progresivos, práctica útil y orientación concreta.",
     coursesEyebrow: "Programas de idiomas",

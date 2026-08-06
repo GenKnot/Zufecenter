@@ -79,7 +79,7 @@ export default function ContactPage() {
                     alt="语言中心微信二维码"
                     width={220}
                     height={300}
-                    className="mt-4 w-full max-w-[220px] border border-slate-200 bg-white"
+                    className="mt-4 h-auto w-full max-w-[220px] border border-slate-200 bg-white"
                   />
                 </div>
               )}

@@ -25,7 +25,7 @@ const contextCopy: Record<
 > = {
   about: {
     overview: "进一步了解中心",
-    caption: "十余年的课程、教研与学习服务，共同构成今天的中心。",
+    caption: "十一年的课程、教研与学习服务，共同构成今天的中心。",
     ctaTitle: "想进一步了解语言中心？",
     ctaText: "无论是课程咨询、来访交流还是合作洽谈，我们都愿意从一次具体沟通开始。",
     ctaLabel: "联系语言中心",

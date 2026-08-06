@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   localeFromPathname,
-  localeHome,
+  localePath,
   localeLabels,
   locales,
 } from "@/data/i18n";
@@ -39,7 +39,7 @@ export function LanguageSwitcher({ light = false }: { light?: boolean }) {
         {locales.map((locale) => (
           <Link
             key={locale}
-            href={localeHome(locale)}
+            href={localePath(pathname, locale)}
             hrefLang={localeLabels[locale].htmlLang}
             className={`block px-4 py-2.5 text-xs transition hover:bg-slate-50 ${
               locale === current ? "font-semibold text-[#174f8f]" : ""

@@ -6,7 +6,7 @@ import { frCourses, findFrCourse } from "@/data/fr-courses";
 import { esCourses, findEsCourse } from "@/data/es-courses";
 import { jaCourses, findJaCourse } from "@/data/ja-courses";
 import { koCourses, findKoCourse } from "@/data/ko-courses";
-import { localizedUi, type ForeignLocale } from "@/data/i18n";
+import { localizedLandings, localizedUi, type ForeignLocale } from "@/data/i18n";
 import { siteConfig } from "@/data/site-config";
 
 export const dynamicParams = false;
@@ -35,12 +35,13 @@ export async function generateMetadata({
     : locale === "ko" ? findKoCourse(language, slug)
     : undefined;
   if (!course) return {};
+  const localizedSiteName = localizedLandings[locale as ForeignLocale].siteName;
 
   const canonical = `${siteConfig.url}/${locale}/languages/${language}/${slug}/`;
   const chinese = `${siteConfig.url}/languages/${language}/${slug}/`;
 
   return {
-    title: { absolute: `${course.title} | Language Center · ZUFE` },
+    title: { absolute: `${course.title} | ${localizedSiteName}` },
     description: course.summary,
     keywords: siteConfig.keywords,
     alternates: {
@@ -59,7 +60,7 @@ export async function generateMetadata({
       type: "website",
       locale,
       url: canonical,
-      siteName: "Language Center · ZUFE",
+      siteName: localizedSiteName,
       title: course.title,
       description: course.summary,
       images: [{ url: siteConfig.ogImage, alt: course.title }],

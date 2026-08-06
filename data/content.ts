@@ -462,12 +462,32 @@ export const practicePages: ContentPage[] = [
 
 export const aboutPages: ContentPage[] = [
   {
+    slug: "leadership",
+    title: "中心院长 武鑫教授",
+    english: "Leadership",
+    summary: "武鑫教授现任本中心院长，推动金融创新、国际化服务与法语复合型人才培养。",
+    heroImage: "/images/leadership/wu-xin.jpg",
+    intro: ["武鑫教授现任中心院长、浙江财经大学浙商资本市场研究院执行院长，长期从事金融创新、资本市场与社会经济发展研究。"],
+    highlights: [
+      { title: "金融创新", text: "关注金融创新、资本市场与社会经济发展。" },
+      { title: "国际服务", text: "服务浙江企业国际化与跨境金融实践。" },
+      { title: "法语融合", text: "推动法语、金融与跨文化能力协同培养。" },
+      { title: "产学协同", text: "连接高校、政府、行业与企业资源。" },
+    ],
+    sections: [
+      { title: "教学与人才培养", paragraphs: ["以真实国际商务和跨境金融场景为背景，倡导语言能力与金融、合规及跨文化素养同步发展。"] },
+      { title: "研究与社会服务", paragraphs: ["围绕资本市场、科技金融、地方治理和企业国际化开展研究与咨询服务。"] },
+    ],
+    image: "/images/news/wuxin-finance-forum-2026-a.jpg",
+    imageAlt: "武鑫教授在浙江金融投资论坛会场作报告",
+  },
+  {
     slug: "history",
     title: "发展历程",
     english: "Our History",
-    summary: "十余年里，课程形式不断变化，认真服务每一位学习者这件事没有变。",
+    summary: "十一年里，课程形式不断变化，认真服务每一位学习者这件事没有变。",
     heroImage: "/images/campus-autumn.png",
-    intro: ["中心的语言培训与学习服务始于2015年前后。最初从英语课程和小型学习活动起步，后来加入小语种、职业沟通、线上学习和企业培训，累计服务学员超过一万人。"],
+    intro: ["中心的语言培训与学习服务始于2015年前后。最初从英语课程和小型学习活动起步，后来加入小语种、职业沟通、线上学习和企业培训，累计服务学员超过13,000人。"],
     highlights: [
       { title: "2015—2017", text: "从基础英语课程和周末学习活动起步。" },
       { title: "2018—2020", text: "职业语言、小语种和线上支持拓展。" },
@@ -476,7 +496,7 @@ export const aboutPages: ContentPage[] = [
     ],
     sections: [
       { title: "从课堂和社群开始", paragraphs: ["最初的课程回应的是学员最直接的英语学习需求。随着一批批学员的反馈和口碑积累，考试辅导、职业沟通与小语种兴趣课程陆续加入。"] },
-      { title: "十余年的日常", paragraphs: ["开班、答疑、语言角、阅读分享和教师研讨，这些看似普通的日常，构成了中心真正的历史，也让课程一届比一届更成熟。"] },
+      { title: "十一年的日常", paragraphs: ["开班、答疑、语言角、阅读分享和教师研讨，这些看似普通的日常，构成了中心真正的历史，也让课程一届比一届更成熟。"] },
     ],
     image: "/images/classroom-students.jpg",
   },

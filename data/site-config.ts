@@ -10,7 +10,7 @@ export const siteConfig = {
   englishName: "Language Center · ZUFE",
   tagline: "让语言成为通往更大世界的能力",
   description:
-    "十余年语言教育与学习服务经验，提供英语、法语、日语、韩语分级课程、考试升学辅导、职业语言与组织定制培训。",
+    "十一年语言教育与学习服务经验，累计服务学员超过13,000人，提供英语、法语、日语、韩语分级课程、考试升学辅导、职业语言与组织定制培训。",
   ogImage: "/images/og-default.png",
   keywords: [
     "浙江财经大学语言中心",

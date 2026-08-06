@@ -1,4 +1,5 @@
 import { news } from "@/data/site";
+import { supplementalNewsCopies } from "@/data/supplemental-news-localizations";
 
 type FrNewsCopy = {
   slug: string;
@@ -9,6 +10,7 @@ type FrNewsCopy = {
 };
 
 const copies: FrNewsCopy[] = [
+  ...supplementalNewsCopies.fr,
   { slug: "2026-spring-english-corner", category: "Activité du centre", title: "Coin anglais de printemps : de la vie urbaine à la communication interculturelle", summary: "Les apprenants ont utilisé la vie urbaine et la communication interculturelle comme points de départ pour des discussions naturelles et des tâches de groupe.", content: ["Le coin anglais de printemps a commencé par des questions familières sur le campus, les quartiers et la vie urbaine quotidienne avant d'aborder les différences de communication entre les cultures.", "L'activité fait partie de l'effort continu du centre pour offrir un espace détendu où les apprenants peuvent s'exprimer au-delà du manuel, répondre aux autres et développer leur confiance par une pratique régulière."] },
   { slug: "2026-french-salon-spring", category: "Communauté linguistique", title: "Le salon français de printemps commence par « Ma ville »", summary: "Des photographies, des cartes et de courtes descriptions ont aidé les apprenants à présenter une ville familière et à pratiquer les questions de suivi.", content: ["Les participants ont apporté des images ou des cartes de lieux qu'ils connaissaient et ont utilisé un français accessible pour décrire les rues, les monuments et les souvenirs personnels.", "Le salon maintient les tâches assez petites pour que les apprenants en développement puissent y participer, tout en laissant de la place aux locuteurs plus confiants pour poser des questions et étendre la conversation."] },
   { slug: "2025-business-writing-workshop", category: "Mise à jour du cours", title: "Atelier de rédaction professionnelle d'automne : des e-mails plus clairs et plus appropriés", summary: "Des cas d'e-mails réels ont aidé les apprenants à organiser l'information, choisir un ton approprié et communiquer plus efficacement.", content: ["L'atelier a examiné les objets d'e-mails, les demandes, les suivis, les messages difficiles et la différence entre la directivité et l'impolitesse inutile.", "Les participants ont révisé des exemples en plusieurs étapes, utilisant les retours pour rendre chaque message plus clair, plus concis et mieux adapté à son lecteur."] },
@@ -39,6 +41,9 @@ const copies: FrNewsCopy[] = [
   { slug: "2016-first-language-corner", category: "Activité du centre", title: "Le coin de langues du week-end devient une activité régulière", summary: "Un coin de langues hebdomadaire récurrent a donné aux apprenants plus d'occasions de s'exprimer au-delà des cours.", content: ["L'activité utilisait des thèmes accessibles et des échanges en petits groupes pour que les participants à différents stades puissent y participer.", "Son objectif n'était pas la performance aux examens, mais le développement progressif de la confiance et de l'interaction par un usage authentique."] },
   { slug: "2015-first-study-sharing", category: "Mémoire du centre", title: "Le premier échange de méthodes d'apprentissage en anglais réunit enseignants et apprenants", summary: "Les participants ont discuté du vocabulaire, de la pratique de l'écoute et des façons réalistes d'organiser le temps d'étude.", content: ["Les enseignants ont partagé des approches pratiques tandis que les apprenants comparaient ce qui avait et n'avait pas fonctionné dans leurs propres routines.", "L'échange a établi un modèle précoce pour le centre : l'enseignement s'étend au-delà de la classe quand les apprenants peuvent poser des questions, réfléchir et apprendre les uns des autres."] },
   { slug: "2015-course-launch", category: "Mémoire du centre", title: "Les premiers cours de développement linguistique du centre débutent", summary: "Les cours de développement en anglais et de langue introductive ont commencé à partir des besoins pratiques des premiers apprenants.", content: ["Le premier cycle de cours a combiné l'enseignement des langues avec de petites activités d'apprentissage et une attention étroite aux retours des participants.", "Ces premières classes ont commencé le travail continu du centre de développer des cours et un soutien autour de la façon dont les apprenants utilisent réellement la langue."] },
+  { slug: "2026-wuxin-zhejiang-finance-forum", category: "Activités du doyen", title: "Le professeur Wu Xin participe au Forum du Zhejiang sur la finance et l'investissement", summary: "Le doyen Wu Xin a présenté la coopération en finance internationale et plaidé pour des profils interdisciplinaires francophones.", content: ["Le 17 janvier 2026, le professeur Wu Xin a participé au 19e Forum du Zhejiang sur la finance et l'investissement et à la réunion annuelle 2025 de la Société du Zhejiang de finance internationale.", "Il a proposé de mieux associer finance, communication en français et compétences interculturelles au service des entreprises du Zhejiang actives sur les marchés francophones."] },
+  { slug: "2025-wuxin-qiantang-research", category: "Activités du doyen", title: "Une mission à Qiantang étudie l'accompagnement international des entreprises", summary: "Le doyen Wu Xin a échangé sur la recherche, la prévention des risques et les services en français.", content: ["Le 2 avril 2025, Wu Xin a conduit une mission d'étude dans le district de Qiantang consacrée aux entreprises qui se développent à l'international.", "Les échanges ont relié études de marché et gestion des risques au français professionnel, à la finance transfrontalière et à la conformité en France et en Afrique francophone."] },
+  { slug: "2024-wuxin-finance-french-lecture", category: "Conférence", title: "Soirée conférence : innovation financière et talents francophones transfrontaliers", summary: "Le professeur Wu Xin a abordé l'innovation financière, les marchés francophones et la formation interdisciplinaire.", content: ["Le 28 mars 2024, le professeur Wu Xin a expliqué les liens entre innovation financière, maîtrise des risques et activités transfrontalières.", "À partir de la France et de l'Afrique francophone, il a montré que le français doit se développer avec les compétences en finance, conformité et communication interculturelle."] },
 ];
 
 const imageByChineseCategory: Record<string, string> = {
@@ -59,7 +64,11 @@ const imageByChineseCategory: Record<string, string> = {
 
 const copyBySlug = new Map(copies.map((copy) => [copy.slug, copy]));
 
-export type FrNewsItem = FrNewsCopy & { date: string; image: string };
+export type FrNewsItem = FrNewsCopy & {
+  date: string;
+  image: string;
+  source?: { label: string; href: string };
+};
 
 export const frNews: FrNewsItem[] = news.map((source) => {
   const copy = copyBySlug.get(source.slug);
@@ -67,7 +76,8 @@ export const frNews: FrNewsItem[] = news.map((source) => {
   return {
     ...copy,
     date: source.date,
-    image: imageByChineseCategory[source.category] ?? "/images/student-collaboration.png",
+    source: source.source,
+    image: source.image ?? imageByChineseCategory[source.category] ?? "/images/student-collaboration.png",
   };
 });
 

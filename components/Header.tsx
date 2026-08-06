@@ -20,7 +20,9 @@ const localizedNavSupplements: Record<
   ForeignLocale,
   {
     home: string;
+    menuLabel: string;
     dynamicResources: string;
+    aboutLeadership: NavChild;
     aboutOrganization: NavChild;
     programYoungLearners: NavChild;
     programWorkshops: NavChild;
@@ -34,7 +36,9 @@ const localizedNavSupplements: Record<
 > = {
   en: {
     home: "Home",
+    menuLabel: "Open navigation menu",
     dynamicResources: "News & Resources",
+    aboutLeadership: { label: "Center leadership", href: "/about/leadership", description: "Professor Wu Xin, Dean of the center" },
     aboutOrganization: { label: "Organization", href: "/about/organization", description: "Teaching, research and learner support" },
     programYoungLearners: { label: "Young learners", href: "/programs/young-learners", description: "Interest, confidence and long-term growth" },
     programWorkshops: { label: "Short workshops", href: "/programs/workshops", description: "Focused modules for specific needs" },
@@ -47,7 +51,9 @@ const localizedNavSupplements: Record<
   },
   fr: {
     home: "Accueil",
+    menuLabel: "Ouvrir le menu de navigation",
     dynamicResources: "Actualités et ressources",
+    aboutLeadership: { label: "Direction du centre", href: "/about/leadership", description: "Le professeur Wu Xin, doyen du centre" },
     aboutOrganization: { label: "Organisation", href: "/about/organization", description: "Enseignement, recherche et accompagnement" },
     programYoungLearners: { label: "Jeunes apprenants", href: "/programs/young-learners", description: "Intérêt, confiance et progression durable" },
     programWorkshops: { label: "Ateliers courts", href: "/programs/workshops", description: "Modules ciblés selon les besoins" },
@@ -60,7 +66,9 @@ const localizedNavSupplements: Record<
   },
   ja: {
     home: "ホーム",
+    menuLabel: "ナビゲーションメニューを開く",
     dynamicResources: "ニュース・資料",
+    aboutLeadership: { label: "センター長", href: "/about/leadership", description: "センター長 武鑫教授" },
     aboutOrganization: { label: "組織体制", href: "/about/organization", description: "教育、研究、学習支援の体制" },
     programYoungLearners: { label: "青少年向け", href: "/programs/young-learners", description: "興味、自信、長期的な成長" },
     programWorkshops: { label: "短期ワークショップ", href: "/programs/workshops", description: "目的別の集中モジュール" },
@@ -73,7 +81,9 @@ const localizedNavSupplements: Record<
   },
   ko: {
     home: "홈",
+    menuLabel: "탐색 메뉴 열기",
     dynamicResources: "뉴스·자료",
+    aboutLeadership: { label: "센터 원장", href: "/about/leadership", description: "센터 원장 우신 교수" },
     aboutOrganization: { label: "조직 구조", href: "/about/organization", description: "교육, 연구, 학습 지원 체계" },
     programYoungLearners: { label: "청소년 성장", href: "/programs/young-learners", description: "흥미, 자신감, 장기 성장" },
     programWorkshops: { label: "단기 워크숍", href: "/programs/workshops", description: "목적별 집중 모듈" },
@@ -86,7 +96,9 @@ const localizedNavSupplements: Record<
   },
   es: {
     home: "Inicio",
+    menuLabel: "Abrir el menú de navegación",
     dynamicResources: "Noticias y recursos",
+    aboutLeadership: { label: "Dirección del centro", href: "/about/leadership", description: "El profesor Wu Xin, director del centro" },
     aboutOrganization: { label: "Organización", href: "/about/organization", description: "Docencia, investigación y apoyo al aprendizaje" },
     programYoungLearners: { label: "Jóvenes estudiantes", href: "/programs/young-learners", description: "Interés, confianza y crecimiento a largo plazo" },
     programWorkshops: { label: "Talleres breves", href: "/programs/workshops", description: "Módulos enfocados para necesidades específicas" },
@@ -122,6 +134,7 @@ function buildLocalizedNavigation(locale: ForeignLocale, nav: NavItem[]): NavIte
       href: "/about",
       children: [
         childOrFallback(about, "/about", { label: about?.label ?? "About", href: "/about" }),
+        labels.aboutLeadership,
         childOrFallback(about, "/about/history", { label: "History", href: "/about/history" }),
         childOrFallback(about, "/about/approach", { label: "Approach", href: "/about/approach" }),
         labels.aboutOrganization,
@@ -223,7 +236,7 @@ export function Header() {
                 setOpen((value) => !value);
                 setExpanded(null);
               }}
-              aria-label={localized ? "Open navigation menu" : "打开导航菜单"}
+              aria-label={localized ? localizedNavSupplements[locale as ForeignLocale].menuLabel : "打开导航菜单"}
               aria-expanded={open}
             >
               <span className="text-xl">{open ? "×" : "☰"}</span>

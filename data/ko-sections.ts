@@ -5,7 +5,7 @@ export const koSections: LocalizedSection[] = [
   {
     slug: "about",
     eyebrow: "센터 소개",
-    title: "10년간의 일상적인 실천으로 다져진 언어교육",
+    title: "11년간의 일상적인 실천으로 다져진 언어교육",
     description:
       "학생, 직장인, 기관을 위한 언어교육에서 센터의 역할, 역사, 교육 방식을 소개합니다.",
     introTitle: "꾸준한 수업과 학습자의 성장으로 만들어진 센터",

@@ -36,6 +36,11 @@ import { koNews } from "@/data/ko-news";
 
 export const dynamic = "force-static";
 
+const newsDateMetadata = (date: string) =>
+  /^\d{4}-\d{2}-\d{2}$/.test(date)
+    ? { lastModified: new Date(date) }
+    : {};
+
 const staticRoutes = [
   "",
   "/about",
@@ -120,7 +125,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const englishNewsPages: MetadataRoute.Sitemap = englishNews.map((item) => ({
     url: `${siteConfig.url}/en/news/${item.slug}/`,
-    lastModified: new Date(item.date),
+    ...newsDateMetadata(item.date),
     changeFrequency: "yearly",
     priority: 0.5,
   }));
@@ -160,7 +165,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteConfig.url}/${locale}/news/`, lastModified: now, changeFrequency: "weekly" as const, priority: 0.6 },
     ...newsItems.map((item) => ({
       url: `${siteConfig.url}/${locale}/news/${item.slug}/`,
-      lastModified: new Date(item.date),
+      ...newsDateMetadata(item.date),
       changeFrequency: "yearly" as const,
       priority: 0.5,
     })),

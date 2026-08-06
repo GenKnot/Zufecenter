@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { ContentDetail } from "@/components/ContentDetail";
+import { WuXinProfile } from "@/components/WuXinProfile";
 import { aboutPages } from "@/data/content";
 import { createPageMetadata } from "@/lib/site-metadata";
 
@@ -34,6 +35,8 @@ export default async function AboutDetailPage({
       backHref="/about"
       backLabel="返回关于中心"
       context="about"
-    />
+    >
+      {page.slug === "leadership" && <WuXinProfile />}
+    </ContentDetail>
   );
 }

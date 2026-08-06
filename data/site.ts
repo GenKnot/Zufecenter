@@ -1,3 +1,5 @@
+import { expandedNewsContent } from "@/data/expanded-news-content";
+
 export type NewsItem = {
   slug: string;
   date: string;
@@ -6,6 +8,9 @@ export type NewsItem = {
   summary: string;
   imageBrief: string;
   content: string[];
+  image?: string;
+  gallery?: { src: string; alt: string }[];
+  source?: { label: string; href: string };
 };
 
 export const programs = [
@@ -431,6 +436,194 @@ const newsItems: NewsItem[] = [
       "这场小型分享活动也成为中心后来持续组织学习社群活动的起点之一。",
     ],
   },
+  {
+    slug: "2026-wuxin-zhejiang-finance-forum",
+    date: "2026-01-18",
+    category: "院长动态",
+    title: "武鑫教授参加第十九届浙江金融投资论坛暨2025年浙江省国际金融学术年会",
+    summary: "中心院长武鑫教授在年度工作报告中介绍国际金融学术联盟建设，并提出加强法语复合型国际金融人才培养。",
+    imageBrief: "武鑫教授在浙江金融投资论坛会场作报告。",
+    content: [
+      "2026年1月17日，第十九届浙江金融投资论坛暨2025年浙江省国际金融学术年会在浙江工商大学举行。中心院长、浙江财经大学浙商资本市场研究院执行院长武鑫教授参加会议，并以浙江省国际金融学会副秘书长、浙江省国际金融学术联盟秘书长身份作2025年度工作报告。",
+      "报告回顾了联盟在学术交流、人才培养与服务地方开放型经济等方面的工作。武鑫教授提出，应面向浙商企业跨境金融与国际经营需求，加快培养兼具金融专业能力、法语沟通能力与跨文化素养的复合型人才。",
+      "论坛以“新阶段新理念新格局：金融高质量发展赋能浙江现代化先行”为主题，围绕创新驱动、绿色发展、共同富裕以及“十五五”时期金融创新与新质生产力发展展开研讨。来自省级有关部门、金融机构、会员单位、高校院所、企业和媒体的200余名代表参加会议。",
+      "会上发布《浙江省创新发展报告（2025年卷）》，武鑫教授担任执行主编。报告覆盖金融政策、服务、市场、产品和金融科技创新，并关注浙江与法语区国家的跨境金融合作，为法语国际金融交流和复合型人才培养提供研究参考。会议同时公布2025年度科研成果奖。",
+      "本届论坛由浙江省社会科学界联合会指导，科技金融时报、浙江省国际金融学会、浙江金融投资论坛组委会和浙江工商大学金融学院（浙商资产管理学院）联合主办。会议把学术研究、地方金融实践与国际化人才培养放在同一场交流中讨论，也为中心进一步连接法语教育与跨境金融需求提供了现实背景。",
+    ],
+  },
+  {
+    slug: "2025-wuxin-qiantang-research",
+    date: "2025-04-04",
+    category: "院长动态",
+    title: "浙资院赴钱塘区调研，共绘企业出海新蓝图",
+    summary: "武鑫院长带队赴钱塘区调研，围绕企业出海研究、风险提示与法语市场服务讨论合作方向。",
+    imageBrief: "武鑫院长一行在钱塘区开展企业出海专题座谈。",
+    content: [
+      "2025年4月2日，武鑫院长带队赴杭州市钱塘区开展专题调研，与有关单位围绕金砖国家特殊经济区中国合作中心服务企业国际化发展进行交流。",
+      "座谈聚焦企业出海中的宏观环境分析、需求诊断和风险预警。武鑫院长介绍研究院的课题调研方案：一方面研究中东、东南亚等传统市场，形成通用区域投资参考；另一方面面向法国和参与金砖合作的西非法语国家开展专项国别研究。",
+      "针对企业在商务谈判、当地政策解读和跨境合规中遇到的语言障碍，调研方案提出通过企业访谈与问卷进一步识别需求，并联合政府部门和企业开展定制化培训。跨境商务法语、法语区金融规则解读和常态化法语学习服务将与市场研究、风险提示同步推进。",
+      "调研团队还考察了金砖国家合作中心展厅与江海之城规划展厅。双方围绕企业ODI审批辅导、跨境投资风险预警、法语区市场专项服务和企业出海蓝皮书等方向交换意见，希望把高校研究、平台资源和企业实际需求连接起来。",
+      "后续合作将继续探索面向企业管理人员的法语公益沙龙和复合型人才培养活动，通过语言、金融、合规与跨文化能力的协同训练，为钱塘企业进入法国及法语非洲市场提供更具体的支持。",
+    ],
+  },
+  {
+    slug: "2024-wuxin-finance-french-lecture",
+    date: "2024-03-29",
+    category: "讲座活动",
+    title: "讲座之夜：金融创新与法语复合型跨境金融人才培育",
+    summary: "武鑫教授从金融创新、法语市场与企业国际化需求出发，分享复合型跨境金融人才培养思路。",
+    imageBrief: "武鑫教授在专题讲座中讲解金融创新与法语人才培养。",
+    content: [
+      "2024年3月28日，武鑫教授作“金融创新与法语复合型跨境金融人才培育”专题讲座，从金融活动的基本逻辑出发，介绍金融创新、风险识别与跨境经营之间的联系。",
+      "讲座开始前，现场介绍了武鑫教授在金融市场、金融创新、公共政策研究和国际金融学术交流方面的工作。他长期推动校园法语教育与金融课程结合，并关注浙江企业进入法语区市场时面临的人才与智库服务需求。",
+      "武鑫教授以投资方、经营主体和储蓄供给方之间的资源跨期配置为例解释金融运行的基础。他指出，跨境投融资天然伴随时间、地域、制度和文化差异，法语沟通能力不足会放大信息理解与交易执行中的风险。",
+      "结合巴黎资本市场、西非货币联盟以及法语区金融规则，讲座说明了语言在政策研判、尽职调查、合同沟通和风险识别中的作用。金融知识提供分析框架，法语能力则帮助从业者直接理解当地信息并减少跨境沟通损耗。",
+      "在人力资本投资部分，武鑫教授以学习工具、海外深造和职业能力积累为例，引导学生区分短期消费与长期能力建设。对于希望赴法国高校学习或进入法资金融机构工作的学生，系统的法语训练是专业发展路径中的重要基础。",
+      "讲座还讨论了企业家创新、海外经营评价和合规管理。浙江企业进入法国及法语非洲市场时，需要既理解金融与产业逻辑、又能阅读当地规则并开展商务沟通的复合型人才，从而降低市场调研、谈判和项目落地中的交易成本。",
+      "在直接融资、间接融资与金融中介的讲解中，武鑫教授进一步联系法资银行、证券市场和跨境投融资场景，说明专业能力与语言能力如何共同服务国际业务。讲座最后鼓励学生把法语学习放进长期职业规划，在持续积累中形成能够服务企业国际化的综合能力。",
+    ],
+  },
+  {
+    slug: "past-chinese-culture-week",
+    date: "2025",
+    category: "活动回顾",
+    title: "往期汉语文化周回顾：从汉字、诗词到城市生活",
+    summary: "通过汉字、诗词、节日与城市街景影像，学习者在语言练习中认识中国文化与日常生活。",
+    imageBrief: "汉语文化周回顾：学生观看中国城市街景并进行汉字与诗词体验，课堂纪实，16:9。",
+    image: "/images/classroom-students.jpg",
+    content: [
+      "本文整理中心往期汉语文化周的常见活动内容，是对历次学习体验的综合回顾，不对应某一个单独日期。活动从汉字构形、日常问候、成语与诗词片段出发，让不同基础的学习者都能找到可以参与的入口。",
+      "文化介绍延伸到传统节日、饮食习惯、城市生活和地方历史。师生一起观看街道、市场、校园与公共交通等影像资料，再用关键词、短句和小组讨论交流观察，让语言与真实生活建立联系。",
+      "书写体验、诗词朗读、文化问答和情景表达穿插进行。活动既帮助国际学习者理解中国文化，也让中文母语学生从新的视角重新认识熟悉的生活。",
+    ],
+  },
+  {
+    slug: "past-french-culture-week",
+    date: "2024",
+    category: "活动回顾",
+    title: "往期法语文化周回顾：沿着街道影像认识法语世界",
+    summary: "从法国及其他法语国家和地区的历史、城市与日常生活出发，在影像和交流中体验法语文化。",
+    imageBrief: "法语文化周回顾：投影展示法语城市街道，学生围绕地图与明信片交流，16:9。",
+    image: "/images/news/french-open-class-2024-a.png",
+    content: [
+      "本文回顾中心往期法语文化周的代表性内容，不对应某一次活动的具体日期。活动以法国以及其他法语国家和地区为线索，介绍历史背景、城市风貌、节庆传统和多样的法语文化。",
+      "课堂通过街道、咖啡馆、市场、博物馆和公共空间的短片与图片，让参与者观察法语在真实环境中的使用方式。地图、明信片和城市路线也被用来练习问候、方向、地点与个人感受等基础表达。",
+      "语音体验、文化问答和小组分享让零基础学习者也能参与其中。活动希望呈现的不是单一印象，而是一个跨越欧洲、非洲和其他地区的多元法语世界。",
+    ],
+  },
+  {
+    slug: "past-japanese-culture-week",
+    date: "2023",
+    category: "活动回顾",
+    title: "往期日语文化周回顾：从城市街景到节庆礼仪",
+    summary: "借助日本城市、校园与节庆影像，参与者在基础表达、文字和礼仪体验中理解语言背后的生活语境。",
+    imageBrief: "日语文化周回顾：学生观看日本城市与校园影像，练习文字和日常会话，16:9。",
+    image: "/images/news/japanese-reading-2025-a.jpg",
+    content: [
+      "本文整理中心往期日语文化周的活动片段，是综合性回顾，不对应单一日期。内容从日本历史、城市发展、四季节庆和校园生活切入，把语言知识放进具体文化情境。",
+      "师生共同观看街道、车站、商店、社区与校园等影像，比较不同城市的空间与生活节奏，并围绕问候、出行、购物和自我介绍练习基础表达。",
+      "假名书写、礼仪观察、文化问答和情景对话构成互动环节。参与者不仅学习词句，也讨论表达方式与社会习惯之间的联系。",
+    ],
+  },
+  {
+    slug: "past-korean-culture-week",
+    date: "2022",
+    category: "活动回顾",
+    title: "往期韩语文化周回顾：文字、街景与日常生活",
+    summary: "从韩文字母、历史文化到城市街景与现代生活，参与者通过观看、书写和对话感受韩语学习的乐趣。",
+    imageBrief: "韩语文化周回顾：学生进行韩文书写并观看韩国城市街景影片，课堂纪实，16:9。",
+    image: "/images/news/korean-culture-2025-a.jpg",
+    content: [
+      "本文综合回顾中心往期韩语文化周的代表性活动，不对应某一个单独日期。课程从韩文字母的构成与书写入门，逐步延伸到韩国历史、传统节日和现代社会生活。",
+      "活动选取首尔及其他城市的街道、市场、公共交通和校园影像，引导参与者观察真实场景中的文字与表达。饮食、礼仪、音乐和影视也成为理解日常文化的讨论入口。",
+      "姓名书写、基础对话、文化问答和小组分享交替进行，让零基础参与者能够边看、边写、边说，在轻松互动中建立继续学习的兴趣。",
+    ],
+  },
+  {
+    slug: "2019-business-chinese-corner",
+    date: "2019-12-06",
+    category: "校园语言文化",
+    title: "中外学生在商务汉语角共读《蒹葭》",
+    summary: "十名国际学生与中国学生在商务汉语角共读《诗经》，通过诗歌朗读与交流感受汉语之美。",
+    imageBrief: "中外学生汉语角活动：围坐共读中国古典诗歌，校园交流纪实，16:9。",
+    image: "/images/student-discussion.jpg",
+    content: [
+      "2019年12月5日，浙江财经大学国际学院十名国际学生受邀参加商务汉语角活动，与中国学生共同诵读《诗经》名篇《蒹葭》。活动以经典诗歌为媒介，在朗读、解释和交流中体会汉语的音韵与意境。",
+      "这场校内语言文化交流让国际学生接触中国古典文学，也为中外学生提供了面对面沟通、互相学习的机会。本条为校园语言文化记录，活动主办信息以原始报道为准。",
+    ],
+    source: {
+      label: "浙江财经大学国际学院：我院留学生受邀参加商务汉语角活动",
+      href: "https://sie.zufe.edu.cn/info/1026/1203.htm",
+    },
+  },
+  {
+    slug: "2024-international-student-recitation",
+    date: "2024-04-02",
+    category: "校园语言文化",
+    title: "国际学生在“诗画江南·大美中华”朗诵大赛中获奖",
+    summary: "学校组织国际学生参加中文朗诵比赛，以诗歌表达呈现语言学习成果与对中国文化的理解。",
+    imageBrief: "国际学生中文朗诵活动：舞台朗诵与校园指导场景，16:9。",
+    image: "/images/university-lecture.jpg",
+    content: [
+      "浙江财经大学国际学生参加“诗画江南·大美中华”朗诵大赛并取得一等奖、三等奖和优秀奖各一项。学校在赛前组织选拔与指导，帮助参赛学生打磨中文发音、文本理解和舞台表达。",
+      "朗诵比赛把语言学习、文学阅读与文化体验结合起来，也为国际学生展示中文学习成果提供了舞台。本条为学校国际学生语言文化活动记录，奖项与组织信息依据校方公开报道整理。",
+    ],
+    source: {
+      label: "浙江财经大学国际学院：“诗画江南·大美中华”朗诵大赛报道",
+      href: "https://sie.zufe.edu.cn/info/1026/3209.htm",
+    },
+  },
+  {
+    slug: "2024-language-career-fair",
+    date: "2024-11-18",
+    category: "校园动态",
+    title: "中外学生专场招聘会连接语言能力与国际化职业发展",
+    summary: "五十余家学校和用人单位带来六百余个岗位，面向中外学生展示多语言学习与国际化发展的多种路径。",
+    imageBrief: "高校中外学生专场招聘会：学生与学校、用人单位现场交流，纪实横图，16:9。",
+    image: "/images/graduation.jpg",
+    content: [
+      "2024年11月12日，浙江财经大学举办中外学生专场招聘会。五十余家学校和用人单位提供六百余个岗位，现场设置招聘、留学直通与国际教育交流区域，为具有外语和跨文化背景的学生提供多样选择。",
+      "活动把语言能力与升学、就业和国际交流放在同一场景中，帮助学生更直观地理解多语言能力如何服务未来发展。本条为校园动态记录，参会规模与活动设置依据校方公开报道整理。",
+    ],
+    source: {
+      label: "浙江财经大学国际学院：中外学生专场招聘会报道",
+      href: "https://sie.zufe.edu.cn/info/1026/2908.htm",
+    },
+  },
 ];
 
-export const news = newsItems.sort((a, b) => b.date.localeCompare(a.date));
+const imageBySlug: Record<string, string> = {
+  "2026-spring-english-corner": "/images/news/english-corner-2026.jpg",
+  "2026-french-salon-spring": "/images/news/french-salon-2026.jpg",
+  "2025-business-writing-workshop": "/images/news/business-writing-2025.jpg",
+  "2025-autumn-japanese-reading": "/images/news/japanese-reading-2025-a.jpg",
+  "2025-korean-culture-day": "/images/news/korean-culture-2025-a.jpg",
+  "2025-learning-plan-consultation": "/images/news/learning-consultation-2025.png",
+  "2024-multilingual-open-day": "/images/news/multilingual-open-day-2024.jpg",
+  "2024-autumn-placement": "/images/news/placement-2024.png",
+  "2024-teacher-open-class": "/images/news/teacher-open-class-2024-a.png",
+  "2024-french-open-class": "/images/news/french-open-class-2024-a.png",
+  "2022-online-course-review": "/images/news/online-course-review-2022.jpg",
+  "2015-first-study-sharing": "/images/news/study-sharing-2015.jpg",
+  "2026-wuxin-zhejiang-finance-forum": "/images/news/wuxin-finance-forum-2026-a.jpg",
+  "2025-wuxin-qiantang-research": "/images/news/wuxin-qiantang-2025.png",
+  "2024-wuxin-finance-french-lecture": "/images/news/wuxin-lecture-2024-a.jpg",
+};
+
+const galleryBySlug: Record<string, { src: string; alt: string }[]> = {
+  "2025-autumn-japanese-reading": [{ src: "/images/news/japanese-reading-2025-b.jpg", alt: "参与秋季日语共读的学员" }],
+  "2025-korean-culture-day": [{ src: "/images/news/korean-culture-2025-b.jpg", alt: "韩语文化体验日的饮食文化实践" }],
+  "2024-teacher-open-class": [{ src: "/images/news/teacher-open-class-2024-b.png", alt: "教师观摩并记录公开课" }],
+  "2024-french-open-class": [{ src: "/images/news/french-open-class-2024-b.jpg", alt: "法语入门公开课现场" }],
+  "2026-wuxin-zhejiang-finance-forum": [{ src: "/images/news/wuxin-finance-forum-2026-b.jpg", alt: "武鑫教授在论坛作年度工作报告" }],
+  "2024-wuxin-finance-french-lecture": [{ src: "/images/news/wuxin-lecture-2024-b.jpg", alt: "武鑫教授讲解金融创新与跨境金融人才培养" }],
+};
+
+export const news = newsItems
+  .map((item) => ({
+    ...item,
+    content: expandedNewsContent[item.slug] ?? item.content,
+    image: imageBySlug[item.slug] ?? item.image,
+    gallery: galleryBySlug[item.slug],
+  }))
+  .sort((a, b) => b.date.localeCompare(a.date));
