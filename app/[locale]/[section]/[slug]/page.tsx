@@ -281,7 +281,11 @@ export default async function EnglishContentDetailPage({
           alt=""
           fill
           priority
-          className="object-cover"
+          className={
+            detail.parent === "about" && detail.slug === "leadership"
+              ? "object-cover object-[58%_center] sm:object-[center_18%]"
+              : "object-cover"
+          }
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#071f3e]/95 via-[#071f3e]/76 to-[#071f3e]/30" />
