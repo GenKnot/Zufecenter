@@ -1,7 +1,27 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { NewsItem } from "@/data/site";
 
-type NewsCardItem = Pick<NewsItem, "slug" | "date" | "category" | "title" | "summary">;
+type NewsCardItem = Pick<
+  NewsItem,
+  "slug" | "date" | "category" | "title" | "summary" | "image"
+>;
+
+const fallbackImages: Record<string, string> = {
+  中心活动: "/images/student-collaboration.png",
+  语言社群: "/images/student-discussion.jpg",
+  课程动态: "/images/language-class.png",
+  文化体验: "/images/classroom-students.jpg",
+  公开课: "/images/modern-classroom.jpg",
+  教学研讨: "/images/meeting-room.jpg",
+  学员活动: "/images/student-collaboration.png",
+  教学服务: "/images/learning-consultation.png",
+  学习支持: "/images/study-desk.jpg",
+  专题工作坊: "/images/language-class.png",
+  定制培训: "/images/meeting-room.jpg",
+  中心记忆: "/images/classroom-students.jpg",
+  通知公告: "/images/library-hero.png",
+};
 
 export function NewsCard({
   item,
@@ -13,10 +33,24 @@ export function NewsCard({
   readLabel?: string;
 }) {
   const href = `${prefix}/news/${item.slug}`;
+  const image = item.image || fallbackImages[item.category] || "/images/student-collaboration.png";
 
   return (
     <article className="group border-t border-slate-200 py-6">
-      <div className="grid gap-4 sm:grid-cols-[120px_1fr_auto] sm:items-start">
+      <div className="grid gap-5 sm:grid-cols-[132px_112px_1fr_auto] sm:items-start">
+        <Link
+          href={href}
+          className="relative aspect-[4/3] overflow-hidden bg-[#0b2f5b]"
+          aria-label={`${readLabel} ${item.title}`}
+        >
+          <Image
+            src={image}
+            alt=""
+            fill
+            className="object-cover transition duration-500 group-hover:scale-[1.04]"
+            sizes="(max-width: 640px) 100vw, 132px"
+          />
+        </Link>
         <div>
           <time className="font-serif text-xl text-[#174f8f]">
             {item.date.slice(0, 7).replace("-", ".")}

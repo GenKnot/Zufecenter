@@ -66,9 +66,7 @@ const contentRoutes = [
   ...facultyPages.map((page) => `/faculty/${page.slug}`),
   ...researchPages.map((page) => `/research/${page.slug}`),
   ...collaborationPages.map((page) => `/collaboration/${page.slug}`),
-  ...resourcePages
-    .filter((page) => page.slug !== "downloads")
-    .map((page) => `/resources/${page.slug}`),
+  ...resourcePages.map((page) => `/resources/${page.slug}`),
   ...news.map((item) => `/news/${item.slug}`),
 ];
 
@@ -156,7 +154,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),
-    ...details.filter((d) => d.slug !== "downloads").map((d) => ({
+    ...details.map((d) => ({
       url: `${siteConfig.url}/${locale}/${d.parent}/${d.slug}/`,
       lastModified: now,
       changeFrequency: "monthly" as const,

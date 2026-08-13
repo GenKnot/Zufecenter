@@ -2,6 +2,7 @@ import { PageHero } from "@/components/PageHero";
 import { HubCards } from "@/components/HubCards";
 import { facultyPages } from "@/data/content";
 import { facultyProfilesZh } from "@/data/faculty-profiles";
+import { currentOfferings, currentTerm } from "@/data/operations";
 import { createPageMetadata } from "@/lib/site-metadata";
 
 export const metadata = createPageMetadata(
@@ -28,6 +29,34 @@ export default function FacultyPage() {
             </p>
           </div>
           <HubCards items={facultyPages} basePath="/faculty" />
+
+          <div className="mt-20 border-y border-slate-200 py-12">
+            <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+              <div>
+                <span className="eyebrow">Autumn teaching</span>
+                <h2 className="section-title">本学期教学安排</h2>
+                <p className="section-copy">
+                  秋季课程由各方向教学组共同承担。开课前完成课程衔接、材料确认与学员基础沟通。
+                </p>
+              </div>
+              <p className="text-xs text-slate-400">更新于 {currentTerm.updatedAt}</p>
+            </div>
+            <div className="mt-10 grid gap-px overflow-hidden border border-slate-200 bg-slate-200 md:grid-cols-2 lg:grid-cols-3">
+              {currentOfferings.map((offering) => (
+                <article key={offering.code} className="min-h-48 bg-white p-6">
+                  <div className="flex items-center justify-between gap-4">
+                    <span className="text-xs font-semibold text-[#174f8f]">{offering.code}</span>
+                    <span className="text-xs text-[#a77c31]">{offering.status}</span>
+                  </div>
+                  <h3 className="mt-5 font-serif text-xl font-semibold">{offering.teacher}</h3>
+                  <p className="mt-3 text-sm leading-7 text-slate-500">{offering.title}</p>
+                  <p className="mt-4 text-xs leading-6 text-slate-400">
+                    {offering.startDate} · {offering.schedule}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </div>
 
           <div className="mt-20">
             <div className="mb-10 max-w-3xl">

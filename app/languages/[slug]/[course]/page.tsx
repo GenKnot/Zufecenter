@@ -6,6 +6,7 @@ import {
   languageCourses,
 } from "@/data/language-courses";
 import { siteConfig } from "@/data/site-config";
+import { currentTerm, findCurrentOffering } from "@/data/operations";
 import { localizedAlternates } from "@/lib/site-metadata";
 
 export function generateStaticParams() {
@@ -64,6 +65,7 @@ export default async function LanguageCoursePage({
   const { slug, course } = await params;
   const item = findLanguageCourse(slug, course);
   if (!item) notFound();
+  const offering = findCurrentOffering(item.code);
 
   return (
     <>
@@ -110,7 +112,7 @@ export default async function LanguageCoursePage({
             ["标准周期", item.duration],
             ["学习频率", item.frequency],
             ["建议班额", item.classSize],
-            ["招生状态", "招生中"],
+            ["招生状态", offering?.status || "接受意向登记"],
           ].map(([label, value]) => (
             <div
               key={label}
@@ -122,6 +124,45 @@ export default async function LanguageCoursePage({
               <p className="mt-2 font-serif text-xl font-semibold">{value}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="border-b border-slate-200 bg-white py-12">
+        <div className="shell">
+          <div className="grid gap-px overflow-hidden border border-slate-200 bg-slate-200 md:grid-cols-4">
+            <div className="bg-[#0b2f5b] p-6 text-white">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#ead7ad]">
+                {currentTerm.eyebrow}
+              </p>
+              <p className="mt-3 font-serif text-xl font-semibold">
+                {offering ? "本期排课" : "本期意向登记"}
+              </p>
+            </div>
+            <div className="bg-[#f7f5f0] p-6">
+              <p className="text-xs text-slate-400">开课与上课时间</p>
+              <p className="mt-2 text-sm font-semibold leading-6 text-slate-700">
+                {offering ? `${offering.startDate} · ${offering.schedule}` : "根据登记人数与学习基础协调排课"}
+              </p>
+            </div>
+            <div className="bg-[#f7f5f0] p-6">
+              <p className="text-xs text-slate-400">教学安排</p>
+              <p className="mt-2 text-sm font-semibold leading-6 text-slate-700">
+                {offering?.teacher || `${item.languageLabel}教学组`}
+              </p>
+            </div>
+            <div className="bg-[#f7f5f0] p-6">
+              <p className="text-xs text-slate-400">教学地点</p>
+              <p className="mt-2 text-sm font-semibold leading-6 text-slate-700">
+                {offering?.location || "文一西路教学点 · 开班后确认教室"}
+              </p>
+            </div>
+          </div>
+          <div className="mt-4 flex flex-col justify-between gap-2 text-xs text-slate-400 sm:flex-row">
+            <p>安排更新于 {currentTerm.updatedAt}，具体开班信息以报名通知为准。</p>
+            <Link href="/contact" className="font-semibold text-[#174f8f]">
+              预约分班沟通 →
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -10,10 +10,6 @@ export const metadata = createPageMetadata(
 );
 
 export default function ResourcesPage() {
-  const visibleResourcePages = resourcePages.filter(
-    (page) => page.slug !== "downloads",
-  );
-
   return (
     <>
       <PageHero
@@ -30,7 +26,7 @@ export default function ResourcesPage() {
               这里集中整理学习指南、常见问题和数字学习支持。你可以先了解课程，也可以找到适合自己日常使用的练习工具。
             </p>
           </div>
-          <HubCards items={visibleResourcePages} basePath="/resources" />
+          <HubCards items={resourcePages} basePath="/resources" />
         </div>
       </section>
     </>

@@ -176,15 +176,12 @@ function LocalizedFrenchFacultyTeachers({ locale }: { locale: ForeignLocale }) {
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  const visibleDetails = <T extends { slug: string }>(items: T[]) =>
-    items.filter((item) => item.slug !== "downloads");
-
   return [
-    ...visibleDetails(englishContentDetails).map((d) => ({ locale: "en", section: d.parent, slug: d.slug })),
-    ...visibleDetails(frContentDetails).map((d) => ({ locale: "fr", section: d.parent, slug: d.slug })),
-    ...visibleDetails(esContentDetails).map((d) => ({ locale: "es", section: d.parent, slug: d.slug })),
-    ...visibleDetails(jaContentDetails).map((d) => ({ locale: "ja", section: d.parent, slug: d.slug })),
-    ...visibleDetails(koContentDetails).map((d) => ({ locale: "ko", section: d.parent, slug: d.slug })),
+    ...englishContentDetails.map((d) => ({ locale: "en", section: d.parent, slug: d.slug })),
+    ...frContentDetails.map((d) => ({ locale: "fr", section: d.parent, slug: d.slug })),
+    ...esContentDetails.map((d) => ({ locale: "es", section: d.parent, slug: d.slug })),
+    ...jaContentDetails.map((d) => ({ locale: "ja", section: d.parent, slug: d.slug })),
+    ...koContentDetails.map((d) => ({ locale: "ko", section: d.parent, slug: d.slug })),
   ];
 }
 
@@ -202,7 +199,6 @@ export async function generateMetadata({
     : locale === "ko" ? findKoContentDetail(section, slug)
     : undefined;
   if (!detail) return {};
-  if (detail.slug === "downloads") return {};
   const localizedSiteName = localizedLandings[locale as ForeignLocale].siteName;
 
   const canonical = `${siteConfig.url}/${locale}/${section}/${slug}/`;
@@ -260,7 +256,6 @@ export default async function EnglishContentDetailPage({
     : locale === "ko" ? findKoContentDetail(section, slug)
     : undefined;
   if (!detail) notFound();
-  if (detail.slug === "downloads") notFound();
 
   const foreignLocale = locale as ForeignLocale;
   const context = detail.parent === "about" && detail.slug === "leadership"

@@ -9,6 +9,11 @@ import {
 } from "@/data/content";
 import { news } from "@/data/site";
 import { selectHomepageNews } from "@/data/news-utils";
+import {
+  currentOfferings,
+  currentTerm,
+  upcomingActivities,
+} from "@/data/operations";
 import { createPageMetadata } from "@/lib/site-metadata";
 
 export const metadata = createPageMetadata(
@@ -126,6 +131,87 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-white py-24" id="autumn-2026">
+        <div className="shell">
+          <div className="grid gap-10 border-b border-slate-200 pb-10 lg:grid-cols-[1fr_0.82fr] lg:items-end">
+            <div>
+              <span className="eyebrow">{currentTerm.eyebrow}</span>
+              <h2 className="section-title">{currentTerm.title}</h2>
+              <p className="section-copy">{currentTerm.summary}</p>
+            </div>
+            <div className="grid grid-cols-2 gap-px bg-slate-200">
+              <div className="bg-[#f7f5f0] p-5">
+                <p className="text-[10px] font-semibold tracking-[0.14em] text-slate-400">
+                  咨询与测评
+                </p>
+                <p className="mt-2 text-sm font-semibold text-[#0b2f5b]">
+                  {currentTerm.consultationPeriod}
+                </p>
+              </div>
+              <div className="bg-[#f7f5f0] p-5">
+                <p className="text-[10px] font-semibold tracking-[0.14em] text-slate-400">
+                  秋季教学周期
+                </p>
+                <p className="mt-2 text-sm font-semibold text-[#0b2f5b]">
+                  {currentTerm.teachingPeriod}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {currentOfferings.map((offering) => (
+              <Link
+                key={offering.code}
+                href={offering.href}
+                className="group flex min-h-[300px] flex-col border border-slate-200 p-7 transition hover:-translate-y-1 hover:border-[#c99b48] hover:shadow-[0_18px_45px_rgba(7,31,62,0.08)]"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <span className="rounded-full bg-[#0b2f5b] px-3 py-1.5 text-[10px] font-semibold tracking-[0.12em] text-white">
+                      {offering.code}
+                    </span>
+                    <span className="ml-2 text-xs text-slate-400">
+                      {offering.language}
+                    </span>
+                  </div>
+                  <span className="text-xs font-semibold text-[#a77c31]">
+                    {offering.status}
+                  </span>
+                </div>
+                <h3 className="mt-7 font-serif text-2xl font-semibold text-[#11233e]">
+                  {offering.title}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-slate-500">
+                  {offering.note}
+                </p>
+                <dl className="mt-auto grid gap-2 border-t border-slate-100 pt-6 text-xs">
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-slate-400">开课</dt>
+                    <dd className="font-semibold text-slate-700">{offering.startDate}</dd>
+                  </div>
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-slate-400">时间</dt>
+                    <dd className="text-right font-semibold text-slate-700">{offering.schedule}</dd>
+                  </div>
+                  <div className="flex justify-between gap-4">
+                    <dt className="text-slate-400">教学</dt>
+                    <dd className="text-right font-semibold text-slate-700">{offering.teacher}</dd>
+                  </div>
+                </dl>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-7 flex flex-col justify-between gap-4 border-t border-slate-200 pt-6 text-xs text-slate-400 sm:flex-row sm:items-center">
+            <p>安排更新于 {currentTerm.updatedAt} · {currentTerm.placement}</p>
+            <Link href="/contact" className="font-semibold text-[#174f8f]">
+              预约分班与课程咨询 →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="py-24">
         <div className="shell grid gap-12 lg:grid-cols-[0.84fr_1.16fr] lg:items-center">
           <div>
@@ -239,6 +325,51 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="bg-[#071f3e] py-24 text-white">
+        <div className="shell">
+          <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ead7ad]">
+                Upcoming activities
+              </p>
+              <h2 className="mt-5 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
+                近期活动日历
+              </h2>
+              <p className="mt-5 max-w-md text-sm leading-8 text-white/62">
+                从课程说明、零基础体验到语言社群，新学期先通过一次真实参与找到适合自己的学习方式。
+              </p>
+              <Link href="/contact" className="mt-8 inline-block text-sm font-semibold text-[#ead7ad]">
+                咨询参与方式 →
+              </Link>
+            </div>
+            <div className="divide-y divide-white/12 border-y border-white/12">
+              {upcomingActivities.map((activity) => (
+                <article
+                  key={`${activity.date}-${activity.title}`}
+                  className="grid gap-5 py-7 sm:grid-cols-[90px_1fr_auto] sm:items-start"
+                >
+                  <div>
+                    <p className="font-serif text-3xl text-[#ead7ad]">{activity.date}</p>
+                    <p className="mt-1 text-xs text-white/42">{activity.day} · {activity.time}</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-semibold tracking-[0.14em] text-[#c99b48]">
+                      {activity.category}
+                    </p>
+                    <h3 className="mt-2 font-serif text-2xl font-semibold">{activity.title}</h3>
+                    <p className="mt-3 max-w-2xl text-sm leading-7 text-white/58">{activity.summary}</p>
+                    <p className="mt-3 text-xs text-white/38">地点：{activity.location}</p>
+                  </div>
+                  <span className="w-fit border border-[#c99b48]/50 px-3 py-2 text-xs text-[#ead7ad]">
+                    {activity.status}
+                  </span>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#f7f5f0] py-24">
         <div className="shell">
           <div className="grid gap-6 lg:grid-cols-2">
@@ -330,8 +461,8 @@ export default function HomePage() {
               查看资源中心 →
             </Link>
           </div>
-          <div className="mt-10 grid gap-px bg-white/12 md:grid-cols-3">
-            {resourcePages.filter((item) => item.slug !== "downloads").map((item) => (
+          <div className="mt-10 grid gap-px bg-white/12 md:grid-cols-2 lg:grid-cols-4">
+            {resourcePages.map((item) => (
               <Link
                 key={item.slug}
                 href={`/resources/${item.slug}`}
