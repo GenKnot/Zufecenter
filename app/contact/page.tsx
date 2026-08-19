@@ -35,6 +35,7 @@ export default function ContactPage() {
         eyebrow="CONTACT US"
         title="一次真诚交流，可能就是进步的起点"
         description="无论是个人学习、青少年课程、团体培训还是企业定制，先告诉我们你的目标，再一起找到合适的课程与节奏。"
+        image="/images/section-heroes/contact-hero.jpg"
       />
 
       <section className="py-24">

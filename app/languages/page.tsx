@@ -20,6 +20,7 @@ export default function LanguagesPage() {
         eyebrow="LANGUAGE PROGRAMS"
         title="四种语言，二十六条通往世界的进阶路径"
         description="从零基础、初级、中级到高级应用与考试专项，每个语种都有清晰的班级层级、阶段目标和衔接方向。"
+        image="/images/section-heroes/language-programs-hero.jpg"
       />
       <section className="border-b border-slate-200 bg-[#f7f5f0]">
         <div className="shell grid grid-cols-2 lg:grid-cols-4">

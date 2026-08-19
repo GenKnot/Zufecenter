@@ -1,7 +1,10 @@
 import { notFound } from "next/navigation";
 import { ContentDetail } from "@/components/ContentDetail";
+import { FacultyTeamPhoto } from "@/components/FacultyTeamPhoto";
+import { FacultyProfilesGrid } from "@/components/FacultyProfilesGrid";
 import { facultyPages } from "@/data/content";
 import { facultyProfilesZh } from "@/data/faculty-profiles";
+import type { AdditionalFacultyLanguage } from "@/data/additional-faculty-profiles";
 import { createPageMetadata } from "@/lib/site-metadata";
 
 function FrenchFacultyTeachers() {
@@ -15,6 +18,7 @@ function FrenchFacultyTeachers() {
             法语教学团队由课程负责人、分级课程教师和考试辅导教师共同组成，覆盖法语分级教学、国际测评备考、商务法语与跨文化交流等方向。
           </p>
         </div>
+        <FacultyTeamPhoto language="french" locale="zh" />
         <div className="grid gap-px overflow-hidden border border-slate-200 bg-slate-200 lg:grid-cols-2">
           {facultyProfilesZh.map((teacher) => (
             <article key={teacher.name} className="min-h-[420px] bg-white p-8">
@@ -70,6 +74,12 @@ export default async function FacultyDetailPage({
       context="faculty"
     >
       {slug === "french" && <FrenchFacultyTeachers />}
+      {slug !== "french" && (
+        <FacultyProfilesGrid
+          locale="zh"
+          language={slug as AdditionalFacultyLanguage}
+        />
+      )}
     </ContentDetail>
   );
 }

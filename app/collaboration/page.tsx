@@ -16,6 +16,7 @@ export default function CollaborationPage() {
         eyebrow="COLLABORATION"
         title="让语言教育连接校园、产业与更广阔的世界"
         description="中心积极开展与海外高校、官方教育机构及组织伙伴的深度合作，为华东地区师生构建高标准的国际语言提升与国际化测评平台。"
+        image="/images/section-heroes/collaboration-hero.jpg"
       />
       <section className="py-24">
         <div className="shell">

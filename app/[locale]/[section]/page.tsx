@@ -20,6 +20,30 @@ import { localizedFacultyProfiles } from "@/data/faculty-profiles";
 import { localizedLandings, localizedUi, type ForeignLocale } from "@/data/i18n";
 import { siteConfig } from "@/data/site-config";
 
+const sectionHeroImages: Record<string, string> = {
+  about: "/images/section-heroes/about-center-hero.jpg",
+  languages: "/images/section-heroes/language-programs-hero.jpg",
+  programs: "/images/section-heroes/programs-training-hero.jpg",
+  practice: "/images/section-heroes/learning-practice-hero.jpg",
+  faculty: "/images/section-heroes/faculty-hero.jpg",
+  research: "/images/section-heroes/teaching-research-hero.jpg",
+  collaboration: "/images/section-heroes/collaboration-hero.jpg",
+  resources: "/images/section-heroes/learning-resources-hero.jpg",
+  contact: "/images/section-heroes/contact-hero.jpg",
+};
+
+const sectionOverviewImages: Record<string, string> = {
+  about: "/images/generated/replacements/section-about-overview.webp",
+  languages: "/images/generated/replacements/section-languages-overview.webp",
+  programs: "/images/generated/replacements/section-programs-overview.webp",
+  practice: "/images/generated/replacements/section-practice-overview.webp",
+  faculty: "/images/generated/replacements/section-faculty-overview.webp",
+  research: "/images/generated/replacements/section-research-overview.webp",
+  collaboration: "/images/generated/replacements/section-collaboration-overview.webp",
+  resources: "/images/generated/replacements/section-resources-overview.webp",
+  contact: "/images/generated/replacements/section-contact-overview.webp",
+};
+
 const facultyShowcaseCopy: Record<
   ForeignLocale,
   { eyebrow: string; title: string; intro: string }
@@ -234,6 +258,7 @@ export default async function EnglishSectionPage({
         eyebrow={section.eyebrow}
         title={section.title}
         description={section.description}
+        image={sectionHeroImages[section.slug]}
       />
 
       <section className="py-24">
@@ -249,7 +274,7 @@ export default async function EnglishSectionPage({
           </div>
           <div className="relative min-h-[430px] overflow-hidden bg-[#0b2f5b]">
             <Image
-              src={section.image}
+              src={sectionOverviewImages[section.slug] ?? section.image}
               alt=""
               fill
               priority

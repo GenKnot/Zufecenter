@@ -13,6 +13,16 @@ export type NewsItem = {
   source?: { label: string; href: string };
 };
 
+export const illustrativeNewsSlugs = new Set([
+  "past-chinese-culture-week",
+  "past-french-culture-week",
+  "past-japanese-culture-week",
+  "past-korean-culture-week",
+  "2019-business-chinese-corner",
+  "2024-international-student-recitation",
+  "2024-language-career-fair",
+]);
+
 export const programs = [
   {
     code: "01",
@@ -392,7 +402,7 @@ const newsItems: NewsItem[] = [
     slug: "2018-french-interest-group",
     date: "2018-10-27",
     category: "课程动态",
-    title: "从 Bonjour 开始，法语兴趣小组迈过入门第一步",
+    title: "从 Bonjour 开始，法语兴趣小组迈出入门第一步",
     summary: "学员完成语音、问候、自我介绍和基础生活表达，形成继续学习的初步方法。",
     imageBrief: "早期法语兴趣小组：普通教室、纸质教材、黑板法语问候语，略有年代感，4:3。",
     content: [
@@ -490,7 +500,7 @@ const newsItems: NewsItem[] = [
     title: "往期汉语文化周回顾：从汉字、诗词到城市生活",
     summary: "通过汉字、诗词、节日与城市街景影像，学习者在语言练习中认识中国文化与日常生活。",
     imageBrief: "汉语文化周回顾：学生观看中国城市街景并进行汉字与诗词体验，课堂纪实，16:9。",
-    image: "/images/classroom-students.jpg",
+    image: "/images/generated/news/chinese-culture-week-illustration.png",
     content: [
       "本文整理中心往期汉语文化周的常见活动内容，是对历次学习体验的综合回顾，不对应某一个单独日期。活动从汉字构形、日常问候、成语与诗词片段出发，让不同基础的学习者都能找到可以参与的入口。",
       "文化介绍延伸到传统节日、饮食习惯、城市生活和地方历史。师生一起观看街道、市场、校园与公共交通等影像资料，再用关键词、短句和小组讨论交流观察，让语言与真实生活建立联系。",
@@ -504,7 +514,7 @@ const newsItems: NewsItem[] = [
     title: "往期法语文化周回顾：沿着街道影像认识法语世界",
     summary: "从法国及其他法语国家和地区的历史、城市与日常生活出发，在影像和交流中体验法语文化。",
     imageBrief: "法语文化周回顾：投影展示法语城市街道，学生围绕地图与明信片交流，16:9。",
-    image: "/images/news/french-open-class-2024-a.png",
+    image: "/images/generated/news/french-culture-week-illustration.png",
     content: [
       "本文回顾中心往期法语文化周的代表性内容，不对应某一次活动的具体日期。活动以法国以及其他法语国家和地区为线索，介绍历史背景、城市风貌、节庆传统和多样的法语文化。",
       "课堂通过街道、咖啡馆、市场、博物馆和公共空间的短片与图片，让参与者观察法语在真实环境中的使用方式。地图、明信片和城市路线也被用来练习问候、方向、地点与个人感受等基础表达。",
@@ -518,7 +528,7 @@ const newsItems: NewsItem[] = [
     title: "往期日语文化周回顾：从城市街景到节庆礼仪",
     summary: "借助日本城市、校园与节庆影像，参与者在基础表达、文字和礼仪体验中理解语言背后的生活语境。",
     imageBrief: "日语文化周回顾：学生观看日本城市与校园影像，练习文字和日常会话，16:9。",
-    image: "/images/news/japanese-reading-2025-a.jpg",
+    image: "/images/generated/news/japanese-culture-week-illustration.png",
     content: [
       "本文整理中心往期日语文化周的活动片段，是综合性回顾，不对应单一日期。内容从日本历史、城市发展、四季节庆和校园生活切入，把语言知识放进具体文化情境。",
       "师生共同观看街道、车站、商店、社区与校园等影像，比较不同城市的空间与生活节奏，并围绕问候、出行、购物和自我介绍练习基础表达。",
@@ -532,7 +542,7 @@ const newsItems: NewsItem[] = [
     title: "往期韩语文化周回顾：文字、街景与日常生活",
     summary: "从韩文字母、历史文化到城市街景与现代生活，参与者通过观看、书写和对话感受韩语学习的乐趣。",
     imageBrief: "韩语文化周回顾：学生进行韩文书写并观看韩国城市街景影片，课堂纪实，16:9。",
-    image: "/images/news/korean-culture-2025-a.jpg",
+    image: "/images/generated/news/korean-culture-week-illustration.png",
     content: [
       "本文综合回顾中心往期韩语文化周的代表性活动，不对应某一个单独日期。课程从韩文字母的构成与书写入门，逐步延伸到韩国历史、传统节日和现代社会生活。",
       "活动选取首尔及其他城市的街道、市场、公共交通和校园影像，引导参与者观察真实场景中的文字与表达。饮食、礼仪、音乐和影视也成为理解日常文化的讨论入口。",
@@ -546,7 +556,7 @@ const newsItems: NewsItem[] = [
     title: "中外学生在商务汉语角共读《蒹葭》",
     summary: "十名国际学生与中国学生在商务汉语角共读《诗经》，通过诗歌朗读与交流感受汉语之美。",
     imageBrief: "中外学生汉语角活动：围坐共读中国古典诗歌，校园交流纪实，16:9。",
-    image: "/images/student-discussion.jpg",
+    image: "/images/generated/news/business-chinese-corner-illustration.png",
     content: [
       "2019年12月5日，浙江财经大学国际学院十名国际学生受邀参加商务汉语角活动，与中国学生共同诵读《诗经》名篇《蒹葭》。活动以经典诗歌为媒介，在朗读、解释和交流中体会汉语的音韵与意境。",
       "这场校内语言文化交流让国际学生接触中国古典文学，也为中外学生提供了面对面沟通、互相学习的机会。本条为校园语言文化记录，活动主办信息以原始报道为准。",
@@ -563,7 +573,7 @@ const newsItems: NewsItem[] = [
     title: "国际学生在“诗画江南·大美中华”朗诵大赛中获奖",
     summary: "学校组织国际学生参加中文朗诵比赛，以诗歌表达呈现语言学习成果与对中国文化的理解。",
     imageBrief: "国际学生中文朗诵活动：舞台朗诵与校园指导场景，16:9。",
-    image: "/images/university-lecture.jpg",
+    image: "/images/generated/news/international-recitation-illustration.png",
     content: [
       "浙江财经大学国际学生参加“诗画江南·大美中华”朗诵大赛并取得一等奖、三等奖和优秀奖各一项。学校在赛前组织选拔与指导，帮助参赛学生打磨中文发音、文本理解和舞台表达。",
       "朗诵比赛把语言学习、文学阅读与文化体验结合起来，也为国际学生展示中文学习成果提供了舞台。本条为学校国际学生语言文化活动记录，奖项与组织信息依据校方公开报道整理。",
@@ -580,7 +590,7 @@ const newsItems: NewsItem[] = [
     title: "中外学生专场招聘会连接语言能力与国际化职业发展",
     summary: "五十余家学校和用人单位带来六百余个岗位，面向中外学生展示多语言学习与国际化发展的多种路径。",
     imageBrief: "高校中外学生专场招聘会：学生与学校、用人单位现场交流，纪实横图，16:9。",
-    image: "/images/graduation.jpg",
+    image: "/images/generated/news/language-career-fair-illustration.png",
     content: [
       "2024年11月12日，浙江财经大学举办中外学生专场招聘会。五十余家学校和用人单位提供六百余个岗位，现场设置招聘、留学直通与国际教育交流区域，为具有外语和跨文化背景的学生提供多样选择。",
       "活动把语言能力与升学、就业和国际交流放在同一场景中，帮助学生更直观地理解多语言能力如何服务未来发展。本条为校园动态记录，参会规模与活动设置依据校方公开报道整理。",
@@ -603,8 +613,26 @@ const imageBySlug: Record<string, string> = {
   "2024-autumn-placement": "/images/news/placement-2024.png",
   "2024-teacher-open-class": "/images/news/teacher-open-class-2024-a.png",
   "2024-french-open-class": "/images/news/french-open-class-2024-a.png",
+  "2023-teaching-review": "/images/news/teaching-review-2023.png",
+  "2023-summer-speaking-camp": "/images/news/speaking-camp-2023.jpeg",
+  "2023-korean-writing-evening": "/images/news/korean-writing-2023.jpg",
+  "2022-autumn-reading-plan": "/images/news/reading-plan-2022.jpg",
   "2022-online-course-review": "/images/news/online-course-review-2022.jpg",
+  "2022-business-presentation": "/images/news/business-presentation-2022.jpg",
+  "2021-online-french-club": "/images/news/online-french-club-2021.jpeg",
+  "2021-online-speaking-club": "/images/news/online-speaking-club-2021.jpg",
+  "2020-teaching-materials-update": "/images/news/teaching-materials-update-2020.png",
+  "2020-online-learning-support": "/images/news/online-learning-support-2020.png",
+  "2019-japanese-culture-class": "/images/news/japanese-culture-class-2019.png",
+  "2019-summer-pronunciation": "/images/news/pronunciation-workshop-2019.png",
+  "2018-french-interest-group": "/images/news/french-interest-group-2018.png",
+  "2018-company-communication": "/images/news/company-communication-2018.png",
+  "2017-reading-club": "/images/news/reading-club-2017.png",
+  "2017-autumn-writing-clinic": "/images/news/writing-clinic-2017.png",
+  "2016-winter-course-review": "/images/news/course-review-2016.jpg",
+  "2016-first-language-corner": "/images/news/language-corner-2016.jpeg",
   "2015-first-study-sharing": "/images/news/study-sharing-2015.jpg",
+  "2015-course-launch": "/images/news/course-launch-2015.jpeg",
   "2026-wuxin-zhejiang-finance-forum": "/images/news/wuxin-finance-forum-2026-a.jpg",
   "2025-wuxin-qiantang-research": "/images/news/wuxin-qiantang-2025.png",
   "2024-wuxin-finance-french-lecture": "/images/news/wuxin-lecture-2024-a.jpg",

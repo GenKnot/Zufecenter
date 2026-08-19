@@ -9,6 +9,7 @@ import { jaNews, findJaNews } from "@/data/ja-news";
 import { koNews, findKoNews } from "@/data/ko-news";
 import { localizedLandings, localizedUi, type ForeignLocale } from "@/data/i18n";
 import { siteConfig } from "@/data/site-config";
+import { illustrativeNewsSlugs } from "@/data/site";
 
 const sourceLabels: Record<ForeignLocale, string> = {
   en: "Official source",
@@ -16,6 +17,14 @@ const sourceLabels: Record<ForeignLocale, string> = {
   es: "Fuente oficial",
   ja: "公式情報",
   ko: "공식 출처",
+};
+
+const illustrativeCaptionLabels: Record<ForeignLocale, string> = {
+  en: "Illustrative activity scene — not a historical event photograph",
+  fr: "Scène d’activité illustrative — il ne s’agit pas d’une photo historique",
+  es: "Escena ilustrativa de la actividad — no es una fotografía histórica",
+  ja: "活動場面のイメージ（当時の記録写真ではありません）",
+  ko: "활동 장면 예시 이미지(당시 기록 사진이 아님)",
 };
 
 export const dynamicParams = false;
@@ -107,20 +116,34 @@ export default async function EnglishNewsDetailPage({
 
   return (
     <>
-      <section className="bg-[#f7f5f0] py-20">
-        <div className="shell max-w-4xl">
-          <Link href={`/${locale}/news`} className="text-sm text-[#174f8f]">
-            ← {ui.backToNews}
-          </Link>
-          <p className="mt-10 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
-            {item.category} · {item.date}
-          </p>
-          <h1 className="mt-5 font-serif text-4xl font-semibold leading-tight text-[#11233e] sm:text-5xl">
-            {item.title}
-          </h1>
-          <p className="mt-6 text-base leading-8 text-slate-500">
-            {item.summary}
-          </p>
+      <section className="relative isolate overflow-hidden bg-[#f7f5f0] py-20">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-16 right-[-6%] hidden h-[115%] w-[54%] opacity-30 lg:block"
+        >
+          <Image
+            src="/images/generated/news-header-editorial-ornament.png"
+            alt=""
+            fill
+            className="object-contain object-right-bottom mix-blend-multiply"
+            sizes="54vw"
+          />
+        </div>
+        <div className="shell relative z-10 max-w-6xl">
+          <div className="max-w-4xl">
+            <Link href={`/${locale}/news`} className="text-sm text-[#174f8f]">
+              ← {ui.backToNews}
+            </Link>
+            <p className="mt-10 text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">
+              {item.category} · {item.date}
+            </p>
+            <h1 className="mt-5 font-serif text-4xl font-semibold leading-tight text-[#11233e] sm:text-5xl">
+              {item.title}
+            </h1>
+            <p className="mt-6 max-w-3xl text-base leading-8 text-slate-500">
+              {item.summary}
+            </p>
+          </div>
         </div>
       </section>
 
@@ -136,7 +159,9 @@ export default async function EnglishNewsDetailPage({
           />
         </div>
         <p className="mt-3 text-xs leading-6 text-slate-400">
-          {item.category} · {ui.newsCaption}
+          {illustrativeNewsSlugs.has(item.slug)
+            ? illustrativeCaptionLabels[locale as ForeignLocale]
+            : `${item.category} · ${ui.newsCaption}`}
         </p>
         <div className="prose-page mt-12">
           {item.content.map((paragraph) => (

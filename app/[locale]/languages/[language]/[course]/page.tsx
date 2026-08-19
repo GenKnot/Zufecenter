@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { englishCourses, findEnglishCourse } from "@/data/english-courses";
@@ -7,6 +8,7 @@ import { esCourses, findEsCourse } from "@/data/es-courses";
 import { jaCourses, findJaCourse } from "@/data/ja-courses";
 import { koCourses, findKoCourse } from "@/data/ko-courses";
 import { localizedLandings, localizedUi, type ForeignLocale } from "@/data/i18n";
+import { getCourseImage } from "@/data/course-images";
 import { siteConfig } from "@/data/site-config";
 
 export const dynamicParams = false;
@@ -39,6 +41,7 @@ export async function generateMetadata({
 
   const canonical = `${siteConfig.url}/${locale}/languages/${language}/${slug}/`;
   const chinese = `${siteConfig.url}/languages/${language}/${slug}/`;
+  const image = getCourseImage(language, slug);
 
   return {
     title: { absolute: `${course.title} | ${localizedSiteName}` },
@@ -63,13 +66,13 @@ export async function generateMetadata({
       siteName: localizedSiteName,
       title: course.title,
       description: course.summary,
-      images: [{ url: siteConfig.ogImage, alt: course.title }],
+      images: [{ url: image, alt: course.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: course.title,
       description: course.summary,
-      images: [siteConfig.ogImage],
+      images: [image],
     },
     robots: {
       index: true,
@@ -93,11 +96,21 @@ export default async function EnglishCoursePage({
     : undefined;
   if (!course) notFound();
   const ui = localizedUi[locale as ForeignLocale];
+  const courseImage = getCourseImage(course.language, course.slug);
 
   return (
     <>
-      <section className="bg-[#071f3e] py-20 text-white">
-        <div className="shell">
+      <section className="relative min-h-[560px] overflow-hidden bg-[#071f3e] py-20 text-white">
+        <Image
+          src={courseImage}
+          alt=""
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071f3e]/98 via-[#071f3e]/86 to-[#071f3e]/42" />
+        <div className="shell relative">
           <Link
             href={`/${locale}/languages/${course.language}`}
             className="text-xs font-semibold tracking-[0.12em] text-[#ead7ad]"
@@ -116,7 +129,7 @@ export default async function EnglishCoursePage({
                 {course.summary}
               </p>
             </div>
-            <div className="border-l-2 border-[#c99b48] pl-6">
+            <div className="border-l-2 border-[#c99b48] bg-[#071f3e]/48 p-6 backdrop-blur-sm">
               <p className="text-xs uppercase tracking-[0.14em] text-white/45">
                 {ui.recommendedFor}
               </p>

@@ -43,7 +43,7 @@ export default function HomePage() {
     <>
       <section className="relative min-h-[720px] overflow-hidden bg-[#071f3e] text-white">
         <Image
-          src="/images/campus-autumn.png"
+          src="/images/generated/replacements/home-hero.webp"
           alt=""
           fill
           priority
@@ -237,7 +237,7 @@ export default function HomePage() {
           </div>
           <div className="relative min-h-[480px] overflow-hidden bg-[#0b2f5b]">
             <Image
-              src="/images/language-class.png"
+              src="/images/generated/replacements/home-about-overview.webp"
               alt="多语种教学课堂"
               fill
               className="object-cover"
@@ -291,7 +291,7 @@ export default function HomePage() {
           <div className="grid overflow-hidden bg-[#071f3e] text-white lg:grid-cols-[1.04fr_0.96fr]">
             <div className="relative min-h-[520px]">
               <Image
-                src="/images/student-collaboration.png"
+                src="/images/generated/replacements/home-practice-overview.webp"
                 alt="学员小组交流"
                 fill
                 className="object-cover"
@@ -378,7 +378,7 @@ export default function HomePage() {
               className="group relative min-h-[440px] overflow-hidden bg-[#0b2f5b] p-9 text-white sm:p-12"
             >
               <Image
-                src="/images/modern-classroom.jpg"
+                src="/images/generated/replacements/home-research-overview.webp"
                 alt=""
                 fill
                 className="object-cover opacity-42 transition duration-500 group-hover:scale-[1.03]"
@@ -401,7 +401,7 @@ export default function HomePage() {
               className="group relative min-h-[440px] overflow-hidden bg-[#0b2f5b] p-9 text-white sm:p-12"
             >
               <Image
-                src="/images/meeting-room.jpg"
+                src="/images/generated/replacements/home-collaboration-overview.webp"
                 alt=""
                 fill
                 className="object-cover opacity-42 transition duration-500 group-hover:scale-[1.03]"

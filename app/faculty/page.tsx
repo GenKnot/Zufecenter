@@ -7,7 +7,7 @@ import { createPageMetadata } from "@/lib/site-metadata";
 
 export const metadata = createPageMetadata(
   "师资与教研",
-  "了解英语、法语、日语、韩语教学团队，以及中心的共同备课、课堂观察与课程质量机制。",
+  "了解英语、法语、日语、韩语及国际中文教学团队，以及中心的共同备课、课堂观察与课程质量机制。",
   "/faculty",
 );
 
@@ -18,6 +18,7 @@ export default function FacultyPage() {
         eyebrow="FACULTY"
         title="专业所抵达的地方，是每一堂值得信任的课"
         description="中心汇集语言教育、考试辅导与跨文化沟通等方向的教学力量，以共同备课、课堂观察和学习反馈构成稳定的课程质量体系。"
+        image="/images/section-heroes/faculty-hero.jpg"
       />
       <section className="py-24">
         <div className="shell">
@@ -25,7 +26,7 @@ export default function FacultyPage() {
             <span className="eyebrow">Teaching teams</span>
             <h2 className="section-title">教学团队</h2>
             <p className="section-copy">
-              四个语种团队共同研发课程、分析课堂表现并组织文化活动。每位教师各有专长，也共同对学员的阶段成果负责。
+              五个语种团队共同研发课程、分析课堂表现并组织文化活动。每位教师各有专长，也共同对学员的阶段成果负责。
             </p>
           </div>
           <HubCards items={facultyPages} basePath="/faculty" />
@@ -61,9 +62,9 @@ export default function FacultyPage() {
           <div className="mt-20">
             <div className="mb-10 max-w-3xl">
               <span className="eyebrow">Faculty members</span>
-              <h2 className="section-title">教师代表</h2>
+              <h2 className="section-title">法语教师代表</h2>
               <p className="section-copy">
-                本次公开展示的四位教师均来自法语教学团队，覆盖分级教学、国际测评、专业法语、学术语言与跨文化沟通等方向。
+                以下四位教师来自法语教学团队；英语、日语、韩语和国际中文教师的完整资料可进入对应教学团队页面查看。
               </p>
             </div>
             <div className="grid gap-px overflow-hidden border border-slate-200 bg-slate-200 md:grid-cols-2">

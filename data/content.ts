@@ -57,7 +57,7 @@ export const languagePages: ContentPage[] = [
         ],
       },
     ],
-    image: "/images/student-collaboration.png",
+    image: "/images/generated/replacements/language-english-image.webp",
     imageAlt: "学员进行英语主题讨论",
   },
   {
@@ -65,7 +65,7 @@ export const languagePages: ContentPage[] = [
     title: "法语课程",
     english: "Programmes de français",
     summary: "从第一句 Bonjour 开始，学会交流，也慢慢读懂法语世界。",
-    heroImage: "/images/library-hero.png",
+    heroImage: "/images/generated/replacements/language-french-hero.webp",
     intro: [
       "法语不仅属于法国，也连接着欧洲、北美、非洲和许多国际组织。有人为留学和工作学习，有人因为旅行、电影或文学走近它；不同起点，都需要一条清楚而不仓促的学习路径。",
       "课程面向零基础和已有学习经历的学员，参照欧洲语言共同参考框架组织阶段目标。语音、语法和词汇会讲清楚，但每节课最终都要回到一句话：在真实场景里，你能不能把意思说出来。",
@@ -100,7 +100,7 @@ export const languagePages: ContentPage[] = [
         ],
       },
     ],
-    image: "/images/study-desk.jpg",
+    image: "/images/generated/replacements/language-french-image.webp",
     imageAlt: "法语学习资料与自主学习场景",
   },
   {
@@ -108,7 +108,7 @@ export const languagePages: ContentPage[] = [
     title: "日语课程",
     english: "日本語プログラム",
     summary: "从五十音到自然会话，把兴趣变成一套扎实、能继续走下去的能力。",
-    heroImage: "/images/campus-autumn.png",
+    heroImage: "/images/generated/replacements/language-japanese-hero.webp",
     intro: [
       "日语入门并不难，难的是在最初的新鲜感过去以后，仍然清楚自己该学什么。课程从文字和发音打底，再把语法、听解、阅读和表达逐层接起来，不让知识停在零散记忆里。",
       "无论因为兴趣、升学、工作还是赴日交流而学习，都能找到对应方向。需要参加 JLPT 的学员，也可以在综合课程之外加入考试训练。",
@@ -143,7 +143,7 @@ export const languagePages: ContentPage[] = [
         ],
       },
     ],
-    image: "/images/classroom-students.jpg",
+    image: "/images/generated/replacements/language-japanese-image.webp",
     imageAlt: "多语种课堂学习场景",
   },
   {
@@ -151,7 +151,7 @@ export const languagePages: ContentPage[] = [
     title: "韩语课程",
     english: "한국어 프로그램",
     summary: "看懂韩文字母只是第一步，更重要的是在合适的场合说出自然、得体的韩语。",
-    heroImage: "/images/student-collaboration.png",
+    heroImage: "/images/generated/replacements/language-korean-hero.webp",
     intro: [
       "韩文字母结构清楚，初学者通常很快就能读出简单词句。课程会利用这种成就感带动后续学习，从发音、基础句型走向生活会话、阅读和短篇表达。",
       "韩语里，称谓、礼貌层级和场合关系非常重要。我们不仅解释一句话“怎么说”，也会说明“什么时候这样说更合适”，让表达更自然、更得体。",
@@ -186,7 +186,7 @@ export const languagePages: ContentPage[] = [
         ],
       },
     ],
-    image: "/images/learning-consultation.png",
+    image: "/images/generated/replacements/language-korean-image.webp",
     imageAlt: "教师为学员提供学习咨询",
   },
 ];
@@ -197,7 +197,7 @@ export const programPages: ContentPage[] = [
     title: "通用语言能力",
     english: "General Language",
     summary: "把零散学过的知识重新连起来，为考试、工作和长期进阶打好基础。",
-    heroImage: "/images/language-class.png",
+    heroImage: "/images/generated/replacements/program-general-hero.webp",
     intro: [
       "很多人并不是没学过，而是词汇、语法、听力和表达各自分散，遇到真实交流就调动不起来。通用能力课程从现有基础出发，把这些部分重新连成一套可使用的语言能力。",
     ],
@@ -218,7 +218,7 @@ export const programPages: ContentPage[] = [
     title: "考试与升学辅导",
     english: "Exam Preparation",
     summary: "不靠盲目刷题，用诊断、规划和复盘把有限的备考时间花在关键处。",
-    heroImage: "/images/study-desk.jpg",
+    heroImage: "/images/generated/replacements/program-exam-preparation-hero.webp",
     intro: [
       "备考最怕两件事：不知道问题在哪里，也不知道时间应该怎么分。课程先看基础与目标，再安排语言补强、题型训练和模考复盘，让每一阶段都有明确重点。",
     ],
@@ -253,7 +253,7 @@ export const programPages: ContentPage[] = [
       { title: "核心模块", paragraphs: ["可根据个人或组织需要组合模块。"], bullets: ["商务邮件与书面表达", "会议主持与参与", "产品介绍与专业演示", "客户接待与关系维护", "跨文化团队协作"] },
       { title: "怎样上课", paragraphs: ["课堂使用案例分析、角色模拟、文本修改和录制复盘。练习尽量接近真实工作，同时保留安全、具体的反馈空间。"] },
     ],
-    image: "/images/learning-consultation.png",
+    image: "/images/generated/replacements/program-business-image.webp",
   },
   {
     slug: "academic",
@@ -274,14 +274,14 @@ export const programPages: ContentPage[] = [
       { title: "课程内容", paragraphs: ["课程可按短期工作坊或连续课程开展。"], bullets: ["学术阅读与笔记", "摘要和短篇学术写作", "展示设计与口头陈述", "国际会议沟通", "研究写作语言辅导"] },
       { title: "课程成果", paragraphs: ["一篇经过多轮修改的文本、一次完整陈述、一份文献阅读档案或一场模拟学术问答，都可以成为课程结束时带得走的成果。"] },
     ],
-    image: "/images/library-hero.png",
+    image: "/images/generated/replacements/program-academic-image.webp",
   },
   {
     slug: "young-learners",
     title: "青少年语言成长",
     english: "Young Learners",
     summary: "不抢跑、不填鸭，让兴趣、阅读和表达能力陪孩子走得更久。",
-    heroImage: "/images/classroom-students.jpg",
+    heroImage: "/images/generated/replacements/program-young-learners-hero.webp",
     intro: [
       "青少年语言学习不该只剩背单词和做题。课程按照年龄与认知特点安排内容，让孩子在故事、阅读、项目和表达中建立兴趣，也慢慢学会管理自己的学习。",
     ],
@@ -295,14 +295,14 @@ export const programPages: ContentPage[] = [
       { title: "课程方向", paragraphs: ["课程可覆盖英语阅读表达、小语种启蒙、寒暑期主题营和考试基础等方向。"] },
       { title: "课堂怎么学", paragraphs: ["绘本、项目任务、角色表演、主题阅读和小组合作，不是为了把课堂变得热闹，而是让孩子愿意开口、能够理解，也有内容可以表达。"] },
     ],
-    image: "/images/student-discussion.jpg",
+    image: "/images/generated/replacements/program-young-learners-image.webp",
   },
   {
     slug: "corporate",
     title: "企业定制培训",
     english: "Corporate Training",
     summary: "从企业真实业务出发，让培训内容与岗位、客户和国际沟通直接相关。",
-    heroImage: "/images/meeting-room.jpg",
+    heroImage: "/images/generated/replacements/program-corporate-hero.webp",
     intro: [
       "同一套商务英语，放在不同企业里未必都有效。我们先了解员工在哪里使用外语、最常遇到什么困难，再把岗位任务、行业表达和企业案例写进课程。",
     ],
@@ -316,14 +316,14 @@ export const programPages: ContentPage[] = [
       { title: "常见主题", paragraphs: ["培训可覆盖以下主题并根据行业进行改写。"], bullets: ["海外客户接待", "跨境会议与演示", "商务邮件与文件", "外派前语言准备", "跨文化团队协作"] },
       { title: "合作流程", paragraphs: ["先访谈需求、了解人员基础，再确认课程方案与交付节奏。培训过程中保留阶段反馈，结项时向组织说明学习表现和后续建议。"] },
     ],
-    image: "/images/team.jpg",
+    image: "/images/generated/replacements/program-corporate-image.webp",
   },
   {
     slug: "workshops",
     title: "短期专题工作坊",
     english: "Short Workshops",
     summary: "一次解决一个具体问题，时间不长，但方法和练习都能带走。",
-    heroImage: "/images/student-collaboration.png",
+    heroImage: "/images/generated/replacements/program-workshops-hero.webp",
     intro: [
       "专题工作坊通常从半天到数周，主题小而明确。它适合想改善某项表达、体验一门新语言，或还没决定是否进入长期课程的人。",
     ],
@@ -358,7 +358,7 @@ export const programPages: ContentPage[] = [
       { title: "准备模块", paragraphs: ["可按个人时间和目的地组合。"], bullets: ["语言考试规划", "学术阅读与写作", "课堂表达与小组合作", "海外生活会话", "跨文化适应工作坊"] },
       { title: "从哪里开始", paragraphs: ["课程开始前先梳理目的地、申请与入学时间、当前水平和可投入精力，再决定考试、学术或生活沟通模块如何组合。"] },
     ],
-    image: "/images/library.jpg",
+    image: "/images/generated/replacements/program-study-abroad-image.webp",
   },
 ];
 
@@ -380,7 +380,7 @@ export const practicePages: ContentPage[] = [
       { title: "辅导内容", paragraphs: ["可提供发音纠正、文本反馈、口语练习、学习规划与课程衔接建议。"] },
       { title: "怎样准备", paragraphs: ["预约时说明问题，并提前准备文本、录音或学习记录。信息越具体，辅导越容易落到真正的困难上。"] },
     ],
-    image: "/images/study-desk.jpg",
+    image: "/images/generated/replacements/practice-tutoring-image.webp",
   },
   {
     slug: "language-clubs",
@@ -406,7 +406,7 @@ export const practicePages: ContentPage[] = [
     title: "语言文化体验",
     english: "Cultural Experiences",
     summary: "从电影、书写、节日和日常生活里，理解一句话为什么要这样说。",
-    heroImage: "/images/library-hero.png",
+    heroImage: "/images/generated/replacements/practice-cultural-hero.webp",
     intro: ["文化不是课堂里的几页背景知识。它藏在称谓、礼貌、幽默、节日和日常选择中。文化体验活动用真实材料和共同参与，让语言背后的逻辑变得可感知。"],
     highlights: [
       { title: "多元主题", text: "文学、影视、节日、饮食与城市文化。" },
@@ -418,14 +418,14 @@ export const practicePages: ContentPage[] = [
       { title: "四季活动", paragraphs: ["春季语言文化周、暑期主题营、秋季多语种体验日和冬季学习成果展，构成中心一年的文化活动节奏。"] },
       { title: "不止于热闹", paragraphs: ["每场活动都从具体语言材料出发，并补充必要的历史背景和当代生活语境，让文化体验既有趣，也有内容。"] },
     ],
-    image: "/images/classroom-students.jpg",
+    image: "/images/generated/replacements/practice-cultural-image.webp",
   },
   {
     slug: "competitions",
     title: "赛事与成果展示",
     english: "Competitions & Showcase",
     summary: "为一次演讲、一篇文章或一场展示认真准备，往往能看见平时看不见的进步。",
-    heroImage: "/images/university-lecture.jpg",
+    heroImage: "/images/generated/replacements/practice-competitions-hero.webp",
     intro: ["中心根据课程进度组织演讲、写作、朗读、配音和项目展示。对准备参加校内外语言活动的学员，教师也会提供内容、语言和现场表达方面的训练。"],
     highlights: [
       { title: "过程导向", text: "重视准备、修改与复盘。" },
@@ -437,14 +437,14 @@ export const practicePages: ContentPage[] = [
       { title: "常见活动", paragraphs: ["年度英语演讲展示、多语种朗读会、短篇写作计划、主题配音和学习项目展。"] },
       { title: "辅导支持", paragraphs: ["教师可在内容结构、语言准确度、发音表达和现场呈现等方面提供阶段指导。"] },
     ],
-    image: "/images/graduation.jpg",
+    image: "/images/generated/replacements/practice-competitions-image.webp",
   },
   {
     slug: "study-tours",
     title: "主题研学与交流",
     english: "Study Tours & Exchange",
     summary: "离开熟悉的课桌，在城市、行业与跨文化交流中检验语言能不能真正派上用场。",
-    heroImage: "/images/campus-autumn.png",
+    heroImage: "/images/generated/replacements/practice-study-tours-hero.webp",
     intro: ["主题研学把课程内容带到真实环境中。学员在高校、企业或城市文化场景里观察、提问、交流，再把经历整理成自己的语言成果。"],
     highlights: [
       { title: "主题明确", text: "围绕语言、文化或职业能力设计。" },
@@ -456,7 +456,7 @@ export const practicePages: ContentPage[] = [
       { title: "项目方向", paragraphs: ["项目包括高校语言文化访问、企业国际沟通观察、城市文化主题研学和线上国际伙伴交流。"] },
       { title: "项目设计", paragraphs: ["每个项目均围绕清晰的学习主题、行前准备、现场任务与成果分享展开，让一次参访真正形成完整的学习体验。"] },
     ],
-    image: "/images/team.jpg",
+    image: "/images/generated/replacements/practice-study-tours-image.webp",
   },
 ];
 
@@ -498,14 +498,14 @@ export const aboutPages: ContentPage[] = [
       { title: "从课堂和社群开始", paragraphs: ["最初的课程回应的是学员最直接的英语学习需求。随着一批批学员的反馈和口碑积累，考试辅导、职业沟通与小语种兴趣课程陆续加入。"] },
       { title: "十一年的日常", paragraphs: ["开班、答疑、语言角、阅读分享和教师研讨，这些看似普通的日常，构成了中心真正的历史，也让课程一届比一届更成熟。"] },
     ],
-    image: "/images/classroom-students.jpg",
+    image: "/images/generated/replacements/about-history-image.webp",
   },
   {
     slug: "approach",
     title: "教育理念",
     english: "Learning Approach",
     summary: "讲清楚，练充分，用得上——好的语言课最终要回到这三件事。",
-    heroImage: "/images/language-class.png",
+    heroImage: "/images/generated/replacements/about-approach-hero.webp",
     intro: ["好的语言课既要有清晰目标，也要允许学员按自己的节奏进步。内容不能太轻，难度也不能高到让人失去信心；讲解、练习和反馈之间需要保持平衡。"],
     highlights: [
       { title: "真实任务", text: "围绕生活、学习和工作中的表达任务。" },
@@ -517,14 +517,14 @@ export const aboutPages: ContentPage[] = [
       { title: "课堂设计", paragraphs: ["讲解、示范、练习、反馈与再应用构成基本课堂循环，避免只有输入、没有输出。"] },
       { title: "评价方式", paragraphs: ["评价关注学习过程与综合表现，可使用口头任务、短篇写作、项目作品和阶段测评等多种形式。"] },
     ],
-    image: "/images/student-collaboration.png",
+    image: "/images/generated/replacements/about-approach-image.webp",
   },
   {
     slug: "organization",
     title: "组织架构",
     english: "Organization",
     summary: "一门课的背后，不只有讲台上的教师，还有教研、学员服务与项目团队。",
-    heroImage: "/images/meeting-room.jpg",
+    heroImage: "/images/generated/replacements/about-organization-hero.webp",
     intro: ["中心以教学为核心。语种团队负责课堂和学习反馈，教研团队打磨课程与材料，学员服务团队衔接咨询、测评和班务，合作项目团队则面向高校与企业设计专项方案。"],
     highlights: [
       { title: "教学组", text: "英语、法语、日语、韩语课程实施。" },
@@ -579,7 +579,7 @@ export const researchPages: ContentPage[] = [
     title: "语言教学研究",
     english: "Language Education Research",
     summary: "把课堂里反复出现的问题留下来研究，再把答案带回下一次教学。",
-    heroImage: "/images/modern-classroom.jpg",
+    heroImage: "/images/generated/replacements/research-teaching-hero.webp",
     intro: ["为什么同一项口语任务在不同班级效果不同？怎样给写作反馈，学员才知道下一步怎么改？教学研究从这些具体问题开始。"],
     highlights: [
       { title: "课堂观察", text: "从学习表现发现真实问题。" },
@@ -591,14 +591,14 @@ export const researchPages: ContentPage[] = [
       { title: "关注议题", paragraphs: ["分级教学、口语互动、写作反馈、混合式学习、学习动机与多语种课程设计等。"] },
       { title: "成果形式", paragraphs: ["阶段报告、教学案例、课程材料、公开课与专题分享。"] },
     ],
-    image: "/images/university-lecture.jpg",
+    image: "/images/generated/replacements/research-teaching-image.webp",
   },
   {
     slug: "curriculum-development",
     title: "课程建设",
     english: "Curriculum Development",
     summary: "课程不是一份写完就不再动的大纲，而是一套需要被课堂不断检验的设计。",
-    heroImage: "/images/study-desk.jpg",
+    heroImage: "/images/generated/replacements/research-curriculum-hero.webp",
     intro: ["学习者的基础会变，语言使用场景也在变。课程团队根据课堂表现和实际需求更新目标、材料、任务与评价，让每一级课程都接得上、用得着。"],
     highlights: [
       { title: "目标清晰", text: "说明每个阶段能够完成什么。" },
@@ -610,14 +610,14 @@ export const researchPages: ContentPage[] = [
       { title: "建设流程", paragraphs: ["需求分析、目标设定、材料开发、试教观察、学习反馈和版本更新。"] },
       { title: "资源积累", paragraphs: ["教案、任务模板、学习清单、题库与数字资源由团队共同维护，成熟内容可以复用，也会随着课堂反馈及时修订。"] },
     ],
-    image: "/images/library.jpg",
+    image: "/images/generated/replacements/research-curriculum-image.webp",
   },
   {
     slug: "faculty-development",
     title: "教师发展",
     english: "Faculty Development",
     summary: "教师彼此看课、谈课、改课，课程质量才不会只依赖个人经验。",
-    heroImage: "/images/meeting-room.jpg",
+    heroImage: "/images/generated/replacements/research-faculty-development-hero.webp",
     intro: ["稳定的课程质量来自团队协作。集体备课统一目标，课堂观摩看见细节，课后复盘则把一次教学经验变成下一次改进。"],
     highlights: [
       { title: "集体备课", text: "共建目标、任务和评价标准。" },
@@ -629,7 +629,7 @@ export const researchPages: ContentPage[] = [
       { title: "年度安排", paragraphs: ["春秋季各设置课程复盘与公开课，结合需要组织材料设计、课堂互动和学习评价等专题。"] },
       { title: "开放交流", paragraphs: ["中心邀请高校同行与行业实践者参与专题交流，让教学方法既有专业依据，也能回应真实语言场景。"] },
     ],
-    image: "/images/team.jpg",
+    image: "/images/generated/replacements/research-faculty-development-image.webp",
   },
 ];
 
@@ -639,7 +639,7 @@ export const collaborationPages: ContentPage[] = [
     title: "高校与校园合作",
     english: "Campus Collaboration",
     summary: "从一场讲座到一学期课程，与院系和学生组织一起把语言项目做得更贴近需求。",
-    heroImage: "/images/campus-autumn.png",
+    heroImage: "/images/generated/replacements/collaboration-campus-hero.webp",
     intro: ["不同专业、年级和学生群体，对语言学习的期待并不相同。中心从参与对象和实际目标出发，与合作方共同设计课程、讲座、工作坊和文化活动。"],
     highlights: [
       { title: "联合课程", text: "根据专业与学习需求共建内容。" },
@@ -651,14 +651,14 @@ export const collaborationPages: ContentPage[] = [
       { title: "合作方式", paragraphs: ["既可以从单场讲座、小型工作坊开始，也可以按学期组织系列课程或长期项目。形式可以灵活，全面对接国际通用语言标准（如 CEFR），确保学术成果与测评目标的清晰互认。"] },
       { title: "如何开始", paragraphs: ["告诉我们参与对象、希望解决的问题和大致时间，我们会据此整理主题、师资、课时与执行建议。"] },
     ],
-    image: "/images/university-lecture.jpg",
+    image: "/images/generated/replacements/collaboration-campus-image.webp",
   },
   {
     slug: "enterprise",
     title: "企业与组织合作",
     english: "Enterprise Partnership",
     summary: "不做与工作脱节的通用培训，让员工学到的表达可以直接回到业务现场。",
-    heroImage: "/images/meeting-room.jpg",
+    heroImage: "/images/generated/replacements/collaboration-enterprise-hero.webp",
     intro: ["企业语言培训应当先谈业务，再谈课程。我们会了解岗位任务、沟通对象和常见难点，再把邮件、会议、接待、谈判或外派准备变成可练习的课堂任务。"],
     highlights: [
       { title: "岗位场景", text: "从真实工作任务提取课程内容。" },
@@ -670,14 +670,14 @@ export const collaborationPages: ContentPage[] = [
       { title: "适用项目", paragraphs: ["国际业务团队语言提升、外派前准备、客户沟通、行业英语和跨文化协作。"] },
       { title: "合作流程", paragraphs: ["初步沟通后形成需求简报，再确定测评、课程、时间和交付方式。"] },
     ],
-    image: "/images/learning-consultation.png",
+    image: "/images/generated/replacements/collaboration-enterprise-image.webp",
   },
   {
     slug: "international",
     title: "国际交流",
     english: "International Exchange",
     summary: "对接国际优质教育资源，建设高标准语言提升与国际化测评合作平台。",
-    heroImage: "/images/student-collaboration.png",
+    heroImage: "/images/generated/replacements/collaboration-international-hero.webp",
     intro: ["中心积极拓展与海外高校、官方教育机构及国际伙伴的合作，在课程共建、师资交流、语言提升与测评服务等方向形成稳定协作，为学习者提供更高标准的国际化语言学习环境。"],
     highlights: [
       { title: "资源对接", text: "连接海外高校与官方教育资源。" },
@@ -689,7 +689,7 @@ export const collaborationPages: ContentPage[] = [
       { title: "合作方向", paragraphs: ["合作内容包括国际课程资源引入、语言能力提升项目、教师研修、标准化测评服务和跨文化学习活动。"] },
       { title: "合作标准", paragraphs: ["项目设计强调清晰的学术管理流程、可执行的教学安排和规范化的测评要求，让国际合作真正服务于学习质量提升。"] },
     ],
-    image: "/images/library-hero.png",
+    image: "/images/generated/replacements/collaboration-international-image.webp",
   },
 ];
 
@@ -750,14 +750,14 @@ export const resourcePages: ContentPage[] = [
       { title: "资料如何获取", paragraphs: ["班级手册与学习清单在入学和阶段转换时发放；课堂讲义、练习与反馈材料由教师按照教学进度统一组织。"] },
       { title: "使用与版权", paragraphs: ["中心原创资料供相应课程学习使用；涉及第三方版权的内容遵循原始授权，学员个人资料与内部教学记录不对外公开。"] },
     ],
-    image: "/images/study-desk.jpg",
+    image: "/images/generated/replacements/resources-downloads-image.webp",
   },
   {
     slug: "faq",
     title: "常见问题",
     english: "Frequently Asked Questions",
     summary: "关于选课、测评、班型、学习基础和企业培训的常见说明。",
-    heroImage: "/images/learning-consultation.png",
+    heroImage: "/images/generated/replacements/resources-faq-hero.webp",
     intro: ["第一次咨询时，大家最常问的是从哪里开始、该选什么班、每周要投入多久。我们把这些问题集中说明，方便你先做判断，再与课程顾问细聊。"],
     highlights: [
       { title: "零基础", text: "四个语种均可设置零基础入门班。" },
@@ -775,14 +775,14 @@ export const resourcePages: ContentPage[] = [
       { title: "如何记录学习成果？", paragraphs: ["课程通过阶段任务、教师反馈与学习档案记录成长；不同项目还可设置结业展示、作品集或学习报告。"] },
       { title: "企业或院系如何定制项目？", paragraphs: ["先说明参与人数、人员基础、使用场景、期望周期与可上课时间。中心完成需求沟通后，再提出测评方式、课程模块、师资与交付节奏建议。"] },
     ],
-    image: "/images/student-discussion.jpg",
+    image: "/images/generated/replacements/resources-faq-image.webp",
   },
   {
     slug: "digital-learning",
     title: "数字学习",
     english: "Digital Learning",
     summary: "用线上资源、学习档案和社群支持延伸课堂，但不让工具取代真正的练习。",
-    heroImage: "/images/library-hero.png",
+    heroImage: "/images/generated/replacements/resources-digital-hero.webp",
     intro: ["数字工具的价值，是让课前准备更轻、课后反馈更快、学习记录更清楚。课程资料、线上任务与活动通知会按班级需要统一组织。"],
     highlights: [
       { title: "课前准备", text: "通过短材料进入课堂主题。" },
@@ -796,7 +796,7 @@ export const resourcePages: ContentPage[] = [
       { title: "学习档案：记录重点而不是堆积文件", paragraphs: ["每个阶段保留代表性任务、教师反馈和个人复盘，帮助学习者在课程转换或继续进阶时清楚说明自己的起点与困难。"] },
       { title: "使用原则", paragraphs: ["数字工具应减少重复事务、增加反馈机会，而不是制造额外打卡负担。课程团队会区分必做、选做与拓展内容。"] },
     ],
-    image: "/images/study-desk.jpg",
+    image: "/images/generated/replacements/resources-digital-image.webp",
   },
 ];
 
@@ -806,7 +806,7 @@ export const facultyPages: ContentPage[] = [
     title: "英语教学团队",
     english: "English Faculty",
     summary: "覆盖通用英语、商务沟通、学术表达和考试辅导等教学方向。",
-    heroImage: "/images/language-class.png",
+    heroImage: "/images/generated/replacements/faculty-english-hero.webp",
     intro: ["英语课程跨度很大：有人要重新建立基础，有人准备考试，也有人需要在会议或论文中更准确地表达。团队按学习目标分工，同时共享课程标准与课堂经验。"],
     highlights: [
       { title: "综合能力组", text: "听说读写分级课程。" },
@@ -818,14 +818,14 @@ export const facultyPages: ContentPage[] = [
       { title: "怎样一起教好一门课", paragraphs: ["教师共同制定阶段目标、准备关键任务并分析学习反馈。课堂不是各自为战，成熟的方法会进入下一轮课程，反复出现的问题也会被团队集中研究。"] },
       { title: "我们看重什么", paragraphs: ["比讲完多少知识更重要的，是学员能否在新的场景中使用语言。课程因此重视表达任务、具体反馈与可以看见的阶段成果。"] },
     ],
-    image: "/images/team.jpg",
+    image: "/images/generated/replacements/faculty-english-image.webp",
   },
   {
     slug: "french",
     title: "法语教学团队",
     english: "French Faculty",
     summary: "负责法语分级课程、文化专题与留学语言准备。",
-    heroImage: "/images/library-hero.png",
+    heroImage: "/images/generated/replacements/faculty-french-hero.webp",
     intro: ["法语入门既需要耐心打好语音基础，也需要尽早感受到交流的乐趣。团队把分级语言训练与法语世界的文化内容放在同一条学习路径中。"],
     highlights: [
       { title: "语音基础", text: "让初学者尽早建立准确习惯。" },
@@ -837,14 +837,14 @@ export const facultyPages: ContentPage[] = [
       { title: "从发音到表达", paragraphs: ["课程不把语音、语法和文化拆成彼此无关的知识点。教师用对话、阅读与主题任务把它们连起来，让学员知道所学内容在什么场景下可以使用。"] },
       { title: "团队协作", paragraphs: ["统一的阶段目标保证课程衔接，共享的课堂案例则让教师可以根据不同班级的表现调整讲解和练习节奏。"] },
     ],
-    image: "/images/team.jpg",
+    image: "/images/generated/replacements/faculty-french-image.webp",
   },
   {
     slug: "japanese",
     title: "日语教学团队",
     english: "Japanese Faculty",
     summary: "负责日语入门、分级进阶、能力考试与文化实践课程。",
-    heroImage: "/images/campus-autumn.png",
+    heroImage: "/images/generated/replacements/faculty-japanese-hero.webp",
     intro: ["日语学习常在文字、语法和实际表达之间出现落差。团队把结构讲解放进真实场景，引导学员从“看得懂”走向“说得出、用得对”。"],
     highlights: [
       { title: "入门教学", text: "文字、发音与基础句型。" },
@@ -856,14 +856,14 @@ export const facultyPages: ContentPage[] = [
       { title: "清楚的进阶路径", paragraphs: ["从文字语音、基础句型到听解阅读与主题表达，每一阶段都有明确任务。考试目标可以加入专项训练，但不会取代真正的语言能力。"] },
       { title: "课堂之外也要用", paragraphs: ["朗读、配音、文化体验和交流活动为课堂内容增加使用机会，让兴趣学习、考试准备和实际交流可以彼此支撑。"] },
     ],
-    image: "/images/classroom-students.jpg",
+    image: "/images/generated/replacements/faculty-japanese-image.webp",
   },
   {
     slug: "korean",
     title: "韩语教学团队",
     english: "Korean Faculty",
     summary: "负责韩语文字入门、生活表达、综合进阶与文化主题课程。",
-    heroImage: "/images/student-collaboration.png",
+    heroImage: "/images/generated/replacements/faculty-korean-hero.webp",
     intro: ["韩语教学团队从初学者常见困难出发，重视发音、语法结构和礼貌表达的系统讲解。"],
     highlights: [
       { title: "文字入门", text: "理解韩文字母的构成逻辑。" },
@@ -875,6 +875,25 @@ export const facultyPages: ContentPage[] = [
       { title: "先把基础讲明白", paragraphs: ["教师会解释韩文字母的构成、发音变化和句子结构，不要求学员靠死记硬背跨过入门阶段。清楚的方法能让练习更有把握。"] },
       { title: "把礼貌表达放进场景", paragraphs: ["韩语表达与关系、语气和场合密切相关。课程用生活会话、影视片段和文化任务，让学员理解同一句话为什么要换一种说法。"] },
     ],
-    image: "/images/team.jpg",
+    image: "/images/generated/replacements/faculty-korean-image.webp",
+  },
+  {
+    slug: "chinese",
+    title: "国际中文教学团队",
+    english: "Mandarin Chinese Faculty",
+    summary: "面向国际学习者开展普通话、HSK、学术中文与职业沟通教学。",
+    heroImage: "/images/generated/replacements/faculty-chinese-hero.webp",
+    intro: ["国际中文教学连接语音、汉字、语法与真实交流。团队根据学习者的语言背景和来华学习、工作及生活目标，组织分级课程与专项支持。"],
+    highlights: [
+      { title: "中文入门", text: "拼音、声调、汉字与基础表达。" },
+      { title: "HSK", text: "从基础能力到专项考试准备。" },
+      { title: "学术中文", text: "阅读、写作与大学学习沟通。" },
+      { title: "职业沟通", text: "商务表达与真实工作场景。" },
+    ],
+    sections: [
+      { title: "从准确发音到自然表达", paragraphs: ["课程重视拼音、声调与句子结构，也通过真实对话、阅读和情境任务帮助学习者建立可以持续使用的中文能力。"] },
+      { title: "回应不同学习目标", paragraphs: ["团队可根据 HSK、来华学习、学术交流、旅行生活及职业沟通等目标调整内容，并通过阶段反馈明确下一步。"] },
+    ],
+    image: "/images/generated/replacements/faculty-chinese-image.webp",
   },
 ];

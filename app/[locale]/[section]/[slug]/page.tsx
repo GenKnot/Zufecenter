@@ -12,6 +12,13 @@ import { esContentDetails, findEsContentDetail } from "@/data/es-content-details
 import { jaContentDetails, findJaContentDetail } from "@/data/ja-content-details";
 import { koContentDetails, findKoContentDetail } from "@/data/ko-content-details";
 import { localizedFacultyProfiles } from "@/data/faculty-profiles";
+import { FacultyProfilesGrid } from "@/components/FacultyProfilesGrid";
+import { FacultyTeamPhoto } from "@/components/FacultyTeamPhoto";
+import type { AdditionalFacultyLanguage } from "@/data/additional-faculty-profiles";
+import {
+  ProvisionalFacultyTeam,
+  type ProvisionalFacultyLanguage,
+} from "@/components/ProvisionalFacultyTeam";
 import { WuXinProfile } from "@/components/WuXinProfile";
 import { localizedLandings, localizedUi, type ForeignLocale } from "@/data/i18n";
 import { siteConfig } from "@/data/site-config";
@@ -151,6 +158,7 @@ function LocalizedFrenchFacultyTeachers({ locale }: { locale: ForeignLocale }) {
           <h2 className="section-title">{copy.title}</h2>
           <p className="section-copy">{copy.intro}</p>
         </div>
+        <FacultyTeamPhoto language="french" locale={locale} />
         <div className="grid gap-px overflow-hidden border border-slate-200 bg-slate-200 lg:grid-cols-2">
           {teachers.map((teacher) => (
             <article key={teacher.name} className="min-h-[420px] bg-white p-8">
@@ -354,6 +362,20 @@ export default async function EnglishContentDetailPage({
 
       {detail.parent === "faculty" && detail.slug === "french" && (
         <LocalizedFrenchFacultyTeachers locale={locale as ForeignLocale} />
+      )}
+
+      {detail.parent === "faculty" && detail.slug !== "french" && locale === "en" && (
+        <FacultyProfilesGrid
+          locale="en"
+          language={detail.slug as AdditionalFacultyLanguage}
+        />
+      )}
+
+      {detail.parent === "faculty" && detail.slug !== "french" && locale !== "en" && (
+        <ProvisionalFacultyTeam
+          locale={locale as ForeignLocale}
+          language={detail.slug as ProvisionalFacultyLanguage}
+        />
       )}
 
       {detail.parent === "about" && detail.slug === "leadership" && (

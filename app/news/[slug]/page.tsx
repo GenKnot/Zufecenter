@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { news } from "@/data/site";
+import { illustrativeNewsSlugs, news } from "@/data/site";
 import { createPageMetadata } from "@/lib/site-metadata";
 
 const newsImages: Record<string, string> = {
@@ -50,20 +50,34 @@ export default async function NewsDetailPage({
 
   return (
     <>
-      <section className="bg-[#f7f5f0] py-20">
-        <div className="shell max-w-4xl">
-          <Link href="/news" className="text-sm text-[#174f8f]">
-            ← 返回新闻动态
-          </Link>
-          <p className="mt-10 text-xs tracking-[0.14em] text-slate-400">
-            {item.category} · {item.date}
-          </p>
-          <h1 className="mt-5 font-serif text-4xl font-semibold leading-tight text-[#11233e] sm:text-5xl">
-            {item.title}
-          </h1>
-          <p className="mt-6 text-base leading-8 text-slate-500">
-            {item.summary}
-          </p>
+      <section className="relative isolate overflow-hidden bg-[#f7f5f0] py-20">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-16 right-[-6%] hidden h-[115%] w-[54%] opacity-30 lg:block"
+        >
+          <Image
+            src="/images/generated/news-header-editorial-ornament.png"
+            alt=""
+            fill
+            className="object-contain object-right-bottom mix-blend-multiply"
+            sizes="54vw"
+          />
+        </div>
+        <div className="shell relative z-10 max-w-6xl">
+          <div className="max-w-4xl">
+            <Link href="/news" className="text-sm text-[#174f8f]">
+              ← 返回新闻动态
+            </Link>
+            <p className="mt-10 text-xs tracking-[0.14em] text-slate-400">
+              {item.category} · {item.date}
+            </p>
+            <h1 className="mt-5 font-serif text-4xl font-semibold leading-tight text-[#11233e] sm:text-5xl">
+              {item.title}
+            </h1>
+            <p className="mt-6 max-w-3xl text-base leading-8 text-slate-500">
+              {item.summary}
+            </p>
+          </div>
         </div>
       </section>
       <article className="shell max-w-4xl py-20">
@@ -72,12 +86,15 @@ export default async function NewsDetailPage({
             src={item.image || newsImages[item.category] || "/images/student-collaboration.png"}
             alt={item.title}
             fill
+            priority
             className="object-cover"
             sizes="(max-width: 900px) 100vw, 900px"
           />
         </div>
         <p className="mt-3 text-xs leading-6 text-slate-400">
-          {item.category} · 语言学习与交流场景
+          {illustrativeNewsSlugs.has(item.slug)
+            ? "活动场景示意图（非历史现场照片）"
+            : `${item.category} · 语言学习与交流场景`}
         </p>
         <div className="prose-page mt-12">
           {item.content.map((paragraph) => (

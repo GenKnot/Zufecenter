@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -7,6 +8,7 @@ import {
 } from "@/data/language-courses";
 import { siteConfig } from "@/data/site-config";
 import { currentTerm, findCurrentOffering } from "@/data/operations";
+import { getCourseImage } from "@/data/course-images";
 import { localizedAlternates } from "@/lib/site-metadata";
 
 export function generateStaticParams() {
@@ -26,6 +28,7 @@ export async function generateMetadata({
   if (!item) return {};
   const path = `/languages/${slug}/${course}`;
   const canonical = `${siteConfig.url}${path}/`;
+  const image = getCourseImage(slug, course);
 
   return {
     title: item.title,
@@ -42,13 +45,13 @@ export async function generateMetadata({
       siteName: siteConfig.name,
       title: item.title,
       description: item.summary,
-      images: [{ url: siteConfig.ogImage, alt: item.title }],
+      images: [{ url: image, alt: item.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: item.title,
       description: item.summary,
-      images: [siteConfig.ogImage],
+      images: [image],
     },
     robots: {
       index: true,
@@ -66,11 +69,21 @@ export default async function LanguageCoursePage({
   const item = findLanguageCourse(slug, course);
   if (!item) notFound();
   const offering = findCurrentOffering(item.code);
+  const courseImage = getCourseImage(item.language, item.slug);
 
   return (
     <>
-      <section className="bg-[#071f3e] py-20 text-white sm:py-28">
-        <div className="shell">
+      <section className="relative min-h-[580px] overflow-hidden bg-[#071f3e] py-20 text-white sm:py-28">
+        <Image
+          src={courseImage}
+          alt=""
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071f3e]/98 via-[#071f3e]/86 to-[#071f3e]/42" />
+        <div className="shell relative">
           <Link
             href={`/languages/${item.language}#classes`}
             className="text-xs font-semibold tracking-[0.14em] text-[#ead7ad]"
@@ -94,7 +107,7 @@ export default async function LanguageCoursePage({
                 {item.summary}
               </p>
             </div>
-            <div className="border-t border-white/20 pt-6 lg:border-l lg:border-t-0 lg:pl-9 lg:pt-0">
+            <div className="border-t border-white/20 bg-[#071f3e]/48 p-6 backdrop-blur-sm lg:border-l lg:border-t-0 lg:pl-9">
               <p className="text-xs uppercase tracking-[0.18em] text-[#ead7ad]">
                 适合人群
               </p>
