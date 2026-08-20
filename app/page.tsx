@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { HomeHero, type HeroSlide } from "@/components/HomeHero";
 import { NewsCard } from "@/components/NewsCard";
 import {
   languagePages,
@@ -29,6 +30,49 @@ const stats = [
   { value: "26", label: "分级与专项班型" },
 ];
 
+/*
+  首屏轮播的五幕。
+  选图统一取左三分之一为干净墙面的画面，文字压上去不会盖到人脸。
+  文案沿用原版的语气：先一句主张，再一句把范围和做法说清楚。
+*/
+const heroSlides: HeroSlide[] = [
+  {
+    image: "/images/generated/replacements/home-hero.webp",
+    titleTop: "让语言成为",
+    titleBottom: "通往更大世界的能力",
+    description:
+      "英语、法语、日语、韩语，从零基础分级进阶到考试、升学与职业应用，为个人与组织提供有目标、有路径、有反馈的语言学习方案。",
+  },
+  {
+    image: "/images/section-heroes/language-programs-hero.jpg",
+    titleTop: "从零基础到",
+    titleBottom: "能开口的那一步",
+    description:
+      "四个语种、二十六个分级与专项班型，每一级都有明确的阶段目标与可见成果，让学习者清楚知道自己在哪里、下一步该练什么。",
+  },
+  {
+    image: "/images/section-heroes/programs-training-hero.jpg",
+    titleTop: "考试、升学、职业",
+    titleBottom: "每条路径都有准备",
+    description:
+      "雅思、DELF、JLPT、TOPIK 与商务沟通专项，围绕具体目标安排内容与节奏，把有限的备考时间用在真正关键的地方。",
+  },
+  {
+    image: "/images/section-heroes/learning-practice-hero.jpg",
+    titleTop: "让每一次表达",
+    titleBottom: "都更准确、更自信",
+    description:
+      "课堂讨论、邮件写作、会议表达与日常交流中反复使用，语言角、工作坊与文化体验让课堂所学真正成为能拿出来用的能力。",
+  },
+  {
+    image: "/images/section-heroes/about-center-hero.jpg",
+    titleTop: "把语言教育",
+    titleBottom: "做成一件长期的事",
+    description:
+      "从课程设计到教学研讨，持续打磨教学方法与反馈机制，服务学生、职场人士及企事业单位的多元学习目标。",
+  },
+];
+
 const languageMarks: Record<string, string> = {
   english: "EN",
   french: "FR",
@@ -41,50 +85,7 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="relative min-h-[720px] overflow-hidden bg-[#071f3e] text-white">
-        <Image
-          src="/images/generated/replacements/home-hero.webp"
-          alt=""
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071f3e]/95 via-[#071f3e]/82 to-[#071f3e]/30" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_35%,rgba(201,155,72,0.18),transparent_30%)]" />
-        <div className="shell relative flex min-h-[720px] items-center py-24">
-          <div className="max-w-3xl">
-            <p className="text-xs font-semibold tracking-[0.28em] text-[#ead7ad]">
-              LANGUAGE · KNOWLEDGE · WORLD
-            </p>
-            <h1 className="mt-7 font-serif text-[clamp(46px,7vw,82px)] font-semibold leading-[1.12] tracking-[-0.05em]">
-              让语言成为
-              <br />
-              通往更大世界的能力
-            </h1>
-            <p className="mt-7 max-w-xl text-base leading-8 text-white/76 sm:text-lg">
-              英语、法语、日语、韩语，从零基础分级进阶到考试、升学与职业应用，为个人与组织提供有目标、有路径、有反馈的语言学习方案。
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href="/languages"
-                className="bg-[#c99b48] px-7 py-4 text-sm font-semibold text-[#071f3e] transition hover:bg-[#ead7ad]"
-              >
-                探索语种课程
-              </Link>
-              <Link
-                href="/programs"
-                className="border border-white/35 px-7 py-4 text-sm font-semibold transition hover:bg-white/10"
-              >
-                查看培训项目
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="absolute bottom-0 right-0 bg-[#071f3e]/70 px-5 py-3 text-[11px] tracking-[0.08em] text-white/70 backdrop-blur-sm">
-          多语种学习 · 专业辅导 · 国际视野
-        </div>
-      </section>
+      <HomeHero slides={heroSlides} />
 
       <section className="-mt-px bg-[#0b2f5b] text-white">
         <div className="shell grid sm:grid-cols-2 lg:grid-cols-4">

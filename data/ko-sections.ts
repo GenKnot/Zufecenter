@@ -133,7 +133,7 @@ export const koSections: LocalizedSection[] = [
       "센터의 연구는 실용적인 질문에서 시작됩니다. 학습자가 어디서 막히는지, 어떤 과제가 성장을 드러내는지, 피드백이 더 나은 자기 주도 학습으로 이어질 수 있는지.",
       "토론, 관찰, 소규모 시도가 팀이 아이디어를 수업 기준으로 만들기 전에 검증하는 데 도움이 됩니다.",
     ],
-    image: "/images/meeting-room.jpg",
+    image: "/images/generated/replacements/home-research-overview.webp",
     cards: [
       { title: "언어 수업 연구", label: "수업의 질문", text: "학습을 관찰하고, 반복적으로 나타나는 어려움을 분석하며, 교육적 대응을 개선합니다." },
       { title: "교육과정 개발", label: "과정 설계", text: "각 진행 단계에서 목표, 과제, 교재, 평가를 정렬합니다." },
@@ -178,7 +178,7 @@ export const koSections: LocalizedSection[] = [
       "센터는 대학, 공식 교육기관, 기관 파트너와 협력하여 언어 역량 향상, 국제 평가 준비, 공동 과정 개발을 지원합니다.",
       "협력은 명확한 학업 관리, 일관된 평가 기준, 실행 가능한 운영 계획을 바탕으로 우수한 국제 자원을 지역 학습에 적용합니다.",
     ],
-    image: "/images/meeting-room.jpg",
+    image: "/images/generated/replacements/home-collaboration-overview.webp",
     cards: [
       { title: "캠퍼스 협력", label: "과정·활동", text: "특정 학생 그룹을 위한 공동 과정, 강연, 워크숍, 언어문화 활동." },
       { title: "기업 협력", label: "직무 요구", text: "직무, 고객 소통, 국제 비즈니스 상황에서 도출한 연수." },

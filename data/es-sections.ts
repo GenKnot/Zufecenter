@@ -133,7 +133,7 @@ export const esSections: LocalizedSection[] = [
       "La investigación del centro parte de preguntas prácticas: dónde los estudiantes dudan, qué tareas revelan el progreso y cómo los comentarios pueden conducir a un mejor estudio autónomo.",
       "Las discusiones, la observación y los ensayos a pequeña escala ayudan al equipo a probar una idea antes de que se convierta en parte de un estándar de curso.",
     ],
-    image: "/images/meeting-room.jpg",
+    image: "/images/generated/replacements/home-research-overview.webp",
     cards: [
       { title: "Investigación pedagógica", label: "PREGUNTAS DE AULA", text: "Observar el aprendizaje, analizar las dificultades recurrentes y perfeccionar las respuestas pedagógicas." },
       { title: "Desarrollo curricular", label: "DISEÑO DE CURSOS", text: "Alinear los objetivos, las tareas, los materiales y la evaluación en cada progresión." },
@@ -178,7 +178,7 @@ export const esSections: LocalizedSection[] = [
       "El centro trabaja con universidades, organismos educativos oficiales y socios institucionales para apoyar la mejora lingüística, la preparación para evaluaciones internacionales y el desarrollo conjunto de cursos.",
       "La cooperación se guía por una gestión académica clara, expectativas de evaluación coherentes y un plan de ejecución práctico para que los recursos de calidad puedan aplicarse localmente.",
     ],
-    image: "/images/meeting-room.jpg",
+    image: "/images/generated/replacements/home-collaboration-overview.webp",
     cards: [
       { title: "Colaboraciones con campus", label: "CURSOS Y ACTIVIDADES", text: "Cursos conjuntos, conferencias, talleres y actividades lingüístico-culturales para grupos de estudiantes específicos." },
       { title: "Colaboraciones empresariales", label: "NECESIDADES LABORALES", text: "Formación derivada de las funciones, la comunicación con clientes y las situaciones de negocios internacionales." },

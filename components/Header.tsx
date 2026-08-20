@@ -204,6 +204,13 @@ export function Header() {
       locale === "zh" ? "zh-CN" : locale;
   }, [locale]);
 
+  // 当前所在栏目：/languages/english 也应点亮「语种课程」
+  const isActive = (href: string) => {
+    const target = localized ? localizedHref(locale, href) : href;
+    if (target === "/" || target === `/${locale}`) return pathname === target;
+    return pathname === target || pathname.startsWith(`${target}/`);
+  };
+
   return (
     <header className="relative z-50 bg-white">
       <div className="border-b border-slate-200/80">
@@ -252,9 +259,9 @@ export function Header() {
         <div
           className={`shell ${
             open ? "grid h-full content-start gap-2 overflow-y-auto py-4" : "hidden"
-          } lg:flex lg:h-14 lg:items-stretch lg:justify-between lg:gap-1 lg:overflow-visible lg:py-0`}
+          } lg:flex lg:h-14 lg:items-stretch lg:justify-center lg:gap-0 lg:overflow-visible lg:py-0`}
         >
-          {navItems.map((item) => (
+          {navItems.map((item, navIndex) => (
             <div
               key={item.href}
               className="group relative overflow-hidden border border-white/10 bg-white/[0.035] lg:flex lg:items-center lg:overflow-visible lg:border-0 lg:bg-transparent"
@@ -289,20 +296,45 @@ export function Header() {
                   <span>{item.label}</span>
                 </Link>
               )}
+              {/*
+                桌面端的一级导航项。
+                原本是 hover 时整块变浅色底、并靠 justify-between 把七项撑满版心——
+                色块 hover 显得笨重，撑满则让相邻两项隔开一百多像素，看着是被抻开的。
+                现在居中成组，hover 与当前栏目都用底部一条金线表示。
+              */}
               <Link
                 href={localized ? localizedHref(locale, item.href) : item.href}
                 onClick={() => {
                   setOpen(false);
                   setExpanded(null);
                 }}
-                className="hidden px-4 py-3.5 text-sm font-semibold tracking-[0.04em] transition hover:bg-white/10 lg:block lg:px-4 lg:py-[18px] lg:font-normal lg:tracking-[0.06em]"
+                aria-current={isActive(item.href) ? "page" : undefined}
+                className={`relative hidden px-4 py-3.5 text-sm font-semibold tracking-[0.04em] transition lg:flex lg:items-center lg:gap-1.5 lg:px-6 lg:py-[18px] lg:font-normal lg:tracking-[0.06em] ${
+                  isActive(item.href) ? "lg:text-white" : "lg:text-white/82 lg:hover:text-white"
+                }`}
               >
                 <span>{item.label}</span>
                 {item.children && (
-                  <span className="ml-1.5 hidden text-[9px] text-white/45 lg:inline">
-                    ▾
-                  </span>
+                  <svg
+                    aria-hidden
+                    viewBox="0 0 10 6"
+                    className="hidden h-[5px] w-2.5 fill-none stroke-current opacity-45 transition group-hover:opacity-90 lg:block"
+                    strokeWidth="1.4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M1 1l4 4 4-4" />
+                  </svg>
                 )}
+                {/* 底部金线：hover 时从左展开，当前栏目常驻 */}
+                <span
+                  aria-hidden
+                  className={`absolute inset-x-5 bottom-0 hidden h-0.5 origin-left bg-[#c99b48] transition-transform duration-300 lg:block ${
+                    isActive(item.href)
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                />
               </Link>
               {item.children && (
                 <>
@@ -325,15 +357,26 @@ export function Header() {
                       </Link>
                     ))}
                   </div>
-                  <div className="invisible fixed left-0 top-[152px] z-50 hidden w-screen border-t-2 border-[#c99b48] bg-white/95 opacity-0 shadow-2xl transition-all duration-200 group-hover:visible group-hover:opacity-100 lg:block">
-                    <div className="shell grid max-w-[820px] grid-cols-2 gap-px bg-slate-200">
+                  {/*
+                    下拉面板锚定在它自己的菜单项下方。
+                    原本是一条通栏白条，里面用 .shell + max-w-[820px] 装内容——
+                    而 .shell 带 margin-inline:auto，内容被居中到视口，
+                    和触发它的菜单项完全对不上，左边还空出一大块白。
+                    最右三项改为从右边缘对齐，避免在 1024px 这类窄桌面屏上溢出。
+                  */}
+                  <div
+                    className={`invisible absolute top-full z-50 hidden w-[34rem] max-w-[calc(100vw-3rem)] border-t-2 border-[#c99b48] bg-white opacity-0 shadow-[0_24px_48px_rgba(7,31,62,0.18)] transition-all duration-200 group-hover:visible group-hover:opacity-100 lg:block ${
+                      navIndex >= navItems.length - 3 ? "right-0" : "left-0"
+                    }`}
+                  >
+                    <div className="grid grid-cols-2 gap-x-8 px-7 py-5">
                       {item.children.map((child) => (
                         <Link
                           key={child.href}
                           href={localized ? localizedHref(locale, child.href) : child.href}
-                          className="bg-white p-5 text-[#11233e] transition hover:bg-[#f7f5f0]"
+                          className="group/item border-t border-slate-200 py-4 text-[#11233e] transition first:border-t-0 [&:nth-child(2)]:border-t-0"
                         >
-                          <strong className="block font-serif text-base">
+                          <strong className="block font-serif text-base font-semibold transition group-hover/item:text-[#174f8f]">
                             {child.label}
                           </strong>
                           {child.description && (

@@ -197,7 +197,7 @@ export const programPages: ContentPage[] = [
     title: "通用语言能力",
     english: "General Language",
     summary: "把零散学过的知识重新连起来，为考试、工作和长期进阶打好基础。",
-    heroImage: "/images/generated/replacements/program-general-hero.webp",
+    heroImage: "/images/programs/general.webp",
     intro: [
       "很多人并不是没学过，而是词汇、语法、听力和表达各自分散，遇到真实交流就调动不起来。通用能力课程从现有基础出发，把这些部分重新连成一套可使用的语言能力。",
     ],
@@ -218,7 +218,7 @@ export const programPages: ContentPage[] = [
     title: "考试与升学辅导",
     english: "Exam Preparation",
     summary: "不靠盲目刷题，用诊断、规划和复盘把有限的备考时间花在关键处。",
-    heroImage: "/images/generated/replacements/program-exam-preparation-hero.webp",
+    heroImage: "/images/programs/exam-preparation.webp",
     intro: [
       "备考最怕两件事：不知道问题在哪里，也不知道时间应该怎么分。课程先看基础与目标，再安排语言补强、题型训练和模考复盘，让每一阶段都有明确重点。",
     ],
@@ -239,7 +239,7 @@ export const programPages: ContentPage[] = [
     title: "商务与职业语言",
     english: "Business Communication",
     summary: "邮件写得清楚，会议敢于开口，面对客户能够专业、得体地回应。",
-    heroImage: "/images/meeting-room.jpg",
+    heroImage: "/images/programs/business.webp",
     intro: [
       "职业语言不追求复杂辞藻，首先要做到准确、清楚、得体。课程直接从工作任务出发：怎样写一封让人迅速抓住重点的邮件，怎样在会议中表达不同意见，怎样向客户介绍方案。",
     ],
@@ -260,7 +260,7 @@ export const programPages: ContentPage[] = [
     title: "学术英语与表达",
     english: "Academic Communication",
     summary: "读文献更快抓住重点，写作更有结构，做英文陈述时把研究讲明白。",
-    heroImage: "/images/university-lecture.jpg",
+    heroImage: "/images/programs/academic.webp",
     intro: [
       "学术表达并不是把句子写得更长，而是让观点、证据和逻辑更清楚。课程面向需要阅读文献、撰写英文文本、完成课程展示或参与国际交流的高校学生与研究人员。",
     ],
@@ -281,7 +281,7 @@ export const programPages: ContentPage[] = [
     title: "青少年语言成长",
     english: "Young Learners",
     summary: "不抢跑、不填鸭，让兴趣、阅读和表达能力陪孩子走得更久。",
-    heroImage: "/images/generated/replacements/program-young-learners-hero.webp",
+    heroImage: "/images/programs/young-learners.webp",
     intro: [
       "青少年语言学习不该只剩背单词和做题。课程按照年龄与认知特点安排内容，让孩子在故事、阅读、项目和表达中建立兴趣，也慢慢学会管理自己的学习。",
     ],
@@ -302,7 +302,7 @@ export const programPages: ContentPage[] = [
     title: "企业定制培训",
     english: "Corporate Training",
     summary: "从企业真实业务出发，让培训内容与岗位、客户和国际沟通直接相关。",
-    heroImage: "/images/generated/replacements/program-corporate-hero.webp",
+    heroImage: "/images/programs/corporate.webp",
     intro: [
       "同一套商务英语，放在不同企业里未必都有效。我们先了解员工在哪里使用外语、最常遇到什么困难，再把岗位任务、行业表达和企业案例写进课程。",
     ],
@@ -323,7 +323,7 @@ export const programPages: ContentPage[] = [
     title: "短期专题工作坊",
     english: "Short Workshops",
     summary: "一次解决一个具体问题，时间不长，但方法和练习都能带走。",
-    heroImage: "/images/generated/replacements/program-workshops-hero.webp",
+    heroImage: "/images/programs/workshops.webp",
     intro: [
       "专题工作坊通常从半天到数周，主题小而明确。它适合想改善某项表达、体验一门新语言，或还没决定是否进入长期课程的人。",
     ],
@@ -344,7 +344,7 @@ export const programPages: ContentPage[] = [
     title: "留学语言准备",
     english: "Study Abroad Readiness",
     summary: "不只准备一场考试，也提前准备海外课堂、生活沟通和文化适应。",
-    heroImage: "/images/graduation.jpg",
+    heroImage: "/images/programs/study-abroad.webp",
     intro: [
       "拿到目标分数只是留学准备的一部分。进入海外课堂以后，怎样参与讨论、读文献、完成展示，怎样处理住宿、出行和日常沟通，同样会影响最初几个月的状态。",
     ],
@@ -699,7 +699,7 @@ export const resourcePages: ContentPage[] = [
     title: "学习指南",
     english: "Study Guides",
     summary: "从制定目标到保持节奏，用更清楚的方法管理长期语言学习。",
-    heroImage: "/images/study-desk.jpg",
+    heroImage: "/images/resources/study-guides.webp",
     intro: ["语言学习容易开始，难的是长期管理。这里把选课、规划、复习、口语练习和阅读中的常见问题讲清楚，让每一段投入都有方向。"],
     highlights: [
       { title: "目标设置", text: "把长期目标转换为阶段任务。" },
@@ -738,7 +738,7 @@ export const resourcePages: ContentPage[] = [
     title: "课程资料",
     english: "Course Materials",
     summary: "从课程手册到学习清单，让每一份资料都服务于明确的学习任务。",
-    heroImage: "/images/library-hero.png",
+    heroImage: "/images/resources/downloads.webp",
     intro: ["课程资料包括公开课程安排、阶段学习清单、课堂讲义和自主练习工具。公开资料可以直接下载，班级讲义、作业与教师反馈材料则按课程进度向学员发放。"],
     highlights: [
       { title: "课程手册", text: "课程方向、层级与学习安排。" },
@@ -757,7 +757,7 @@ export const resourcePages: ContentPage[] = [
     title: "常见问题",
     english: "Frequently Asked Questions",
     summary: "关于选课、测评、班型、学习基础和企业培训的常见说明。",
-    heroImage: "/images/generated/replacements/resources-faq-hero.webp",
+    heroImage: "/images/resources/faq.webp",
     intro: ["第一次咨询时，大家最常问的是从哪里开始、该选什么班、每周要投入多久。我们把这些问题集中说明，方便你先做判断，再与课程顾问细聊。"],
     highlights: [
       { title: "零基础", text: "四个语种均可设置零基础入门班。" },
@@ -782,7 +782,7 @@ export const resourcePages: ContentPage[] = [
     title: "数字学习",
     english: "Digital Learning",
     summary: "用线上资源、学习档案和社群支持延伸课堂，但不让工具取代真正的练习。",
-    heroImage: "/images/generated/replacements/resources-digital-hero.webp",
+    heroImage: "/images/resources/digital-learning.webp",
     intro: ["数字工具的价值，是让课前准备更轻、课后反馈更快、学习记录更清楚。课程资料、线上任务与活动通知会按班级需要统一组织。"],
     highlights: [
       { title: "课前准备", text: "通过短材料进入课堂主题。" },

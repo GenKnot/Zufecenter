@@ -133,7 +133,7 @@ export const jaSections: LocalizedSection[] = [
       "センターの研究は実践的な疑問から始まります。学習者がどこで躓くか、どの課題が進歩を示すか、フィードバックがより良い自立学習につながるか。",
       "議論・観察・小規模な試みがチームを助け、アイデアをコース基準にする前に検証します。",
     ],
-    image: "/images/meeting-room.jpg",
+    image: "/images/generated/replacements/home-research-overview.webp",
     cards: [
       { title: "語学教育研究", label: "授業の問い", text: "学習を観察し、繰り返し現れる困難を分析し、指導の対応を改善します。" },
       { title: "カリキュラム開発", label: "コース設計", text: "各段階の到達目標・課題・教材・評価を整合させます。" },
@@ -178,7 +178,7 @@ export const jaSections: LocalizedSection[] = [
       "センターは大学、公式教育機関、組織パートナーと連携し、語学力向上、国際評価への準備、共同カリキュラム開発を支援します。",
       "連携は明確な学術管理、統一された評価期待、実行可能な実施計画に基づき、質の高い国際リソースを地域の学習に活用します。",
     ],
-    image: "/images/meeting-room.jpg",
+    image: "/images/generated/replacements/home-collaboration-overview.webp",
     cards: [
       { title: "大学間連携", label: "コース・活動", text: "特定の学生グループのための合同コース・講義・ワークショップ・文化活動。" },
       { title: "企業連携", label: "職場のニーズ", text: "役割・顧客対応・国際ビジネス場面から導き出した研修。" },
