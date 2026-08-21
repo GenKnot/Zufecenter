@@ -149,7 +149,7 @@ export const frSections: LocalizedSection[] = [
       "La recherche du centre part de questions pratiques : où les apprenants hésitent, quelles tâches révèlent les progrès et comment les retours peuvent conduire à une meilleure étude autonome.",
       "Les discussions, l'observation et les essais à petite échelle aident l'équipe à tester une idée avant qu'elle devienne une norme de cours.",
     ],
-    image: "/images/generated/replacements/home-research-overview.webp",
+    image: "/images/library/sections/home-research-overview.webp",
     cards: [
       { title: "Recherche pédagogique", label: "QUESTIONS DE CLASSE", text: "Observer l'apprentissage, analyser les difficultés récurrentes et affiner les réponses pédagogiques." },
       { title: "Développement curriculaire", label: "CONCEPTION DE COURS", text: "Aligner les objectifs, les tâches, les matériaux et l'évaluation à chaque progression." },
@@ -194,7 +194,7 @@ export const frSections: LocalizedSection[] = [
       "Le centre travaille avec des universités, des organismes éducatifs officiels et des partenaires institutionnels pour soutenir le développement linguistique, la préparation aux évaluations internationales et la co-construction de cours.",
       "La coopération suit une gestion académique claire, des attentes d'évaluation cohérentes et un plan de mise en œuvre pratique afin que les ressources de qualité puissent être utilisées localement.",
     ],
-    image: "/images/generated/replacements/home-collaboration-overview.webp",
+    image: "/images/library/sections/home-collaboration-overview.webp",
     cards: [
       { title: "Partenariats universitaires", label: "COURS & ACTIVITÉS", text: "Cours communs, conférences, ateliers et activités linguistiques pour des groupes d'étudiants spécifiques." },
       { title: "Partenariats entreprises", label: "BESOINS EN MILIEU DE TRAVAIL", text: "Formation issue des fonctions, de la communication client et des situations d'affaires internationales." },

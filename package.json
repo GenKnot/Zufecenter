@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/check-font-coverage.mjs",
     "build": "next build",
+    "fonts": "./scripts/build-fonts.sh",
     "postbuild": "node scripts/localize-static-html-lang.mjs",
     "audit:export": "node scripts/audit-static-export.mjs",
     "start": "next start",

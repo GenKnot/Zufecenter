@@ -68,6 +68,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN" data-scroll-behavior="smooth" suppressHydrationWarning>
+      <head>
+        {/* 标题用的思源宋体和正文用的思源黑体先取，避免中文先以系统宋体渲染再跳字 */}
+        <link
+          rel="preload"
+          href="/fonts/noto-serif-sc-600.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/noto-sans-sc-400.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         <Script id="locale-html-lang" strategy="beforeInteractive">
           {"(()=>{const s=location.pathname.split('/').filter(Boolean)[0];const locales=['en','fr','es','ja','ko'];document.documentElement.lang=locales.includes(s)?s:'zh-CN'})()"}

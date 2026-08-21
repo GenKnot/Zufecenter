@@ -33,15 +33,15 @@ const sectionHeroImages: Record<string, string> = {
 };
 
 const sectionOverviewImages: Record<string, string> = {
-  about: "/images/generated/replacements/section-about-overview.webp",
-  languages: "/images/generated/replacements/section-languages-overview.webp",
-  programs: "/images/generated/replacements/section-programs-overview.webp",
-  practice: "/images/generated/replacements/section-practice-overview.webp",
-  faculty: "/images/generated/replacements/section-faculty-overview.webp",
-  research: "/images/generated/replacements/section-research-overview.webp",
-  collaboration: "/images/generated/replacements/section-collaboration-overview.webp",
-  resources: "/images/generated/replacements/section-resources-overview.webp",
-  contact: "/images/generated/replacements/section-contact-overview.webp",
+  about: "/images/library/sections/section-about-overview.webp",
+  languages: "/images/library/sections/section-languages-overview.webp",
+  programs: "/images/library/sections/section-programs-overview.webp",
+  practice: "/images/library/sections/section-practice-overview.webp",
+  faculty: "/images/library/sections/section-faculty-overview.webp",
+  research: "/images/library/sections/section-research-overview.webp",
+  collaboration: "/images/library/sections/section-collaboration-overview.webp",
+  resources: "/images/library/sections/section-resources-overview.webp",
+  contact: "/images/library/sections/section-contact-overview.webp",
 };
 
 const facultyShowcaseCopy: Record<

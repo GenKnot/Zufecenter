@@ -149,7 +149,7 @@ export const englishSections: EnglishSection[] = [
       "The center’s research begins with practical questions: where learners hesitate, which tasks reveal progress and how feedback can lead to better independent study.",
       "Discussion, observation and small-scale trials help the team test an idea before it becomes part of a course standard.",
     ],
-    image: "/images/generated/replacements/home-research-overview.webp",
+    image: "/images/library/sections/home-research-overview.webp",
     cards: [
       { title: "Language teaching research", label: "CLASSROOM QUESTIONS", text: "Observe learning, analyze recurring difficulties and refine teaching responses." },
       { title: "Curriculum development", label: "COURSE DESIGN", text: "Align outcomes, tasks, materials and assessment across each progression." },
@@ -194,7 +194,7 @@ export const englishSections: EnglishSection[] = [
       "The center works with universities, official education organizations and institutional partners to support language advancement, international assessment readiness and shared course development.",
       "Collaboration is guided by academic management, consistent assessment expectations and a practical delivery plan so that high-quality resources can be used locally.",
     ],
-    image: "/images/generated/replacements/home-collaboration-overview.webp",
+    image: "/images/library/sections/home-collaboration-overview.webp",
     cards: [
       { title: "Campus partnerships", label: "COURSES & ACTIVITIES", text: "Joint courses, lectures, workshops and language-cultural activities for specific student groups." },
       { title: "Enterprise partnerships", label: "WORKPLACE NEEDS", text: "Training derived from roles, client communication and international business situations." },

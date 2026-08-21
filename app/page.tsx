@@ -32,40 +32,46 @@ const stats = [
 
 /*
   首屏轮播的五幕。
-  选图统一取左三分之一为干净墙面的画面，文字压上去不会盖到人脸。
-  文案沿用原版的语气：先一句主张，再一句把范围和做法说清楚。
+
+  选图来自 output/website-image-library：空镜、远景、背影，没有正脸。
+  人物的脸、手和牙齿最容易露馅，与其把人做得更真，不如不拍人；
+  阴天与荧光灯混光、墙面磨损、椅子不成套这些"普通"的细节反而带来可信度。
+  六张候选的左三分之一平均亮度都在 140 以下，白色标题压上去稳得住。
+
+  每一幕的图和文案对应：总起用校园林荫路，起步用普通教室，
+  备考用图书馆自习区，表达用教学走廊，长期用书架纵深。
 */
 const heroSlides: HeroSlide[] = [
   {
-    image: "/images/generated/replacements/home-hero.webp",
+    image: "/images/campus/01-hero-campus-tree-walkway.webp",
     titleTop: "让语言成为",
     titleBottom: "通往更大世界的能力",
     description:
       "英语、法语、日语、韩语，从零基础分级进阶到考试、升学与职业应用，为个人与组织提供有目标、有路径、有反馈的语言学习方案。",
   },
   {
-    image: "/images/section-heroes/language-programs-hero.jpg",
+    image: "/images/campus/03-hero-empty-classroom.webp",
     titleTop: "从零基础到",
     titleBottom: "能开口的那一步",
     description:
       "四个语种、二十六个分级与专项班型，每一级都有明确的阶段目标与可见成果，让学习者清楚知道自己在哪里、下一步该练什么。",
   },
   {
-    image: "/images/section-heroes/programs-training-hero.jpg",
+    image: "/images/campus/05-hero-library-study-area.webp",
     titleTop: "考试、升学、职业",
     titleBottom: "每条路径都有准备",
     description:
       "雅思、DELF、JLPT、TOPIK 与商务沟通专项，围绕具体目标安排内容与节奏，把有限的备考时间用在真正关键的地方。",
   },
   {
-    image: "/images/section-heroes/learning-practice-hero.jpg",
+    image: "/images/campus/06-hero-language-center-corridor.webp",
     titleTop: "让每一次表达",
     titleBottom: "都更准确、更自信",
     description:
       "课堂讨论、邮件写作、会议表达与日常交流中反复使用，语言角、工作坊与文化体验让课堂所学真正成为能拿出来用的能力。",
   },
   {
-    image: "/images/section-heroes/about-center-hero.jpg",
+    image: "/images/campus/02-hero-library-aisle.webp",
     titleTop: "把语言教育",
     titleBottom: "做成一件长期的事",
     description:
@@ -238,7 +244,7 @@ export default function HomePage() {
           </div>
           <div className="relative min-h-[480px] overflow-hidden bg-[#0b2f5b]">
             <Image
-              src="/images/generated/replacements/home-about-overview.webp"
+              src="/images/library/sections/home-about-overview.webp"
               alt="多语种教学课堂"
               fill
               className="object-cover"
@@ -292,7 +298,7 @@ export default function HomePage() {
           <div className="grid overflow-hidden bg-[#071f3e] text-white lg:grid-cols-[1.04fr_0.96fr]">
             <div className="relative min-h-[520px]">
               <Image
-                src="/images/generated/replacements/home-practice-overview.webp"
+                src="/images/library/sections/home-practice-overview.webp"
                 alt="学员小组交流"
                 fill
                 className="object-cover"
@@ -379,7 +385,7 @@ export default function HomePage() {
               className="group relative min-h-[440px] overflow-hidden bg-[#0b2f5b] p-9 text-white sm:p-12"
             >
               <Image
-                src="/images/generated/replacements/home-research-overview.webp"
+                src="/images/library/sections/home-research-overview.webp"
                 alt=""
                 fill
                 className="object-cover opacity-42 transition duration-500 group-hover:scale-[1.03]"
@@ -402,7 +408,7 @@ export default function HomePage() {
               className="group relative min-h-[440px] overflow-hidden bg-[#0b2f5b] p-9 text-white sm:p-12"
             >
               <Image
-                src="/images/generated/replacements/home-collaboration-overview.webp"
+                src="/images/library/sections/home-collaboration-overview.webp"
                 alt=""
                 fill
                 className="object-cover opacity-42 transition duration-500 group-hover:scale-[1.03]"

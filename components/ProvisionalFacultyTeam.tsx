@@ -6,9 +6,9 @@ export type ProvisionalFacultyLanguage = "english" | "japanese" | "korean";
 type ShowcaseLocale = "zh" | ForeignLocale;
 
 const teamImages: Record<ProvisionalFacultyLanguage, string> = {
-  english: "/images/generated/faculty/english-team.png",
-  japanese: "/images/generated/faculty/japanese-team.png",
-  korean: "/images/generated/faculty/korean-team.png",
+  english: "/images/library/faculty/english-team.png",
+  japanese: "/images/library/faculty/japanese-team.png",
+  korean: "/images/library/faculty/korean-team.png",
 };
 
 const copy: Record<

@@ -122,7 +122,7 @@ export default async function EnglishNewsDetailPage({
           className="pointer-events-none absolute -bottom-16 right-[-6%] hidden h-[115%] w-[54%] opacity-30 lg:block"
         >
           <Image
-            src="/images/generated/news-header-editorial-ornament.png"
+            src="/images/library/news-header-editorial-ornament.png"
             alt=""
             fill
             className="object-contain object-right-bottom mix-blend-multiply"

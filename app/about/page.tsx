@@ -33,7 +33,7 @@ export default function AboutPage() {
         <div className="shell grid gap-14 lg:grid-cols-[1fr_1fr] lg:items-start">
           <div className="relative min-h-[520px] overflow-hidden bg-[#0b2f5b]">
             <Image
-              src="/images/generated/replacements/about-overview-image.webp"
+              src="/images/library/sections/about-overview-image.webp"
               alt="开放的学习与阅读空间"
               fill
               className="object-cover"

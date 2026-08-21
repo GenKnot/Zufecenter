@@ -142,7 +142,7 @@ export default async function EnglishNewsPage({
     <>
       <section className="relative flex min-h-[430px] items-center overflow-hidden bg-[#0b2f5b] py-20 text-white">
         <Image
-          src="/images/generated/replacements/section-news-overview.webp"
+          src="/images/library/sections/section-news-overview.webp"
           alt=""
           fill
           priority

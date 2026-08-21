@@ -4,3 +4,6 @@ out
 .DS_Store
 *.log
 /.gk
+tsconfig.tsbuildinfo
+.fonts-src
+/output/image-backups-*

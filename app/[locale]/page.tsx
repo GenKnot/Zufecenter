@@ -150,7 +150,7 @@ export default async function LocalizedLandingPage({
     <>
       <section className="relative min-h-[700px] overflow-hidden bg-[#071f3e] text-white">
         <Image
-          src="/images/generated/replacements/home-hero.webp"
+          src="/images/library/sections/home-hero.webp"
           alt=""
           fill
           priority
@@ -242,7 +242,7 @@ export default async function LocalizedLandingPage({
           </div>
           <div className="relative min-h-[440px] overflow-hidden bg-[#0b2f5b]">
             <Image
-              src="/images/generated/replacements/home-about-overview.webp"
+              src="/images/library/sections/home-about-overview.webp"
               alt=""
               fill
               className="object-cover"

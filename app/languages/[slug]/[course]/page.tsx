@@ -9,6 +9,7 @@ import {
 import { siteConfig } from "@/data/site-config";
 import { currentTerm, findCurrentOffering } from "@/data/operations";
 import { getCourseImage } from "@/data/course-images";
+import { findCourseSyllabus } from "@/data/course-syllabus";
 import { localizedAlternates } from "@/lib/site-metadata";
 
 export function generateStaticParams() {
@@ -70,6 +71,7 @@ export default async function LanguageCoursePage({
   if (!item) notFound();
   const offering = findCurrentOffering(item.code);
   const courseImage = getCourseImage(item.language, item.slug);
+  const syllabus = findCourseSyllabus(item.code);
 
   return (
     <>
@@ -203,35 +205,137 @@ export default async function LanguageCoursePage({
         </div>
       </section>
 
+      {/*
+        入班基础、定制教材与教学安排。
+        这三项原本只在教学大纲文档里，网站上看不到——而它们正是报名前最想确认的事。
+      */}
+      {syllabus && (
+        <section className="py-20">
+          <div className="shell">
+            <div className="max-w-3xl">
+              <span className="eyebrow">Before you enrol</span>
+              <h2 className="section-title">入班基础与教学准备</h2>
+            </div>
+            <dl className="mt-12 grid gap-px overflow-hidden border border-slate-200 bg-slate-200 lg:grid-cols-3">
+              {[
+                ["入班基础", syllabus.prerequisite],
+                ["定制教材", syllabus.materials],
+                ["教学安排", syllabus.teaching],
+              ].map(([label, value]) => (
+                <div key={label} className="bg-white p-7">
+                  <dt className="text-xs font-semibold tracking-[0.12em] text-[#174f8f]">
+                    {label}
+                  </dt>
+                  <dd className="mt-4 text-sm leading-7 text-slate-600">
+                    {value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      )}
+
       <section className="bg-[#edf2f6] py-24">
         <div className="shell">
           <div className="max-w-3xl">
             <span className="eyebrow">Course syllabus</span>
             <h2 className="section-title">课程大纲</h2>
+            {/* 周期与频率在上面的信息条里已经写过，这里不重复 */}
             <p className="section-copy">
               大纲按能力进阶组织。教师会根据班级学习表现调整练习密度，但阶段目标与核心内容保持一致。
             </p>
           </div>
-          <div className="mt-12 divide-y divide-slate-200 border-y border-slate-200">
-            {item.syllabus.map((unit) => (
-              <article
-                key={unit.unit}
-                className="grid gap-5 bg-white px-7 py-8 md:grid-cols-[90px_0.42fr_1fr] md:items-start"
-              >
-                <span className="font-serif text-2xl text-[#c99b48]">
-                  {unit.unit}
-                </span>
-                <h3 className="font-serif text-2xl font-semibold">
-                  {unit.title}
-                </h3>
-                <p className="text-sm leading-8 text-slate-600">
-                  {unit.content}
-                </p>
-              </article>
-            ))}
-          </div>
+
+          {syllabus ? (
+            <div className="mt-12 divide-y divide-slate-200 border-y border-slate-200">
+              {syllabus.chapters.map((chapter) => (
+                <article key={chapter.chapter} className="bg-white px-7 py-9">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                    <h3 className="font-serif text-2xl font-semibold">
+                      {chapter.chapter}
+                    </h3>
+                    <span className="text-sm font-semibold text-[#a77c31]">
+                      {chapter.weeks}
+                    </span>
+                  </div>
+                  <dl className="mt-6 grid gap-6 md:grid-cols-3">
+                    {[
+                      ["教学内容", chapter.content],
+                      ["课堂任务", chapter.classwork],
+                      ["作业与章节检测", chapter.homework],
+                    ].map(([label, value]) => (
+                      <div key={label}>
+                        <dt className="text-xs font-semibold tracking-[0.1em] text-slate-400">
+                          {label}
+                        </dt>
+                        <dd className="mt-2.5 text-sm leading-7 text-slate-600">
+                          {value}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div className="mt-12 divide-y divide-slate-200 border-y border-slate-200">
+              {item.syllabus.map((unit) => (
+                <article
+                  key={unit.unit}
+                  className="grid gap-5 bg-white px-7 py-8 md:grid-cols-[90px_0.42fr_1fr] md:items-start"
+                >
+                  <span className="font-serif text-2xl text-[#c99b48]">
+                    {unit.unit}
+                  </span>
+                  <h3 className="font-serif text-2xl font-semibold">
+                    {unit.title}
+                  </h3>
+                  <p className="text-sm leading-8 text-slate-600">
+                    {unit.content}
+                  </p>
+                </article>
+              ))}
+            </div>
+          )}
         </div>
       </section>
+
+      {/* 考核安排：什么时候考、考什么，报名前就写清楚 */}
+      {syllabus && syllabus.assessments.length > 0 && (
+        <section className="py-24">
+          <div className="shell grid gap-14 lg:grid-cols-[0.72fr_1.28fr]">
+            <div>
+              <span className="eyebrow">Assessment</span>
+              <h2 className="section-title">考核安排</h2>
+              <p className="section-copy">
+                采用过程性任务与阶段考核结合，不以一次笔试作为唯一依据。
+              </p>
+            </div>
+            <div>
+              <ol className="divide-y divide-slate-200 border-y border-slate-200">
+                {syllabus.assessments.map((entry) => (
+                  <li
+                    key={entry}
+                    className="py-5 text-sm leading-7 text-slate-600"
+                  >
+                    {entry}
+                  </li>
+                ))}
+              </ol>
+              {syllabus.outcome && (
+                <p className="mt-8 border-l-2 border-[#c99b48] pl-6 text-sm leading-7 text-slate-600">
+                  <strong className="font-semibold text-[#11233e]">
+                    结课成果
+                  </strong>
+                  <br />
+                  {syllabus.outcome}
+                </p>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="py-20">
         <div className="shell grid gap-10 bg-[#0b2f5b] p-9 text-white sm:p-12 lg:grid-cols-[1fr_auto] lg:items-center">

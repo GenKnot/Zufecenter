@@ -1,5 +1,96 @@
 @import "tailwindcss";
 
+/*
+ * 字体自托管。
+ *
+ * 此前 globals.css 里虽然写着 "Noto Sans SC" / "Noto Serif SC"，但从来没有加载过
+ * 它们——没有 @font-face，也没走 next/font，所以只有恰好装了这两个字体的电脑才生效。
+ * 而 font-serif 全站用了 115 处，它解析成 Tailwind 默认的 Georgia 字体栈，
+ * Georgia 没有中文字形，于是每个中文标题都掉到系统宋体：
+ * macOS 上是 Songti SC 还算体面，Windows 上是中易宋体，发虚且字重不匀。
+ *
+ * 字体文件由 ./scripts/build-fonts.sh 按站内实际用字裁剪后提交进仓库，
+ * 构建时不需要联网，也不依赖 Google（国内 CI 访问不到）。
+ * 拉丁字母与数字走 Source Serif 4 / Source Sans 3——它们和思源系同源，
+ * 中西混排时字面大小与重心一致。
+ */
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/source-serif-4-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/source-sans-3-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Noto Serif SC";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/noto-serif-sc-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Noto Sans SC";
+  font-style: normal;
+  font-weight: 100 400;
+  font-display: swap;
+  src: url("/fonts/noto-sans-sc-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Noto Sans SC";
+  font-style: normal;
+  font-weight: 500 900;
+  font-display: swap;
+  src: url("/fonts/noto-sans-sc-500.woff2") format("woff2");
+}
+
+/*
+ * 思源宋体／黑体的 SC 版本不含谚文（实测谚文音节 0 个），韩语页面会掉到系统字体。
+ * unicode-range 限定在谚文区段，其它页面不会因此多下载一个字节。
+ */
+@font-face {
+  font-family: "Noto Serif KR";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/noto-serif-kr-600.woff2") format("woff2");
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3,
+    U+D7B0-D7FF;
+}
+
+@font-face {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/noto-sans-kr-400.woff2") format("woff2");
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7A3,
+    U+D7B0-D7FF;
+}
+
+/*
+ * 让 Tailwind 的 font-sans / font-serif 指向上面这几套。
+ * 这是关键一步：全站 115 处 font-serif 原本走的是 Tailwind 默认的 Georgia 栈。
+ */
+@theme {
+  --font-sans:
+    "Source Sans 3", "Noto Sans SC", "Noto Sans KR", -apple-system,
+    BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-serif:
+    "Source Serif 4", "Noto Serif SC", "Noto Serif KR", Georgia, "Songti SC",
+    "SimSun", serif;
+}
+
 :root {
   --ink: #11233e;
   --navy: #0b2f5b;
@@ -26,8 +117,9 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--white);
-  font-family: "Noto Sans SC", "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+  font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
