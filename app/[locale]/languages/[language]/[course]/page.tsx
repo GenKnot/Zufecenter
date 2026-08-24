@@ -7,6 +7,10 @@ import { frCourses, findFrCourse } from "@/data/fr-courses";
 import { esCourses, findEsCourse } from "@/data/es-courses";
 import { jaCourses, findJaCourse } from "@/data/ja-courses";
 import { koCourses, findKoCourse } from "@/data/ko-courses";
+import {
+  findLocalizedSyllabus,
+  syllabusUi,
+} from "@/data/course-syllabus-i18n";
 import { localizedLandings, localizedUi, type ForeignLocale } from "@/data/i18n";
 import { getCourseImage } from "@/data/course-images";
 import { siteConfig } from "@/data/site-config";
@@ -96,6 +100,8 @@ export default async function EnglishCoursePage({
     : undefined;
   if (!course) notFound();
   const ui = localizedUi[locale as ForeignLocale];
+  const sy = syllabusUi[locale as ForeignLocale];
+  const syllabus = findLocalizedSyllabus(locale as ForeignLocale, course.code);
   const courseImage = getCourseImage(course.language, course.slug);
 
   return (
@@ -188,33 +194,138 @@ export default async function EnglishCoursePage({
         </div>
       </section>
 
+      {syllabus && (
+        <section className="py-24">
+          <div className="shell">
+            <span className="eyebrow">{ui.courseOutline}</span>
+            <h2 className="section-title">{sy.preparationTitle}</h2>
+            <dl className="mt-12 grid gap-px overflow-hidden border border-slate-200 bg-slate-200 lg:grid-cols-3">
+              {[
+                [sy.prerequisite, syllabus.prerequisite],
+                [sy.materials, syllabus.materials],
+              ].map(([label, value]) => (
+                <div key={label} className="bg-white p-7">
+                  <dt className="text-xs font-semibold tracking-[0.12em] text-[#174f8f]">
+                    {label}
+                  </dt>
+                  <dd className="mt-4 text-sm leading-7 text-slate-600">
+                    {value}
+                  </dd>
+                </div>
+              ))}
+              <div className="bg-white p-7">
+                <dt className="text-xs font-semibold tracking-[0.12em] text-[#174f8f]">
+                  {sy.teaching}
+                </dt>
+                <dd className="mt-4 text-sm leading-7 text-slate-600">
+                  {syllabus.teaching.map((person) => (
+                    <span key={person.label} className="block">
+                      {person.label}
+                      <span className="text-slate-400">　</span>
+                      {person.name}
+                    </span>
+                  ))}
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </section>
+      )}
+
       <section className="bg-[#edf2f6] py-24">
         <div className="shell">
           <span className="eyebrow">{ui.courseOutline}</span>
           <h2 className="section-title">{ui.modulesTitle}</h2>
           <p className="section-copy">
-            {ui.modulesIntro}
+            {syllabus ? sy.outlineIntro : ui.modulesIntro}
           </p>
-          <div className="mt-12 grid gap-5 md:grid-cols-2">
-            {course.syllabus.map((module) => (
-              <article
-                key={module.unit}
-                className="border border-slate-200 bg-white p-8"
-              >
-                <span className="font-serif text-sm text-[#c99b48]">
-                  {ui.moduleLabel} {module.unit}
-                </span>
-                <h3 className="mt-5 font-serif text-2xl font-semibold text-[#11233e]">
-                  {module.title}
-                </h3>
-                <p className="mt-4 text-sm leading-7 text-slate-500">
-                  {module.content}
-                </p>
-              </article>
-            ))}
-          </div>
+
+          {syllabus ? (
+            <div className="mt-12 divide-y divide-slate-200 border-y border-slate-200">
+              {course.syllabus.map((module, index) => (
+                <article key={module.unit} className="bg-white px-7 py-9">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
+                    <h3 className="font-serif text-2xl font-semibold text-[#11233e]">
+                      {ui.moduleLabel} {module.unit} · {module.title}
+                    </h3>
+                    <span className="text-sm font-semibold text-[#a77c31]">
+                      {syllabus.chapters[index]?.weeks}
+                    </span>
+                  </div>
+                  <dl className="mt-6 grid gap-6 md:grid-cols-3">
+                    {[
+                      [sy.content, module.content],
+                      [sy.classwork, syllabus.chapters[index]?.classwork],
+                      [sy.homework, syllabus.chapters[index]?.homework],
+                    ].map(([label, value]) => (
+                      <div key={label}>
+                        <dt className="text-xs font-semibold tracking-[0.1em] text-slate-400">
+                          {label}
+                        </dt>
+                        <dd className="mt-2.5 text-sm leading-7 text-slate-600">
+                          {value}
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div className="mt-12 grid gap-5 md:grid-cols-2">
+              {course.syllabus.map((module) => (
+                <article
+                  key={module.unit}
+                  className="border border-slate-200 bg-white p-8"
+                >
+                  <span className="font-serif text-sm text-[#c99b48]">
+                    {ui.moduleLabel} {module.unit}
+                  </span>
+                  <h3 className="mt-5 font-serif text-2xl font-semibold text-[#11233e]">
+                    {module.title}
+                  </h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-500">
+                    {module.content}
+                  </p>
+                </article>
+              ))}
+            </div>
+          )}
         </div>
       </section>
+
+      {syllabus && (
+        <section className="py-24">
+          <div className="shell grid gap-12 lg:grid-cols-[minmax(0,22rem)_1fr]">
+            <div>
+              <span className="eyebrow">{ui.courseOutline}</span>
+              <h2 className="section-title">{sy.assessmentTitle}</h2>
+              <p className="section-copy">{sy.assessmentIntro}</p>
+            </div>
+            <div>
+              <ol className="divide-y divide-slate-200 border-y border-slate-200">
+                {syllabus.assessments.map((entry) => (
+                  <li
+                    key={entry}
+                    className="py-5 text-sm leading-7 text-slate-600"
+                  >
+                    {entry}
+                  </li>
+                ))}
+              </ol>
+              {syllabus.outcome && (
+                <p className="mt-8 border-l-2 border-[#c99b48] pl-6 text-sm leading-7 text-slate-600">
+                  <strong className="font-semibold text-[#11233e]">
+                    {sy.outcome}
+                  </strong>
+                  <br />
+                  {syllabus.outcome}
+                </p>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="py-20">
         <div className="shell flex flex-col justify-between gap-8 bg-[#0b2f5b] p-9 text-white sm:p-12 lg:flex-row lg:items-end">

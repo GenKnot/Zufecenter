@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { HomeHero, type HomeHeroCopy } from "@/components/HomeHero";
 import { NewsCard } from "@/components/NewsCard";
+import { heroSlideLabel, heroSlidesByLocale } from "@/data/hero-slides";
 import { englishNews } from "@/data/english-news";
 import { esNews } from "@/data/es-news";
 import { frNews } from "@/data/fr-news";
@@ -148,48 +150,23 @@ export default async function LocalizedLandingPage({
 
   return (
     <>
-      <section className="relative min-h-[700px] overflow-hidden bg-[#071f3e] text-white">
-        <Image
-          src="/images/library/sections/home-hero.webp"
-          alt=""
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#071f3e]/95 via-[#071f3e]/82 to-[#071f3e]/30" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_35%,rgba(201,155,72,0.18),transparent_30%)]" />
-        <div className="shell relative flex min-h-[700px] items-center py-24">
-          <div className="max-w-3xl">
-            <p className="text-xs font-semibold tracking-[0.24em] text-[#ead7ad]">
-              {content.eyebrow}
-            </p>
-            <h1 className="mt-7 font-serif text-[clamp(42px,6vw,76px)] font-semibold leading-[1.08] tracking-[-0.04em]">
-              {content.heroTitle}
-            </h1>
-            <p className="mt-7 max-w-2xl text-base leading-8 text-white/76 sm:text-lg">
-              {content.heroText}
-            </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link
-                href={`/${locale}/languages`}
-                className="bg-[#c99b48] px-7 py-4 text-sm font-semibold text-[#071f3e] transition hover:bg-[#ead7ad]"
-              >
-                {content.primaryCta}
-              </Link>
-              <Link
-                href={`/${locale}/contact`}
-                className="border border-white/35 px-7 py-4 text-sm font-semibold transition hover:bg-white/10"
-              >
-                {content.secondaryCta}
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="absolute bottom-0 right-0 bg-[#071f3e]/70 px-5 py-3 text-[11px] tracking-[0.08em] text-white/70 backdrop-blur-sm">
-          {content.footerTagline}
-        </div>
-      </section>
+      <HomeHero
+        slides={heroSlidesByLocale[locale]}
+        copy={{
+          eyebrow: content.eyebrow,
+          primaryCta: {
+            href: `/${locale}/languages`,
+            label: content.primaryCta,
+          },
+          secondaryCta: {
+            href: `/${locale}/contact`,
+            label: content.secondaryCta,
+          },
+          tagline: content.footerTagline,
+          slideLabel: heroSlideLabel[locale],
+          titleSize: locale === "ja" || locale === "ko" ? "cjk" : "latin",
+        } satisfies HomeHeroCopy}
+      />
 
       <section className="-mt-px bg-[#0b2f5b] text-white">
         <div className="shell grid sm:grid-cols-2 lg:grid-cols-4">

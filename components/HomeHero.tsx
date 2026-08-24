@@ -12,10 +12,29 @@ export type HeroSlide = {
   description: string;
 };
 
-const INTERVAL = 5000;
+export type HomeHeroCopy = {
+  eyebrow: string;
+  primaryCta: { href: string; label: string };
+  secondaryCta: { href: string; label: string };
+  tagline: string;
+  /** 指示条的读屏标签模板，支持 {n} {total} {title} 三个占位符 */
+  slideLabel: string;
+  /**
+   * 标题字号档位。中日韩一行装得下 6-9 个字，拉丁语系同样意思要 18-22 个字符，
+   * 用同一个上限必然有一边要么撑破版心要么显小，所以分两档。
+   */
+  titleSize?: "cjk" | "latin";
+};
+
+const INTERVAL = 3000;
+
+const TITLE_SIZE = {
+  cjk: "text-[clamp(38px,7vw,82px)] leading-[1.12] tracking-[-0.05em]",
+  latin: "text-[clamp(28px,5vw,62px)] leading-[1.08] tracking-[-0.03em]",
+} as const;
 
 /**
- * 首页主视觉轮播。
+ * 首页主视觉轮播。中文站与五个外语站共用。
  *
  * 视觉与原版首屏完全一致（深蓝渐变罩、金色描边小标、衬线大标题、两个按钮、
  * 右下角标语），只是照片与文案会轮换。选图都取左三分之一为干净墙面的画面，
@@ -26,7 +45,13 @@ const INTERVAL = 5000;
  *  - 鼠标悬停或键盘聚焦在首屏内时暂停，避免读到一半被切走
  *  - 底部提供可点的指示条，不做成只能等它自己转
  */
-export function HomeHero({ slides }: { slides: HeroSlide[] }) {
+export function HomeHero({
+  slides,
+  copy,
+}: {
+  slides: HeroSlide[];
+  copy: HomeHeroCopy;
+}) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const reduced = useRef(false);
@@ -44,6 +69,7 @@ export function HomeHero({ slides }: { slides: HeroSlide[] }) {
   }, [paused, slides.length]);
 
   const active = slides[index];
+  const titleClass = TITLE_SIZE[copy.titleSize ?? "cjk"];
 
   return (
     <section
@@ -73,12 +99,12 @@ export function HomeHero({ slides }: { slides: HeroSlide[] }) {
       <div className="shell relative flex min-h-[720px] items-center py-24">
         <div className="max-w-3xl">
           <p className="text-xs font-semibold tracking-[0.28em] text-[#ead7ad]">
-            LANGUAGE · KNOWLEDGE · WORLD
+            {copy.eyebrow}
           </p>
 
           {/* aria-live 让读屏用户在轮换时也能拿到当前这一幕的内容 */}
           <div aria-live="polite" aria-atomic="true">
-            <h1 className="mt-7 font-serif text-[clamp(38px,7vw,82px)] font-semibold leading-[1.12] tracking-[-0.05em]">
+            <h1 className={`mt-7 font-serif font-semibold ${titleClass}`}>
               {active.titleTop}
               <br />
               {active.titleBottom}
@@ -90,16 +116,16 @@ export function HomeHero({ slides }: { slides: HeroSlide[] }) {
 
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
-              href="/languages"
+              href={copy.primaryCta.href}
               className="bg-[#c99b48] px-7 py-4 text-sm font-semibold text-[#071f3e] transition hover:bg-[#ead7ad]"
             >
-              探索语种课程
+              {copy.primaryCta.label}
             </Link>
             <Link
-              href="/programs"
+              href={copy.secondaryCta.href}
               className="border border-white/35 px-7 py-4 text-sm font-semibold transition hover:bg-white/10"
             >
-              查看培训项目
+              {copy.secondaryCta.label}
             </Link>
           </div>
 
@@ -110,7 +136,13 @@ export function HomeHero({ slides }: { slides: HeroSlide[] }) {
                   key={slide.image}
                   type="button"
                   onClick={() => setIndex(i)}
-                  aria-label={`第 ${i + 1} 幕：${slide.titleTop}${slide.titleBottom}`}
+                  aria-label={copy.slideLabel
+                    .replace("{n}", String(i + 1))
+                    .replace("{total}", String(slides.length))
+                    .replace(
+                      "{title}",
+                      `${slide.titleTop} ${slide.titleBottom}`,
+                    )}
                   aria-current={i === index}
                   className="group py-2"
                 >
@@ -129,7 +161,7 @@ export function HomeHero({ slides }: { slides: HeroSlide[] }) {
       </div>
 
       <div className="absolute right-0 bottom-0 bg-[#071f3e]/70 px-5 py-3 text-[11px] tracking-[0.08em] text-white/70 backdrop-blur-sm">
-        多语种学习 · 专业辅导 · 国际视野
+        {copy.tagline}
       </div>
     </section>
   );

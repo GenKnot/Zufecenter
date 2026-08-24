@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { HomeHero, type HeroSlide } from "@/components/HomeHero";
+import { HomeHero, type HomeHeroCopy } from "@/components/HomeHero";
+import { heroSlideLabel, heroSlidesByLocale } from "@/data/hero-slides";
 import { NewsCard } from "@/components/NewsCard";
 import {
   languagePages,
@@ -30,54 +31,14 @@ const stats = [
   { value: "26", label: "分级与专项班型" },
 ];
 
-/*
-  首屏轮播的五幕。
 
-  选图来自 output/website-image-library：空镜、远景、背影，没有正脸。
-  人物的脸、手和牙齿最容易露馅，与其把人做得更真，不如不拍人；
-  阴天与荧光灯混光、墙面磨损、椅子不成套这些"普通"的细节反而带来可信度。
-  六张候选的左三分之一平均亮度都在 140 以下，白色标题压上去稳得住。
-
-  每一幕的图和文案对应：总起用校园林荫路，起步用普通教室，
-  备考用图书馆自习区，表达用教学走廊，长期用书架纵深。
-*/
-const heroSlides: HeroSlide[] = [
-  {
-    image: "/images/campus/01-hero-campus-tree-walkway.webp",
-    titleTop: "让语言成为",
-    titleBottom: "通往更大世界的能力",
-    description:
-      "英语、法语、日语、韩语，从零基础分级进阶到考试、升学与职业应用，为个人与组织提供有目标、有路径、有反馈的语言学习方案。",
-  },
-  {
-    image: "/images/campus/03-hero-empty-classroom.webp",
-    titleTop: "从零基础到",
-    titleBottom: "能开口的那一步",
-    description:
-      "四个语种、二十六个分级与专项班型，每一级都有明确的阶段目标与可见成果，让学习者清楚知道自己在哪里、下一步该练什么。",
-  },
-  {
-    image: "/images/campus/05-hero-library-study-area.webp",
-    titleTop: "考试、升学、职业",
-    titleBottom: "每条路径都有准备",
-    description:
-      "雅思、DELF、JLPT、TOPIK 与商务沟通专项，围绕具体目标安排内容与节奏，把有限的备考时间用在真正关键的地方。",
-  },
-  {
-    image: "/images/campus/06-hero-language-center-corridor.webp",
-    titleTop: "让每一次表达",
-    titleBottom: "都更准确、更自信",
-    description:
-      "课堂讨论、邮件写作、会议表达与日常交流中反复使用，语言角、工作坊与文化体验让课堂所学真正成为能拿出来用的能力。",
-  },
-  {
-    image: "/images/campus/02-hero-library-aisle.webp",
-    titleTop: "把语言教育",
-    titleBottom: "做成一件长期的事",
-    description:
-      "从课程设计到教学研讨，持续打磨教学方法与反馈机制，服务学生、职场人士及企事业单位的多元学习目标。",
-  },
-];
+const heroCopy: HomeHeroCopy = {
+  eyebrow: "LANGUAGE · KNOWLEDGE · WORLD",
+  primaryCta: { href: "/languages", label: "探索语种课程" },
+  secondaryCta: { href: "/programs", label: "查看培训项目" },
+  tagline: "多语种学习 · 专业辅导 · 国际视野",
+  slideLabel: heroSlideLabel.zh,
+};
 
 const languageMarks: Record<string, string> = {
   english: "EN",
@@ -91,7 +52,7 @@ export default function HomePage() {
 
   return (
     <>
-      <HomeHero slides={heroSlides} />
+      <HomeHero slides={heroSlidesByLocale.zh} copy={heroCopy} />
 
       <section className="-mt-px bg-[#0b2f5b] text-white">
         <div className="shell grid sm:grid-cols-2 lg:grid-cols-4">
