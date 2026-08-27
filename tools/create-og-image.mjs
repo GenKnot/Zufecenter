@@ -2,7 +2,7 @@ import sharp from "sharp";
 
 const width = 1200;
 const height = 630;
-const source = "public/images/campus-autumn.png";
+const source = "public/images/campus-autumn.webp";
 const output = "public/images/og-default.png";
 
 const overlay = `

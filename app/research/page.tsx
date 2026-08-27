@@ -16,7 +16,7 @@ export default function ResearchPage() {
         eyebrow="TEACHING & RESEARCH"
         title="从课堂发现问题，以研究推动下一次进步"
         description="中心持续开展语言教学研究、课程建设与教师发展，让一线经验经过讨论、验证和迭代，沉淀为更成熟的教学方法。"
-        image="/images/section-heroes/teaching-research-hero.jpg"
+        image="/images/section-heroes/teaching-research-hero.webp"
       />
       <section className="py-24">
         <div className="shell">

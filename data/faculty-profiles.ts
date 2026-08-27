@@ -11,7 +11,7 @@ export type FacultyProfile = {
 
 export const facultyProfilesZh: FacultyProfile[] = [
   {
-    name: "Alexis Martin（孟天）",
+    name: "Alexis Martin (孟天)",
     role: "法语教学教师 / FLE 与国际测评",
     focus: "对外法语、专门用途法语、大学法语、TEF / TEFAQ / DFP",
     experience: "20 余年国际法语教学经验",
@@ -19,7 +19,7 @@ export const facultyProfilesZh: FacultyProfile[] = [
     credential: "拥有教育科学、专业在线教育及对外法语教学法三个硕士学位，并具备 TEF、TEFAQ 与 DFP 授权考官资质。",
   },
   {
-    name: "Li Gao（高力）",
+    name: "Li Gao (高力)",
     role: "法语教学与学习辅导教师",
     focus: "法语入门、发音与会话、个别辅导、DELF B1 / B2",
     experience: "7 年法语教学与辅导经验",
@@ -27,7 +27,7 @@ export const facultyProfilesZh: FacultyProfile[] = [
     credential: "西南财经大学金融学硕士，具备法语、英语和中文多语沟通能力，并有集体课、个别课及线上教学经验。",
   },
   {
-    name: "Jean-Christophe Connat（高尚）",
+    name: "Jean-Christophe Connat (高尚)",
     role: "法语教学教师 / 专业法语方向",
     focus: "法语会话、法国文化、商务及科技法语、跨文化沟通",
     experience: "法语教学与成人培训背景",
@@ -115,7 +115,7 @@ export const localizedFacultyProfiles: Record<ForeignLocale, FacultyProfile[]> =
   ],
   ja: [
     {
-      name: "Alexis Martin（孟天）",
+      name: "Alexis Martin (孟天)",
       role: "フランス語講師 / FLE・国際評価",
       focus: "FLE、専門・大学目的フランス語、TEF、TEFAQ、DFP",
       experience: "20年以上の国際フランス語教育経験",
@@ -123,7 +123,7 @@ export const localizedFacultyProfiles: Record<ForeignLocale, FacultyProfile[]> =
       credential: "教育科学、専門eラーニング、FLE教授法の3つの修士号を持ち、TEF・TEFAQ・DFPの認定試験官です。",
     },
     {
-      name: "Li Gao（高力）",
+      name: "Li Gao (高力)",
       role: "フランス語講師・学習アドバイザー",
       focus: "初級フランス語、発音・会話、個別指導、DELF B1/B2",
       experience: "7年のフランス語教育・個別指導経験",
@@ -131,7 +131,7 @@ export const localizedFacultyProfiles: Record<ForeignLocale, FacultyProfile[]> =
       credential: "西南財経大学金融学修士。フランス語、英語、中国語を用い、グループ・個別・オンラインの各形式で指導できます。",
     },
     {
-      name: "Jean-Christophe Connat（高尚）",
+      name: "Jean-Christophe Connat (高尚)",
       role: "フランス語講師 / 専門フランス語",
       focus: "フランス語会話、フランス文化、ビジネス・技術フランス語、異文化コミュニケーション",
       experience: "フランス語教育と成人研修の経験",

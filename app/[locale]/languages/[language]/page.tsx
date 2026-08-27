@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ContentDetail } from "@/components/ContentDetail";
+import { CourseCatalog } from "@/components/CourseCatalog";
+import { findLocalizedDetail } from "@/data/content-detail-i18n";
 import { PageHero } from "@/components/PageHero";
 import { englishCoursesByLanguage } from "@/data/english-courses";
 import { frCoursesByLanguage } from "@/data/fr-courses";
@@ -183,6 +186,22 @@ export default async function EnglishLanguagePage({
     : locale === "ja" ? jaCoursesByLanguage(language)
     : locale === "ko" ? koCoursesByLanguage(language)
     : englishCoursesByLanguage(language);
+
+  // 正文が補われている言語は中文站と同じ ContentDetail を使う（版式を一本化）。
+  const localized = findLocalizedDetail(foreignLocale, "languages", language);
+  if (localized) {
+    return (
+      <ContentDetail
+        page={localized}
+        locale={foreignLocale}
+        context="language"
+        backHref={`/${locale}/languages`}
+        backLabel={ui.backToAllLanguages}
+      >
+        <CourseCatalog language={language} courses={courses} locale={foreignLocale} />
+      </ContentDetail>
+    );
+  }
 
   return (
     <>

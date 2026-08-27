@@ -22,7 +22,7 @@ export default function NewsPage() {
         eyebrow="NEWS & STORIES"
         title="记录每一次出发，也珍藏每一段成长"
         description="从 2015 年至今，课程动态、教学研讨、语言活动与中心记忆共同勾勒出十一年的语言教育日常。"
-        image="/images/section-heroes/news-hero.jpg"
+        image="/images/section-heroes/news-hero.webp"
       />
       <section className="py-24">
         <div className="shell grid gap-14 lg:grid-cols-[180px_1fr]">

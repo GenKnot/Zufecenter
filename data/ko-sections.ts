@@ -13,7 +13,7 @@ export const koSections: LocalizedSection[] = [
       "언어센터는 저장재경대학교 저장상인 자본시장 연구원과 협력하여 대학의 학습 자원과 개인 및 기관의 요구에 맞는 유연한 프로그램을 연결합니다.",
       "2015년경부터 영어 수업과 소규모 학습 모임에서 시작하여 일반 능력, 시험 준비, 학술 커뮤니케이션, 직무 활용, 맞춤형 연수를 아우르는 4개 언어 프로그램으로 발전해 왔습니다.",
     ],
-    image: "/images/library-hero.png",
+    image: "/images/library-hero.webp",
     cards: [
       { title: "센터의 발자취", label: "2015—2026", text: "수업, 언어 클럽, 워크숍, 수업 연구가 센터의 살아있는 역사를 이루고 있습니다." },
       { title: "교육 방식", label: "사용하며 배우기", text: "명확한 단계 목표가 언어 지식과 실제로 사용할 수 있는 소통을 연결합니다." },
@@ -36,7 +36,7 @@ export const koSections: LocalizedSection[] = [
       "각 언어는 기초에서 더 자립적인 소통으로 이어지는 명확한 단계별 진행을 따릅니다. 회화, 직무 활용, 주요 어학 시험을 위한 전문 수업도 마련되어 있습니다.",
       "과정을 추천하기 전에 이전 학습 경험, 현재 수준, 학습 목표, 현실적으로 투자할 수 있는 시간을 확인합니다.",
     ],
-    image: "/images/language-class.png",
+    image: "/images/language-class.webp",
     cards: [
       { title: "영어", label: "8개 과정", text: "A1~B2 단계 진행, 영어 회화, 비즈니스 영어, IELTS 준비.", href: "/ko/languages/english" },
       { title: "프랑스어", label: "6개 과정", text: "A1.1~B2 CEFR 준거 과정과 DELF 집중 준비 옵션.", href: "/ko/languages/french" },
@@ -59,7 +59,7 @@ export const koSections: LocalizedSection[] = [
       "유학을 준비하는 학습자와 고객 미팅을 준비하는 직장인에게는 서로 다른 리듬이 필요합니다. 상황에서 출발하여 언어, 내용, 형식을 선택합니다.",
       "프로그램은 지속적인 과정, 집중 워크숍, 또는 그룹을 위한 맞춤형 시퀀스로 운영될 수 있습니다.",
     ],
-    image: "/images/modern-classroom.jpg",
+    image: "/images/modern-classroom.webp",
     cards: [
       { title: "일반 능력", label: "기초", text: "명확한 단계 진행을 갖춘 균형 잡힌 듣기·말하기·읽기·쓰기." },
       { title: "시험 및 진학 준비", label: "준비", text: "언어 평가, 시험 기술, 학술적 표현, 유학 준비." },
@@ -86,7 +86,7 @@ export const koSections: LocalizedSection[] = [
       "수업 밖의 연습은 학습자가 최근 배운 언어를 더 자연스럽고 개인적인 것으로 만드는 데 도움이 됩니다.",
       "활동은 달성 가능한 소통 과제, 참여에 충분한 지원, 동료에게서 배우는 공간을 갖추고 설계됩니다.",
     ],
-    image: "/images/student-collaboration.png",
+    image: "/images/student-collaboration.webp",
     cards: [
       { title: "언어 보충 지도", label: "맞춤 지원", text: "개별 학습 어려움에 대한 진단, 질문, 집중 피드백." },
       { title: "언어 클럽", label: "커뮤니티", text: "공식 수업 밖에서 말하고, 듣고, 응답하는 정기적인 기회." },
@@ -110,7 +110,7 @@ export const koSections: LocalizedSection[] = [
       "영어, 프랑스어, 일본어, 한국어 교원은 각자 다른 경험과 전문성을 갖고 있으면서도 공통된 단계 목표를 중심으로 함께 일합니다.",
       "공동 수업 계획, 수업 참관, 정기적인 검토가 팀이 수업마다 학습자 경험을 개선하는 데 도움이 됩니다.",
     ],
-    image: "/images/team.jpg",
+    image: "/images/team.webp",
     cards: [
       { title: "영어 팀", label: "일반·전문", text: "일반 영어, 회화, 학술 소통, 비즈니스, 시험 준비." },
       { title: "프랑스어 팀", label: "언어·문화", text: "CEFR 준거 단계 진행, 문화적 이해, DELF 준비." },
@@ -155,7 +155,7 @@ export const koSections: LocalizedSection[] = [
       "학습 자료는 불확실성을 줄여야지, 또 다른 자료 더미를 만들어서는 안 됩니다. 학습자가 실제로 내려야 하는 결정을 중심으로 정보를 정리합니다.",
       "일부 자료는 현재 수업과 직접 공유되어 교원이 과정의 수준과 진행 상황에 맞게 활용할 수 있도록 합니다.",
     ],
-    image: "/images/study-desk.jpg",
+    image: "/images/study-desk.webp",
     cards: [
       { title: "학습 가이드", label: "방법·계획", text: "목표, 루틴, 어휘, 듣기, 말하기 연습을 위한 실용적인 안내." },
       { title: "과정 교재", label: "수업 지원", text: "과정 교재, 학습 체크리스트, 엄선된 수업 자료." },
@@ -200,7 +200,7 @@ export const koSections: LocalizedSection[] = [
       "센터의 역사는 과장된 수상 실적에 기반하지 않습니다. 수업 개강, 언어 클럽, 수업 연구, 문화 활동, 학습자의 성찰에서 드러납니다.",
       "현재 아카이브는 2015년부터의 활동 연도에 대한 개요를 제공합니다.",
     ],
-    image: "/images/classroom-students.jpg",
+    image: "/images/classroom-students.webp",
     cards: [
       { title: "수업 및 공개 강의", label: "2015—2026", text: "신규 과정, 배치 활동, 집중 워크숍, 학습 지원." },
       { title: "언어 커뮤니티", label: "함께 배우기", text: "언어 코너, 독서 모임, 온라인 말하기, 문화 체험." },
@@ -222,7 +222,7 @@ export const koSections: LocalizedSection[] = [
       "개인 문의의 경우 언어, 이전 학습 경험, 현재 목표, 가능한 시간대를 포함해 주시면 도움이 됩니다.",
       "그룹이나 기관 문의의 경우 참가자가 누구인지, 어떤 상황을 마주하고 있는지, 기대하는 성과가 무엇인지 알려 주세요.",
     ],
-    image: "/images/learning-consultation.png",
+    image: "/images/learning-consultation.webp",
     cards: [
       { title: "개인 학습", label: "과정·배치", text: "언어 선택, 수준 추천, 시험 계획, 장기 진행." },
       { title: "캠퍼스·그룹 프로그램", label: "함께 배우기", text: "수업, 학습자 커뮤니티, 워크숍, 언어문화 활동." },

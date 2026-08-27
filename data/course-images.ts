@@ -2,24 +2,24 @@ import type { LanguageSlug } from "@/data/language-courses";
 
 const imageSets: Record<LanguageSlug, Record<"foundation" | "conversation" | "exam", string>> = {
   english: {
-    foundation: "/images/library/courses/english-foundation.png",
-    conversation: "/images/library/courses/english-business.png",
-    exam: "/images/library/courses/english-exam-prep.png",
+    foundation: "/images/library/courses/english-foundation.webp",
+    conversation: "/images/library/courses/english-business.webp",
+    exam: "/images/library/courses/english-exam-prep.webp",
   },
   french: {
-    foundation: "/images/library/courses/french-foundation.png",
-    conversation: "/images/library/courses/french-conversation.png",
-    exam: "/images/library/courses/french-delf-prep.png",
+    foundation: "/images/library/courses/french-foundation.webp",
+    conversation: "/images/library/courses/french-conversation.webp",
+    exam: "/images/library/courses/french-delf-prep.webp",
   },
   japanese: {
-    foundation: "/images/library/courses/japanese-foundation.png",
-    conversation: "/images/library/courses/japanese-conversation.png",
-    exam: "/images/library/courses/japanese-jlpt-prep.png",
+    foundation: "/images/library/courses/japanese-foundation.webp",
+    conversation: "/images/library/courses/japanese-conversation.webp",
+    exam: "/images/library/courses/japanese-jlpt-prep.webp",
   },
   korean: {
-    foundation: "/images/library/courses/korean-foundation.png",
-    conversation: "/images/library/courses/korean-conversation.png",
-    exam: "/images/library/courses/korean-topik-prep.png",
+    foundation: "/images/library/courses/korean-foundation.webp",
+    conversation: "/images/library/courses/korean-conversation.webp",
+    exam: "/images/library/courses/korean-topik-prep.webp",
   },
 };
 

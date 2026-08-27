@@ -27,7 +27,7 @@ export default function AboutPage() {
         eyebrow="ABOUT THE CENTER"
         title="十一年专注语言教育，让每一次进阶都有方向"
         description="从高校课堂到职业现场，从零基础入门到考试、留学与国际沟通，我们以系统课程、专业教学和持续反馈陪伴学习者稳步向前。"
-        image="/images/section-heroes/about-center-hero.jpg"
+        image="/images/section-heroes/about-center-hero.webp"
       />
       <section className="py-24">
         <div className="shell grid gap-14 lg:grid-cols-[1fr_1fr] lg:items-start">

@@ -36,7 +36,7 @@ export default async function ResourceDetailPage({
       backLabel="返回学习资源"
       context="resource"
     >
-      {page.slug === "downloads" ? <ResourceDownloads /> : null}
+      {page.slug === "downloads" ? <ResourceDownloads locale="zh" /> : null}
     </ContentDetail>
   );
 }

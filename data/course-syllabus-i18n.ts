@@ -77,9 +77,12 @@ function formatTeaching(value: string, locale: ForeignLocale) {
     ko: ["과정 책임", "협동 교원"],
     es: ["Responsable del curso", "Docente colaborador"],
   }[locale];
+  // 中文源里「Li Gao（高力）」用全角括号，在中文语境是对的；
+  // 但进到拉丁文/日韩页面时外层是外语，得换成半角。
+  const ascii = (n: string) => n.replace(/（/g, " (").replace(/）/g, ")").replace(/\s+\(/g, " (");
   const parts: { label: string; name: string }[] = [];
-  if (lead) parts.push({ label: labels[0], name: lead[1].trim() });
-  if (co) parts.push({ label: labels[1], name: co[1].trim() });
+  if (lead) parts.push({ label: labels[0], name: ascii(lead[1].trim()) });
+  if (co) parts.push({ label: labels[1], name: ascii(co[1].trim()) });
   return parts;
 }
 

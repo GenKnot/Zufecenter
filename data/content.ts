@@ -21,7 +21,7 @@ export const languagePages: ContentPage[] = [
     title: "英语课程",
     english: "English Programs",
     summary: "无论为了课堂、考试还是工作，都从真正能听懂、能表达、能写清楚开始。",
-    heroImage: "/images/language-class.png",
+    heroImage: "/images/language-class.webp",
     intro: [
       "英语学了很多年，真正开口时仍然犹豫，这是许多学员来到中心时最直接的困扰。我们的课程不把词汇和语法单独摆在课本里，而是把它们放进课堂讨论、邮件写作、会议表达和日常交流中反复使用。",
       "入学前先了解基础、目标和时间安排，再决定从综合能力还是专项课程开始。每个阶段都要完成看得见的表达任务，让学员知道自己哪里进步了，下一步该练什么。",
@@ -211,7 +211,7 @@ export const programPages: ContentPage[] = [
       { title: "学习内容", paragraphs: ["每个单元都从一个常见主题出发，让听、说、读、写在同一语境里互相支撑。"], bullets: ["核心词汇和语法", "日常沟通与主题表达", "分级阅读与听力", "基础写作与信息整理"] },
       { title: "适合人群", paragraphs: ["适合基础不够系统、长期缺少使用环境的人，也适合希望在进入考试或职业专项前，把综合能力补齐的学员。"] },
     ],
-    image: "/images/classroom-students.jpg",
+    image: "/images/classroom-students.webp",
   },
   {
     slug: "exam-preparation",
@@ -232,7 +232,7 @@ export const programPages: ContentPage[] = [
       { title: "辅导方向", paragraphs: ["不同考试考查方式不同，但都离不开扎实的语言能力和清楚的应试节奏。"], bullets: ["雅思与托福基础/强化", "大学英语能力提升", "JLPT / TOPIK / DELF 等小语种方向", "留学文书语言与面试表达"] },
       { title: "学习流程", paragraphs: ["测评之后形成阶段计划；课堂训练解决方法，课后任务巩固能力，模拟测试检验节奏。每次复盘都要回答：下一分最有可能从哪里拿到。"] },
     ],
-    image: "/images/solo-auditorium-study.jpg",
+    image: "/images/solo-auditorium-study.webp",
   },
   {
     slug: "business",
@@ -337,7 +337,7 @@ export const programPages: ContentPage[] = [
       { title: "近期主题", paragraphs: ["主题会随学习需求和季节活动更新，每一期都保留足够的现场练习。"], bullets: ["英文邮件写作", "三分钟英文表达", "法语旅行会话", "日语五十音体验", "韩文字母与书写", "跨文化沟通入门"] },
       { title: "开放方式", paragraphs: ["可面向个人公开报名，也可为班级、社团与组织定制专场。"] },
     ],
-    image: "/images/modern-classroom.jpg",
+    image: "/images/modern-classroom.webp",
   },
   {
     slug: "study-abroad",
@@ -368,7 +368,7 @@ export const practicePages: ContentPage[] = [
     title: "语言辅导",
     english: "Language Tutoring",
     summary: "卡在发音、写作或学习安排上时，用一次有准备的辅导把问题说清楚。",
-    heroImage: "/images/learning-consultation.png",
+    heroImage: "/images/learning-consultation.webp",
     intro: ["有些问题不需要重上一门课，却值得单独花时间解决。语言辅导采用预约方式，集中处理发音、写作、口语表达、学习计划或阶段瓶颈。"],
     highlights: [
       { title: "预约制", text: "围绕明确问题提前准备。" },
@@ -387,7 +387,7 @@ export const practicePages: ContentPage[] = [
     title: "语言角与学习社群",
     english: "Language Clubs",
     summary: "有人一起开口、一起读、一起坚持，语言学习就不再是一件孤单的事。",
-    heroImage: "/images/student-discussion.jpg",
+    heroImage: "/images/student-discussion.webp",
     intro: ["英语角、法语沙龙、日语交流会和韩语学习小组，是中心持续多年的课外活动。这里不追求标准答案，更在意每个人是否愿意表达、是否能听见不同的观点。"],
     highlights: [
       { title: "低压力", text: "重参与，不以考试和排名为目的。" },
@@ -399,7 +399,7 @@ export const practicePages: ContentPage[] = [
       { title: "活动形式", paragraphs: ["常见形式包括主题讨论、读书分享、电影交流、桌游会话与线上打卡。"] },
       { title: "如何参加", paragraphs: ["活动时间、主题和报名方式会发布在新闻动态中，也可通过电话或邮箱咨询近期安排。大多数活动面向相应语种的在读学员开放。"] },
     ],
-    image: "/images/student-collaboration.png",
+    image: "/images/student-collaboration.webp",
   },
   {
     slug: "cultural-events",
@@ -466,7 +466,7 @@ export const aboutPages: ContentPage[] = [
     title: "中心院长 武鑫教授",
     english: "Leadership",
     summary: "武鑫教授现任本中心院长，推动金融创新、国际化服务与法语复合型人才培养。",
-    heroImage: "/images/leadership/wu-xin.jpg",
+    heroImage: "/images/leadership/wu-xin.webp",
     intro: ["武鑫教授现任中心院长、浙江财经大学浙商资本市场研究院执行院长，长期从事金融创新、资本市场与社会经济发展研究。"],
     highlights: [
       { title: "金融创新", text: "关注金融创新、资本市场与社会经济发展。" },
@@ -478,7 +478,7 @@ export const aboutPages: ContentPage[] = [
       { title: "教学与人才培养", paragraphs: ["以真实国际商务和跨境金融场景为背景，倡导语言能力与金融、合规及跨文化素养同步发展。"] },
       { title: "研究与社会服务", paragraphs: ["围绕资本市场、科技金融、地方治理和企业国际化开展研究与咨询服务。"] },
     ],
-    image: "/images/news/wuxin-finance-forum-2026-a.jpg",
+    image: "/images/news/wuxin-finance-forum-2026-a.webp",
     imageAlt: "武鑫教授在浙江金融投资论坛会场作报告",
   },
   {
@@ -486,7 +486,7 @@ export const aboutPages: ContentPage[] = [
     title: "发展历程",
     english: "Our History",
     summary: "十一年里，课程形式不断变化，认真服务每一位学习者这件事没有变。",
-    heroImage: "/images/campus-autumn.png",
+    heroImage: "/images/campus-autumn.webp",
     intro: ["中心的语言培训与学习服务始于2015年前后。最初从英语课程和小型学习活动起步，后来加入小语种、职业沟通、线上学习和企业培训，累计服务学员超过13,000人。"],
     highlights: [
       { title: "2015—2017", text: "从基础英语课程和周末学习活动起步。" },
@@ -536,14 +536,14 @@ export const aboutPages: ContentPage[] = [
       { title: "怎样协作", paragraphs: ["课程负责人把握教学目标和质量，各语种团队定期集体备课；学员服务团队把课堂反馈带回教研，合作项目团队则把新的使用场景带进课程。"] },
       { title: "共同的标准", paragraphs: ["无论语种和班型如何变化，课程都要做到目标清楚、内容扎实、练习充分、反馈及时。"] },
     ],
-    image: "/images/team.jpg",
+    image: "/images/team.webp",
   },
   {
     slug: "facilities",
     title: "硬件设施",
     english: "Testing Facilities",
     summary: "配备标准化机考工位、独立隔断与听说设备，支持语言测评与多媒体教学。",
-    heroImage: "/images/testing-lab-workstations.png",
+    heroImage: "/images/testing-lab-workstations.webp",
     intro: [
       "中心配备面向语言测评和多媒体教学的计算机辅助测试空间，可用于听力、口语、阅读、写作等环节的集中训练与阶段测评。",
       "每个考位设置独立隔断、电脑终端和语音耳麦，便于在相对安静、互不干扰的环境中完成机考、模拟测评或听说训练。",
@@ -568,7 +568,7 @@ export const aboutPages: ContentPage[] = [
         ],
       },
     ],
-    image: "/images/testing-lab-partitioned-seats.png",
+    image: "/images/testing-lab-partitioned-seats.webp",
     imageAlt: "标准化语言机考工位与语音耳麦",
   },
 ];
@@ -731,7 +731,7 @@ export const resourcePages: ContentPage[] = [
         paragraphs: ["用同类任务比较变化：重新录制一次表达、重写一封邮件，或完成一次相近难度的阅读。记录已经能够完成的事、仍然反复出现的问题和下一阶段最值得投入的方向。"],
       },
     ],
-    image: "/images/library.jpg",
+    image: "/images/library.webp",
   },
   {
     slug: "downloads",

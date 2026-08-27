@@ -18,7 +18,7 @@ export default function FacultyPage() {
         eyebrow="FACULTY"
         title="专业所抵达的地方，是每一堂值得信任的课"
         description="中心汇集语言教育、考试辅导与跨文化沟通等方向的教学力量，以共同备课、课堂观察和学习反馈构成稳定的课程质量体系。"
-        image="/images/section-heroes/faculty-hero.jpg"
+        image="/images/section-heroes/faculty-hero.webp"
       />
       <section className="py-24">
         <div className="shell">

@@ -21,15 +21,15 @@ import { localizedLandings, localizedUi, type ForeignLocale } from "@/data/i18n"
 import { siteConfig } from "@/data/site-config";
 
 const sectionHeroImages: Record<string, string> = {
-  about: "/images/section-heroes/about-center-hero.jpg",
-  languages: "/images/section-heroes/language-programs-hero.jpg",
-  programs: "/images/section-heroes/programs-training-hero.jpg",
-  practice: "/images/section-heroes/learning-practice-hero.jpg",
-  faculty: "/images/section-heroes/faculty-hero.jpg",
-  research: "/images/section-heroes/teaching-research-hero.jpg",
-  collaboration: "/images/section-heroes/collaboration-hero.jpg",
-  resources: "/images/section-heroes/learning-resources-hero.jpg",
-  contact: "/images/section-heroes/contact-hero.jpg",
+  about: "/images/section-heroes/about-center-hero.webp",
+  languages: "/images/section-heroes/language-programs-hero.webp",
+  programs: "/images/section-heroes/programs-training-hero.webp",
+  practice: "/images/section-heroes/learning-practice-hero.webp",
+  faculty: "/images/section-heroes/faculty-hero.webp",
+  research: "/images/section-heroes/teaching-research-hero.webp",
+  collaboration: "/images/section-heroes/collaboration-hero.webp",
+  resources: "/images/section-heroes/learning-resources-hero.webp",
+  contact: "/images/section-heroes/contact-hero.webp",
 };
 
 const sectionOverviewImages: Record<string, string> = {
@@ -90,6 +90,10 @@ const contactInfoCopy: Record<
     wechat: string;
     address: string;
     hours: string;
+    /** 下面三个是「值」不是「标签」——原来直接吐 siteConfig 里的中文 */
+    hoursValue: string;
+    locationName: string;
+    addressRoman: string;
   }
 > = {
   en: {
@@ -100,6 +104,9 @@ const contactInfoCopy: Record<
     wechat: "WeChat consultation",
     address: "Address",
     hours: "Consultation hours",
+    hoursValue: "Daily 09:00–20:00",
+    locationName: "ZUFE Language Center",
+    addressRoman: "No. 83 Wenyi West Road, Gudang Subdistrict, Xihu District, Hangzhou, Zhejiang",
   },
   fr: {
     eyebrow: "Coordonnées",
@@ -109,6 +116,9 @@ const contactInfoCopy: Record<
     wechat: "Consultation WeChat",
     address: "Adresse",
     hours: "Horaires de consultation",
+    hoursValue: "Tous les jours, 9h00–20h00",
+    locationName: "Centre de langues de la ZUFE",
+    addressRoman: "83 route Wenyi Ouest, sous-district de Gudang, district de Xihu, Hangzhou, Zhejiang",
   },
   ja: {
     eyebrow: "お問い合わせ情報",
@@ -118,6 +128,9 @@ const contactInfoCopy: Record<
     wechat: "WeChat相談",
     address: "住所",
     hours: "相談時間",
+    hoursValue: "毎日 9:00〜20:00",
+    locationName: "浙江財経大学 語学センター",
+    addressRoman: "浙江省杭州市西湖区古蕩街道文一西路83号",
   },
   ko: {
     eyebrow: "연락 정보",
@@ -127,6 +140,9 @@ const contactInfoCopy: Record<
     wechat: "WeChat 상담",
     address: "주소",
     hours: "상담 시간",
+    hoursValue: "매일 09:00~20:00",
+    locationName: "저장재경대학교 언어센터",
+    addressRoman: "저장성 항저우시 시후구 구당가도 원이시로 83호",
   },
   es: {
     eyebrow: "Datos de contacto",
@@ -136,6 +152,9 @@ const contactInfoCopy: Record<
     wechat: "Consulta por WeChat",
     address: "Dirección",
     hours: "Horario de consulta",
+    hoursValue: "Todos los días, 09:00–20:00",
+    locationName: "Centro de Idiomas de la ZUFE",
+    addressRoman: "N.º 83 de la carretera Wenyi Oeste, subdistrito de Gudang, distrito de Xihu, Hangzhou, Zhejiang",
   },
 };
 
@@ -381,7 +400,7 @@ export default async function EnglishSectionPage({
                     {siteConfig.contact.phone}
                   </a>
                   <p className="mt-4 text-sm leading-7 text-slate-500">
-                    {siteConfig.contact.hours}
+                    {contactCopy.hoursValue}
                   </p>
                 </article>
                 <article className="bg-white p-8 sm:p-10">
@@ -395,7 +414,7 @@ export default async function EnglishSectionPage({
                     {siteConfig.contact.email}
                   </a>
                   <p className="mt-4 text-sm leading-7 text-slate-500">
-                    {siteConfig.contact.locationName}
+                    {contactCopy.locationName}
                   </p>
                 </article>
                 <article className="bg-white p-8 sm:col-span-2 sm:p-10">
@@ -403,7 +422,11 @@ export default async function EnglishSectionPage({
                     {contactCopy.address}
                   </p>
                   <p className="mt-4 max-w-3xl text-sm leading-8 text-slate-600">
-                    {siteConfig.contact.address}
+                    {contactCopy.addressRoman}
+                    {/* 中文地址保留一行：寄件和导航要用真实地址，译名只是给人读的 */}
+                    <span className="mt-1 block text-slate-400">
+                      {siteConfig.contact.address}
+                    </span>
                   </p>
                 </article>
               </div>

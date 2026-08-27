@@ -51,7 +51,7 @@ export function WuXinProfile({ locale = "zh" }: { locale?: WuXinLocale }) {
             {wuXinMilestones.map((item) => (
               <article key={`${item.date}-${item.href}`} className="grid gap-3 px-6 py-5 sm:grid-cols-[120px_1fr_auto] sm:items-center">
                 <time className="font-serif text-lg text-[#174f8f]">{item.date}</time>
-                <p className="text-sm leading-7 text-slate-700">{item.title}</p>
+                <p className="text-sm leading-7 text-slate-700">{item.title[locale]}</p>
                 <a href={item.href} target="_blank" rel="noreferrer" className="text-sm font-semibold text-[#174f8f]">{copy.sourceLabel} ↗</a>
               </article>
             ))}

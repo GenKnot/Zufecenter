@@ -16,7 +16,7 @@ export default function PracticePage() {
         eyebrow="LEARNING IN PRACTICE"
         title="语言的边界，在每一次使用中被打开"
         description="从语言辅导与学习社群，到文化体验、赛事展示和主题研学，中心以丰富的第二课堂连接知识、表达与世界。"
-        image="/images/section-heroes/learning-practice-hero.jpg"
+        image="/images/section-heroes/learning-practice-hero.webp"
       />
       <section className="py-24">
         <div className="shell">

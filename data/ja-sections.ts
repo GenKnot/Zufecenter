@@ -13,7 +13,7 @@ export const jaSections: LocalizedSection[] = [
       "語学センターは浙江財経大学浙商資本市場研究院と連携し、大学の学習リソースと個人・組織向けの柔軟なプログラムを結びつけています。",
       "2015年ごろから、英語クラスと小さな学習グループから始まり、総合能力・試験対策・学術的コミュニケーション・職業的活用・カスタム研修をカバーする四言語プログラムへと発展しました。",
     ],
-    image: "/images/library-hero.png",
+    image: "/images/library-hero.webp",
     cards: [
       { title: "センターの歩み", label: "2015—2026", text: "授業、語学クラブ、ワークショップ、授業研究がセンターの歴史を形づくっています。" },
       { title: "教育アプローチ", label: "使いながら学ぶ", text: "明確な到達目標が、言語知識と実際に使えるコミュニケーションをつなぎます。" },
@@ -36,7 +36,7 @@ export const jaSections: LocalizedSection[] = [
       "各言語は基礎からより自律的なコミュニケーションへと明確な段階的進展をたどります。会話・ビジネス活用・主要な語学試験に対応した専門クラスも揃えています。",
       "クラスを紹介する前に、学習歴・現在の能力・学習目標・現実的に確保できる学習時間を確認します。",
     ],
-    image: "/images/language-class.png",
+    image: "/images/language-class.webp",
     cards: [
       { title: "英語", label: "8クラス", text: "A1〜B2の段階進学、英会話、ビジネス英語、IELTS準備。", href: "/ja/languages/english" },
       { title: "フランス語", label: "6クラス", text: "A1.1〜B2のCEFR準拠コースとDELF専攻オプション。", href: "/ja/languages/french" },
@@ -59,7 +59,7 @@ export const jaSections: LocalizedSection[] = [
       "留学を準備する学習者と、クライアントとの会議に備えるビジネスパーソンでは必要なリズムが異なります。状況から出発し、言語・内容・形式を選びます。",
       "プログラムは継続コース、集中ワークショップ、グループ向けカスタムシーケンスとして実施できます。",
     ],
-    image: "/images/modern-classroom.jpg",
+    image: "/images/modern-classroom.webp",
     cards: [
       { title: "総合能力", label: "基礎", text: "明確なレベル進行を伴う、バランスの取れた聴読話書。" },
       { title: "試験・進学準備", label: "準備", text: "言語評価、試験技術、学術表現、留学準備。" },
@@ -86,7 +86,7 @@ export const jaSections: LocalizedSection[] = [
       "授業以外での練習は、学習者が最近習得した言語を、より自然で個人的なものに変えるのに役立ちます。",
       "活動は達成可能なコミュニケーション課題、参加に十分なサポート、仲間から学ぶ余地を持って設計されています。",
     ],
-    image: "/images/student-collaboration.png",
+    image: "/images/student-collaboration.webp",
     cards: [
       { title: "語学補講", label: "ピンポイントサポート", text: "個別の学習課題に対する診断・質問・集中フィードバック。" },
       { title: "語学クラブ", label: "コミュニティ", text: "正式な授業以外で話し・聞き・応答する定期的な機会。" },
@@ -110,7 +110,7 @@ export const jaSections: LocalizedSection[] = [
       "英語・フランス語・日本語・韓国語の教員は、それぞれ異なる経験と専門性を持ちながら、共通のステージ到達目標のもとで働いています。",
       "合同計画・授業観察・定期的なレビューが、チームがコースごとに学習者の体験を改善する助けになっています。",
     ],
-    image: "/images/team.jpg",
+    image: "/images/team.webp",
     cards: [
       { title: "英語チーム", label: "総合・専門", text: "総合英語、会話、学術的コミュニケーション、ビジネス、試験対策。" },
       { title: "フランス語チーム", label: "言語・文化", text: "CEFR準拠の段階進行、文化的理解、DELF対策。" },
@@ -155,7 +155,7 @@ export const jaSections: LocalizedSection[] = [
       "学習リソースは不確実性を減らすべきで、素材の山をさらに増やすべきではありません。学習者が実際に行う必要のある意思決定を中心に情報を整理しています。",
       "一部の素材は現在のクラスと直接共有され、教員がコースのレベルと進捗に合わせられるようにしています。",
     ],
-    image: "/images/study-desk.jpg",
+    image: "/images/study-desk.webp",
     cards: [
       { title: "学習ガイド", label: "方法・計画", text: "目標設定・ルーティン・語彙・リスニング・スピーキング練習のための実践的なガイダンス。" },
       { title: "コース教材", label: "授業サポート", text: "コースハンドブック・学習チェックリスト・厳選された授業リソース。" },
@@ -200,7 +200,7 @@ export const jaSections: LocalizedSection[] = [
       "センターの歴史は誇張された賞に基づいていません。コース開講・語学クラブ・授業研究・文化活動・学習者の振り返りに見えています。",
       "現在のアーカイブは2015年からの活動年の概要を提供しています。",
     ],
-    image: "/images/classroom-students.jpg",
+    image: "/images/classroom-students.webp",
     cards: [
       { title: "コース・公開授業", label: "2015—2026", text: "新コース・配置活動・集中ワークショップ・学習サポート。" },
       { title: "語学コミュニティ", label: "共に学ぶ", text: "語学コーナー・読書会・オンライン会話・文化体験。" },
@@ -222,7 +222,7 @@ export const jaSections: LocalizedSection[] = [
       "個人のお問い合わせには、言語・これまでの学習・現在の目標・ご都合の良い時間帯を添えていただくと助かります。",
       "グループや組織のお問い合わせには、参加者・直面している状況・期待する成果をお知らせください。",
     ],
-    image: "/images/learning-consultation.png",
+    image: "/images/learning-consultation.webp",
     cards: [
       { title: "個人学習", label: "コース・配置", text: "言語選択・レベルの推薦・試験計画・長期進行。" },
       { title: "キャンパス・グループ", label: "共同学習", text: "授業・学習コミュニティ・ワークショップ・語学文化活動。" },

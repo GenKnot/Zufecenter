@@ -12,6 +12,9 @@ import { esContentDetails, findEsContentDetail } from "@/data/es-content-details
 import { jaContentDetails, findJaContentDetail } from "@/data/ja-content-details";
 import { koContentDetails, findKoContentDetail } from "@/data/ko-content-details";
 import { localizedFacultyProfiles } from "@/data/faculty-profiles";
+import { ContentDetail } from "@/components/ContentDetail";
+import { ResourceDownloads } from "@/components/ResourceDownloads";
+import { findLocalizedDetail } from "@/data/content-detail-i18n";
 import { FacultyProfilesGrid } from "@/components/FacultyProfilesGrid";
 import { FacultyTeamPhoto } from "@/components/FacultyTeamPhoto";
 import type { AdditionalFacultyLanguage } from "@/data/additional-faculty-profiles";
@@ -275,6 +278,74 @@ export default async function EnglishContentDetailPage({
           ...localizedGenericContext[foreignLocale],
         };
   const ui = localizedUi[locale as ForeignLocale];
+
+  // 栏目详情页的正文补齐后，中外文共用 ContentDetail，版式由同一个组件保证。
+  // 还没补到的语种会落回下面原有的薄版式。
+  const localized = findLocalizedDetail(
+    foreignLocale,
+    detail.parent,
+    detail.slug,
+  );
+  const detailContext = {
+    about: "about",
+    programs: "program",
+    practice: "practice",
+    faculty: "faculty",
+    research: "research",
+    resources: "resource",
+    collaboration: "collaboration",
+  }[detail.parent] as
+    | "about"
+    | "program"
+    | "practice"
+    | "faculty"
+    | "research"
+    | "resource"
+    | "collaboration";
+
+  const extras = (
+    <>
+      {detail.parent === "faculty" && detail.slug === "french" && (
+        <LocalizedFrenchFacultyTeachers locale={foreignLocale} />
+      )}
+      {detail.parent === "faculty" &&
+        detail.slug !== "french" &&
+        locale === "en" && (
+          <FacultyProfilesGrid
+            locale="en"
+            language={detail.slug as AdditionalFacultyLanguage}
+          />
+        )}
+      {detail.parent === "faculty" &&
+        detail.slug !== "french" &&
+        locale !== "en" && (
+          <ProvisionalFacultyTeam
+            locale={foreignLocale}
+            language={detail.slug as ProvisionalFacultyLanguage}
+          />
+        )}
+      {detail.parent === "about" && detail.slug === "leadership" && (
+        <WuXinProfile locale={foreignLocale} />
+      )}
+      {detail.parent === "resources" && detail.slug === "downloads" && (
+        <ResourceDownloads locale={foreignLocale} />
+      )}
+    </>
+  );
+
+  if (localized) {
+    return (
+      <ContentDetail
+        page={localized}
+        locale={foreignLocale}
+        context={detailContext}
+        backHref={`/${locale}/${detail.parent}`}
+        backLabel={context.label}
+      >
+        {extras}
+      </ContentDetail>
+    );
+  }
 
   return (
     <>

@@ -29,7 +29,7 @@ export const frSections: LocalizedSection[] = [
       "Le Centre de langues travaille en partenariat avec l'Institut de recherche sur les marchés de capitaux Zheshang de l'Université des finances et de l'économie du Zhejiang. Il réunit les ressources pédagogiques universitaires et des programmes flexibles adaptés aux besoins individuels et organisationnels.",
       "Depuis 2015 environ, le centre a évolué de cours d'anglais et de petits groupes d'étude vers un programme en quatre langues couvrant les compétences générales, les examens, la communication académique, l'usage professionnel et la formation sur mesure.",
     ],
-    image: "/images/library-hero.png",
+    image: "/images/library-hero.webp",
     cards: [
       { title: "Notre histoire", label: "2015—2026", text: "Cours, clubs de langues, ateliers et bilans pédagogiques constituent l'histoire vivante du centre." },
       { title: "Notre approche", label: "APPRENDRE EN UTILISANT", text: "Des objectifs d'étape clairs relient les connaissances linguistiques à une communication réellement utilisable." },
@@ -52,7 +52,7 @@ export const frSections: LocalizedSection[] = [
       "Chaque langue suit une progression claire des bases vers une communication plus autonome. Des cours ciblés soutiennent l'expression orale, l'usage professionnel et les principaux examens de langue.",
       "Avant de recommander un cours, nous prenons en compte les études antérieures, le niveau actuel, les objectifs d'apprentissage et le temps que l'apprenant peut réellement consacrer.",
     ],
-    image: "/images/language-class.png",
+    image: "/images/language-class.webp",
     cards: [
       { title: "Anglais", label: "8 FORMATS", text: "Progression A1 à B2, anglais oral, communication professionnelle et préparation à l'IELTS.", href: "/fr/languages/english" },
       { title: "Français", label: "6 FORMATS", text: "Progression A1.1 à B2 avec une option de préparation ciblée au DELF.", href: "/fr/languages/french" },
@@ -75,7 +75,7 @@ export const frSections: LocalizedSection[] = [
       "Un apprenant qui prépare des études à l'étranger a besoin d'un rythme différent d'un professionnel qui se prépare à des réunions avec des clients. Nous partons de la situation, puis choisissons la langue, le contenu et le format.",
       "Les programmes peuvent se dérouler sous forme de cours continu, d'atelier intensif ou d'un parcours personnalisé pour un groupe.",
     ],
-    image: "/images/modern-classroom.jpg",
+    image: "/images/modern-classroom.webp",
     cards: [
       { title: "Compétences générales", label: "FONDAMENTAUX", text: "Écoute, expression, lecture et écriture équilibrées avec une progression de niveau claire." },
       { title: "Examens et études", label: "PRÉPARATION", text: "Évaluation linguistique, compétences d'examen, expression académique et préparation aux études à l'étranger." },
@@ -102,7 +102,7 @@ export const frSections: LocalizedSection[] = [
       "La pratique au-delà du cours aide les apprenants à transformer une langue récemment acquise en quelque chose de plus spontané et personnel.",
       "Les activités sont conçues avec une tâche de communication réalisable, suffisamment de soutien pour y participer et de l'espace pour apprendre des pairs.",
     ],
-    image: "/images/student-collaboration.png",
+    image: "/images/student-collaboration.webp",
     cards: [
       { title: "Tutorat linguistique", label: "SOUTIEN CIBLÉ", text: "Diagnostic, questions et conseils ciblés pour les difficultés d'apprentissage individuelles." },
       { title: "Clubs de langues", label: "COMMUNAUTÉ", text: "Des occasions régulières de parler, d'écouter et de répondre en dehors des cours formels." },
@@ -126,7 +126,7 @@ export const frSections: LocalizedSection[] = [
       "Les enseignants d'anglais, de français, de japonais et de coréen apportent des expériences et des spécialisations différentes tout en travaillant à partir d'objectifs d'étape communs.",
       "La planification collective, l'observation en classe et les bilans réguliers aident l'équipe à améliorer ce que vivent les apprenants d'un cours à l'autre.",
     ],
-    image: "/images/team.jpg",
+    image: "/images/team.webp",
     cards: [
       { title: "Équipe d'anglais", label: "GÉNÉRAL & SPÉCIALISÉ", text: "Compétences générales, expression orale, communication académique, affaires et préparation aux examens." },
       { title: "Équipe de français", label: "LANGUE & CULTURE", text: "Progression alignée CECRL, compréhension culturelle et préparation au DELF." },
@@ -171,7 +171,7 @@ export const frSections: LocalizedSection[] = [
       "Les ressources d'apprentissage doivent réduire l'incertitude plutôt que créer un autre tas de matériaux. Nous organisons l'information autour des décisions que les apprenants ont réellement besoin de prendre.",
       "Certains matériaux sont partagés directement avec les classes en cours afin que les enseignants puissent les adapter au niveau et à la progression.",
     ],
-    image: "/images/study-desk.jpg",
+    image: "/images/study-desk.webp",
     cards: [
       { title: "Guides d'étude", label: "MÉTHODES & PLANIFICATION", text: "Conseils pratiques pour les objectifs, les routines, le vocabulaire, l'écoute et la pratique orale." },
       { title: "Matériaux de cours", label: "SOUTIEN EN CLASSE", text: "Manuels de cours, listes de contrôle d'apprentissage et ressources de classe sélectionnées." },
@@ -216,7 +216,7 @@ export const frSections: LocalizedSection[] = [
       "L'histoire du centre ne repose pas sur des récompenses exagérées. Elle est visible dans les ouvertures de cours, les clubs de langues, les bilans pédagogiques, les activités culturelles et les réflexions des apprenants.",
       "Les archives actuelles offrent un aperçu des années d'activité depuis 2015.",
     ],
-    image: "/images/classroom-students.jpg",
+    image: "/images/classroom-students.webp",
     cards: [
       { title: "Cours et classes ouvertes", label: "2015—2026", text: "Nouveaux cours, activités de positionnement, ateliers ciblés et soutien à l'apprentissage." },
       { title: "Communautés linguistiques", label: "APPRENDRE ENSEMBLE", text: "Coins de langues, groupes de lecture, expression orale en ligne et expériences culturelles." },
@@ -238,7 +238,7 @@ export const frSections: LocalizedSection[] = [
       "Pour une demande individuelle, il est utile d'inclure la langue, l'apprentissage antérieur, l'objectif actuel et vos disponibilités.",
       "Pour un groupe ou une organisation, dites-nous qui sont les participants, les situations auxquelles ils font face et le résultat que vous espérez.",
     ],
-    image: "/images/learning-consultation.png",
+    image: "/images/learning-consultation.webp",
     cards: [
       { title: "Apprentissage individuel", label: "COURS & POSITIONNEMENT", text: "Choix de la langue, recommandation de niveau, planification d'examen et progression à long terme." },
       { title: "Programmes campus et groupes", label: "APPRENTISSAGE PARTAGÉ", text: "Cours, communautés étudiantes, ateliers et activités linguistiques culturelles." },

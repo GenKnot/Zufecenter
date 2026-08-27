@@ -1,19 +1,166 @@
 export type WuXinLocale = "zh" | "en" | "fr" | "es" | "ja" | "ko";
 
+/**
+ * 院长对外动态。标题是我们自己写的中文摘要（不是原文标题），
+ * 所以六个语种各写一版；date 与 href 是事实数据，不翻译。
+ */
 export const wuXinMilestones = [
-  { date: "2025-12-18", title: "浙江省国际金融学会：交流研究院建设与以赛促学实践", href: "http://www.stuse.com/index/news_detail/id/13432.html" },
-  { date: "2025-09-30", title: "南开大学金融学院：介绍政产学研协同与研究院合作机制", href: "https://finance.nankai.edu.cn/2025/0930/c34600a579408/page.htm" },
-  { date: "2025-07-18", title: "浙商之家：受聘钱塘助企出海全球化服务导师", href: "https://www.qxzh.zj.cn/art/2025/7/18/art_1228965107_58934745.html" },
-  { date: "2025-07-14", title: "媒体报道：参与金砖国家企业出海智库建设", href: "http://m.toutiao.com/group/7526930635571675691/" },
-  { date: "2025-07-11", title: "科技金融时报：谈地方国资与新质生产力", href: "https://kjb.zjol.com.cn/resfile/2025-07-11/00006/kjjrsb2025071100006.pdf" },
-  { date: "2025-05-20", title: "上海证券报：获提名楚环科技独立董事", href: "http://paper.cnstock.com/html/2025-05/20/content_2069902.htm" },
-  { date: "2024", title: "浙江省国际金融学会：年度工作总结与学术协作", href: "http://www.stuse.com/index/news_detail/id/13434.html" },
-  { date: "2024-05-14", title: "媒体报道：上市公司独立董事候选人相关公告", href: "http://m.toutiao.com/group/7368695061342732809/" },
-  { date: "2023-09-27", title: "浙江财经大学：合作论文发表于 International Review of Financial Analysis", href: "https://zyy.zufe.edu.cn/info/1022/2165.htm" },
-  { date: "2023-08-05", title: "媒体报道：研究院与上市公司董秘群体开展合作", href: "http://m.toutiao.com/group/7263691336967291452/" },
-  { date: "2022-09-20", title: "中国证券报：浙商资本市场研究院成立", href: "https://www.cs.com.cn/qs/202209/t20220920_6298957.html" },
-  { date: "2016-07-03", title: "浙江财经大学：优秀共产党员与最受学生喜爱教师事迹", href: "https://xcb.zufe.edu.cn/info/1075/7953.htm" },
-  { date: "2015-06-10", title: "浙江财经大学：第二届最受学生喜爱教师相关报道", href: "https://www.zufe.edu.cn/info/1063/18051.htm" },
+  {
+    date: "2025-12-18",
+    href: "http://www.stuse.com/index/news_detail/id/13432.html",
+    title: {
+      zh: "浙江省国际金融学会：交流研究院建设与以赛促学实践",
+      en: "Zhejiang International Finance Association: on building the institute and learning through competition",
+      fr: "Association financière internationale du Zhejiang : construction de l’institut et apprentissage par la compétition",
+      ja: "浙江省国際金融学会：研究院の整備とコンテストを通じた学びについて報告",
+      ko: "저장성 국제금융학회: 연구원 구축과 대회를 통한 학습 사례 발표",
+      es: "Asociación Financiera Internacional de Zhejiang: construcción del instituto y aprendizaje mediante competiciones",
+    },
+  },
+  {
+    date: "2025-09-30",
+    href: "https://finance.nankai.edu.cn/2025/0930/c34600a579408/page.htm",
+    title: {
+      zh: "南开大学金融学院：介绍政产学研协同与研究院合作机制",
+      en: "School of Finance, Nankai University: on government–industry–academia collaboration and institute partnerships",
+      fr: "École de finance de l’université Nankai : coopération public-privé-université et mécanismes de partenariat",
+      ja: "南開大学金融学院：産官学連携と研究院の協力体制について講演",
+      ko: "난카이대학 금융학원: 산관학 협력과 연구원 협업 체계 소개",
+      es: "Escuela de Finanzas de la Universidad Nankai: colaboración público-empresa-universidad y alianzas del instituto",
+    },
+  },
+  {
+    date: "2025-07-18",
+    href: "https://www.qxzh.zj.cn/art/2025/7/18/art_1228965107_58934745.html",
+    title: {
+      zh: "浙商之家：受聘钱塘助企出海全球化服务导师",
+      en: "Zheshang Home: appointed adviser for Qiantang’s enterprise globalization service program",
+      fr: "Zheshang Home : nommé conseiller du programme d’internationalisation des entreprises de Qiantang",
+      ja: "浙商之家：銭塘区の企業海外展開支援プログラムの指導者に就任",
+      ko: "저장상인의 집: 첸탕구 기업 해외 진출 지원 프로그램 자문위원 위촉",
+      es: "Zheshang Home: nombrado asesor del programa de internacionalización empresarial de Qiantang",
+    },
+  },
+  {
+    date: "2025-07-14",
+    href: "http://m.toutiao.com/group/7526930635571675691/",
+    title: {
+      zh: "媒体报道：参与金砖国家企业出海智库建设",
+      en: "Press: contributing to a BRICS think tank on enterprise internationalization",
+      fr: "Presse : participation à un groupe de réflexion BRICS sur l’internationalisation des entreprises",
+      ja: "報道：BRICS 諸国の企業海外展開に関するシンクタンク構築に参加",
+      ko: "언론 보도: 브릭스 국가 기업 해외 진출 싱크탱크 구축 참여",
+      es: "Prensa: participación en un centro de estudios BRICS sobre internacionalización empresarial",
+    },
+  },
+  {
+    date: "2025-07-11",
+    href: "https://kjb.zjol.com.cn/resfile/2025-07-11/00006/kjjrsb2025071100006.pdf",
+    title: {
+      zh: "科技金融时报：谈地方国资与新质生产力",
+      en: "Science & Technology Finance Times: on local state capital and new quality productive forces",
+      fr: "Science & Technology Finance Times : capital public local et nouvelles forces productives de qualité",
+      ja: "科技金融時報：地方国有資本と新質生産力について論じる",
+      ko: "과학기술금융시보: 지방 국유자본과 신질 생산력에 대한 논의",
+      es: "Science & Technology Finance Times: capital estatal local y nuevas fuerzas productivas de calidad",
+    },
+  },
+  {
+    date: "2025-05-20",
+    href: "http://paper.cnstock.com/html/2025-05/20/content_2069902.htm",
+    title: {
+      zh: "上海证券报：获提名楚环科技独立董事",
+      en: "Shanghai Securities News: nominated as independent director of Chuhuan Technology",
+      fr: "Shanghai Securities News : nommé administrateur indépendant de Chuhuan Technology",
+      ja: "上海証券報：楚環科技の独立取締役候補に指名",
+      ko: "상하이증권보: 추환과기 사외이사 후보 지명",
+      es: "Shanghai Securities News: nominado consejero independiente de Chuhuan Technology",
+    },
+  },
+  {
+    date: "2024",
+    href: "http://www.stuse.com/index/news_detail/id/13434.html",
+    title: {
+      zh: "浙江省国际金融学会：年度工作总结与学术协作",
+      en: "Zhejiang International Finance Association: annual review and academic collaboration",
+      fr: "Association financière internationale du Zhejiang : bilan annuel et collaboration académique",
+      ja: "浙江省国際金融学会：年次総括と学術協力",
+      ko: "저장성 국제금융학회: 연간 업무 총괄과 학술 협력",
+      es: "Asociación Financiera Internacional de Zhejiang: balance anual y colaboración académica",
+    },
+  },
+  {
+    date: "2024-05-14",
+    href: "http://m.toutiao.com/group/7368695061342732809/",
+    title: {
+      zh: "媒体报道：上市公司独立董事候选人相关公告",
+      en: "Press: announcement regarding an independent director nomination at a listed company",
+      fr: "Presse : annonce relative à une candidature d’administrateur indépendant dans une société cotée",
+      ja: "報道：上場企業の独立取締役候補に関する公告",
+      ko: "언론 보도: 상장사 사외이사 후보 관련 공고",
+      es: "Prensa: anuncio sobre una candidatura a consejero independiente en una empresa cotizada",
+    },
+  },
+  {
+    date: "2023-09-27",
+    href: "https://zyy.zufe.edu.cn/info/1022/2165.htm",
+    title: {
+      zh: "浙江财经大学：合作论文发表于 International Review of Financial Analysis",
+      en: "ZUFE: co-authored paper published in the International Review of Financial Analysis",
+      fr: "ZUFE : article co-écrit publié dans l’International Review of Financial Analysis",
+      ja: "浙江財経大学：共著論文が International Review of Financial Analysis に掲載",
+      ko: "저장재경대학교: 공동 논문이 International Review of Financial Analysis에 게재",
+      es: "ZUFE: artículo en coautoría publicado en International Review of Financial Analysis",
+    },
+  },
+  {
+    date: "2023-08-05",
+    href: "http://m.toutiao.com/group/7263691336967291452/",
+    title: {
+      zh: "媒体报道：研究院与上市公司董秘群体开展合作",
+      en: "Press: the institute begins working with board secretaries of listed companies",
+      fr: "Presse : l’institut engage une coopération avec les secrétaires généraux de sociétés cotées",
+      ja: "報道：研究院が上場企業の役員秘書層との連携を開始",
+      ko: "언론 보도: 연구원이 상장사 이사회 비서진과 협력 시작",
+      es: "Prensa: el instituto inicia la cooperación con secretarios de consejo de empresas cotizadas",
+    },
+  },
+  {
+    date: "2022-09-20",
+    href: "https://www.cs.com.cn/qs/202209/t20220920_6298957.html",
+    title: {
+      zh: "中国证券报：浙商资本市场研究院成立",
+      en: "China Securities Journal: founding of the Zheshang Capital Market Research Institute",
+      fr: "China Securities Journal : création de l’Institut de recherche Zheshang sur les marchés de capitaux",
+      ja: "中国証券報：浙商資本市場研究院が設立",
+      ko: "중국증권보: 저장상인 자본시장 연구원 설립",
+      es: "China Securities Journal: creación del Instituto Zheshang de Investigación del Mercado de Capitales",
+    },
+  },
+  {
+    date: "2016-07-03",
+    href: "https://xcb.zufe.edu.cn/info/1075/7953.htm",
+    title: {
+      zh: "浙江财经大学：优秀共产党员与最受学生喜爱教师事迹",
+      en: "ZUFE: recognized as an outstanding Party member and a most popular teacher",
+      fr: "ZUFE : distinctions de membre exemplaire du Parti et d’enseignant préféré des étudiants",
+      ja: "浙江財経大学：優秀党員および学生に最も慕われる教員として表彰",
+      ko: "저장재경대학교: 우수 당원 및 학생이 가장 좋아하는 교원으로 선정",
+      es: "ZUFE: reconocido como militante ejemplar del Partido y docente preferido por el alumnado",
+    },
+  },
+  {
+    date: "2015-06-10",
+    href: "https://www.zufe.edu.cn/info/1063/18051.htm",
+    title: {
+      zh: "浙江财经大学：第二届最受学生喜爱教师相关报道",
+      en: "ZUFE: coverage of the second Most Popular Teacher awards",
+      fr: "ZUFE : couverture de la deuxième édition du prix de l’enseignant préféré des étudiants",
+      ja: "浙江財経大学：第2回「学生に最も慕われる教員」に関する報道",
+      ko: "저장재경대학교: 제2회 ‘학생이 가장 좋아하는 교원’ 관련 보도",
+      es: "ZUFE: cobertura de la segunda edición del premio al docente preferido",
+    },
+  },
 ] as const;
 
 type WuXinProfileCopy = {

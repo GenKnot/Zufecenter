@@ -16,7 +16,7 @@ export default function ProgramsPage() {
         eyebrow="PROGRAMS & TRAINING"
         title="目标不同，抵达它的课程路径也应不同"
         description="从基础提升、考试升学到职业沟通与企业定制，我们把长期目标拆解为可执行、可反馈、可衡量的学习阶段。"
-        image="/images/section-heroes/programs-training-hero.jpg"
+        image="/images/section-heroes/programs-training-hero.webp"
       />
       <section className="py-24">
         <div className="shell">

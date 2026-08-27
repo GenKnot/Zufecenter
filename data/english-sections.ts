@@ -29,7 +29,7 @@ export const englishSections: EnglishSection[] = [
       "The Language Center works with the Zheshang Capital Market Research Institute at Zhejiang University of Finance and Economics. It brings university learning resources together with flexible programs for individual and organizational needs.",
       "Since around 2015, the center has grown from English classes and small learning groups into a four-language program covering general ability, examinations, academic communication, professional use and customized training.",
     ],
-    image: "/images/library-hero.png",
+    image: "/images/library-hero.webp",
     cards: [
       { title: "Our story", label: "2015—2026", text: "Courses, language clubs, workshops and teaching reviews form the center’s living history." },
       { title: "Educational approach", label: "LEARN BY USING", text: "Clear stage goals connect language knowledge with communication learners can actually use." },
@@ -52,7 +52,7 @@ export const englishSections: EnglishSection[] = [
       "Each language follows a clear progression from foundations to more independent communication. Focused classes support speaking, business use and major language examinations.",
       "Before recommending a class, we consider prior study, current ability, learning goals and the time a learner can realistically invest.",
     ],
-    image: "/images/language-class.png",
+    image: "/images/language-class.webp",
     cards: [
       { title: "English", label: "8 COURSE FORMATS", text: "A1 to B2 progression, spoken English, business communication and IELTS preparation.", href: "/en/languages/english" },
       { title: "French", label: "6 COURSE FORMATS", text: "A1.1 to B2 progression with a focused DELF preparation option.", href: "/en/languages/french" },
@@ -75,7 +75,7 @@ export const englishSections: EnglishSection[] = [
       "A learner preparing for overseas study needs a different rhythm from a professional preparing for client meetings. We begin with the situation, then choose the language, content and format.",
       "Programs may run as a sustained course, an intensive workshop or a customized sequence for a group.",
     ],
-    image: "/images/modern-classroom.jpg",
+    image: "/images/modern-classroom.webp",
     cards: [
       { title: "General ability", label: "FOUNDATIONS", text: "Balanced listening, speaking, reading and writing with a clear level progression." },
       { title: "Exams and study", label: "PREPARATION", text: "Language assessment, exam skills, academic expression and overseas-study readiness." },
@@ -102,7 +102,7 @@ export const englishSections: EnglishSection[] = [
       "Practice beyond class helps learners turn recently acquired language into something more spontaneous and personal.",
       "Activities are designed with an achievable communication task, enough support to participate and space to learn from peers.",
     ],
-    image: "/images/student-collaboration.png",
+    image: "/images/student-collaboration.webp",
     cards: [
       { title: "Language tutoring", label: "TARGETED SUPPORT", text: "Diagnosis, questions and focused guidance for individual learning challenges." },
       { title: "Language clubs", label: "COMMUNITY", text: "Regular opportunities to speak, listen and respond outside formal lessons." },
@@ -126,7 +126,7 @@ export const englishSections: EnglishSection[] = [
       "English, French, Japanese and Korean teachers contribute different experience and specializations while working from common stage outcomes.",
       "Collective planning, classroom observation and regular review help the team improve what learners experience from one course to the next.",
     ],
-    image: "/images/team.jpg",
+    image: "/images/team.webp",
     cards: [
       { title: "English team", label: "GENERAL & SPECIALIST", text: "General ability, speaking, academic communication, business and exam preparation." },
       { title: "French team", label: "LANGUAGE & CULTURE", text: "CEFR-aligned progression, cultural understanding and DELF preparation." },
@@ -171,7 +171,7 @@ export const englishSections: EnglishSection[] = [
       "Learning resources should reduce uncertainty rather than create another pile of material. We organize information around decisions learners actually need to make.",
       "Some materials are shared directly with current classes so that teachers can match them to course level and progress.",
     ],
-    image: "/images/study-desk.jpg",
+    image: "/images/study-desk.webp",
     cards: [
       { title: "Study guides", label: "METHODS & PLANNING", text: "Practical guidance for goals, routines, vocabulary, listening and speaking practice." },
       { title: "Course materials", label: "CLASS SUPPORT", text: "Course handbooks, learning checklists and selected classroom resources." },
@@ -216,7 +216,7 @@ export const englishSections: EnglishSection[] = [
       "The center’s story is not built around exaggerated awards. It is visible in course openings, language clubs, teaching reviews, cultural activities and learner reflections.",
       "The archive brings together course openings, language communities, teaching reviews and learner support records since 2015.",
     ],
-    image: "/images/classroom-students.jpg",
+    image: "/images/classroom-students.webp",
     cards: [
       { title: "Courses and open classes", label: "2015—2026", text: "New classes, placement activities, focused workshops and learning support." },
       { title: "Language communities", label: "LEARNING TOGETHER", text: "Language corners, reading groups, online speaking and cultural experiences." },
@@ -238,7 +238,7 @@ export const englishSections: EnglishSection[] = [
       "For an individual enquiry, it helps to include the language, previous learning, current goal and times you may be available.",
       "For a group or organization, tell us who the participants are, the situations they face and the outcome you hope to see.",
     ],
-    image: "/images/learning-consultation.png",
+    image: "/images/learning-consultation.webp",
     cards: [
       { title: "Individual learning", label: "COURSES & PLACEMENT", text: "Language choice, level recommendation, exam planning and long-term progression." },
       { title: "Campus and group programs", label: "SHARED LEARNING", text: "Classes, student communities, workshops and language-cultural activities." },

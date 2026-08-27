@@ -8,19 +8,19 @@ type NewsCardItem = Pick<
 >;
 
 const fallbackImages: Record<string, string> = {
-  中心活动: "/images/student-collaboration.png",
-  语言社群: "/images/student-discussion.jpg",
-  课程动态: "/images/language-class.png",
-  文化体验: "/images/classroom-students.jpg",
-  公开课: "/images/modern-classroom.jpg",
+  中心活动: "/images/student-collaboration.webp",
+  语言社群: "/images/student-discussion.webp",
+  课程动态: "/images/language-class.webp",
+  文化体验: "/images/classroom-students.webp",
+  公开课: "/images/modern-classroom.webp",
   教学研讨: "/images/programs/workshops.webp",
-  学员活动: "/images/student-collaboration.png",
-  教学服务: "/images/learning-consultation.png",
-  学习支持: "/images/study-desk.jpg",
-  专题工作坊: "/images/language-class.png",
+  学员活动: "/images/student-collaboration.webp",
+  教学服务: "/images/learning-consultation.webp",
+  学习支持: "/images/study-desk.webp",
+  专题工作坊: "/images/language-class.webp",
   定制培训: "/images/programs/corporate.webp",
-  中心记忆: "/images/classroom-students.jpg",
-  通知公告: "/images/library-hero.png",
+  中心记忆: "/images/classroom-students.webp",
+  通知公告: "/images/library-hero.webp",
 };
 
 export function NewsCard({
@@ -33,7 +33,7 @@ export function NewsCard({
   readLabel?: string;
 }) {
   const href = `${prefix}/news/${item.slug}`;
-  const image = item.image || fallbackImages[item.category] || "/images/student-collaboration.png";
+  const image = item.image || fallbackImages[item.category] || "/images/student-collaboration.webp";
 
   return (
     <article className="group border-t border-slate-200 py-6">

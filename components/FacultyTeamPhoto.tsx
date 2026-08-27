@@ -11,11 +11,11 @@ export type FacultyTeamLanguage =
 type FacultyPhotoLocale = "zh" | ForeignLocale;
 
 const teamImages: Record<FacultyTeamLanguage, string> = {
-  english: "/images/library/faculty/english-team.png",
-  french: "/images/library/faculty/french-team.png",
-  japanese: "/images/library/faculty/japanese-team.png",
-  korean: "/images/library/faculty/korean-team.png",
-  chinese: "/images/library/faculty/chinese-team.png",
+  english: "/images/library/faculty/english-team.webp",
+  french: "/images/library/faculty/french-team.webp",
+  japanese: "/images/library/faculty/japanese-team.webp",
+  korean: "/images/library/faculty/korean-team.webp",
+  chinese: "/images/library/faculty/chinese-team.webp",
 };
 
 const captions: Record<FacultyPhotoLocale, string> = {

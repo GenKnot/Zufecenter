@@ -16,7 +16,7 @@ export default function ResourcesPage() {
         eyebrow="LEARNING RESOURCES"
         title="好的学习支持，让课堂之外依然有路可循"
         description="从学习规划到方法指南，从常见问题到数字学习支持，我们把关键说明整理在一起，让课前选择更从容、课后练习更有效。"
-        image="/images/section-heroes/learning-resources-hero.jpg"
+        image="/images/section-heroes/learning-resources-hero.webp"
       />
       <section className="py-24">
         <div className="shell">
