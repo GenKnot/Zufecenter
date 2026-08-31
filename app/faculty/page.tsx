@@ -23,7 +23,7 @@ export default function FacultyPage() {
       <section className="py-24">
         <div className="shell">
           <div className="mb-12 max-w-2xl">
-            <span className="eyebrow">Teaching teams</span>
+            <span className="eyebrow">语种团队<small>Teaching teams</small></span>
             <h2 className="section-title">教学团队</h2>
             <p className="section-copy">
               五个语种团队共同研发课程、分析课堂表现并组织文化活动。每位教师各有专长，也共同对学员的阶段成果负责。
@@ -34,7 +34,7 @@ export default function FacultyPage() {
           <div className="mt-20 border-y border-slate-200 py-12">
             <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
               <div>
-                <span className="eyebrow">Autumn teaching</span>
+                <span className="eyebrow">秋季学期<small>Autumn teaching</small></span>
                 <h2 className="section-title">本学期教学安排</h2>
                 <p className="section-copy">
                   秋季课程由各方向教学组共同承担。开课前完成课程衔接、材料确认与学员基础沟通。
@@ -61,7 +61,7 @@ export default function FacultyPage() {
 
           <div className="mt-20">
             <div className="mb-10 max-w-3xl">
-              <span className="eyebrow">Faculty members</span>
+              <span className="eyebrow">教师简历<small>Faculty members</small></span>
               <h2 className="section-title">法语教师代表</h2>
               <p className="section-copy">
                 以下四位教师来自法语教学团队；英语、日语、韩语和国际中文教师的完整资料可进入对应教学团队页面查看。
@@ -97,7 +97,7 @@ export default function FacultyPage() {
 
           <div className="mt-16 grid gap-8 bg-[#edf2f6] p-8 sm:p-12 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
-              <span className="eyebrow">Faculty profile</span>
+              <span className="eyebrow">师资理念<small>Faculty profile</small></span>
               <h2 className="mt-5 font-serif text-3xl font-semibold">专业不是标签，而是每一堂课背后的准备</h2>
             </div>
             <div className="text-sm leading-8 text-slate-600">

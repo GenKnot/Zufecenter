@@ -21,7 +21,7 @@ export default function ResourcesPage() {
       <section className="py-24">
         <div className="shell">
           <div className="mb-12 max-w-3xl">
-            <span className="eyebrow">Resource center</span>
+            <span className="eyebrow">课后支持<small>Resource center</small></span>
             <h2 className="section-title">学习支持与资料中心</h2>
             <p className="section-copy">
               这里集中整理学习指南、常见问题和数字学习支持。你可以先了解课程，也可以找到适合自己日常使用的练习工具。

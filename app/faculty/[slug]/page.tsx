@@ -12,7 +12,7 @@ function FrenchFacultyTeachers() {
     <section className="bg-[#f7f5f0] py-24">
       <div className="shell">
         <div className="mb-12 max-w-3xl">
-          <span className="eyebrow">Nos Enseignants</span>
+          <span className="eyebrow">教师简历<small>Nos Enseignants</small></span>
           <h2 className="section-title">师资力量</h2>
           <p className="section-copy">
             法语教学团队由课程负责人、分级课程教师和考试辅导教师共同组成，覆盖法语分级教学、国际测评备考、商务法语与跨文化交流等方向。

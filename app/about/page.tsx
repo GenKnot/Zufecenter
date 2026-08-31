@@ -41,7 +41,7 @@ export default function AboutPage() {
             />
           </div>
           <div className="prose-page">
-            <span className="eyebrow">Our story</span>
+            <span className="eyebrow">我们的故事<small>Our story</small></span>
             <h2 className="section-title">中心简介</h2>
             <p className="mt-7">
               浙江财经大学语言中心依托高校教育资源与开放合作平台，面向学生、职场人士及企事业单位开展多层次语言学习与培训服务。
@@ -64,7 +64,7 @@ export default function AboutPage() {
       <section className="py-24">
         <div className="shell">
           <div className="mb-12">
-            <span className="eyebrow">Discover more</span>
+            <span className="eyebrow">更多栏目<small>Discover more</small></span>
             <h2 className="section-title">进一步了解中心</h2>
           </div>
           <HubCards items={aboutPages} basePath="/about" compact />
@@ -72,7 +72,7 @@ export default function AboutPage() {
       </section>
       <section className="bg-[#f7f5f0] py-24">
         <div className="shell">
-          <span className="eyebrow">Milestones</span>
+          <span className="eyebrow">发展足迹<small>Milestones</small></span>
           <h2 className="section-title">一路走来</h2>
           <div className="mt-12 border-t border-slate-300">
             {milestones.map(([year, text]) => (

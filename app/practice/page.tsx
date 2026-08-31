@@ -21,7 +21,7 @@ export default function PracticePage() {
       <section className="py-24">
         <div className="shell">
           <div className="mb-12 max-w-3xl">
-            <span className="eyebrow">Beyond classroom</span>
+            <span className="eyebrow">实践场景<small>Beyond classroom</small></span>
             <h2 className="section-title">课堂之外的学习现场</h2>
             <p className="section-copy">
               在语言角主动开口，在文化活动中理解语境，在分享与展示中完成表达。每一次真实使用，都让课堂所学更稳、更活。

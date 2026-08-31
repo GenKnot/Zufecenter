@@ -12,17 +12,14 @@ export const metadata = createPageMetadata(
 
 const steps = [
   {
-    number: "01",
     title: "说说你的目标",
     text: "告诉我们想学的语种、当前基础、学习目标和可安排时间。",
   },
   {
-    number: "02",
     title: "获得学习建议",
     text: "课程顾问将结合你的情况，推荐适合的课程方向与学习节奏。",
   },
   {
-    number: "03",
     title: "开启学习计划",
     text: "完成基础沟通或水平评估后，进入相应班型并建立阶段目标。",
   },
@@ -39,9 +36,9 @@ export default function ContactPage() {
       />
 
       <section className="py-24">
-        <div className="shell grid gap-14 lg:grid-cols-[0.82fr_1.18fr]">
+        <div className="shell grid gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <div>
-            <span className="eyebrow">Get in touch</span>
+            <span className="eyebrow">联系方式<small>Get in touch</small></span>
             <h2 className="section-title">联系语言中心</h2>
             <p className="section-copy">
               课程咨询、水平评估、团体报名与合作洽谈，均可通过以下方式与我们联系。
@@ -101,31 +98,27 @@ export default function ContactPage() {
 
           <div className="bg-[#edf2f6] p-8 sm:p-12">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#174f8f]">
-              Course consultation
+              课程咨询
+              <small className="ml-2.5 text-[10px] font-semibold tracking-[0.14em] opacity-55">
+                Course consultation
+              </small>
             </p>
             <h2 className="mt-4 font-serif text-3xl font-semibold sm:text-4xl">
               三步开启课程咨询
             </h2>
-            <div className="mt-10 divide-y divide-slate-300 border-t border-slate-300">
+            <ol className="relative mt-10 space-y-9 border-l border-slate-300 pl-8">
               {steps.map((step) => (
-                <article
-                  key={step.number}
-                  className="grid gap-4 py-7 sm:grid-cols-[64px_1fr]"
-                >
-                  <span className="font-serif text-2xl text-[#c99b48]">
-                    {step.number}
-                  </span>
-                  <div>
-                    <h3 className="font-serif text-xl font-semibold">
-                      {step.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-7 text-slate-500">
-                      {step.text}
-                    </p>
-                  </div>
-                </article>
+                <li key={step.title} className="relative">
+                  <span className="absolute -left-[37px] top-2 size-2.5 rounded-full border-2 border-[#c99b48] bg-[#edf2f6]" />
+                  <h3 className="font-serif text-xl font-semibold">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-7 text-slate-500">
+                    {step.text}
+                  </p>
+                </li>
               ))}
-            </div>
+            </ol>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href={siteConfig.contact.phoneHref}
@@ -146,6 +139,10 @@ export default function ContactPage() {
                 先看看课程 →
               </Link>
             </div>
+            <p className="mt-8 border-t border-slate-300 pt-6 text-xs leading-6 text-slate-500">
+              热线与到访接待时间为{siteConfig.contact.hours}
+              ；其余时段可先发邮件说明语种与学习目标，我们会尽快与你联系。
+            </p>
           </div>
         </div>
       </section>

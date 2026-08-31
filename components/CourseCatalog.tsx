@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import type { Locale } from "@/data/i18n";
 import type { LanguageCourse } from "@/data/language-courses";
 import { currentTerm, findCurrentOffering } from "@/data/operations";
@@ -51,7 +52,7 @@ function localizeSchedule(value: string, locale: Locale) {
 const catalogCopy: Record<
   Locale,
   {
-    eyebrow: string;
+    eyebrow: ReactNode;
     title: string;
     text: string;
     note: string;
@@ -61,7 +62,11 @@ const catalogCopy: Record<
   }
 > = {
   zh: {
-    eyebrow: "Class catalogue",
+    eyebrow: (
+      <>
+        班级目录<small>Class catalogue</small>
+      </>
+    ),
     title: "每一级，都为下一步做好准备",
     text: "每个班级都有明确起点、学习周期与阶段成果。完成一个级别后，可以顺畅衔接下一阶段，也可以按考试、职业或表达目标进入专项课程。",
     note: "不确定从哪里开始？入学沟通会结合既有基础、学习目标与每周可投入时间给出建议。",
@@ -143,27 +148,24 @@ export function CourseCatalog({
           </div>
 
           <div className="grid gap-4 md:grid-cols-2">
-            {courses.map((item, index) => {
+            {courses.map((item) => {
               const offering = findCurrentOffering(item.code);
 
               return (
                 <Link
                   key={item.slug}
                   href={`${prefix}/languages/${language}/${item.slug}`}
-                  className="group flex min-h-[315px] flex-col border border-slate-200 bg-white p-7 transition hover:-translate-y-1 hover:border-[#c99b48] hover:shadow-[0_18px_45px_rgba(7,31,62,0.09)]"
+                  className="group flex min-h-[315px] flex-col border border-slate-200 bg-white p-7 transition hover:border-[#c99b48]"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <span className="rounded-full bg-[#0b2f5b] px-3 py-1.5 text-[10px] font-semibold tracking-[0.12em] text-white">
                       {item.code}
                     </span>
-                    <span className="font-serif text-sm text-[#c99b48]">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
                   </div>
                   <p className="mt-7 text-xs font-semibold text-[#174f8f]">
                     {item.level} · {item.track}
                   </p>
-                  <h3 className="mt-2 font-serif text-2xl font-semibold">
+                  <h3 className="mt-2 font-serif text-2xl font-semibold transition group-hover:text-[#174f8f]">
                     {item.title}
                   </h3>
                   <p className="mt-4 text-sm leading-7 text-slate-500">
@@ -181,7 +183,7 @@ export function CourseCatalog({
                   )}
                   <div className="mt-auto flex items-end justify-between gap-4 pt-7">
                     <span className="text-xs text-slate-400">{item.duration}</span>
-                    <span className="text-sm font-semibold text-[#174f8f]">
+                    <span className="link-gold text-sm font-semibold text-[#174f8f]">
                       {t.action}
                     </span>
                   </div>

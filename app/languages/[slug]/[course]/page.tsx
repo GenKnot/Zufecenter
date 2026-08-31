@@ -184,19 +184,17 @@ export default async function LanguageCoursePage({
       <section className="py-24">
         <div className="shell grid gap-14 lg:grid-cols-[0.72fr_1.28fr]">
           <div>
-            <span className="eyebrow">Learning outcomes</span>
+            <span className="eyebrow">学习成果<small>Learning outcomes</small></span>
             <h2 className="section-title">学完这一阶段，你应该能够</h2>
             <p className="section-copy">
               阶段成果既看语言知识，也看能否在相应难度的真实任务中完成表达。
             </p>
           </div>
           <div className="grid gap-px overflow-hidden border border-slate-200 bg-slate-200 sm:grid-cols-2">
-            {item.outcomes.map((outcome, index) => (
+            {item.outcomes.map((outcome) => (
               <article key={outcome} className="min-h-44 bg-white p-7">
-                <span className="font-serif text-sm text-[#c99b48]">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <p className="mt-8 text-base font-semibold leading-7">
+                <span className="block h-px w-7 bg-[#c99b48]" />
+                <p className="mt-7 text-base font-semibold leading-7">
                   {outcome}
                 </p>
               </article>
@@ -213,7 +211,7 @@ export default async function LanguageCoursePage({
         <section className="py-20">
           <div className="shell">
             <div className="max-w-3xl">
-              <span className="eyebrow">Before you enrol</span>
+              <span className="eyebrow">入班准备<small>Before you enrol</small></span>
               <h2 className="section-title">入班基础与教学准备</h2>
             </div>
             <dl className="mt-12 grid gap-px overflow-hidden border border-slate-200 bg-slate-200 lg:grid-cols-3">
@@ -239,7 +237,7 @@ export default async function LanguageCoursePage({
       <section className="bg-[#edf2f6] py-24">
         <div className="shell">
           <div className="max-w-3xl">
-            <span className="eyebrow">Course syllabus</span>
+            <span className="eyebrow">章节与任务<small>Course syllabus</small></span>
             <h2 className="section-title">课程大纲</h2>
             {/* 周期与频率在上面的信息条里已经写过，这里不重复 */}
             <p className="section-copy">
@@ -306,7 +304,7 @@ export default async function LanguageCoursePage({
         <section className="py-24">
           <div className="shell grid gap-14 lg:grid-cols-[0.72fr_1.28fr]">
             <div>
-              <span className="eyebrow">Assessment</span>
+              <span className="eyebrow">过程考核<small>Assessment</small></span>
               <h2 className="section-title">考核安排</h2>
               <p className="section-copy">
                 采用过程性任务与阶段考核结合，不以一次笔试作为唯一依据。

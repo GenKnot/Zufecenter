@@ -21,7 +21,7 @@ export default function ResearchPage() {
       <section className="py-24">
         <div className="shell">
           <div className="mb-12 max-w-3xl">
-            <span className="eyebrow">Research areas</span>
+            <span className="eyebrow">从课堂出发<small>Research areas</small></span>
             <h2 className="section-title">教研方向</h2>
           </div>
           <HubCards items={researchPages} basePath="/research" />

@@ -16,6 +16,8 @@ import {
   currentTerm,
   upcomingActivities,
 } from "@/data/operations";
+import { facultyProfilesZh } from "@/data/faculty-profiles";
+import { additionalFacultyProfiles } from "@/data/additional-faculty-profiles";
 import { createPageMetadata } from "@/lib/site-metadata";
 
 export const metadata = createPageMetadata(
@@ -25,10 +27,45 @@ export const metadata = createPageMetadata(
 );
 
 const stats = [
-  { value: "11", label: "年教学与服务经验" },
-  { value: "13,000+", label: "累计服务学员" },
-  { value: "4", label: "核心语种方向" },
-  { value: "26", label: "分级与专项班型" },
+  {
+    value: "11",
+    label: "年教学与服务经验",
+    detail: "从 2015 年的第一批英语课程开始",
+  },
+  {
+    value: "13,000+",
+    label: "累计服务学员",
+    detail: "个人课程与团体培训合计",
+  },
+  {
+    value: "4",
+    label: "核心语种方向",
+    detail: "英语 · 法语 · 日语 · 韩语",
+  },
+  {
+    value: "26",
+    label: "分级与专项班型",
+    detail: "20 个分级班 + 6 个专项与考试班",
+  },
+];
+
+// 教师代表：从师资数据里取真实在职教师，每语种一位。
+// 名字与课程大纲「教学安排」里的授课教师一致；照片暂缺，待补齐后升级为带头像版。
+const pickFaculty = (lang: string, name: string) => {
+  const t = additionalFacultyProfiles.find((p) => p.name.startsWith(name))!;
+  return { lang, name: t.name, meta: t.experience.zh, focus: t.focus.zh };
+};
+
+const featuredFaculty = [
+  pickFaculty("英语 · English", "Michael Anderson"),
+  {
+    lang: "法语 · Français",
+    name: facultyProfilesZh[0].name,
+    meta: facultyProfilesZh[0].experience,
+    focus: facultyProfilesZh[0].focus,
+  },
+  pickFaculty("日语 · 日本語", "山田 美咲"),
+  pickFaculty("韩语 · 한국어", "김서연"),
 ];
 
 
@@ -94,12 +131,15 @@ export default function HomePage() {
               <span className="mt-2 block text-xs tracking-[0.1em] text-slate-500">
                 {item.label}
               </span>
+              <span className="mt-1.5 block text-[11px] leading-5 text-slate-400">
+                {item.detail}
+              </span>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="bg-white py-24" id="autumn-2026">
+      <section className="bg-white py-28" id="autumn-2026">
         <div className="shell">
           <div className="grid gap-10 border-b border-slate-200 pb-10 lg:grid-cols-[1fr_0.82fr] lg:items-end">
             <div>
@@ -132,7 +172,7 @@ export default function HomePage() {
               <Link
                 key={offering.code}
                 href={offering.href}
-                className="group flex min-h-[300px] flex-col border border-slate-200 p-7 transition hover:-translate-y-1 hover:border-[#c99b48] hover:shadow-[0_18px_45px_rgba(7,31,62,0.08)]"
+                className="group flex min-h-[300px] flex-col border border-slate-200 p-7 transition hover:border-[#c99b48]"
               >
                 <div className="flex items-start justify-between gap-4">
                   <div>
@@ -147,7 +187,7 @@ export default function HomePage() {
                     {offering.status}
                   </span>
                 </div>
-                <h3 className="mt-7 font-serif text-2xl font-semibold text-[#11233e]">
+                <h3 className="mt-7 font-serif text-2xl font-semibold text-[#11233e] transition group-hover:text-[#174f8f]">
                   {offering.title}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-slate-500">
@@ -180,10 +220,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-28">
         <div className="shell grid gap-12 lg:grid-cols-[0.84fr_1.16fr] lg:items-center">
           <div>
-            <span className="eyebrow">About us</span>
+            <span className="eyebrow">关于我们<small>About us</small></span>
             <h2 className="section-title">十一年，把语言教育做成一件长期的事</h2>
             <p className="section-copy">
               从最初的英语课程与学习小组，到今天覆盖四个语种、多个级别和应用方向的课程体系，我们始终关注一件事：学过之后，能否更自信、更准确地表达。
@@ -215,11 +255,44 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="border-y border-slate-200 bg-[#f7f5f0] py-20">
+        <div className="shell">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <span className="eyebrow">教学团队<small>Faculty</small></span>
+              <h2 className="section-title">课程背后，是一位位具体的老师</h2>
+              <p className="section-copy">
+                你在课程大纲「教学安排」里看到的名字，就是课堂里的人。每位教师的教育背景、教学年限与方向都可以在师资页查到。
+              </p>
+            </div>
+            <Link href="/faculty" className="text-sm font-semibold text-[#174f8f]">
+              认识全部教学团队 →
+            </Link>
+          </div>
+          <div className="mt-12 grid gap-10 border-t border-slate-200 pt-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-slate-200">
+            {featuredFaculty.map((teacher) => (
+              <div key={teacher.name} className="lg:px-8 lg:first:pl-0 lg:last:pr-0">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#a77c31]">
+                  {teacher.lang}
+                </p>
+                <h3 className="mt-3 font-serif text-2xl font-semibold text-[#11233e]">
+                  {teacher.name}
+                </h3>
+                <p className="mt-1.5 text-xs text-slate-400">{teacher.meta}</p>
+                <p className="mt-4 text-sm leading-7 text-slate-600">
+                  {teacher.focus}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#edf2f6] py-24">
         <div className="shell">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <span className="eyebrow">Learning pathways</span>
+              <span className="eyebrow">学习路径<small>Learning pathways</small></span>
               <h2 className="section-title">每一个学习目标，都有更合适的抵达方式</h2>
               <p className="section-copy">
                 打牢基础、准备考试、走向海外课堂、提升职业沟通，或为团队定制培训——目标不同，课程组合与学习节奏也应不同。
@@ -254,7 +327,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-20">
         <div className="shell">
           <div className="grid overflow-hidden bg-[#071f3e] text-white lg:grid-cols-[1.04fr_0.96fr]">
             <div className="relative min-h-[520px]">
@@ -268,7 +341,10 @@ export default function HomePage() {
             </div>
             <div className="p-9 sm:p-14">
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ead7ad]">
-                Learning in practice
+                教学实践
+                <small className="ml-2.5 text-[10px] font-semibold tracking-[0.14em] opacity-55">
+                  Learning in practice
+                </small>
               </span>
               <h2 className="mt-5 font-serif text-4xl font-semibold leading-tight">
                 让语言走出课本，进入真实交流
@@ -298,7 +374,10 @@ export default function HomePage() {
           <div className="grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ead7ad]">
-                Upcoming activities
+                活动预告
+                <small className="ml-2.5 text-[10px] font-semibold tracking-[0.14em] opacity-55">
+                  Upcoming activities
+                </small>
               </p>
               <h2 className="mt-5 font-serif text-4xl font-semibold leading-tight sm:text-5xl">
                 近期活动日历
@@ -338,7 +417,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#f7f5f0] py-24">
+      <section className="bg-[#f7f5f0] py-20">
         <div className="shell">
           <div className="grid gap-6 lg:grid-cols-2">
             <Link
@@ -349,7 +428,7 @@ export default function HomePage() {
                 src="/images/library/sections/home-research-overview.webp"
                 alt=""
                 fill
-                className="object-cover opacity-42 transition duration-500 group-hover:scale-[1.03]"
+                className="object-cover opacity-42 transition duration-500 group-hover:opacity-55"
                 sizes="50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#071f3e] via-[#071f3e]/45 to-transparent" />
@@ -361,7 +440,9 @@ export default function HomePage() {
                 <p className="mt-4 max-w-md text-sm leading-7 text-white/68">
                   从课堂问题出发研究方法、更新课程，把十一年的教学经验沉淀为可验证、可延续的专业标准。
                 </p>
-                <span className="mt-6 text-sm font-semibold">进入栏目 →</span>
+                <span className="link-gold mt-6 w-fit text-sm font-semibold">
+                  进入栏目 →
+                </span>
               </div>
             </Link>
             <Link
@@ -372,7 +453,7 @@ export default function HomePage() {
                 src="/images/library/sections/home-collaboration-overview.webp"
                 alt=""
                 fill
-                className="object-cover opacity-42 transition duration-500 group-hover:scale-[1.03]"
+                className="object-cover opacity-42 transition duration-500 group-hover:opacity-55"
                 sizes="50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#071f3e] via-[#071f3e]/45 to-transparent" />
@@ -384,7 +465,9 @@ export default function HomePage() {
                 <p className="mt-4 max-w-md text-sm leading-7 text-white/68">
                   与高校、企业及国际伙伴共同设计语言项目，让课程回应校园发展、岗位能力与跨文化交流需求。
                 </p>
-                <span className="mt-6 text-sm font-semibold">进入栏目 →</span>
+                <span className="link-gold mt-6 w-fit text-sm font-semibold">
+                  进入栏目 →
+                </span>
               </div>
             </Link>
           </div>
@@ -394,7 +477,7 @@ export default function HomePage() {
       <section className="py-24">
         <div className="shell grid gap-14 lg:grid-cols-[0.72fr_1.28fr]">
           <div>
-            <span className="eyebrow">News & archive</span>
+            <span className="eyebrow">新闻动态<small>News & archive</small></span>
             <h2 className="section-title">十一年的学习现场，汇成一部成长档案</h2>
             <p className="section-copy">
               开班、语言角、公开课与教学研讨，记录着课程如何成熟、教师如何精进，也记录着一届届学员如何走得更远。
@@ -419,7 +502,10 @@ export default function HomePage() {
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <p className="text-xs uppercase tracking-[0.18em] text-[#ead7ad]">
-                Resource center
+                资源中心
+                <small className="ml-2.5 text-[10px] tracking-[0.14em] opacity-55">
+                  Resource center
+                </small>
               </p>
               <h2 className="mt-4 font-serif text-4xl font-semibold">
                 让每一次课后投入，都更有方向
@@ -450,7 +536,10 @@ export default function HomePage() {
         <div className="shell flex flex-col justify-between gap-8 lg:flex-row lg:items-center">
           <div>
             <p className="text-xs font-semibold tracking-[0.2em] text-[#071f3e]/60">
-              START A CONVERSATION
+              联系我们
+              <small className="ml-2.5 text-[10px] font-semibold tracking-[0.14em] opacity-70">
+                START A CONVERSATION
+              </small>
             </p>
             <h2 className="mt-3 font-serif text-3xl font-semibold text-[#071f3e] sm:text-4xl">
               从目标出发，开启你的语言进阶路径

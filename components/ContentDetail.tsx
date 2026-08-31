@@ -523,7 +523,15 @@ export function ContentDetail({
       <section className="py-20">
         <div className="shell grid gap-12 lg:grid-cols-[0.78fr_1.22fr]">
           <div>
-            <span className="eyebrow">At a glance</span>
+            <span className="eyebrow">
+              {locale === "zh" ? (
+                <>
+                  概览<small>At a glance</small>
+                </>
+              ) : (
+                "At a glance"
+              )}
+            </span>
             <h2 className="section-title">{copy.overview}</h2>
           </div>
           <div className="space-y-5">
@@ -538,12 +546,10 @@ export function ContentDetail({
 
       <section className="bg-[#edf2f6] py-16">
         <div className="shell grid gap-px overflow-hidden border border-slate-200 bg-slate-200 sm:grid-cols-2 lg:grid-cols-4">
-          {page.highlights.map((item, index) => (
+          {page.highlights.map((item) => (
             <article key={item.title} className="min-h-52 bg-white p-7">
-              <span className="font-serif text-sm text-[#c99b48]">
-                0{index + 1}
-              </span>
-              <h2 className="mt-8 font-serif text-xl font-semibold">
+              <span className="block h-px w-7 bg-[#c99b48]" />
+              <h2 className="mt-7 font-serif text-xl font-semibold">
                 {item.title}
               </h2>
               <p className="mt-3 text-sm leading-7 text-slate-500">
@@ -624,7 +630,16 @@ export function ContentDetail({
         <div className="shell flex flex-col justify-between gap-7 md:flex-row md:items-center">
           <div>
             <p className="text-xs font-semibold tracking-[0.18em] text-[#071f3e]/55">
-              NEXT STEP
+              {locale === "zh" ? (
+                <>
+                  下一步
+                  <small className="ml-2.5 text-[10px] font-semibold tracking-[0.14em] opacity-70">
+                    NEXT STEP
+                  </small>
+                </>
+              ) : (
+                "NEXT STEP"
+              )}
             </p>
             <h2 className="mt-2 font-serif text-3xl font-semibold text-[#071f3e]">
               {copy.ctaTitle}

@@ -48,7 +48,7 @@ export default function LanguagesPage() {
       <section className="py-24">
         <div className="shell">
           <div className="mb-12 max-w-3xl">
-            <span className="eyebrow">Choose a language</span>
+            <span className="eyebrow">语种导览<small>Choose a language</small></span>
             <h2 className="section-title">选择一种语言，开启一段有方向的进阶</h2>
             <p className="section-copy">
               从兴趣与目标出发，再结合现有基础、每周可投入时间和未来使用场景选择班型。拿不准时，也可以通过入学沟通找到合适起点。

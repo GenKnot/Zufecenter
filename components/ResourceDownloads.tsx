@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { currentTerm, resourceDownloads } from "@/data/operations";
 import type { Locale } from "@/data/i18n";
 
@@ -10,7 +11,7 @@ import type { Locale } from "@/data/i18n";
 const copy: Record<
   Locale,
   {
-    eyebrow: string;
+    eyebrow: ReactNode;
     title: string;
     text: string;
     version: string;
@@ -21,7 +22,11 @@ const copy: Record<
   }
 > = {
   zh: {
-    eyebrow: "Public downloads",
+    eyebrow: (
+      <>
+        公开资料<small>Public downloads</small>
+      </>
+    ),
     title: "公开资料下载",
     text: "先从课程安排和学习工具开始。班级讲义、作业与教师反馈材料将在开课后按教学进度发放。",
     version: "资料版本",

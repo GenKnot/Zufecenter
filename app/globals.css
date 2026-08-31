@@ -164,6 +164,40 @@ textarea {
   background: var(--gold);
 }
 
+/* 中文小标后的英文小衬：中文为主，英文缩小、降色作陪衬。 */
+.eyebrow small {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  opacity: 0.52;
+}
+
+/*
+ * 金线 hover：与导航一致的语汇——一条金线从左展开。
+ * 自身 hover 或所在 .group 卡片 hover 时触发。
+ */
+.link-gold {
+  position: relative;
+}
+
+.link-gold::after {
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  left: 0;
+  height: 1px;
+  content: "";
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.link-gold:hover::after,
+.group:hover .link-gold::after {
+  transform: scaleX(1);
+}
+
 .section-title {
   margin: 14px 0 0;
   color: var(--ink);

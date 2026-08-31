@@ -29,7 +29,13 @@ export function FacultyProfilesGrid({
       <div className="shell">
         <div className="mb-12 max-w-3xl">
           <span className="eyebrow">
-            {locale === "zh" ? "FACULTY MEMBERS" : "FACULTY MEMBERS"}
+            {locale === "zh" ? (
+              <>
+                教师简历<small>Faculty members</small>
+              </>
+            ) : (
+              "FACULTY MEMBERS"
+            )}
           </span>
           <h2 className="section-title">
             {locale === "zh"

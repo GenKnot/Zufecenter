@@ -21,7 +21,7 @@ export default function CollaborationPage() {
       <section className="py-24">
         <div className="shell">
           <div className="mb-12 max-w-3xl">
-            <span className="eyebrow">Partnership</span>
+            <span className="eyebrow">伙伴与项目<small>Partnership</small></span>
             <h2 className="section-title">合作方向</h2>
             <p className="section-copy">
               对接国际优质教育资源，严格遵循全球统一的学术管理与测评规范。中心围绕课程共建、组织培训、国际交流与语言测评服务，推动高质量语言教育资源落地。

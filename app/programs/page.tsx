@@ -21,7 +21,7 @@ export default function ProgramsPage() {
       <section className="py-24">
         <div className="shell">
           <div className="mb-12 max-w-3xl">
-            <span className="eyebrow">Learning pathways</span>
+            <span className="eyebrow">学习路径<small>Learning pathways</small></span>
             <h2 className="section-title">按目标选择培训路径</h2>
             <p className="section-copy">
               培训项目与语种课程可以交叉组合。例如，商务方向可选择英语，也可根据团队需要定制日语、法语或韩语模块。

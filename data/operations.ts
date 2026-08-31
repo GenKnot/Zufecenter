@@ -31,7 +31,7 @@ export type UpcomingActivity = {
 };
 
 export const currentTerm = {
-  eyebrow: "2026 AUTUMN TERM",
+  eyebrow: "2026 秋季学期",
   title: "2026 秋季课程与活动安排",
   summary:
     "秋季课程从入学沟通和分级测评开始，按语种与学习目标陆续开班。现公布本学期课程与活动安排，具体班次以报名通知为准。",
